@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="description" content="字幕時間重疊、斷行太長、上下兩行對不齊，是雙語字幕最常見的三個問題。說明正確做法與檢查方法，附 SRT 製作注意事項。" />
+<link rel="canonical" href="https://z2idugagr.github.io/blog/bilingual-subtitle-mistakes/" />
+<title>雙語字幕最常踩的三個地雷：時間重疊、斷行太長、雙語對不齊｜Hank 翻譯</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Noto+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"雙語字幕最常踩的三個地雷：時間重疊、斷行太長、雙語對不齊","author":{"@type":"Person","name":"Hank Chen"},"datePublished":"2026-11-16","inLanguage":"zh-Hant-TW","mainEntityOfPage":"https://z2idugagr.github.io/blog/bilingual-subtitle-mistakes/"}
+</script>
+<style>
+  :root{--navy:#0F2A44;--navy-2:#16365A;--navy-deep:#0A1E33;--yellow:#FFC400;--yellow-dark:#E0AA00;--bg:#F6F7F9;--surface:#FFFFFF;--surface-2:#EEF2F6;--ink:#14232F;--muted:#5A6B7A;--line:#DCE3EA;--radius:14px;color-scheme:light}
+  @media (prefers-color-scheme: dark){:root{--bg:#0B1B2E;--surface:#12293F;--surface-2:#0F2A44;--ink:#F2F5F8;--muted:#A9BAC9;--line:#24405C;color-scheme:dark}}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:"Noto Sans TC","Noto Sans",system-ui,-apple-system,"PingFang TC","Microsoft JhengHei",sans-serif;background:var(--bg);color:var(--ink);line-height:1.8;-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  .wrap{max-width:760px;margin:0 auto;padding:0 20px}
+  .nav{position:sticky;top:0;z-index:50;background:var(--navy);color:#fff;border-bottom:3px solid var(--yellow)}
+  .nav-inner{display:flex;align-items:center;gap:18px;min-height:60px;flex-wrap:wrap;padding-top:6px;padding-bottom:6px;max-width:1080px;margin:0 auto;padding-left:20px;padding-right:20px}
+  .brand{font-weight:900;font-size:1.08rem;text-decoration:none;display:flex;align-items:center;gap:10px}
+  .brand .mark{background:var(--yellow);color:var(--navy);font-weight:900;padding:2px 9px;border-radius:6px;font-size:.95rem}
+  .nav-links{display:flex;gap:4px;margin-left:auto;flex-wrap:wrap}
+  .nav-links a{text-decoration:none;font-size:.92rem;font-weight:500;color:#E7EEF5;padding:9px 12px;border-radius:8px}
+  .nav-links a:hover{background:var(--navy-2);color:#fff}
+  article{padding:44px 0 8px}
+  .tag{display:inline-block;background:rgba(255,196,0,.2);color:var(--yellow-dark);border:1px solid var(--yellow-dark);font-size:.82rem;font-weight:700;padding:4px 13px;border-radius:999px;margin-bottom:14px}
+  @media (prefers-color-scheme: dark){.tag{color:var(--yellow)}}
+  h1{font-size:1.9rem;line-height:1.35;font-weight:900;margin:0 0 10px}
+  .meta{color:var(--muted);font-size:.9rem;margin:0 0 28px}
+  h2{font-size:1.35rem;font-weight:900;margin:36px 0 12px}
+  h2 .bar{color:var(--yellow-dark)}
+  h2 .n{color:var(--yellow-dark)}
+  p{margin:0 0 16px}
+  .ex{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:12px 0 20px;font-size:.95rem}
+  .ex p{margin:4px 0}
+  .ex .bad{color:#B3261E}
+  .ex .good{color:#1E7B34}
+  @media (prefers-color-scheme: dark){.ex .bad{color:#FF8A80}.ex .good{color:#7ED492}}
+  .check{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:20px 22px;margin:20px 0}
+  .check h3{margin:0 0 10px;font-size:1.05rem}
+  .check ul{margin:0;padding-left:1.2em;color:var(--muted);font-size:.95rem}
+  .check ul li{margin:6px 0}
+  .note{background:var(--surface-2);border-left:4px solid var(--yellow);border-radius:0 10px 10px 0;padding:14px 18px;margin:20px 0;font-size:.95rem;color:var(--muted)}
+  .note b{color:var(--ink)}
+  .cta{background:var(--navy);color:#fff;border-radius:16px;padding:28px;margin:36px 0}
+  .cta h3{margin:0 0 8px;font-size:1.15rem}
+  .cta h3 span{color:var(--yellow)}
+  .cta p{color:#C9D7E4;margin:0 0 18px;font-size:.95rem}
+  .cta .btns{display:flex;gap:12px;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:11px 24px;border-radius:10px;font-weight:700;font-size:.98rem;text-decoration:none}
+  .btn-yellow{background:var(--yellow);color:var(--navy)}
+  .btn-outline{border:2px solid #7E97AE;color:#fff}
+  .author{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:20px;display:flex;gap:16px;align-items:start;margin-bottom:20px}
+  .avatar{width:56px;height:56px;border-radius:12px;background:var(--navy);color:var(--yellow);display:flex;align-items:center;justify-content:center;font-size:1.5rem;font-weight:900;flex-shrink:0}
+  .author h3{margin:0 0 2px;font-size:1.05rem}
+  .author p{margin:0;color:var(--muted);font-size:.92rem}
+  .back{margin-bottom:40px}
+  .back a{font-weight:700;color:var(--navy);text-decoration:none}
+  @media (prefers-color-scheme: dark){.back a{color:var(--yellow)}}
+  footer{background:var(--navy-deep);color:#9DB2C6;padding:28px 0 32px;font-size:.88rem;margin-top:40px}
+  footer .wrap{display:flex;gap:14px;flex-wrap:wrap;justify-content:space-between;align-items:center}
+  footer b{color:#fff}
+  footer a{color:var(--yellow);text-decoration:none;font-weight:700}
+  @media (max-width:640px){h1{font-size:1.55rem}}
+</style>
+</head>
+<body>
+<header class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="https://z2idugagr.github.io/"><span class="mark">譯</span>Hank 翻譯</a>
+    <nav class="nav-links" aria-label="主選單">
+      <a href="https://z2idugagr.github.io/#services">服務</a>
+      <a href="https://z2idugagr.github.io/#pricing">價格</a>
+      <a href="https://z2idugagr.github.io/blog/">翻譯小知識</a>
+      <a href="https://z2idugagr.github.io/#faq">FAQ</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+<article>
+  <span class="tag">翻譯小知識</span>
+  <h1>雙語字幕最常踩的三個地雷：時間重疊、斷行太長、雙語對不齊</h1>
+  <p class="meta">Hank Chen ・ 2026 年 11 月 16 日 ・ 約 3 分鐘閱讀</p>
+
+  <p>雙語字幕看起來只是把英文翻成中文、貼在畫面下方，實際上是翻譯、排版、時間軸三件事同時要顧。很多字幕的問題不在翻譯翻錯，而是時間、斷行、對齊出了問題。以下是做英中雙語字幕時最常踩的三個地雷。</p>
+
+  <h2><span class="bar">▍</span><span class="n">地雷 1：</span>時間重疊，字幕互相打架</h2>
+  <p>前一條字幕的結束時間晚於下一條的開始時間，畫面上的字幕就會閃爍、重疊，甚至兩句話疊在一起看不清楚。最常見的原因是直接沿用英文原字幕的時間軸來切中文：英文一句話講完的時間，中文可能需要更長的閱讀時間，硬切就會出問題。</p>
+  <p>正確做法：每條字幕之間至少留一點間隔，不要讓時間軸頭尾相接；輸出前用字幕軟體的檢查功能掃一遍，確認沒有重疊的時間段。如果一句話真的太長，寧可拆成兩條，也不要硬塞進一條裡。</p>
+
+  <h2><span class="bar">▍</span><span class="n">地雷 2：</span>斷行太長，觀眾根本讀不完</h2>
+  <p>字幕是給人邊看畫面邊讀的，不是給人停下來慢慢看的。中文每行建議不超過 20 個字，雙語上下兩行加起來還要留得住畫面。太長的字幕有兩個壞處：觀眾讀到一半字幕就跳掉了，而且字幕會遮住太多畫面。</p>
+  <div class="ex">
+    <p class="bad">✗ 太長：一行塞進整句話，觀眾讀到一半字幕就換了，後半句永遠看不到。</p>
+    <p class="good">✓ 正確：照說話的節奏斷句，一句話切成兩行，每行都是一個完整的語意，停留時間夠讀完。</p>
+  </div>
+  <p>斷句的訣竅是跟著口氣走：講到一個段落、一個意思完整的地方再換行，不要在詞語中間切開，也不要把「的」「了」這類虛字留在行首。</p>
+
+  <h2><span class="bar">▍</span><span class="n">地雷 3：</span>雙語對不齊，眼睛上下亂跳</h2>
+  <p>雙語字幕通常是英文一行、中文一行，或者中英各一行上下排列。最常見的問題是斷句位置對不上：英文在第一行斷，中文卻在第二行才斷，觀眾的眼睛要在上下兩行之間來回找對應的意思，看幾分鐘就累了。更糟的是中英行數不一致，畫面上的字幕忽長忽短，看起來很不專業。</p>
+  <p>正確做法：中英文的斷句位置盡量對齊，行數保持一致，標點也互相對應。翻譯的時候不要只翻文字，要同時想好這句話在畫面上要怎麼分行。英文原文一句話，中文翻譯也盡量是一句話；需要拆行的地方，中英文一起拆。</p>
+
+  <div class="check">
+    <h3>交件前檢查清單</h3>
+    <ul>
+      <li>時間軸有沒有重疊或間隔太小的段落？</li>
+      <li>每一行中文是不是都在 20 字以內？</li>
+      <li>中英文斷句位置對不對得上，行數一不一致？</li>
+      <li>標點是不是台灣習慣的全形標點與直式引號「」？</li>
+      <li>用詞是不是台灣說法（軟體不是軟件、影片不是視頻）？</li>
+      <li>實際播放一次，從頭看到尾確認沒有閃爍或錯字。</li>
+    </ul>
+  </div>
+
+  <p>字幕翻譯的標準不在字多字少，而在觀眾看不看得懂、讀不讀得完。時間、斷行、對齊這三件事顧好，翻譯本身的品質才有意義。想自己動手的話，我有一份<a href="https://zidug.gumroad.com/l/srt-bilingual-subtitle-template-pack" target="_blank" rel="noopener">SRT 雙語字幕模板包</a>，時間軸與斷句格式都已經設定好，換上自己的字幕內容就能用。</p>
+
+  <div class="note"><b>一句話總結：</b>好的雙語字幕是觀眾感覺不到它存在的字幕——時間剛好、斷行剛好、對齊剛好，眼睛只管看畫面，意思自己進來。</div>
+
+  <div class="cta">
+    <h3>需要<span>可以直接上傳的雙語字幕</span>嗎？</h3>
+    <p>英文字幕翻成台灣繁體中文，交付標準 SRT 檔，時間軸對齊、斷句照口語節奏切。透過 Fiverr 下單，依影片長度客製報價。</p>
+    <div class="btns">
+      <a class="btn btn-yellow" href="https://www.fiverr.com/chenhank372/writing-and-translation-expert" target="_blank" rel="noopener">在 Fiverr 下單 →</a>
+      <a class="btn btn-outline" href="https://z2idugagr.github.io/">回作品集首頁</a>
+    </div>
+  </div>
+
+  <div class="author">
+    <div class="avatar" aria-hidden="true">H</div>
+    <div>
+      <h3>Hank Chen</h3>
+      <p>英文 ↔ 繁體中文（台灣）自由譯者，Fiverr chenhank372。專做文件翻譯、網站文案、Excel 表格與英文字幕 SRT，只出台灣繁體中文。</p>
+    </div>
+  </div>
+  <p class="back"><a href="https://z2idugagr.github.io/">← 回作品集首頁</a></p>
+</article>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div><b>Hank 翻譯</b> ・ 英文 ↔ 繁體中文（台灣）翻譯／校對／排版</div>
+    <div>本站不直接收款，所有交易透過 <a href="https://www.fiverr.com/chenhank372/writing-and-translation-expert" target="_blank" rel="noopener">Fiverr</a> 平台進行。</div>
+  </div>
+</footer>
+</body>
+</html>
