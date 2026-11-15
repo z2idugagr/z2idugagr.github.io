@@ -1,0 +1,1291 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+<meta name="color-scheme" content="light"/>
+<link rel="icon" href="data:,"/>
+<title>緣來是你 — 慢慢認識，認真一點也沒關係</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Noto+Serif+TC:wght@700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FFF8F0; --bg2:#FFF1E2; --card:#FFFFFF; --ink:#1F1F1F; --ink2:#5C554E; --ink3:#8A8178;
+  --coral:#E85D5A; --coral-d:#C94541; --coral-soft:#FDECEA; --amber:#F5B841; --amber-soft:#FEF3D8;
+  --teal:#2A9D8F; --teal-soft:#E2F4F1; --line:#F0E2D2; --shadow:0 10px 30px rgba(120,60,30,.12);
+  --r:18px;
+}
+*{box-sizing:border-box} html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Noto Sans TC",system-ui,-apple-system,"PingFang TC","Microsoft JhengHei",sans-serif;-webkit-font-smoothing:antialiased}
+button,[role="button"],select,summary,input:not([type="checkbox"]){min-height:2.25rem}
+button{font-family:inherit;cursor:pointer}
+img{max-width:100%}
+h1,h2,h3{font-family:"Noto Serif TC","Noto Sans TC",serif;margin:0}
+.wrap{max-width:1120px;margin:0 auto;padding:0 16px 110px}
+/* header */
+header.top{position:sticky;top:0;z-index:60;background:rgba(255,248,240,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.topin{max-width:1120px;margin:0 auto;padding:10px 16px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.logo{font-family:"Noto Serif TC",serif;font-weight:900;font-size:22px;letter-spacing:.02em}
+.logo em{font-style:normal;color:var(--coral)}
+.logo small{display:block;font-family:"Noto Sans TC";font-weight:500;font-size:11px;color:var(--ink2);letter-spacing:.06em}
+.topsp{flex:1}
+.pillbtn{border:1.5px solid var(--line);background:#fff;border-radius:999px;padding:7px 14px;font-size:13.5px;font-weight:700;color:var(--ink);display:inline-flex;align-items:center;gap:6px;min-height:38px}
+.pillbtn:hover{border-color:var(--coral);color:var(--coral-d)}
+.pillbtn.safety{border-color:var(--teal);color:var(--teal);background:var(--teal-soft)}
+select.langsel{border:1.5px solid var(--line);border-radius:999px;background:#fff;padding:6px 10px;font-size:13.5px;font-weight:700;min-height:38px}
+/* hero strip */
+.hero{padding:26px 0 6px}
+.hero h1{font-size:clamp(26px,4.5vw,40px);line-height:1.25}
+.hero h1 .hl{color:var(--coral)}
+.hero p{color:var(--ink2);font-size:15.5px;line-height:1.7;max-width:640px;margin:10px 0 0}
+.badge-demo{display:inline-block;background:var(--amber-soft);color:#8A5E00;border:1px solid var(--amber);font-size:12px;font-weight:700;border-radius:999px;padding:3px 10px}
+/* progress */
+.progress{height:8px;background:#F3E3CE;border-radius:99px;overflow:hidden;margin:14px 0 4px}
+.progress>i{display:block;height:100%;background:linear-gradient(90deg,var(--amber),var(--coral));border-radius:99px;transition:width .35s}
+.stepmeta{display:flex;justify-content:space-between;font-size:12.5px;color:var(--ink2);font-weight:700}
+/* cards & forms */
+.panel{background:var(--card);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);padding:22px;margin:16px 0}
+.panel h2{font-size:22px;margin-bottom:6px}
+.panel .sub{color:var(--ink2);font-size:14px;line-height:1.65;margin:0 0 14px}
+label.flabel{display:block;font-weight:700;font-size:14px;margin:14px 0 6px}
+input[type=text],input[type=tel],input[type=date],input[type=number],select.fsel,textarea{width:100%;border:1.5px solid var(--line);border-radius:12px;padding:11px 13px;font-size:15.5px;background:#FFFDF9;font-family:inherit;color:var(--ink)}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--coral);outline-offset:1px;border-color:transparent}
+.err{display:none;background:#FDECEA;border:1px solid var(--coral);color:#8F2B28;border-radius:10px;padding:9px 12px;font-size:13.5px;margin-top:8px;line-height:1.55}
+.err.show{display:block}
+.okmsg{display:none;background:var(--teal-soft);border:1px solid var(--teal);color:#14554D;border-radius:10px;padding:9px 12px;font-size:13.5px;margin-top:8px}
+.okmsg.show{display:block}
+.choices{display:grid;gap:10px}
+.choice{border:2px solid var(--line);background:#FFFDF9;border-radius:14px;padding:15px 16px;text-align:left;font-size:16px;font-weight:700;display:flex;justify-content:space-between;align-items:center;gap:10px;min-height:56px;width:100%}
+.choice small{display:block;font-weight:500;color:var(--ink2);font-size:13px;margin-top:2px}
+.choice.sel{border-color:var(--coral);background:var(--coral-soft)}
+.choice .tick{color:var(--coral);font-weight:900;visibility:hidden}
+.choice.sel .tick{visibility:visible}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{border:1.5px solid var(--line);background:#fff;border-radius:999px;padding:8px 15px;font-size:14px;font-weight:700;min-height:40px}
+.chip.sel{background:var(--coral);border-color:var(--coral);color:#fff}
+.chip.teal.sel{background:var(--teal);border-color:var(--teal)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:none;border-radius:999px;padding:12px 26px;font-size:16px;font-weight:900;min-height:50px;text-decoration:none}
+.btn.primary{background:var(--coral);color:#fff;box-shadow:0 8px 20px rgba(232,93,90,.35)}
+.btn.primary:hover{background:var(--coral-d)}
+.btn.primary:disabled{background:#D8CFC4;box-shadow:none;cursor:not-allowed}
+.btn.ghost{background:#fff;border:1.5px solid var(--line);color:var(--ink)}
+.btn.teal{background:var(--teal);color:#fff}
+.btn.small{padding:8px 18px;font-size:14px;min-height:42px}
+.btnrow{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.checkline{display:flex;gap:10px;align-items:flex-start;font-size:14px;line-height:1.6;margin:10px 0;cursor:pointer;padding:6px 0}
+.checkline input{width:20px;height:20px;accent-color:var(--coral);flex:none;margin-top:2px}
+.phonerow{display:flex;gap:8px}
+.phonerow select{flex:0 0 46%;max-width:250px}
+.phonerow input{flex:1}
+.otpbox{background:var(--amber-soft);border:1.5px dashed var(--amber);border-radius:12px;padding:12px 14px;font-size:14px;margin-top:12px;line-height:1.6}
+.otpbox b{font-size:20px;letter-spacing:.3em;color:#8A5E00}
+.photogrid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.photocell{aspect-ratio:3/4;border-radius:14px;border:2px dashed #E3CDB2;background:#FFF6EA;display:flex;align-items:center;justify-content:center;font-size:13px;color:var(--ink2);font-weight:700;text-align:center;overflow:hidden;position:relative;padding:6px}
+.photocell.filled{border-style:solid;border-color:var(--line);color:#fff;font-size:30px;font-weight:900}
+.photocell button{position:absolute;top:6px;right:6px;width:28px;height:28px;min-height:28px;border-radius:50%;border:none;background:rgba(0,0,0,.45);color:#fff;font-size:14px;line-height:1}
+.styletiles{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.styletile{width:52px;height:52px;border-radius:12px;border:2px solid transparent;cursor:pointer;min-height:52px}
+.styletile.sel{border-color:var(--coral)}
+input[type=range]{width:100%;accent-color:var(--coral)}
+.rangelabels{display:flex;justify-content:space-between;font-size:13px;color:var(--ink2);font-weight:700}
+/* avatars */
+.avatar{border-radius:16px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:900;flex:none;position:relative;overflow:hidden}
+.avatar .ini{font-family:"Noto Serif TC",serif}
+.avatar .scene{position:absolute;font-size:.42em;opacity:.85;bottom:6%;right:8%}
+/* main nav */
+nav.mainnav{position:fixed;left:0;right:0;bottom:0;z-index:60;background:#fff;border-top:1px solid var(--line);box-shadow:0 -6px 20px rgba(120,60,30,.08)}
+.mainnav .in{max-width:1120px;margin:0 auto;display:flex;overflow-x:auto}
+.navbtn{flex:1;min-width:64px;background:none;border:none;padding:8px 2px 10px;font-size:12px;font-weight:700;color:var(--ink3);display:flex;flex-direction:column;align-items:center;gap:2px;min-height:58px}
+.navbtn .ic{font-size:21px;line-height:1}
+.navbtn.on{color:var(--coral)}
+.navbtn .dot{background:var(--coral);color:#fff;border-radius:99px;font-size:10px;padding:0 5px;margin-left:2px}
+/* views */
+.view{display:none}.view.on{display:block}
+.sec-title{font-size:21px;margin:22px 0 4px}
+.sec-sub{color:var(--ink2);font-size:13.5px;margin:0 0 12px}
+/* swipe card */
+.deckwrap{max-width:520px;margin:14px auto 0}
+.swipecard{background:#fff;border-radius:24px;overflow:hidden;box-shadow:var(--shadow);border:1px solid var(--line);touch-action:pan-y;user-select:none}
+.swipecard .photo{height:380px;position:relative;display:flex;align-items:flex-end}
+.swipecard .photo .bigini{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:"Noto Serif TC",serif;font-weight:900;font-size:120px;color:rgba(255,255,255,.92)}
+.swipecard .photo .sceneEmoji{position:absolute;top:38%;width:100%;text-align:center;font-size:54px}
+.swipecard .photo .grad{position:absolute;left:0;right:0;bottom:0;height:55%;background:linear-gradient(transparent,rgba(20,12,8,.72))}
+.swipecard .photo .pinfo{position:relative;padding:16px;color:#fff;width:100%}
+.swipecard .photo .pinfo h3{font-size:27px;color:#fff}
+.verified{display:inline-flex;align-items:center;gap:4px;background:var(--teal);color:#fff;font-size:11.5px;font-weight:800;border-radius:999px;padding:3px 9px;vertical-align:middle;margin-left:8px}
+.demotag{display:inline-block;background:var(--amber);color:#4A3200;font-size:11.5px;font-weight:800;border-radius:999px;padding:3px 9px;margin-left:6px;vertical-align:middle}
+.swipecard .body{padding:14px 16px 16px}
+.promptpeek{background:var(--bg2);border-radius:12px;padding:11px 13px;font-size:14px;line-height:1.6}
+.promptpeek b{color:var(--coral-d);display:block;font-size:12.5px;margin-bottom:2px}
+.tagrow{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}
+.tag{background:#fff;border:1.5px solid var(--line);border-radius:999px;padding:4px 11px;font-size:12.5px;font-weight:700}
+.tag.common{background:var(--teal-soft);border-color:var(--teal);color:#14554D}
+.swipeactions{display:flex;justify-content:center;align-items:center;gap:14px;margin:18px 0 6px}
+.roundbtn{width:62px;height:62px;min-height:62px;border-radius:50%;border:1.5px solid var(--line);background:#fff;font-size:26px;box-shadow:0 6px 16px rgba(120,60,30,.12);display:flex;align-items:center;justify-content:center}
+.roundbtn.like{background:var(--coral);color:#fff;border-color:var(--coral);width:72px;height:72px;min-height:72px;font-size:32px}
+.roundbtn.super{background:var(--amber-soft);border-color:var(--amber);color:#8A5E00}
+.roundbtn.small2{width:48px;height:48px;min-height:48px;font-size:19px}
+.roundbtn:disabled{opacity:.4}
+.quota{text-align:center;font-size:13px;color:var(--ink2);font-weight:700}
+.emptystate{text-align:center;padding:44px 20px}
+.emptystate .big{font-size:52px}
+.emptystate h3{font-size:22px;margin:10px 0 6px}
+.emptystate p{color:var(--ink2);line-height:1.7;font-size:14.5px}
+/* daily + grid */
+.dailylist{display:grid;gap:12px}
+.dailyrow{display:flex;gap:14px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:12px;align-items:center;box-shadow:0 4px 14px rgba(120,60,30,.06)}
+.dailyrow .meta{flex:1;min-width:0}
+.dailyrow h4{margin:0;font-size:17px}
+.bestmatch{background:var(--amber);color:#4A3200;font-size:11px;font-weight:900;border-radius:99px;padding:2px 8px;margin-left:6px}
+.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+@media(min-width:760px){.grid2{grid-template-columns:repeat(4,1fr)}.dailylist{grid-template-columns:1fr 1fr;display:grid}}
+.gcard{background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:0 4px 14px rgba(120,60,30,.06)}
+.gcard .gphoto{height:150px;position:relative;display:flex;align-items:center;justify-content:center;color:#fff;font-family:"Noto Serif TC",serif;font-weight:900;font-size:52px}
+.gcard .gbody{padding:10px 12px 12px}
+.gcard h4{margin:0 0 2px;font-size:16px}
+.gcard p{margin:0;font-size:12.5px;color:var(--ink2);line-height:1.55}
+.iconbtn{background:#fff;border:1.5px solid var(--line);border-radius:999px;width:40px;height:40px;min-height:40px;font-size:17px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.iconbtn.saved{background:var(--amber-soft);border-color:var(--amber)}
+.filterbar{background:#fff;border:1px solid var(--line);border-radius:16px;padding:14px 16px;margin:12px 0}
+.filterbar .row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media(min-width:760px){.filterbar .row{grid-template-columns:repeat(4,1fr)}}
+/* profile detail modal + generic modal */
+.overlay{position:fixed;inset:0;background:rgba(31,20,14,.55);z-index:100;display:none;align-items:flex-end;justify-content:center;padding:0}
+.overlay.open{display:flex}
+.sheet{background:var(--bg);width:100%;max-width:560px;max-height:92vh;overflow-y:auto;border-radius:22px 22px 0 0;padding:20px 18px 30px;animation:up .25s ease}
+@media(min-width:700px){.overlay{align-items:center;padding:20px}.sheet{border-radius:22px}}
+@keyframes up{from{transform:translateY(24px);opacity:.4}to{transform:none;opacity:1}}
+.sheet h3{font-size:21px;margin-bottom:8px}
+.sheet .x{float:right}
+.matchfaces{display:flex;align-items:center;justify-content:center;gap:14px;margin:14px 0}
+.matchfaces .heart{font-size:30px;color:var(--coral)}
+.opener{background:#fff;border:1.5px solid var(--line);border-radius:12px;padding:11px 13px;font-size:14px;width:100%;text-align:left;margin:6px 0;line-height:1.6;min-height:48px}
+.opener:hover{border-color:var(--coral)}
+/* chat */
+.chatlist{display:grid;gap:10px}
+.chatrow{display:flex;gap:12px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:12px;align-items:center;width:100%;text-align:left;box-shadow:0 4px 14px rgba(120,60,30,.05)}
+.chatrow .meta{flex:1;min-width:0}
+.chatrow h4{margin:0;font-size:16px}
+.chatrow p{margin:2px 0 0;font-size:13px;color:var(--ink2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.threadhead{display:flex;align-items:center;gap:10px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:10px 12px;margin-top:12px}
+.commonbar{background:var(--teal-soft);border:1px solid var(--teal);color:#14554D;border-radius:12px;padding:9px 13px;font-size:13.5px;margin:10px 0;line-height:1.6}
+.msgs{display:flex;flex-direction:column;gap:8px;padding:8px 2px;min-height:200px}
+.msg{max-width:78%;padding:10px 14px;border-radius:18px;font-size:15px;line-height:1.6;word-break:break-word}
+.msg.me{align-self:flex-end;background:var(--coral);color:#fff;border-bottom-right-radius:6px}
+.msg.them{align-self:flex-start;background:#fff;border:1px solid var(--line);border-bottom-left-radius:6px}
+.msg.sys{align-self:center;background:var(--amber-soft);color:#7A5200;font-size:12.5px;border-radius:99px;padding:6px 14px;text-align:center;max-width:92%}
+.msg.voice{display:flex;align-items:center;gap:8px}
+.msg .bars{display:inline-flex;gap:2px;align-items:center}
+.msg .bars i{display:block;width:3px;background:currentColor;border-radius:2px;opacity:.75}
+.msgphoto{width:170px;height:130px;border-radius:12px;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:900;font-size:34px;cursor:pointer}
+.msgphoto .blurveil{position:absolute;inset:0;backdrop-filter:blur(14px);background:rgba(255,248,240,.25);display:flex;align-items:center;justify-content:center;font-size:13px;color:var(--ink);font-weight:800;text-align:center;padding:8px}
+.datecard{align-self:center;background:#fff;border:2px dashed var(--amber);border-radius:16px;padding:14px 16px;text-align:center;max-width:92%}
+.datecard h4{margin:0 0 4px;font-size:16px}
+.datecard p{margin:0 0 10px;font-size:13px;color:var(--ink2)}
+.composer{display:flex;gap:8px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:999px;padding:6px;margin-top:10px;position:sticky;bottom:76px}
+.composer input{flex:1;border:none;background:transparent;padding:8px 10px;font-size:15.5px;min-width:0}
+.composer input:focus{outline:none}
+.sendbtn{background:var(--coral);color:#fff;border:none;border-radius:50%;width:44px;height:44px;min-height:44px;font-size:18px;flex:none}
+.toolbtn{background:var(--bg2);border:1px solid var(--line);border-radius:50%;width:44px;height:44px;min-height:44px;font-size:18px;flex:none}
+/* events */
+.eventcard{background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:0 4px 14px rgba(120,60,30,.06);display:flex;flex-direction:column}
+.eventcard .ebanner{height:110px;display:flex;align-items:center;justify-content:center;font-size:46px;color:#fff}
+.eventcard .ebody{padding:14px 16px}
+.eventcard h3{font-size:18px;margin-bottom:6px}
+.eventcard p{margin:3px 0;font-size:13.5px;color:var(--ink2);line-height:1.6}
+.eventgrid{display:grid;gap:14px}
+@media(min-width:760px){.eventgrid{grid-template-columns:1fr 1fr}}
+/* safety / pricing / settings */
+.safetygrid{display:grid;gap:12px}
+@media(min-width:760px){.safetygrid{grid-template-columns:1fr 1fr}}
+.safetybox{background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px}
+.safetybox h3{font-size:17px;margin-bottom:8px}
+.safetybox ul{margin:0;padding-left:20px;line-height:1.9;font-size:14px;color:var(--ink2)}
+.hotline{font-size:30px;font-weight:900;color:var(--coral);font-family:"Noto Serif TC",serif}
+.pricegrid{display:grid;gap:14px}
+@media(min-width:760px){.pricegrid{grid-template-columns:1fr 1fr}}
+.pricecard{background:#fff;border:2px solid var(--line);border-radius:20px;padding:22px;position:relative}
+.pricecard.hot{border-color:var(--coral)}
+.pricecard .amt{font-size:34px;font-weight:900;font-family:"Noto Serif TC",serif}
+.pricecard ul{padding-left:20px;line-height:2;font-size:14.5px;color:var(--ink2)}
+.soon{position:absolute;top:14px;right:14px;background:var(--amber);color:#4A3200;font-weight:900;font-size:12px;border-radius:99px;padding:4px 11px}
+.setrow{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:13px 0;border-bottom:1px solid var(--line);font-size:15px}
+.setrow:last-child{border-bottom:none}
+.switch{position:relative;width:52px;height:30px;flex:none}
+.switch input{opacity:0;width:100%;height:100%;position:absolute;margin:0;cursor:pointer}
+.switch .tr{position:absolute;inset:0;background:#D8CFC4;border-radius:99px;transition:.2s;pointer-events:none}
+.switch .tr:after{content:"";position:absolute;width:24px;height:24px;background:#fff;border-radius:50%;top:3px;left:3px;transition:.2s;box-shadow:0 2px 6px rgba(0,0,0,.2)}
+.switch input:checked + .tr{background:var(--teal)}
+.switch input:checked + .tr:after{left:25px}
+.kv{display:flex;justify-content:space-between;gap:10px;font-size:14px;padding:7px 0;border-bottom:1px dashed var(--line)}
+.kv b{text-align:right}
+.toast{position:fixed;left:50%;bottom:86px;transform:translateX(-50%) translateY(20px);background:var(--ink);color:#fff;padding:11px 20px;border-radius:99px;font-size:14px;font-weight:700;opacity:0;pointer-events:none;transition:.25s;z-index:200;max-width:92vw;text-align:center}
+.toast.show{opacity:1;transform:translateX(-50%)}
+footer.foot{max-width:1120px;margin:26px auto 0;padding:0 16px;font-size:12.5px;color:var(--ink3);line-height:1.8}
+.hidden{display:none!important}
+.reportopt{display:block;width:100%;text-align:left;background:#fff;border:1.5px solid var(--line);border-radius:12px;padding:13px 15px;font-size:15px;font-weight:700;margin:7px 0;min-height:50px}
+.reportopt:hover{border-color:var(--coral)}
+textarea{resize:vertical}
+@media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="topin">
+    <div class="logo">緣來<em>是你</em><small data-i18n="tagline">慢慢認識，認真一點也沒關係</small></div>
+    <div class="topsp"></div>
+    <button class="pillbtn" id="btnPricingTop">♡ <span data-i18n="premium">Premium</span></button>
+    <button class="pillbtn safety" id="btnSafetyTop">🛡 <span data-i18n="safety">安全中心</span></button>
+    <select class="langsel" id="langSel" aria-label="Language">
+      <option value="zh">繁體中文</option><option value="en">English</option><option value="ja">日本語</option>
+      <option value="ko">한국어</option><option value="es">Español</option><option value="fr">Français</option>
+      <option value="de">Deutsch</option><option value="pt">Português</option>
+    </select>
+  </div>
+</header>
+
+<div class="wrap">
+  <!-- ============ ONBOARDING ============ -->
+  <section id="onboardView">
+    <div class="hero">
+      <span class="badge-demo" data-i18n="taipeiFirst">台北優先 · 認真交友</span>
+      <h1><span data-i18n="heroA">緣分不急，</span><br><span class="hl" data-i18n="heroB">先好好認識一個人。</span></h1>
+      <p data-i18n="heroP">給想認真交友的你：真人認證、每日精選、團體活動，還有完整的反詐騙防護。慢慢來，比較快。</p>
+    </div>
+    <div class="stepmeta"><span id="stepLabel">步驟 1 / 7</span><span id="stepPct">0%</span></div>
+    <div class="progress"><i id="progBar" style="width:5%"></i></div>
+    <div id="stepHost"></div>
+  </section>
+
+  <!-- ============ MAIN APP ============ -->
+  <section id="appView" class="hidden">
+    <!-- Discover -->
+    <div class="view" id="view-discover">
+      <h2 class="sec-title" data-i18n="discoverT">探索</h2>
+      <p class="sec-sub" data-i18n="discoverS">點愛心或左右滑動都可以，滑錯了可以免費收回一次。</p>
+      <div class="deckwrap" id="deckHost"></div>
+    </div>
+    <!-- Daily -->
+    <div class="view" id="view-daily">
+      <h2 class="sec-title" data-i18n="dailyT">每日精選</h2>
+      <p class="sec-sub" data-i18n="dailyS">每天為你挑 5 位，其中一位是和你最合拍的。</p>
+      <div class="dailylist" id="dailyHost"></div>
+      <h2 class="sec-title" style="margin-top:28px" data-i18n="favT">我的收藏</h2>
+      <p class="sec-sub" data-i18n="favS">你書籤起來的人，都在這裡。</p>
+      <div id="favHost"></div>
+    </div>
+    <!-- Nearby grid -->
+    <div class="view" id="view-nearby">
+      <h2 class="sec-title" data-i18n="nearbyT">附近的人</h2>
+      <p class="sec-sub" data-i18n="nearbyS">依距離排序，共同興趣會特別標出來。</p>
+      <div class="filterbar">
+        <div class="row">
+          <div><label class="flabel" style="margin-top:0" data-i18n="fAge">年齡</label>
+            <select class="fsel" id="fAge"><option value="0">全部</option><option value="24-27">24–27</option><option value="28-30">28–30</option><option value="31-32">31–32</option></select></div>
+          <div><label class="flabel" style="margin-top:0" data-i18n="fDist">距離</label>
+            <select class="fsel" id="fDist"><option value="99">全部</option><option value="5">5 公里內</option><option value="10">10 公里內</option><option value="20">20 公里內</option></select></div>
+          <div><label class="flabel" style="margin-top:0" data-i18n="fCity">城市</label>
+            <select class="fsel" id="fCity"><option value="">全部</option><option value="台北市">台北市</option><option value="新北市">新北市</option></select></div>
+          <div><label class="flabel" style="margin-top:0" data-i18n="fInt">興趣</label>
+            <select class="fsel" id="fInt"><option value="">全部</option></select></div>
+        </div>
+      </div>
+      <div class="grid2" id="gridHost"></div>
+    </div>
+    <!-- Events -->
+    <div class="view" id="view-events">
+      <h2 class="sec-title" data-i18n="eventsT">團體活動</h2>
+      <p class="sec-sub" data-i18n="eventsS">低負擔的小活動，一群人一起，認識人也比較不尷尬。</p>
+      <div class="eventgrid" id="eventHost"></div>
+    </div>
+    <!-- Chats -->
+    <div class="view" id="view-chats">
+      <h2 class="sec-title" data-i18n="chatsT">訊息</h2>
+      <p class="sec-sub" data-i18n="chatsS">配對成功才能聊天，慢慢聊，不用急。</p>
+      <div id="chatHost"></div>
+    </div>
+    <!-- Me -->
+    <div class="view" id="view-me">
+      <h2 class="sec-title" data-i18n="meT">我的檔案</h2>
+      <div id="meHost"></div>
+    </div>
+    <!-- Safety -->
+    <div class="view" id="view-safety">
+      <h2 class="sec-title" data-i18n="safetyT">安全中心</h2>
+      <p class="sec-sub" data-i18n="safetyS">認識新朋友很開心，但安全永遠第一。</p>
+      <div class="safetygrid">
+        <div class="safetybox">
+          <h3 data-i18n="antiFraud">反詐騙專線</h3>
+          <div class="hotline">165</div>
+          <p style="font-size:14px;color:var(--ink2);line-height:1.7;margin:6px 0" data-i18n="antiFraudP">懷疑遇到詐騙，先打 165 查證，或到警政署反詐騙網站查詢。</p>
+          <a class="btn ghost small" href="https://165.npa.gov.tw" target="_blank" rel="noopener">165.npa.gov.tw ↗</a>
+        </div>
+        <div class="safetybox">
+          <h3 data-i18n="neverT">三個絕不</h3>
+          <ul>
+            <li data-i18n="never1">絕不轉帳、匯款或幫忙投資</li>
+            <li data-i18n="never2">絕不提供簡訊驗證碼或銀行資料</li>
+            <li data-i18n="never3">絕不因為「保證獲利」就心動——那一定是詐騙</li>
+          </ul>
+        </div>
+        <div class="safetybox">
+          <h3 data-i18n="meetT">見面檢查清單</h3>
+          <ul>
+            <li data-i18n="meet1">約在公開、人多的場所</li>
+            <li data-i18n="meet2">先告訴朋友你要去哪、跟誰見面</li>
+            <li data-i18n="meet3">不給錢、不借錢，錢包自己顧好</li>
+            <li data-i18n="meet4">覺得不對勁，隨時可以離開</li>
+          </ul>
+        </div>
+        <div class="safetybox">
+          <h3 data-i18n="reportT2">檢舉與封鎖</h3>
+          <p style="font-size:14px;color:var(--ink2);line-height:1.7;margin:0" data-i18n="reportP">每個人的檔案和每段對話都有檢舉按鈕，一下就能找到。檢舉完全匿名，對方不會知道是你。</p>
+          <div id="blockedHost" style="margin-top:10px"></div>
+        </div>
+      </div>
+    </div>
+    <!-- Pricing -->
+    <div class="view" id="view-pricing">
+      <h2 class="sec-title" data-i18n="pricingT">定價</h2>
+      <p class="sec-sub" data-i18n="pricingS">免費版就能完整認識人。Premium 即將推出，現在不會收你任何費用。</p>
+      <div class="pricegrid">
+        <div class="pricecard">
+          <h3 data-i18n="freeT">免費版</h3>
+          <div class="amt">NT$0</div>
+          <ul>
+            <li data-i18n="free1">每天 25 個讚</li>
+            <li data-i18n="free2">每週 1 個免費超級喜歡</li>
+            <li data-i18n="free3">每日精選 5 人</li>
+            <li data-i18n="free4">配對後無限聊天</li>
+            <li data-i18n="free5">參加團體活動</li>
+          </ul>
+          <button class="btn ghost" disabled data-i18n="currentPlan">目前方案</button>
+        </div>
+        <div class="pricecard hot">
+          <span class="soon" data-i18n="comingSoon">即將推出</span>
+          <h3>Premium</h3>
+          <div class="amt">NT$199<span style="font-size:16px;color:var(--ink2)" data-i18n="perMonth"> /月</span></div>
+          <ul>
+            <li data-i18n="prem1">季繳 NT$149／月 · 年繳 NT$99／月</li>
+            <li data-i18n="prem2">創始終身 NT$1,990（限前 100 名）</li>
+            <li data-i18n="prem3">讚的數量不限</li>
+            <li data-i18n="prem4">看見誰對你按了讚</li>
+            <li data-i18n="prem5">每月 5 個超級喜歡</li>
+          </ul>
+          <button class="btn primary" id="btnPremiumWait" data-i18n="notifyMe">推出時通知我</button>
+        </div>
+      </div>
+      <p style="font-size:13px;color:var(--ink3);margin-top:14px" data-i18n="noPayNote">Premium 尚未開放購買，這裡不會收集任何付款資料。</p>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <span data-i18n="footNote">緣來是你 · 台北優先的認真交友平台。站上的會員檔案皆為示範檔案，使用插畫風頭像，不含真人照片。</span><br>
+    <span data-i18n="footSafe">遇到可疑訊息請撥 165 反詐騙專線，或至</span> <a href="https://165.npa.gov.tw" target="_blank" rel="noopener">165.npa.gov.tw</a> <span data-i18n="footSafe2">查證。</span>
+  </footer>
+</div>
+
+<nav class="mainnav hidden" id="mainNav">
+  <div class="in">
+    <button class="navbtn on" data-nav="discover"><span class="ic">🧭</span><span data-i18n="nDiscover">探索</span></button>
+    <button class="navbtn" data-nav="daily"><span class="ic">✨</span><span data-i18n="nDaily">精選</span></button>
+    <button class="navbtn" data-nav="nearby"><span class="ic">📍</span><span data-i18n="nNearby">附近</span></button>
+    <button class="navbtn" data-nav="events"><span class="ic">🎟</span><span data-i18n="nEvents">活動</span></button>
+    <button class="navbtn" data-nav="chats"><span class="ic">💬</span><span data-i18n="nChats">訊息</span><span id="chatBadge"></span></button>
+    <button class="navbtn" data-nav="me"><span class="ic">👤</span><span data-i18n="nMe">我的</span></button>
+  </div>
+</nav>
+
+<!-- profile detail sheet -->
+<div class="overlay" id="profileSheet"><div class="sheet" id="profileSheetBody"></div></div>
+<!-- match celebration -->
+<div class="overlay" id="matchSheet"><div class="sheet" id="matchSheetBody" style="text-align:center"></div></div>
+<!-- report sheet -->
+<div class="overlay" id="reportSheet"><div class="sheet" id="reportSheetBody"></div></div>
+<!-- confirm sheet -->
+<div class="overlay" id="confirmSheet"><div class="sheet" id="confirmSheetBody"></div></div>
+<!-- like-with-comment sheet -->
+<div class="overlay" id="likeSheet"><div class="sheet" id="likeSheetBody"></div></div>
+
+<div class="toast" id="toast"></div>
+<input type="file" id="photoFile" accept="image/*" class="hidden">
+<input type="file" id="chatPhotoFile" accept="image/*" class="hidden">
+
+<script>
+"use strict";
+/* ================= DATA ================= */
+var COUNTRIES=[
+["台灣","Taiwan","+886",9,9,"9"],["美國","United States","+1",10,10,""],["加拿大","Canada","+1",10,10,""],
+["日本","Japan","+81",10,11,""],["韓國","South Korea","+82",9,11,""],["中國","China","+86",11,11,"1"],
+["香港","Hong Kong","+852",8,8,""],["澳門","Macau","+853",8,8,""],["新加坡","Singapore","+65",8,8,"89"],
+["馬來西亞","Malaysia","+60",9,10,"1"],["泰國","Thailand","+66",9,9,""],["越南","Vietnam","+84",9,10,"35789"],
+["菲律賓","Philippines","+63",10,10,"9"],["印尼","Indonesia","+62",9,13,"8"],["印度","India","+91",10,10,"6789"],
+/* VN prefix handled loosely: after +84 numbers start 3/5/7/8/9 */
+["澳洲","Australia","+61",9,9,"4"],["紐西蘭","New Zealand","+64",8,10,"2"],["英國","United Kingdom","+44",10,10,"7"],
+["法國","France","+33",9,9,"67"],["德國","Germany","+49",10,11,"1"],["義大利","Italy","+39",9,10,"3"],
+["西班牙","Spain","+34",9,9,"6"],["荷蘭","Netherlands","+31",9,9,"6"],["瑞士","Switzerland","+41",9,9,"7"],
+["瑞典","Sweden","+46",9,10,"7"],["挪威","Norway","+47",8,8,"49"],["丹麥","Denmark","+45",8,8,""],
+["芬蘭","Finland","+358",9,10,"4"],["波蘭","Poland","+48",9,9,""],["俄羅斯","Russia","+7",10,10,"9"],
+["烏克蘭","Ukraine","+380",9,9,""],["土耳其","Türkiye","+90",10,10,"5"],["以色列","Israel","+972",9,9,"5"],
+["阿聯酋","UAE","+971",9,9,"5"],["沙烏地阿拉伯","Saudi Arabia","+966",9,9,"5"],["巴西","Brazil","+55",10,11,""],
+["墨西哥","Mexico","+52",10,10,""],["阿根廷","Argentina","+54",10,10,""],["智利","Chile","+56",9,9,"9"],
+["哥倫比亞","Colombia","+57",10,10,"3"],["南非","South Africa","+27",9,9,""],["埃及","Egypt","+20",10,10,"1"],
+["奈及利亞","Nigeria","+234",10,10,""]
+];
+var INTERESTS=["手沖咖啡","健行","夜市小吃","閱讀","電影","攝影","料理","瑜伽","桌遊","獨立音樂","旅行","貓","狗","看展覽","跑步","陶藝","登山","日劇","寫作","植物"];
+var PROMPT_QS=["完美的週日是…","台北必吃的一家店","最近迷上的小事","理想的第一次約會","我最拿手的一道菜","週末充電方式","想一起去的一個地方","我的小小怪癖"];
+var GRADS=[["#F6A192","#E85D5A"],["#F5B841","#E8862E"],["#2A9D8F","#1F7A6E"],["#7FB3D5","#4A7FB5"],["#C39BD3","#8E5EA2"],["#F1948A","#C96F4A"],["#82C99B","#3E8E5F"],["#F0B27A","#D97B3F"],["#93C4D8","#5B8DB8"],["#E8A2C0","#B95C8A"]];
+var SCENES=["☕","🌿","🌃","📚","🎬","🍜","⛰️","🎲","🐱","🌅","🎨","🚲"];
+function P(id,name,g,age,city,km,intent,ints,prompts,verified,likesYou,seed){
+  return {id:id,name:name,gender:g,age:age,city:city,km:km,intent:intent,interests:ints,prompts:prompts,verified:verified,likesYou:likesYou,grad:GRADS[seed%GRADS.length],scene:SCENES[seed%SCENES.length]};
+}
+var PROFILES=[
+P("p1","小安","F",26,"台北市",3,"認真交往",["手沖咖啡","夜市小吃","閱讀"],[["完美的週日是…","睡到自然醒，去大安森林公園散步，再找一家小咖啡店看書。"],["台北必吃的一家店","師大夜市的燈籠滷味，從大學吃到現在。"],["最近迷上的小事","學手沖，V60 還在跟水溫搏鬥中。"]],true,true,0),
+P("p2","予晴","F",28,"新北市",6,"先認識看看",["健行","攝影","貓"],[["完美的週日是…","清晨去象山看台北盆地，下山吃早午餐。"],["想一起去的一個地方","九份的傍晚，人少一點的時候最美。"],["我的小小怪癖","拍照前會先把桌子擦乾淨。"]],true,false,1),
+P("p3","子維","M",29,"台北市",2,"認真交往",["料理","電影","跑步"],[["我最拿手的一道菜","紅酒燉牛肉，朋友說比餐廳好吃。"],["理想的第一次約會","先散步再吃飯，邊走邊聊最自然。"],["週末充電方式","河濱公園慢跑 10 公里，然後睡個午覺。"]],true,true,2),
+P("p4","佳穎","F",25,"台北市",4,"交朋友",["桌遊","日劇","看展覽"],[["最近迷上的小事","收集桌遊，家裡已經快放不下了。"],["完美的週日是…","華山看展，晚上回家追劇配鹹酥雞。"],["台北必吃的一家店","永康街的蔥抓餅加蛋，下午茶剛剛好。"]],true,false,3),
+P("p5","承翰","M",31,"新北市",9,"認真交往",["登山","手沖咖啡","旅行"],[["完美的週日是…","陽明山走一圈，回家沖一壺自己烘的豆子。"],["想一起去的一個地方","合歡山看星星，清單第一名。"],["最近迷上的小事","研究露營裝備，輕量化好難。"]],true,true,4),
+P("p6","亭妤","F",27,"台北市",5,"先認識看看",["瑜伽","植物","獨立音樂"],[["週末充電方式","早上瑜伽，下午去花市買一盆新的植物。"],["最近迷上的小事","聽團，現場的能量無可取代。"],["理想的第一次約會","唱片行挖寶，再去喝杯手沖。"]],true,false,5),
+P("p7","柏宇","M",26,"台北市",3,"交朋友",["夜市小吃","桌遊","狗"],[["台北必吃的一家店","饒河夜市的胡椒餅，排隊也值得。"],["完美的週日是…","帶我家柴犬去迎風狗公園放電。"],["我的小小怪癖","桌遊輸了會認真檢討策略。"]],false,true,6),
+P("p8","心妤","F",30,"新北市",11,"認真交往",["閱讀","寫作","電影"],[["最近迷上的小事","寫晨間日記，已經連續 100 天。"],["理想的第一次約會","誠品慢慢逛，聊聊最近在看的書。"],["完美的週日是…","在家看一部老電影，配自己煮的湯。"]],true,false,7),
+P("p9","冠廷","M",28,"台北市",7,"先認識看看",["攝影","旅行","夜市小吃"],[["最近迷上的小事","底片攝影，等待洗照片的感覺很迷人。"],["想一起去的一個地方","淡水河岸騎腳踏車到漁人碼頭。"],["台北必吃的一家店","寧夏夜市的蚵仔煎，醬是靈魂。"]],true,true,8),
+P("p10","若庭","F",24,"台北市",2,"交朋友",["陶藝","料理","貓"],[["最近迷上的小事","在鶯歌學陶藝，做了三個歪歪的杯子。"],["我最拿手的一道菜","日式咖哩，會加一塊巧克力是祕訣。"],["完美的週日是…","跟貓一起在窗邊發呆曬太陽。"]],true,false,9),
+P("p11","浩然","M",32,"新北市",13,"認真交往",["健行","閱讀","手沖咖啡"],[["完美的週日是…","七星山主峰來回，下山泡個湯。"],["最近迷上的小事","讀台灣史，才發現住的地方好多故事。"],["理想的第一次約會","北投散步，吃碗溫泉拉麵。"]],true,false,0),
+P("p12","芷晴","F",29,"台北市",6,"認真交往",["看展覽","獨立音樂","瑜伽"],[["最近迷上的小事","學烏克麗麗，剛練會第三首歌。"],["完美的週日是…","當代藝術館看展，晚上聽一場小演出。"],["想一起去的一個地方","北美館的屋頂花園，夕陽很美。"]],true,true,1),
+P("p13","彥廷","M",25,"台北市",4,"先認識看看",["跑步","電影","料理"],[["週末充電方式","清晨跑大稻埕河岸，看日出配豆漿。"],["我最拿手的一道菜","蒜香義大利麵，簡單但很穩。"],["最近迷上的小事","挑戰半馬，目標兩小時內。"]],false,false,2),
+P("p14","宜蓁","F",31,"新北市",8,"認真交往",["旅行","攝影","植物"],[["想一起去的一個地方","台東的海邊，什麼都不做也很好。"],["完美的週日是…","早市買花回家插，再慢慢做早餐。"],["最近迷上的小事","把旅行照片洗出來做成相簿。"]],true,true,3),
+P("p15","宗翰","M",27,"台北市",5,"交朋友",["獨立音樂","夜市小吃","日劇"],[["最近迷上的小事","組了一個業餘樂團，缺主唱。"],["台北必吃的一家店","通化夜市的鹽水雞，宵夜首選。"],["完美的週日是…","睡到中午，晚上去看現場演出。"]],true,false,4),
+P("p16","采潔","F",26,"台北市",3,"先認識看看",["手沖咖啡","看展覽","狗"],[["完美的週日是…","帶狗去咖啡廳，牠坐我對面。"],["最近迷上的小事","拉花練習，愛心還是有點歪。"],["理想的第一次約會","民生社區散步，那一帶的樹很漂亮。"]],true,true,5)
+];
+var EVENTS=[
+{id:"e1",icon:"🥾",grad:GRADS[2],title:"象山健行小團",date:"2026-11-21（六）09:00",place:"捷運象山站 2 號出口集合",cap:12,joined:7,cost:"免費"},
+{id:"e2",icon:"☕",grad:GRADS[0],title:"手沖咖啡入門分享",date:"2026-11-22（日）14:00",place:"大安區 · 小巷咖啡教室",cap:10,joined:6,cost:"NT$150（豆子材料費）"},
+{id:"e3",icon:"🌃",grad:GRADS[3],title:"饒河夜市散步局",date:"2026-11-28（六）18:30",place:"松山站 5 號出口集合",cap:16,joined:11,cost:"免費（餐費自理）"},
+{id:"e4",icon:"🏺",grad:GRADS[9],title:"鶯歌陶藝體驗",date:"2026-11-29（日）10:00",place:"鶯歌老街 · 阿婆陶藝坊",cap:8,joined:5,cost:"NT$350（材料＋燒窯）"},
+{id:"e5",icon:"🎲",grad:GRADS[5],title:"桌遊之夜：輕鬆派對場",date:"2026-12-05（六）19:00",place:"中山區 · 桌遊咖啡館",cap:14,joined:9,cost:"NT$200（含一杯飲料）"}
+];
+var SCAM_WORDS=["投資","保證獲利","穩賺","USDT","虛擬貨幣","代操","出金","匯款","轉帳","借錢","保證金","加我LINE","加我賴"];
+var REPLIES=["哈哈，這個我懂！","真的嗎？聽起來很有趣。","我也喜歡耶，下次可以一起。","你平常週末都怎麼過？","這個話題我可以聊很久 😄","好啊，改天約出來聊聊。","你說的那家店我一直想去試試。","慢慢聊，我不趕時間。"];
+</script>
+<script>
+"use strict";
+/* ================= I18N ================= */
+var I18N={
+zh:{tagline:"慢慢認識，認真一點也沒關係",premium:"Premium",safety:"安全中心",taipeiFirst:"台北優先 · 認真交友",heroA:"緣分不急，",heroB:"先好好認識一個人。",heroP:"給想認真交友的你：真人認證、每日精選、團體活動，還有完整的反詐騙防護。慢慢來，比較快。",discoverT:"探索",discoverS:"點愛心或左右滑動都可以，滑錯了可以免費收回一次。",dailyT:"每日精選",dailyS:"每天為你挑 5 位，其中一位是和你最合拍的。",favT:"我的收藏",favS:"你書籤起來的人，都在這裡。",nearbyT:"附近的人",nearbyS:"依距離排序，共同興趣會特別標出來。",fAge:"年齡",fDist:"距離",fCity:"城市",fInt:"興趣",eventsT:"團體活動",eventsS:"低負擔的小活動，一群人一起，認識人也比較不尷尬。",chatsT:"訊息",chatsS:"配對成功才能聊天，慢慢聊，不用急。",meT:"我的檔案",safetyT:"安全中心",safetyS:"認識新朋友很開心，但安全永遠第一。",antiFraud:"反詐騙專線",antiFraudP:"懷疑遇到詐騙，先打 165 查證，或到警政署反詐騙網站查詢。",neverT:"三個絕不",never1:"絕不轉帳、匯款或幫忙投資",never2:"絕不提供簡訊驗證碼或銀行資料",never3:"絕不因為「保證獲利」就心動——那一定是詐騙",meetT:"見面檢查清單",meet1:"約在公開、人多的場所",meet2:"先告訴朋友你要去哪、跟誰見面",meet3:"不給錢、不借錢，錢包自己顧好",meet4:"覺得不對勁，隨時可以離開",reportT2:"檢舉與封鎖",reportP:"每個人的檔案和每段對話都有檢舉按鈕，一下就能找到。檢舉完全匿名，對方不會知道是你。",pricingT:"定價",perMonth:" /月",pricingS:"免費版就能完整認識人。Premium 即將推出，現在不會收你任何費用。",freeT:"免費版",free1:"每天 25 個讚",free2:"每週 1 個免費超級喜歡",free3:"每日精選 5 人",free4:"配對後無限聊天",free5:"參加團體活動",currentPlan:"目前方案",comingSoon:"即將推出",prem1:"季繳 NT$149／月 · 年繳 NT$99／月",prem2:"創始終身 NT$1,990（限前 100 名）",prem3:"讚的數量不限",prem4:"看見誰對你按了讚",prem5:"每月 5 個超級喜歡",notifyMe:"推出時通知我",noPayNote:"Premium 尚未開放購買，這裡不會收集任何付款資料。",footNote:"緣來是你 · 台北優先的認真交友平台。站上的會員檔案皆為示範檔案，使用插畫風頭像，不含真人照片。",footSafe:"遇到可疑訊息請撥 165 反詐騙專線，或至",footSafe2:"查證。",nDiscover:"探索",nDaily:"精選",nNearby:"附近",nEvents:"活動",nChats:"訊息",nMe:"我的"},
+en:{tagline:"Take it slow — sincerity is welcome here",premium:"Premium",safety:"Safety Center",taipeiFirst:"Taipei first · Serious dating",heroA:"No rush —",heroB:"get to know someone, properly.",heroP:"Verified profiles, daily picks, group events and full anti-fraud protection, made for people who mean it.",discoverT:"Discover",discoverS:"Tap the heart or swipe. One free undo for every swipe.",dailyT:"Daily Picks",dailyS:"Five people picked for you each day — one is your best match.",favT:"My Favorites",favS:"Everyone you bookmarked lives here.",nearbyT:"Nearby",nearbyS:"Sorted by distance, with shared interests highlighted.",fAge:"Age",fDist:"Distance",fCity:"City",fInt:"Interest",eventsT:"Group Events",eventsS:"Low-key group activities — meeting people feels easier together.",chatsT:"Messages",chatsS:"Chat opens after a match. No hurry.",meT:"My Profile",safetyT:"Safety Center",safetyS:"Meeting new people is fun — safety always comes first.",antiFraud:"Anti-Fraud Hotline",antiFraudP:"Suspect a scam? Call 165 first, or check the official anti-fraud site.",neverT:"Three Nevers",never1:"Never transfer money or invest for anyone",never2:"Never share SMS codes or bank details",never3:"“Guaranteed profit” is always a scam",meetT:"Meeting Checklist",meet1:"Meet in a public, busy place",meet2:"Tell a friend where you're going and with whom",meet3:"No lending money — keep your wallet yours",meet4:"If it feels off, you can leave anytime",reportT2:"Report & Block",reportP:"Every profile and chat has a report button, one tap away. Reports are fully anonymous.",pricingT:"Pricing",perMonth:" /mo",pricingS:"The free plan is fully usable. Premium is coming soon — nothing is charged now.",freeT:"Free",free1:"25 likes per day",free2:"1 free Super Like per week",free3:"5 daily picks",free4:"Unlimited chat after matching",free5:"Join group events",currentPlan:"Current plan",comingSoon:"Coming soon",prem1:"Quarterly NT$149/mo · Yearly NT$99/mo",prem2:"Founding lifetime NT$1,990 (first 100)",prem3:"Unlimited likes",prem4:"See who liked you",prem5:"5 Super Likes per month",notifyMe:"Notify me at launch",noPayNote:"Premium isn't on sale yet. No payment details are collected here.",footNote:"Yuan Lai Shi Ni — a Taipei-first dating platform for people who mean it. All member profiles shown are demo profiles with illustrated avatars, no real photos.",footSafe:"Suspect a scam? Call the 165 anti-fraud hotline or visit",footSafe2:"to verify.",nDiscover:"Discover",nDaily:"Picks",nNearby:"Nearby",nEvents:"Events",nChats:"Chats",nMe:"Me"},
+ja:{tagline:"ゆっくり知り合おう、真剣でも大丈夫",premium:"Premium",safety:"安全センター",taipeiFirst:"台北優先・真剣な出会い",heroA:"ご縁は急がず、",heroB:"一人の人を、ちゃんと知ろう。",heroP:"本人認証、毎日のおすすめ、グループイベント、詐欺対策まで。真剣な出会いのための場所です。",discoverT:"探索",discoverS:"ハートをタップ、またはスワイプ。1回無料で取り消せます。",dailyT:"今日のおすすめ",dailyS:"毎日5人を厳選、そのうち1人はベストマッチ。",favT:"お気に入り",favS:"ブックマークした人がここにいます。",nearbyT:"近くの人",nearbyS:"距離順、共通の趣味を表示。",fAge:"年齢",fDist:"距離",fCity:"都市",fInt:"趣味",eventsT:"グループイベント",eventsS:"気軽なグループ活動で自然に出会えます。",chatsT:"メッセージ",chatsS:"マッチ後にチャットできます。",meT:"マイプロフィール",safetyT:"安全センター",safetyS:"安全がいつも第一です。",antiFraud:"詐欺対策ホットライン",antiFraudP:"詐欺かもと思ったら、まず165へ。",neverT:"3つの「絶対しない」",never1:"送金・投資の手伝いは絶対しない",never2:"認証コードや銀行情報を渡さない",never3:"「必ず儲かる」は詐欺です",meetT:"会う前のチェック",meet1:"公共の人多い場所で会う",meet2:"友達に行き先を伝える",meet3:"お金は貸さない・渡さない",meet4:"違和感があれば帰ってOK",reportT2:"通報とブロック",reportP:"すべてのプロフィールとチャットに通報ボタンがあります。匿名です。",pricingT:"料金",perMonth:" /月",pricingS:"無料プランで十分使えます。Premiumは近日公開、今は課金されません。",freeT:"無料",free1:"1日25いいね",free2:"週1回スーパーいいね無料",free3:"毎日5人のおすすめ",free4:"マッチ後チャット無制限",free5:"グループイベント参加",currentPlan:"現在のプラン",comingSoon:"近日公開",prem1:"四半期 NT$149/月・年 NT$99/月",prem2:"創設者永久 NT$1,990（先着100名）",prem3:"いいね無制限",prem4:"いいねした人が見える",prem5:"月5回スーパーいいね",notifyMe:"公開時に通知",noPayNote:"Premiumは未発売です。支払い情報は収集しません。",footNote:"緣來是你 — 台北優先の真剣な出会いプラットフォーム。表示される会員はすべてデモプロフィールで、イラスト風アバターを使用しています。",footSafe:"詐欺の疑いは165番へ、または",footSafe2:"で確認を。",nDiscover:"探索",nDaily:"おすすめ",nNearby:"近く",nEvents:"イベント",nChats:"メッセージ",nMe:"私"},
+ko:{tagline:"천천히 알아가요, 진지해도 괜찮아요",premium:"Premium",safety:"안전 센터",taipeiFirst:"타이베이 우선 · 진지한 만남",heroA:"인연은 서두르지 말고,",heroB:"한 사람을 제대로 알아가세요.",heroP:"본인 인증, 매일 추천, 그룹 활동, 사기 방지까지. 진지한 만남을 위한 곳입니다.",discoverT:"탐색",discoverS:"하트를 누르거나 스와이프하세요. 한 번 무료로 되돌릴 수 있어요.",dailyT:"오늘의 추천",dailyS:"매일 5명을 골라드려요. 한 명은 베스트 매치!",favT:"내 즐겨찾기",favS:"북마크한 사람들이 여기 있어요.",nearbyT:"근처 사람들",nearbyS:"거리순 정렬, 공통 관심사를 표시해요.",fAge:"나이",fDist:"거리",fCity:"도시",fInt:"관심사",eventsT:"그룹 활동",eventsS:"부담 없는 그룹 활동으로 자연스럽게 만나요.",chatsT:"메시지",chatsS:"매칭 후 대화할 수 있어요.",meT:"내 프로필",safetyT:"안전 센터",safetyS:"안전이 언제나 먼저예요.",antiFraud:"사기 방지 핫라인",antiFraudP:"사기가 의심되면 먼저 165로 전화하세요.",neverT:"세 가지 절대 금지",never1:"송금이나 투자를 절대 돕지 않기",never2:"인증번호나 은행 정보를 주지 않기",never3:"'수익 보장'은 언제나 사기입니다",meetT:"만남 전 체크리스트",meet1:"공공장소, 사람이 많은 곳에서 만나기",meet2:"친구에게 장소와 상대를 알리기",meet3:"돈은 빌려주지 않기",meet4:"이상하면 언제든 떠날 수 있어요",reportT2:"신고와 차단",reportP:"모든 프로필과 대화에 신고 버튼이 있어요. 완전히 익명입니다.",pricingT:"요금",perMonth:" /월",pricingS:"무료 플랜으로 충분히 이용할 수 있어요. Premium은 곧 출시되며 지금은 과금되지 않습니다.",freeT:"무료",free1:"하루 좋아요 25개",free2:"주 1회 무료 슈퍼 라이크",free3:"매일 추천 5명",free4:"매칭 후 무제한 대화",free5:"그룹 활동 참여",currentPlan:"현재 플랜",comingSoon:"출시 예정",prem1:"분기 NT$149/월 · 연간 NT$99/월",prem2:"창립 평생 NT$1,990 (선착순 100명)",prem3:"좋아요 무제한",prem4:"나를 좋아요한 사람 보기",prem5:"월 슈퍼 라이크 5개",notifyMe:"출시 시 알림 받기",noPayNote:"Premium은 아직 판매 전입니다. 결제 정보를 수집하지 않습니다.",footNote:"緣來是你 — 타이베이 우선 진지한 데이팅 플랫폼. 표시되는 회원은 모두 데모 프로필이며 일러스트 아바타를 사용합니다.",footSafe:"사기가 의심되면 165로 전화하거나",footSafe2:"에서 확인하세요.",nDiscover:"탐색",nDaily:"추천",nNearby:"근처",nEvents:"활동",nChats:"메시지",nMe:"나"},
+es:{tagline:"Conócete sin prisa, en serio también está bien",premium:"Premium",safety:"Centro de seguridad",taipeiFirst:"Taipéi primero · Citas en serio",heroA:"Sin prisa:",heroB:"conoce bien a una persona.",heroP:"Perfiles verificados, selección diaria, eventos en grupo y protección antifraude completa.",discoverT:"Descubrir",discoverS:"Toca el corazón o desliza. Un retroceso gratis por deslizamiento.",dailyT:"Selección diaria",dailyS:"Cinco personas cada día; una es tu mejor coincidencia.",favT:"Mis favoritos",favS:"Aquí están tus guardados.",nearbyT:"Cerca de ti",nearbyS:"Ordenado por distancia, con intereses comunes destacados.",fAge:"Edad",fDist:"Distancia",fCity:"Ciudad",fInt:"Interés",eventsT:"Eventos en grupo",eventsS:"Actividades tranquilas en grupo para conocer gente sin presión.",chatsT:"Mensajes",chatsS:"El chat se abre tras un match.",meT:"Mi perfil",safetyT:"Centro de seguridad",safetyS:"Conocer gente es lindo; la seguridad va primero.",antiFraud:"Línea antifraude",antiFraudP:"¿Sospechas fraude? Llama primero al 165.",neverT:"Tres nuncas",never1:"Nunca transfieras dinero ni inviertas por nadie",never2:"Nunca compartas códigos SMS ni datos bancarios",never3:"«Ganancia garantizada» siempre es fraude",meetT:"Antes de verse",meet1:"Verse en un lugar público y concurrido",meet2:"Avisar a un amigo dónde y con quién",meet3:"No prestar dinero",meet4:"Si algo no se siente bien, puedes irte",reportT2:"Reportar y bloquear",reportP:"Cada perfil y chat tiene botón de reporte. Es anónimo.",pricingT:"Precios",perMonth:" /mes",pricingS:"El plan gratis es completo. Premium llega pronto; hoy no se cobra nada.",freeT:"Gratis",free1:"25 me gusta al día",free2:"1 súper like gratis por semana",free3:"5 seleccionados al día",free4:"Chat ilimitado tras el match",free5:"Eventos en grupo",currentPlan:"Plan actual",comingSoon:"Muy pronto",prem1:"Trimestral NT$149/mes · Anual NT$99/mes",prem2:"Fundador de por vida NT$1,990 (primeros 100)",prem3:"Me gusta ilimitados",prem4:"Ver quién te dio me gusta",prem5:"5 súper likes al mes",notifyMe:"Avísame al lanzar",noPayNote:"Premium aún no está a la venta. No se recopilan datos de pago.",footNote:"緣來是你 — plataforma de citas en serio, Taipéi primero. Todos los perfiles son de demostración, con avatares ilustrados.",footSafe:"¿Sospecha de fraude? Llama al 165 o visita",footSafe2:"para verificar.",nDiscover:"Descubrir",nDaily:"Selección",nNearby:"Cerca",nEvents:"Eventos",nChats:"Mensajes",nMe:"Yo"},
+fr:{tagline:"Prenez le temps — le sérieux est bienvenu",premium:"Premium",safety:"Centre de sécurité",taipeiFirst:"Taipei d'abord · Rencontres sérieuses",heroA:"Rien ne presse :",heroB:"apprenez à connaître quelqu'un.",heroP:"Profils vérifiés, sélection quotidienne, événements de groupe et protection antifraude complète.",discoverT:"Découvrir",discoverS:"Touchez le cœur ou balayez. Un retour gratuit par balayage.",dailyT:"Sélection du jour",dailyS:"Cinq personnes par jour, dont votre meilleure compatibilité.",favT:"Mes favoris",favS:"Vos profils enregistrés sont ici.",nearbyT:"À proximité",nearbyS:"Trié par distance, intérêts communs mis en avant.",fAge:"Âge",fDist:"Distance",fCity:"Ville",fInt:"Intérêt",eventsT:"Événements de groupe",eventsS:"Des activités détendues en groupe pour se rencontrer naturellement.",chatsT:"Messages",chatsS:"La discussion s'ouvre après un match.",meT:"Mon profil",safetyT:"Centre de sécurité",safetyS:"Rencontrer du monde, oui — la sécurité d'abord.",antiFraud:"Ligne antifraude",antiFraudP:"Un doute ? Appelez d'abord le 165.",neverT:"Trois jamais",never1:"Ne transférez jamais d'argent, n'investissez pour personne",never2:"Ne partagez jamais codes SMS ni coordonnées bancaires",never3:"« Profit garanti » = toujours une arnaque",meetT:"Avant de se voir",meet1:"Se voir dans un lieu public et fréquenté",meet2:"Prévenir un ami du lieu et de la personne",meet3:"Ne prêter aucun argent",meet4:"Quelque chose cloche ? Vous pouvez partir",reportT2:"Signaler et bloquer",reportP:"Chaque profil et discussion a un bouton de signalement. 100 % anonyme.",pricingT:"Tarifs",perMonth:" /mois",pricingS:"Le plan gratuit est complet. Premium arrive bientôt ; rien n'est facturé.",freeT:"Gratuit",free1:"25 j'aime par jour",free2:"1 super like gratuit par semaine",free3:"5 profils du jour",free4:"Discussion illimitée après match",free5:"Événements de groupe",currentPlan:"Plan actuel",comingSoon:"Bientôt",prem1:"Trimestriel NT$149/mois · Annuel NT$99/mois",prem2:"Fondateur à vie NT$1 990 (100 premiers)",prem3:"J'aime illimités",prem4:"Voir qui vous a aimé",prem5:"5 super likes par mois",notifyMe:"Me prévenir au lancement",noPayNote:"Premium n'est pas encore en vente. Aucune donnée de paiement n'est collectée.",footNote:"緣來是你 — plateforme de rencontres sérieuses, Taipei d'abord. Tous les profils affichés sont des profils de démonstration avec avatars illustrés.",footSafe:"Suspicion d'arnaque ? Appelez le 165 ou visitez",footSafe2:"pour vérifier.",nDiscover:"Découvrir",nDaily:"Sélection",nNearby:"Proche",nEvents:"Événements",nChats:"Messages",nMe:"Moi"},
+de:{tagline:"Langsam kennenlernen — Ernsthaftigkeit willkommen",premium:"Premium",safety:"Sicherheitscenter",taipeiFirst:"Taipeh zuerst · Ernsthaftes Dating",heroA:"Keine Eile:",heroB:"Lernen Sie jemanden richtig kennen.",heroP:"Verifizierte Profile, tägliche Auswahl, Gruppenaktivitäten und umfassender Betrugsschutz.",discoverT:"Entdecken",discoverS:"Herz antippen oder wischen. Einmal gratis zurück.",dailyT:"Tägliche Auswahl",dailyS:"Fünf Personen pro Tag — eine ist Ihr bestes Match.",favT:"Meine Favoriten",favS:"Ihre gespeicherten Profile sind hier.",nearbyT:"In der Nähe",nearbyS:"Nach Entfernung sortiert, gemeinsame Interessen markiert.",fAge:"Alter",fDist:"Entfernung",fCity:"Stadt",fInt:"Interesse",eventsT:"Gruppenaktivitäten",eventsS:"Entspannte Gruppenaktivitäten zum natürlichen Kennenlernen.",chatsT:"Nachrichten",chatsS:"Chat öffnet sich nach einem Match.",meT:"Mein Profil",safetyT:"Sicherheitscenter",safetyS:"Neue Leute treffen ist schön — Sicherheit geht vor.",antiFraud:"Anti-Betrugs-Hotline",antiFraudP:"Betrugsverdacht? Zuerst 165 anrufen.",neverT:"Drei Niemals",never1:"Niemals Geld überweisen oder für andere investieren",never2:"Niemals SMS-Codes oder Bankdaten teilen",never3:"„Garantierter Gewinn“ ist immer Betrug",meetT:"Checkliste vor dem Treffen",meet1:"An einem öffentlichen, belebten Ort treffen",meet2:"Freunden Ort und Person mitteilen",meet3:"Kein Geld verleihen",meet4:"Unwohl? Sie dürfen jederzeit gehen",reportT2:"Melden & Blockieren",reportP:"Jedes Profil und jeder Chat hat einen Melde-Button. Vollständig anonym.",pricingT:"Preise",perMonth:" /Monat",pricingS:"Der Gratisplan ist voll nutzbar. Premium kommt bald — es wird nichts berechnet.",freeT:"Gratis",free1:"25 Likes pro Tag",free2:"1 gratis Super-Like pro Woche",free3:"5 Tagesvorschläge",free4:"Unbegrenzter Chat nach Match",free5:"Gruppenaktivitäten",currentPlan:"Aktueller Plan",comingSoon:"Demnächst",prem1:"Quartal NT$149/Monat · Jahr NT$99/Monat",prem2:"Gründer-Lifetime NT$1.990 (erste 100)",prem3:"Unbegrenzte Likes",prem4:"Sehen, wer Sie gelikt hat",prem5:"5 Super-Likes pro Monat",notifyMe:"Zum Start benachrichtigen",noPayNote:"Premium ist noch nicht im Verkauf. Es werden keine Zahlungsdaten erhoben.",footNote:"緣來是你 — Dating-Plattform für ernsthafte Treffen, Taipeh zuerst. Alle gezeigten Profile sind Demo-Profile mit illustrierten Avataren.",footSafe:"Betrugsverdacht? Rufen Sie 165 an oder besuchen Sie",footSafe2:"zur Prüfung.",nDiscover:"Entdecken",nDaily:"Auswahl",nNearby:"Nähe",nEvents:"Events",nChats:"Chats",nMe:"Ich"},
+pt:{tagline:"Conheça sem pressa — seriedade é bem-vinda",premium:"Premium",safety:"Central de segurança",taipeiFirst:"Taipei primeiro · Namoro sério",heroA:"Sem pressa:",heroB:"conheça bem uma pessoa.",heroP:"Perfis verificados, seleção diária, eventos em grupo e proteção antifraude completa.",discoverT:"Descobrir",discoverS:"Toque no coração ou deslize. Um retorno grátis por deslize.",dailyT:"Seleção diária",dailyS:"Cinco pessoas por dia; uma é sua melhor combinação.",favT:"Meus favoritos",favS:"Seus perfis salvos estão aqui.",nearbyT:"Perto de você",nearbyS:"Ordenado por distância, com interesses em comum destacados.",fAge:"Idade",fDist:"Distância",fCity:"Cidade",fInt:"Interesse",eventsT:"Eventos em grupo",eventsS:"Atividades leves em grupo para conhecer gente sem pressão.",chatsT:"Mensagens",chatsS:"O chat abre após um match.",meT:"Meu perfil",safetyT:"Central de segurança",safetyS:"Conhecer pessoas é ótimo; segurança vem primeiro.",antiFraud:"Linha antifraude",antiFraudP:"Suspeita de fraude? Ligue primeiro para 165.",neverT:"Três nuncas",never1:"Nunca transfira dinheiro nem invista por ninguém",never2:"Nunca compartilhe códigos SMS ou dados bancários",never3:"“Lucro garantido” é sempre fraude",meetT:"Antes de se encontrar",meet1:"Encontre-se em local público e movimentado",meet2:"Avise um amigo onde e com quem",meet3:"Não empreste dinheiro",meet4:"Algo estranho? Você pode ir embora",reportT2:"Denunciar e bloquear",reportP:"Todo perfil e conversa tem botão de denúncia. Totalmente anônimo.",pricingT:"Preços",perMonth:" /mês",pricingS:"O plano grátis é completo. O Premium vem aí; nada é cobrado agora.",freeT:"Grátis",free1:"25 curtidas por dia",free2:"1 super like grátis por semana",free3:"5 selecionados por dia",free4:"Chat ilimitado após o match",free5:"Eventos em grupo",currentPlan:"Plano atual",comingSoon:"Em breve",prem1:"Trimestral NT$149/mês · Anual NT$99/mês",prem2:"Fundador vitalício NT$1.990 (primeiros 100)",prem3:"Curtidas ilimitadas",prem4:"Ver quem curtiu você",prem5:"5 super likes por mês",notifyMe:"Avise-me no lançamento",noPayNote:"O Premium ainda não está à venda. Nenhum dado de pagamento é coletado.",footNote:"緣來是你 — plataforma de namoro sério, Taipei primeiro. Todos os perfis exibidos são de demonstração, com avatares ilustrados.",footSafe:"Suspeita de fraude? Ligue 165 ou visite",footSafe2:"para verificar.",nDiscover:"Descobrir",nDaily:"Seleção",nNearby:"Perto",nEvents:"Eventos",nChats:"Mensagens",nMe:"Eu"}
+};
+function t(k){var L=I18N[S.lang]||I18N.zh;return L[k]||I18N.zh[k]||k;}
+function applyI18n(){
+  document.querySelectorAll("[data-i18n]").forEach(function(el){el.textContent=t(el.getAttribute("data-i18n"));});
+  document.documentElement.lang = S.lang==="zh"?"zh-Hant":S.lang;
+  var ls=document.getElementById("langSel"); if(ls) ls.value=S.lang;
+}
+/* ================= STATE ================= */
+var KEY="yuanlai_v3";
+function todayKey(){var d=new Date();return d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate();}
+function weekKey(){var d=new Date();var onejan=new Date(d.getFullYear(),0,1);return d.getFullYear()+"-W"+Math.ceil((((d-onejan)/86400000)+onejan.getDay()+1)/7);}
+function defState(){return {
+  lang:"zh", step:1, onboarded:false, premiumNotify:false,
+  profile:{intent:"",cc:"+886",phone:"",otp:"",otpSent:"",verified:false,ageOk:false,agree:false,
+    nickname:"",birth:"",gender:"",seek:"",photos:[],prompts:[{q:PROMPT_QS[0],a:""},{q:PROMPT_QS[1],a:""},{q:PROMPT_QS[2],a:""}],interests:[],
+    ageMin:24,ageMax:35,dist:30,city:"台北市",notify:false},
+  quotaDay:todayKey(), likesLeft:25, week:weekKey(), superLeft:1,
+  deckIdx:0, swiped:{}, lastSwipe:null, matches:[], favs:[], blocked:[], reports:[],
+  chats:{}, eventsJoined:[], hideDist:false, chatOpen:null, reminded:{}, premiumWait:false
+};}
+var S;
+try{S=JSON.parse(localStorage.getItem(KEY))||defState();}catch(e){S=defState();}
+if(!S.profile) S=defState();
+if(S.quotaDay!==todayKey()){S.quotaDay=todayKey();S.likesLeft=25;}
+if(S.week!==weekKey()){S.week=weekKey();S.superLeft=1;}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(S));}catch(e){}}
+/* ================= HELPERS ================= */
+function $(id){return document.getElementById(id);}
+function esc(s){return String(s==null?"":s).replace(/[&<>"']/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c];});}
+var toastTimer=null;
+function toast(msg){var el=$("toast");el.textContent=msg;el.classList.add("show");clearTimeout(toastTimer);toastTimer=setTimeout(function(){el.classList.remove("show");},2600);}
+function prof(id){for(var i=0;i<PROFILES.length;i++)if(PROFILES[i].id===id)return PROFILES[i];return null;}
+function myInterests(){return S.profile.interests||[];}
+function commonInts(p){return p.interests.filter(function(x){return myInterests().indexOf(x)>=0;});}
+function ageOf(birth){if(!birth)return null;var b=new Date(birth),n=new Date();var a=n.getFullYear()-b.getFullYear();var m=n.getMonth()-b.getMonth();if(m<0||(m===0&&n.getDate()<b.getDate()))a--;return a;}
+function completion(){var p=S.profile,c=0;
+  if(p.intent)c+=10; if(p.verified)c+=15; if(p.nickname)c+=10; if(p.birth&&ageOf(p.birth)>=18)c+=10;
+  if(p.gender)c+=5; if(p.seek)c+=5; if(p.photos.length>=3)c+=20; else if(p.photos.length>0)c+=Math.round(p.photos.length/3*20);
+  var filled=p.prompts.filter(function(x){return x.q&&x.a.trim().length>=4;}).length; c+=Math.round(filled/3*10);
+  if(p.interests.length>=5)c+=10; else if(p.interests.length>0)c+=Math.round(p.interests.length/5*10);
+  if(p.city)c+=5; return Math.min(100,c);}
+function avatarHTML(p,size,fs){
+  return '<div class="avatar" style="width:'+size+'px;height:'+size+'px;background:linear-gradient(135deg,'+p.grad[0]+','+p.grad[1]+');font-size:'+(fs||Math.round(size*0.42))+'px"><span class="ini">'+esc(p.name.charAt(0))+'</span><span class="scene">'+p.scene+'</span></div>';
+}
+function myAvatarHTML(size){
+  var p=S.profile; var ini=(p.nickname||"我").charAt(0);
+  if(p.photos.length&&p.photos[0].type==="img")return '<div class="avatar" style="width:'+size+'px;height:'+size+'px"><img src="'+p.photos[0].src+'" style="width:100%;height:100%;object-fit:cover" alt=""></div>';
+  var g=p.photos.length?p.photos[0].grad:GRADS[1];
+  return '<div class="avatar" style="width:'+size+'px;height:'+size+'px;background:linear-gradient(135deg,'+g[0]+','+g[1]+');font-size:'+Math.round(size*0.42)+'px"><span class="ini">'+esc(ini)+'</span></div>';
+}
+function distText(p){return S.hideDist?"":(" · 約 "+p.km+" 公里");}
+function openSheet(id){$(id).classList.add("open");}
+function closeSheet(id){$(id).classList.remove("open");}
+document.querySelectorAll(".overlay").forEach(function(o){o.addEventListener("click",function(e){if(e.target===o)o.classList.remove("open");});});
+</script>
+<script>
+"use strict";
+/* ================= ONBOARDING ================= */
+var stepDraft={};
+function setStep(n){S.step=n;save();renderStep();}
+function renderStep(){
+  var n=S.step,p=S.profile;
+  $("stepLabel").textContent=(S.lang==="en"?"Step ":"步驟 ")+n+" / 7";
+  var pct=Math.round(n/7*100);$("stepPct").textContent=pct+"%";
+  $("progBar").style.width=pct+"%";
+  var h="";
+  if(n===1){
+    h='<div class="panel"><h2>你來這裡，想找什麼？</h2><p class="sub">沒有對錯，誠實選，之後隨時可以改。</p><div class="choices">'
+    +[["認真交往","想找一段穩定、長期的關係"],["先認識看看","先聊聊看，合不合再說"],["交朋友","先從朋友開始，輕鬆一點"]].map(function(o){
+      return '<button class="choice'+(p.intent===o[0]?" sel":"")+'" data-intent="'+o[0]+'"><span>'+o[0]+'<small>'+o[1]+'</small></span><span class="tick">✓</span></button>';}).join("")
+    +'</div><div class="btnrow"><button class="btn primary" id="s1next" '+(p.intent?"":"disabled")+'>下一步</button></div></div>';
+  }
+  if(n===2){
+    var opts=COUNTRIES.map(function(c,i){return '<option value="'+i+'"'+(p.cc===c[2]&&stepDraft.ccName===c[0]?" selected":"")+'>'+c[0]+' '+c[2]+'</option>';}).join("");
+    if(!stepDraft.ccIdx){stepDraft.ccIdx=0;for(var i=0;i<COUNTRIES.length;i++)if(COUNTRIES[i][2]===p.cc){stepDraft.ccIdx=i;break;}}
+    opts=COUNTRIES.map(function(c,i){return '<option value="'+i+'"'+(i===stepDraft.ccIdx?" selected":"")+'>'+c[0]+' '+c[2]+'</option>';}).join("");
+    h='<div class="panel"><h2>手機驗證</h2><p class="sub">一個號碼只能註冊一個帳號。先選國家／地區，再輸入號碼。</p>'
+    +'<label class="flabel">手機號碼</label><div class="phonerow"><select class="fsel" id="ccSel" aria-label="國家國碼">'+opts+'</select>'
+    +'<input type="tel" id="phoneIn" aria-label="手機號碼" inputmode="numeric" placeholder="手機號碼" value="'+esc(p.phone)+'"></div>'
+    +'<div class="err" id="phoneErr"></div>'
+    +'<div class="btnrow"><button class="btn ghost" id="sendOtp">發送驗證碼</button></div>'
+    +(p.otpSent?'<div class="otpbox">📩 示範驗證碼（不會真的寄簡訊）：<br><b>'+p.otpSent+'</b><br>把它輸入下面欄位就能完成驗證。</div>'
+    +'<label class="flabel">輸入 6 位驗證碼</label><input type="text" id="otpIn" aria-label="驗證碼" inputmode="numeric" maxlength="6" placeholder="______" value="'+esc(p.otp)+'"><div class="err" id="otpErr"></div><div class="okmsg" id="otpOk">✓ 手機驗證完成</div>':"")
+    +'<label class="checkline"><input type="checkbox" id="ageOk" aria-label="我已滿 18 歲" '+(p.ageOk?"checked":"")+'><span>我已滿 18 歲</span></label>'
+    +'<label class="checkline"><input type="checkbox" id="agreeOk" aria-label="同意服務條款與隱私政策" '+(p.agree?"checked":"")+'><span>我同意《服務條款》與《隱私政策》，了解平台禁止詐騙、騷擾與任何金錢往來要求。</span></label>'
+    +'<div class="btnrow"><button class="btn ghost" data-back="1">上一步</button><button class="btn primary" id="s2next">下一步</button></div></div>';
+  }
+  if(n===3){
+    h='<div class="panel"><h2>關於你</h2><p class="sub">暱稱和生日會顯示年齡，生日不會公開。</p>'
+    +'<label class="flabel">暱稱</label><input type="text" id="nickIn" aria-label="暱稱" maxlength="12" placeholder="例如：阿哲、小葵" value="'+esc(p.nickname)+'">'
+    +'<label class="flabel">生日</label><input type="date" id="birthIn" aria-label="生日" value="'+esc(p.birth)+'"><div class="err" id="birthErr"></div>'
+    +'<label class="flabel">我的性別</label><div class="chips" id="genderChips">'
+    +["女性","男性","非二元"].map(function(g){return '<button class="chip'+(p.gender===g?" sel":"")+'" data-g="'+g+'">'+g+'</button>';}).join("")+'</div>'
+    +'<label class="flabel">想認識</label><div class="chips" id="seekChips">'
+    +["女性","男性","不限"].map(function(g){return '<button class="chip'+(p.seek===g?" sel":"")+'" data-s="'+g+'">'+g+'</button>';}).join("")+'</div>'
+    +'<div class="btnrow"><button class="btn ghost" data-back="2">上一步</button><button class="btn primary" id="s3next">下一步</button></div></div>';
+  }
+  if(n===4){
+    var cells="";
+    for(var i=0;i<6;i++){
+      if(p.photos[i]){var ph=p.photos[i];
+        cells+='<div class="photocell filled" style="background:linear-gradient(135deg,'+ph.grad[0]+','+ph.grad[1]+')">'+(ph.type==="img"?'<img src="'+ph.src+'" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover" alt="">':'<span>'+ph.scene+'</span>')+'<button data-delphoto="'+i+'" aria-label="刪除">✕</button></div>';
+      } else cells+='<div class="photocell">第 '+(i+1)+' 張</div>';
+    }
+    h='<div class="panel"><h2>放幾張照片吧</h2><p class="sub">最少 3 張、最多 6 張。可以上傳自己的照片，或先用插畫風格代替——第一張會是你的主照片，選好立刻預覽。</p>'
+    +'<div class="photogrid">'+cells+'</div>'
+    +'<label class="flabel">選一個插畫風格加入</label><div class="styletiles">'
+    +GRADS.map(function(g,i){return '<button class="styletile" data-style="'+i+'" style="background:linear-gradient(135deg,'+g[0]+','+g[1]+')" aria-label="風格 '+(i+1)+'"></button>';}).join("")+'</div>'
+    +'<div class="btnrow"><button class="btn ghost" id="uploadBtn">📷 上傳照片</button></div>'
+    +'<div class="err" id="photoErr"></div>'
+    +(p.photos.length?'<label class="flabel">主照片預覽</label><div class="swipecard" style="max-width:300px"><div class="photo" style="height:230px;background:linear-gradient(135deg,'+p.photos[0].grad[0]+','+p.photos[0].grad[1]+')">'+(p.photos[0].type==="img"?'<img src="'+p.photos[0].src+'" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover" alt="">':'<div class="bigini" style="font-size:64px">'+esc((p.nickname||"我").charAt(0))+'</div><div class="sceneEmoji" style="font-size:34px">'+p.photos[0].scene+'</div>')+'<div class="grad"></div><div class="pinfo"><h3 style="font-size:20px">'+esc(p.nickname||"你的暱稱")+(ageOf(p.birth)?"，"+ageOf(p.birth):"")+'</h3></div></div></div>':"")
+    +'<div class="btnrow"><button class="btn ghost" data-back="3">上一步</button><button class="btn primary" id="s4next">下一步（已選 '+p.photos.length+' / 至少 3 張）</button></div></div>';
+  }
+  if(n===5){
+    var qopts='<option value="">選一個提示問題…</option>'+PROMPT_QS.map(function(q){return '<option>'+q+'</option>';}).join("");
+    h='<div class="panel"><h2>用三句話介紹你</h2><p class="sub">選 3 個提示問題寫下回答，這是別人最容易對你開啟話題的地方。</p>';
+    for(var k=0;k<3;k++){
+      h+='<label class="flabel">提示 '+(k+1)+'</label><select class="fsel promptQ" aria-label="提示問題 '+(k+1)+'" data-k="'+k+'">'+qopts.replace('<option>'+p.prompts[k].q+'</option>','<option selected>'+p.prompts[k].q+'</option>')+'</select>'
+      +'<textarea aria-label="提示回答 '+(k+1)+'" class="promptA" data-k="'+k+'" rows="2" maxlength="120" placeholder="寫一點具體的，越像你越好">'+esc(p.prompts[k].a)+'</textarea>';
+    }
+    h+='<label class="flabel">興趣標籤（選 5–7 個，已選 <span id="intCount">'+p.interests.length+'</span>）</label><div class="chips">'
+    +INTERESTS.map(function(x){return '<button class="chip'+(p.interests.indexOf(x)>=0?" sel":"")+'" data-int="'+x+'">'+x+'</button>';}).join("")+'</div>'
+    +'<div class="err" id="s5err"></div>'
+    +'<div class="btnrow"><button class="btn ghost" data-back="4">上一步</button><button class="btn primary" id="s5next">下一步</button></div></div>';
+  }
+  if(n===6){
+    h='<div class="panel"><h2>你想認識什麼樣的人？</h2><p class="sub">偏好隨時可以在設定裡調整。</p>'
+    +'<label class="flabel">年齡範圍：<span id="ageRangeLabel">'+p.ageMin+' – '+p.ageMax+' 歲</span></label>'
+    +'<div class="rangelabels"><span>最小</span></div><input type="range" id="ageMinR" min="18" max="60" value="'+p.ageMin+'">'
+    +'<div class="rangelabels"><span>最大</span></div><input type="range" id="ageMaxR" min="18" max="60" value="'+p.ageMax+'">'
+    +'<label class="flabel">最遠距離：<span id="distLabel">'+p.dist+' 公里</span></label><input type="range" id="distR" min="5" max="100" step="5" value="'+p.dist+'">'
+    +'<label class="flabel">主要城市</label><select class="fsel" id="citySel"><option'+(p.city==="台北市"?" selected":"")+'>台北市</option><option'+(p.city==="新北市"?" selected":"")+'>新北市</option><option'+(p.city==="其他"?" selected":"")+'>其他</option></select>'
+    +'<label class="checkline"><input type="checkbox" id="notifyOk" aria-label="開啟通知" '+(p.notify?"checked":"")+'><span>有新配對或新訊息時通知我（示範開關，不會真的推播）</span></label>'
+    +'<div class="btnrow"><button class="btn ghost" data-back="5">上一步</button><button class="btn primary" id="s6next">下一步</button></div></div>';
+  }
+  if(n===7){
+    var c=completion();
+    h='<div class="panel"><h2>你的檔案預覽</h2><p class="sub">檔案完成度 <b>'+c+'%</b>（需 ≥70% 才能上線'+(c>=100?'，你拿到「完整檔案」徽章了 🏅':'')+'）</p>'
+    +profilePreviewHTML()
+    +'<div class="err" id="s7err"></div>'
+    +'<div class="btnrow"><button class="btn ghost" data-back="6">上一步</button><button class="btn primary" id="startBtn">開始認識 →</button></div></div>';
+  }
+  $("stepHost").innerHTML=h; bindStep(n);
+}
+function profilePreviewHTML(){
+  var p=S.profile,age=ageOf(p.birth);
+  return '<div class="swipecard" style="max-width:340px;margin:0 auto"><div class="photo" style="height:250px;background:linear-gradient(135deg,'+(p.photos[0]?p.photos[0].grad[0]:"#F6A192")+','+(p.photos[0]?p.photos[0].grad[1]:"#E85D5A")+')">'
+  +(p.photos[0]&&p.photos[0].type==="img"?'<img src="'+p.photos[0].src+'" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover" alt="">':'<div class="bigini" style="font-size:70px">'+esc((p.nickname||"我").charAt(0))+'</div>')
+  +'<div class="grad"></div><div class="pinfo"><h3 style="font-size:22px">'+esc(p.nickname||"未填暱稱")+(age?"，"+age:"")+'</h3><div style="font-size:13px;opacity:.92">'+esc(p.city||"")+' · '+esc(p.intent||"")+'</div></div></div>'
+  +'<div class="body">'
+  +p.prompts.filter(function(x){return x.q&&x.a;}).map(function(x){return '<div class="promptpeek" style="margin-bottom:8px"><b>'+esc(x.q)+'</b>'+esc(x.a)+'</div>';}).join("")
+  +'<div class="tagrow">'+p.interests.map(function(x){return '<span class="tag">'+esc(x)+'</span>';}).join("")+'</div>'
+  +'</div></div>';
+}
+function normPhone(ccIdx,num){
+  var c=COUNTRIES[ccIdx]; var d=(num||"").replace(/[^\d]/g,"");
+  if(d.charAt(0)==="0"&&d.length===c[4]+1)d=d.slice(1); /* trunk 0, e.g. Taiwan 09xxxxxxxx */
+  return d;
+}
+function phoneError(ccIdx,num){
+  var c=COUNTRIES[ccIdx]; var d=normPhone(ccIdx,num);
+  if(!d) return "請先輸入手機號碼。";
+  if(d.length<c[3]||d.length>c[4]) return c[0]+" "+c[2]+" 的號碼應為 "+(c[3]===c[4]?c[3]:c[3]+"–"+c[4])+" 位數，你輸入了 "+d.length+" 位，請檢查。";
+  if(c[5]&&c[5].indexOf(d.charAt(0))<0) return c[0]+"的手機號碼應以 "+c[5].split("").join(" 或 ")+" 開頭，請檢查第一碼。";
+  return "";
+}
+function bindStep(n){
+  var p=S.profile;
+  document.querySelectorAll("[data-back]").forEach(function(b){b.addEventListener("click",function(){setStep(parseInt(b.getAttribute("data-back"),10));});});
+  if(n===1){
+    document.querySelectorAll("[data-intent]").forEach(function(b){b.addEventListener("click",function(){p.intent=b.getAttribute("data-intent");save();renderStep();});});
+    $("s1next").addEventListener("click",function(){if(p.intent)setStep(2);});
+  }
+  if(n===2){
+    var ccSel=$("ccSel"),ph=$("phoneIn");
+    ccSel.addEventListener("change",function(){stepDraft.ccIdx=parseInt(ccSel.value,10);p.cc=COUNTRIES[stepDraft.ccIdx][2];save();});
+    ph.addEventListener("input",function(){p.phone=ph.value;save();});
+    $("sendOtp").addEventListener("click",function(){
+      var err=phoneError(stepDraft.ccIdx,ph.value);var e=$("phoneErr");
+      if(err){e.textContent="⚠ "+err;e.classList.add("show");return;}
+      e.classList.remove("show");
+      if(p.verifiedPhone===p.cc+normPhone(stepDraft.ccIdx,ph.value)){toast("這個號碼已經驗證過了");return;}
+      p.otpSent=String(Math.floor(100000+Math.random()*900000));p.otp="";p.verified=false;save();renderStep();
+      toast("示範驗證碼已顯示在畫面上");
+    });
+    if($("otpIn")){
+      $("otpIn").addEventListener("input",function(){
+        p.otp=$("otpIn").value;save();
+        var oe=$("otpErr");
+        if(p.otp.length===6){
+          if(p.otp===p.otpSent){p.verified=true;p.verifiedPhone=p.cc+normPhone(stepDraft.ccIdx,ph.value);oe.classList.remove("show");$("otpOk").classList.add("show");}
+          else{p.verified=false;oe.textContent="⚠ 驗證碼不正確，請對照上方示範驗證碼再試一次。";oe.classList.add("show");$("otpOk").classList.remove("show");}
+        }
+      });
+      if(p.verified)$("otpOk").classList.add("show");
+    }
+    $("ageOk").addEventListener("change",function(){p.ageOk=$("ageOk").checked;save();});
+    $("agreeOk").addEventListener("change",function(){p.agree=$("agreeOk").checked;save();});
+    $("s2next").addEventListener("click",function(){
+      var err=phoneError(stepDraft.ccIdx,ph.value);
+      if(err){var e=$("phoneErr");e.textContent="⚠ "+err;e.classList.add("show");return;}
+      if(!p.verified){toast("請先完成手機驗證");return;}
+      if(!p.ageOk){toast("需要勾選「我已滿 18 歲」才能繼續");return;}
+      if(!p.agree){toast("需要同意服務條款與隱私政策才能繼續");return;}
+      setStep(3);
+    });
+  }
+  if(n===3){
+    $("nickIn").addEventListener("input",function(){p.nickname=$("nickIn").value;save();});
+    $("birthIn").addEventListener("change",function(){p.birth=$("birthIn").value;save();});
+    document.querySelectorAll("[data-g]").forEach(function(b){b.addEventListener("click",function(){p.gender=b.getAttribute("data-g");save();renderStep();});});
+    document.querySelectorAll("[data-s]").forEach(function(b){b.addEventListener("click",function(){p.seek=b.getAttribute("data-s");save();renderStep();});});
+    $("s3next").addEventListener("click",function(){
+      if(!p.nickname.trim()){toast("請填暱稱");return;}
+      var a=ageOf(p.birth),be=$("birthErr");
+      if(!p.birth){be.textContent="⚠ 請選擇生日。";be.classList.add("show");return;}
+      if(a<18){be.textContent="⚠ 未滿 18 歲無法註冊。緣來是你僅供成年人使用。";be.classList.add("show");return;}
+      be.classList.remove("show");
+      if(!p.gender||!p.seek){toast("請選擇性別和想認識的對象");return;}
+      setStep(4);
+    });
+  }
+  if(n===4){
+    document.querySelectorAll("[data-style]").forEach(function(b){b.addEventListener("click",function(){
+      if(p.photos.length>=6){toast("最多 6 張照片");return;}
+      var i=parseInt(b.getAttribute("data-style"),10);
+      p.photos.push({type:"illus",grad:GRADS[i],scene:SCENES[i%SCENES.length]});save();renderStep();
+    });});
+    document.querySelectorAll("[data-delphoto]").forEach(function(b){b.addEventListener("click",function(ev){ev.stopPropagation();p.photos.splice(parseInt(b.getAttribute("data-delphoto"),10),1);save();renderStep();});});
+    $("uploadBtn").addEventListener("click",function(){$("photoFile").click();});
+    $("s4next").addEventListener("click",function(){
+      if(p.photos.length<3){var e=$("photoErr");e.textContent="⚠ 至少需要 3 張照片，目前 "+p.photos.length+" 張。";e.classList.add("show");return;}
+      setStep(5);
+    });
+  }
+  if(n===5){
+    document.querySelectorAll(".promptQ").forEach(function(sel){sel.addEventListener("change",function(){p.prompts[parseInt(sel.getAttribute("data-k"),10)].q=sel.value;save();});});
+    document.querySelectorAll(".promptA").forEach(function(ta){ta.addEventListener("input",function(){p.prompts[parseInt(ta.getAttribute("data-k"),10)].a=ta.value;save();});});
+    document.querySelectorAll("[data-int]").forEach(function(b){b.addEventListener("click",function(){
+      var x=b.getAttribute("data-int"),i=p.interests.indexOf(x);
+      if(i>=0)p.interests.splice(i,1);else{if(p.interests.length>=7){toast("最多選 7 個興趣");return;}p.interests.push(x);}
+      save();renderStep();
+    });});
+    $("s5next").addEventListener("click",function(){
+      var filled=p.prompts.filter(function(x){return x.q&&x.a.trim().length>=4;}).length;
+      var e=$("s5err");
+      if(filled<3){e.textContent="⚠ 請完成 3 個提示問題（每個回答至少 4 個字）。";e.classList.add("show");return;}
+      if(p.interests.length<5){e.textContent="⚠ 請選 5–7 個興趣標籤，目前 "+p.interests.length+" 個。";e.classList.add("show");return;}
+      e.classList.remove("show");setStep(6);
+    });
+  }
+  if(n===6){
+    $("ageMinR").addEventListener("input",function(){p.ageMin=parseInt($("ageMinR").value,10);if(p.ageMin>p.ageMax)p.ageMax=p.ageMin;$("ageRangeLabel").textContent=p.ageMin+" – "+p.ageMax+" 歲";save();});
+    $("ageMaxR").addEventListener("input",function(){p.ageMax=parseInt($("ageMaxR").value,10);if(p.ageMax<p.ageMin)p.ageMin=p.ageMax;$("ageRangeLabel").textContent=p.ageMin+" – "+p.ageMax+" 歲";save();});
+    $("distR").addEventListener("input",function(){p.dist=parseInt($("distR").value,10);$("distLabel").textContent=p.dist+" 公里";save();});
+    $("citySel").addEventListener("change",function(){p.city=$("citySel").value;save();});
+    $("notifyOk").addEventListener("change",function(){p.notify=$("notifyOk").checked;save();});
+    $("s6next").addEventListener("click",function(){setStep(7);});
+  }
+  if(n===7){
+    $("startBtn").addEventListener("click",function(){
+      var c=completion(),e=$("s7err");
+      if(c<70){e.textContent="⚠ 檔案完成度只有 "+c+"%，需要 70% 以上才能上線。請回前面的步驟補齊照片、提示或興趣。";e.classList.add("show");return;}
+      S.onboarded=true;save();enterApp("discover");toast("歡迎來到緣來是你，慢慢認識 👋");
+    });
+  }
+}
+$("photoFile").addEventListener("change",function(){
+  var f=$("photoFile").files[0];if(!f)return;
+  if(S.profile.photos.length>=6){toast("最多 6 張照片");return;}
+  var r=new FileReader();
+  r.onload=function(){S.profile.photos.push({type:"img",src:r.result,grad:GRADS[S.profile.photos.length%GRADS.length],scene:"📷"});save();renderStep();};
+  r.readAsDataURL(f);$("photoFile").value="";
+});
+</script>
+<script>
+"use strict";
+/* ================= APP NAV ================= */
+var curView="discover";
+function enterApp(view){
+  $("onboardView").classList.add("hidden");
+  $("appView").classList.remove("hidden");
+  $("mainNav").classList.remove("hidden");
+  showView(view||"discover");
+  window.scrollTo(0,0);
+}
+function showView(v){
+  curView=v;
+  ["discover","daily","nearby","events","chats","me","safety","pricing"].forEach(function(x){$("view-"+x).classList.toggle("on",x===v);});
+  document.querySelectorAll(".navbtn").forEach(function(b){b.classList.toggle("on",b.getAttribute("data-nav")===v);});
+  if(v==="discover")renderDeck();
+  if(v==="daily"){renderDaily();renderFavs();}
+  if(v==="nearby")renderGrid();
+  if(v==="events")renderEvents();
+  if(v==="chats")renderChats();
+  if(v==="me")renderMe();
+  if(v==="safety")renderBlocked();
+  window.scrollTo(0,0);
+}
+document.querySelectorAll(".navbtn").forEach(function(b){b.addEventListener("click",function(){showView(b.getAttribute("data-nav"));});});
+$("btnSafetyTop").addEventListener("click",function(){if(S.onboarded)showView("safety");else toast("完成註冊後，安全中心會一直在這裡 🛡");});
+$("btnPricingTop").addEventListener("click",function(){if(S.onboarded)showView("pricing");else toast("先完成註冊，定價頁隨時能看");});
+$("langSel").addEventListener("change",function(){S.lang=$("langSel").value;save();applyI18n();if(!S.onboarded)renderStep();else showView(curView);});
+/* ================= DECK / SWIPE ================= */
+function deckPool(){
+  return PROFILES.filter(function(p){
+    if(S.blocked.indexOf(p.id)>=0)return false;
+    if(S.swiped[p.id])return false;
+    if(S.profile.seek==="女性"&&p.gender!=="F")return false;
+    if(S.profile.seek==="男性"&&p.gender!=="M")return false;
+    if(p.age<S.profile.ageMin||p.age>S.profile.ageMax)return false;
+    if(p.km>S.profile.dist)return false;
+    return true;
+  });
+}
+function cardHTML(p,big){
+  var cm=commonInts(p);
+  return '<div class="swipecard" id="swipeCard"><div class="photo" style="background:linear-gradient(150deg,'+p.grad[0]+','+p.grad[1]+')">'
+  +'<div class="bigini">'+esc(p.name.charAt(0))+'</div><div class="sceneEmoji">'+p.scene+'</div><div class="grad"></div>'
+  +'<div class="pinfo"><h3>'+esc(p.name)+'，'+p.age+(p.verified?'<span class="verified">✓ 真人認證</span>':"")+'<span class="demotag">示範檔案</span></h3>'
+  +'<div style="font-size:13.5px;opacity:.94">'+esc(p.city)+distText(p)+' · '+esc(p.intent)+'</div></div></div>'
+  +'<div class="body"><div class="promptpeek"><b>'+esc(p.prompts[0][0])+'</b>'+esc(p.prompts[0][1])
+  +' <button class="iconbtn" data-likePrompt="'+p.id+'" title="對這則提示按讚" style="width:34px;height:34px;min-height:34px;font-size:14px;float:right">♥</button></div>'
+  +'<div class="tagrow">'+p.interests.slice(0,3).map(function(x){return '<span class="tag'+(cm.indexOf(x)>=0?" common":"")+'">'+esc(x)+(cm.indexOf(x)>=0?" · 共同":"")+'</span>';}).join("")+'</div>'
+  +'<div style="display:flex;gap:8px;margin-top:12px;flex-wrap:wrap">'
+  +'<button class="btn ghost small" data-viewProfile="'+p.id+'">看完整檔案</button>'
+  +'<button class="iconbtn'+(S.favs.indexOf(p.id)>=0?" saved":"")+'" data-fav="'+p.id+'" title="收藏">🔖</button>'
+  +'<button class="iconbtn" data-report="'+p.id+'" title="檢舉">⚑</button>'
+  +'</div></div></div>';
+}
+function renderDeck(){
+  var host=$("deckHost");
+  if(S.likesLeft<=0){
+    host.innerHTML='<div class="panel emptystate"><div class="big">🌙</div><h3>今天的 25 個讚用完了</h3><p>好好休息，明天再來慢慢認識新的人。<br>你還是可以去看看每日精選、附近的人，或參加一場團體活動。</p><div class="btnrow" style="justify-content:center"><button class="btn primary" onclick="showView(\'daily\')">看每日精選</button><button class="btn ghost" onclick="showView(\'events\')">看團體活動</button></div></div>'
+    +'<p class="quota">今日讚：0 / 25 · 本週超級喜歡：'+S.superLeft+' / 1</p>';return;
+  }
+  var pool=deckPool();
+  if(!pool.length){
+    host.innerHTML='<div class="panel emptystate"><div class="big">🍃</div><h3>附近的人都看完囉</h3><p>目前符合你偏好的人都滑完了。<br>可以放寬一點年齡或距離，或去「附近」頁面用篩選慢慢挑。</p><div class="btnrow" style="justify-content:center"><button class="btn primary" onclick="showView(\'nearby\')">去附近看看</button><button class="btn ghost" id="resetDeckBtn">重看全部</button></div></div>'
+    +'<p class="quota">今日讚：'+S.likesLeft+' / 25 · 本週超級喜歡：'+S.superLeft+' / 1</p>';
+    var rb=$("resetDeckBtn");if(rb)rb.addEventListener("click",function(){S.swiped={};S.lastSwipe=null;save();renderDeck();});
+    return;
+  }
+  var p=pool[0];
+  host.innerHTML=cardHTML(p)
+  +'<div class="swipeactions">'
+  +'<button class="roundbtn small2" id="undoBtn" title="收回上一次" '+(S.lastSwipe?"":"disabled")+'>↩</button>'
+  +'<button class="roundbtn" id="passBtn" title="略過">✕</button>'
+  +'<button class="roundbtn like" id="likeBtn" title="喜歡">♥</button>'
+  +'<button class="roundbtn super" id="superBtn" title="超級喜歡">★</button>'
+  +'<button class="roundbtn small2" id="commentBtn" title="留言按讚">💬</button></div>'
+  +'<p class="quota">今日讚：'+S.likesLeft+' / 25 · 本週超級喜歡：'+S.superLeft+' / 1 · 點卡片或按鈕都可以</p>';
+  bindCardCommon(host);
+  $("passBtn").addEventListener("click",function(){doSwipe(p,"pass");});
+  $("likeBtn").addEventListener("click",function(){doSwipe(p,"like");});
+  $("superBtn").addEventListener("click",function(){
+    if(S.superLeft<=0){toast("本週的免費超級喜歡用完了，下週再來 ⭐");return;}
+    S.superLeft--;doSwipe(p,"super");
+  });
+  $("commentBtn").addEventListener("click",function(){openLikeSheet(p,"她的照片");});
+  var ub=$("undoBtn");if(ub)ub.addEventListener("click",undoSwipe);
+  /* drag swipe */
+  var card=$("swipeCard"),sx=null;
+  card.addEventListener("pointerdown",function(e){sx=e.clientX;});
+  card.addEventListener("pointerup",function(e){
+    if(sx===null)return;var dx=e.clientX-sx;sx=null;
+    if(dx>70)doSwipe(p,"like");else if(dx<-70)doSwipe(p,"pass");
+  });
+}
+function bindCardCommon(root){
+  root.querySelectorAll("[data-viewProfile]").forEach(function(b){b.addEventListener("click",function(){openProfile(b.getAttribute("data-viewProfile"));});});
+  root.querySelectorAll("[data-fav]").forEach(function(b){b.addEventListener("click",function(){toggleFav(b.getAttribute("data-fav"));});});
+  root.querySelectorAll("[data-report]").forEach(function(b){b.addEventListener("click",function(){openReport(b.getAttribute("data-report"),null);});});
+  root.querySelectorAll("[data-likePrompt]").forEach(function(b){b.addEventListener("click",function(){var p=prof(b.getAttribute("data-likePrompt"));if(p)openLikeSheet(p,"提示「"+p.prompts[0][0]+"」");});});
+}
+function toggleFav(id){
+  var i=S.favs.indexOf(id);
+  if(i>=0){S.favs.splice(i,1);toast("已取消收藏");}
+  else{S.favs.push(id);toast("已收藏 🔖 在「精選」頁可以查看");}
+  save();showView(curView);
+}
+function doSwipe(p,action){
+  if(action==="like"||action==="super"){
+    if(S.likesLeft<=0){renderDeck();return;}
+    S.likesLeft--;
+  }
+  S.swiped[p.id]=action;S.lastSwipe={id:p.id,action:action};save();
+  if((action==="like"||action==="super")&&p.likesYou){
+    if(S.matches.indexOf(p.id)<0)S.matches.push(p.id);
+    if(!S.chats[p.id])S.chats[p.id]=[];
+    save();updateChatBadge();openMatch(p);
+  }
+  renderDeck();
+}
+function undoSwipe(){
+  if(!S.lastSwipe)return;
+  var ls=S.lastSwipe;
+  delete S.swiped[ls.id];
+  if(ls.action==="like"||ls.action==="super")S.likesLeft=Math.min(25,S.likesLeft+1);
+  if(ls.action==="super")S.superLeft=Math.min(1,S.superLeft+1);
+  var mi=S.matches.indexOf(ls.id);if(mi>=0&&(ls.action==="like"||ls.action==="super")){/* keep match if already celebrated? remove for consistency */S.matches.splice(mi,1);}
+  S.lastSwipe=null;save();updateChatBadge();renderDeck();toast("已收回上一次滑動 ↩");
+}
+/* ================= LIKE WITH COMMENT ================= */
+function openLikeSheet(p,what){
+  $("likeSheetBody").innerHTML='<button class="iconbtn x" onclick="closeSheet(\'likeSheet\')">✕</button>'
+  +'<h3>對'+esc(p.name)+'的'+esc(what)+'按讚</h3>'
+  +'<p style="color:var(--ink2);font-size:14px;line-height:1.6">可以附一句留言，對方會先看到你的留言，再決定要不要回讚。</p>'
+  +'<textarea id="likeComment" aria-label="留言" rows="3" maxlength="100" placeholder="例如：你的手沖看起來很厲害，V60 有什麼訣竅嗎？"></textarea>'
+  +'<div class="btnrow"><button class="btn ghost" onclick="closeSheet(\'likeSheet\')">先不要</button>'
+  +'<button class="btn primary" id="sendLikeBtn">♥ 送出按讚</button></div>';
+  openSheet("likeSheet");
+  $("sendLikeBtn").addEventListener("click",function(){
+    var c=$("likeComment").value.trim();
+    closeSheet("likeSheet");
+    if(c)toast("留言已附上：「"+c.slice(0,20)+"…」");
+    doSwipe(p,"like");
+  });
+}
+/* ================= PROFILE SHEET ================= */
+function openProfile(id){
+  var p=prof(id);if(!p)return;
+  var cm=commonInts(p);
+  $("profileSheetBody").innerHTML='<button class="iconbtn x" onclick="closeSheet(\'profileSheet\')">✕</button>'
+  +'<div style="display:flex;gap:14px;align-items:center">'+avatarHTML(p,84)
+  +'<div><h3 style="margin:0">'+esc(p.name)+'，'+p.age+(p.verified?'<span class="verified">✓ 真人認證</span>':"")+'</h3>'
+  +'<div style="color:var(--ink2);font-size:13.5px;margin-top:4px">'+esc(p.city)+distText(p)+' · '+esc(p.intent)+'</div>'
+  +'<span class="demotag" style="margin:6px 0 0">示範檔案</span></div></div>'
+  +(cm.length?'<div class="commonbar">你們有 '+cm.length+' 個共同興趣：'+cm.map(esc).join("、")+'</div>':"")
+  +p.prompts.map(function(pr){return '<div class="promptpeek" style="margin-top:10px"><b>'+esc(pr[0])+'</b>'+esc(pr[1])+'</div>';}).join("")
+  +'<div class="tagrow">'+p.interests.map(function(x){return '<span class="tag'+(cm.indexOf(x)>=0?" common":"")+'">'+esc(x)+'</span>';}).join("")+'</div>'
+  +'<div class="btnrow">'
+  +'<button class="btn primary" id="psLike">♥ 喜歡</button>'
+  +'<button class="btn ghost" id="psFav">'+(S.favs.indexOf(id)>=0?"✓ 已收藏":"🔖 收藏")+'</button>'
+  +'<button class="btn ghost" id="psReport">⚑ 檢舉</button>'
+  +'<button class="btn ghost" id="psBlock">封鎖</button></div>';
+  openSheet("profileSheet");
+  $("psLike").addEventListener("click",function(){closeSheet("profileSheet");doSwipe(p,"like");if(curView!=="discover")showView(curView);});
+  $("psFav").addEventListener("click",function(){closeSheet("profileSheet");toggleFav(id);});
+  $("psReport").addEventListener("click",function(){openReport(id,null);});
+  $("psBlock").addEventListener("click",function(){blockUser(id);closeSheet("profileSheet");});
+}
+function blockUser(id){
+  if(S.blocked.indexOf(id)<0)S.blocked.push(id);
+  delete S.swiped[id];
+  var mi=S.matches.indexOf(id);if(mi>=0)S.matches.splice(mi,1);
+  save();updateChatBadge();toast("已封鎖，對方不會再出現在你的頁面");
+  if(S.onboarded)showView(curView);
+}
+/* ================= MATCH ================= */
+function openersFor(p){
+  var cm=commonInts(p);
+  var list=[];
+  list.push("嗨 "+p.name+"！看到你寫「"+p.prompts[0][1].slice(0,18)+"…」，我也很有共鳴。");
+  if(cm.length)list.push("我們都喜歡"+cm[0]+"耶，你平常都去哪裡"+cm[0]+"？");
+  list.push("你提到的「"+p.prompts[1][0]+"」——"+p.prompts[1][1].slice(0,16)+"…，想多聽你分享一點。");
+  return list;
+}
+function openMatch(p){
+  var cm=commonInts(p);
+  $("matchSheetBody").innerHTML='<div style="font-size:40px">🎉</div><h3>配對成功！</h3>'
+  +'<p style="color:var(--ink2);font-size:14.5px;line-height:1.7">'+(cm.length?("你們都喜歡「"+cm.join("、")+"」，話題應該不會少。"):"你們互相按了讚，先從一個簡單的問題開始吧。")+'</p>'
+  +'<div class="matchfaces">'+myAvatarHTML(84)+'<span class="heart">♥</span>'+avatarHTML(p,84)+'</div>'
+  +'<div style="font-weight:700">'+esc(S.profile.nickname||"你")+' × '+esc(p.name)+'</div>'
+  +'<div class="btnrow" style="justify-content:center"><button class="btn primary" id="mMsg">💬 傳送訊息</button><button class="btn ghost" id="mKeep">繼續探索</button></div>'
+  +'<p style="font-size:13px;color:var(--ink2);font-weight:700;margin:14px 0 4px">不知道怎麼開場？試試這些：</p>'
+  +openersFor(p).map(function(o,i){return '<button class="opener" data-mopener="'+i+'">'+esc(o)+'</button>';}).join("");
+  openSheet("matchSheet");
+  $("mKeep").addEventListener("click",function(){closeSheet("matchSheet");});
+  $("mMsg").addEventListener("click",function(){closeSheet("matchSheet");showView("chats");openThread(p.id,"");});
+  document.querySelectorAll("[data-mopener]").forEach(function(b){b.addEventListener("click",function(){
+    var txt=openersFor(p)[parseInt(b.getAttribute("data-mopener"),10)];
+    closeSheet("matchSheet");showView("chats");openThread(p.id,txt);
+  });});
+}
+/* ================= REPORT ================= */
+var reportCtx={id:null,chat:false};
+function openReport(id,isChat){
+  reportCtx={id:id,chat:!!isChat};
+  var p=prof(id);
+  $("reportSheetBody").innerHTML='<button class="iconbtn x" onclick="closeSheet(\'reportSheet\')">✕</button>'
+  +'<h3>檢舉 '+(p?esc(p.name):"這位使用者")+'</h3>'
+  +'<p style="color:var(--ink2);font-size:14px;line-height:1.6">檢舉完全匿名，對方不會知道是你。請選一個最接近的理由：</p>'
+  +["詐騙／假帳號","騷擾","不雅內容","未成年疑慮","其他"].map(function(r){return '<button class="reportopt" data-reason="'+r+'">'+r+'</button>';}).join("")
+  +'<button class="reportopt" data-blockonly="1" style="border-color:var(--coral);color:var(--coral-d)">直接封鎖對方（不再出現）</button>';
+  openSheet("reportSheet");
+  document.querySelectorAll("[data-reason]").forEach(function(b){b.addEventListener("click",function(){
+    S.reports.push({id:id,reason:b.getAttribute("data-reason"),at:Date.now(),chat:reportCtx.chat});save();
+    closeSheet("reportSheet");toast("已收到檢舉，我們會盡快審查（匿名）");
+  });});
+  document.querySelectorAll("[data-blockonly]").forEach(function(b){b.addEventListener("click",function(){
+    closeSheet("reportSheet");blockUser(id);
+  });});
+}
+function renderBlocked(){
+  var host=$("blockedHost");
+  if(!S.blocked.length){host.innerHTML='<p style="font-size:13.5px;color:var(--ink2);margin:0">目前沒有封鎖任何人。</p>';return;}
+  host.innerHTML='<p style="font-size:13.5px;font-weight:700;margin:0 0 6px">已封鎖名單</p>'+S.blocked.map(function(id){
+    var p=prof(id);return '<div class="kv"><span>'+(p?esc(p.name):id)+'</span><button class="btn ghost small" data-unblock="'+id+'">解除封鎖</button></div>';
+  }).join("");
+  host.querySelectorAll("[data-unblock]").forEach(function(b){b.addEventListener("click",function(){
+    var i=S.blocked.indexOf(b.getAttribute("data-unblock"));if(i>=0)S.blocked.splice(i,1);save();renderBlocked();toast("已解除封鎖");
+  });});
+}
+/* ================= DAILY & FAVS & GRID ================= */
+function renderDaily(){
+  var picks=PROFILES.filter(function(p){return S.blocked.indexOf(p.id)<0;}).slice(0,5);
+  $("dailyHost").innerHTML=picks.map(function(p,i){
+    var cm=commonInts(p);
+    return '<div class="dailyrow">'+avatarHTML(p,64)
+    +'<div class="meta"><h4>'+esc(p.name)+'，'+p.age+(i===0?'<span class="bestmatch">★ 最合拍</span>':"")+(p.verified?'<span class="verified">✓ 認證</span>':"")+'</h4>'
+    +'<p style="margin:2px 0;font-size:13px;color:var(--ink2)">'+esc(p.city)+distText(p)+' · '+esc(p.intent)+'</p>'
+    +'<div class="tagrow" style="margin-top:4px">'+p.interests.slice(0,3).map(function(x){return '<span class="tag'+(cm.indexOf(x)>=0?" common":"")+'">'+esc(x)+'</span>';}).join("")+'</div></div>'
+    +'<div style="display:flex;flex-direction:column;gap:6px"><button class="iconbtn" data-dlike="'+p.id+'" title="喜歡">♥</button>'
+    +'<button class="iconbtn'+(S.favs.indexOf(p.id)>=0?" saved":"")+'" data-fav="'+p.id+'" title="收藏">🔖</button></div></div>';
+  }).join("");
+  bindCardCommon($("dailyHost"));
+  $("dailyHost").querySelectorAll("[data-dlike]").forEach(function(b){b.addEventListener("click",function(){
+    var p=prof(b.getAttribute("data-dlike"));closeSheet("profileSheet");doSwipe(p,"like");showView("daily");
+  });});
+  $("dailyHost").querySelectorAll(".dailyrow").forEach(function(row,idx){
+    row.addEventListener("click",function(e){if(e.target.closest("button"))return;openProfile(picks[idx].id);});
+  });
+}
+function renderFavs(){
+  var host=$("favHost");
+  var favs=S.favs.map(prof).filter(Boolean).filter(function(p){return S.blocked.indexOf(p.id)<0;});
+  if(!favs.length){host.innerHTML='<div class="panel emptystate" style="padding:26px"><div class="big">🔖</div><p>還沒有收藏任何人。<br>看到想多了解的人，點書籤就會收進來。</p></div>';return;}
+  host.innerHTML='<div class="grid2">'+favs.map(function(p){return gcardHTML(p);}).join("")+'</div>';
+  bindCardCommon(host);
+}
+function gcardHTML(p){
+  var cm=commonInts(p);
+  return '<div class="gcard"><div class="gphoto" style="background:linear-gradient(150deg,'+p.grad[0]+','+p.grad[1]+')">'+esc(p.name.charAt(0))+'<span style="position:absolute;font-size:26px;bottom:8px;right:10px">'+p.scene+'</span></div>'
+  +'<div class="gbody"><h4>'+esc(p.name)+'，'+p.age+(p.verified?' <span style="color:var(--teal);font-size:12px">✓認證</span>':"")+'</h4>'
+  +'<p>'+esc(p.city)+distText(p)+'</p>'
+  +(cm.length?'<p style="color:#14554D;font-weight:700">共同：'+cm.map(esc).join("、")+'</p>':"")
+  +'<div style="display:flex;gap:6px;margin-top:8px"><button class="btn primary small" data-viewProfile="'+p.id+'" style="flex:1">看檔案</button>'
+  +'<button class="iconbtn'+(S.favs.indexOf(p.id)>=0?" saved":"")+'" data-fav="'+p.id+'">🔖</button>'
+  +'<button class="iconbtn" data-report="'+p.id+'">⚑</button></div></div></div>';
+}
+function renderGrid(){
+  var fInt=$("fInt");
+  if(fInt.options.length<=1){INTERESTS.forEach(function(x){var o=document.createElement("option");o.textContent=x;fInt.appendChild(o);});}
+  var ageV=$("fAge").value,distV=parseFloat($("fDist").value),cityV=$("fCity").value,intV=fInt.value;
+  var list=PROFILES.filter(function(p){
+    if(S.blocked.indexOf(p.id)>=0)return false;
+    if(ageV!=="0"){var r=ageV.split("-");if(p.age<+r[0]||p.age>+r[1])return false;}
+    if(p.km>distV)return false;
+    if(cityV&&p.city!==cityV)return false;
+    if(intV&&p.interests.indexOf(intV)<0)return false;
+    return true;
+  }).sort(function(a,b){return a.km-b.km;});
+  $("gridHost").innerHTML=list.length?list.map(gcardHTML).join(""):'<div class="panel emptystate" style="grid-column:1/-1;padding:26px"><p>這個條件下暫時沒有人，放寬一點篩選試試。</p></div>';
+  bindCardCommon($("gridHost"));
+}
+["fAge","fDist","fCity","fInt"].forEach(function(id){$(id).addEventListener("change",renderGrid);});
+/* ================= EVENTS ================= */
+function renderEvents(){
+  $("eventHost").innerHTML=EVENTS.map(function(ev){
+    var joined=S.eventsJoined.indexOf(ev.id)>=0;
+    var count=ev.joined+(joined?1:0);
+    return '<div class="eventcard"><div class="ebanner" style="background:linear-gradient(135deg,'+ev.grad[0]+','+ev.grad[1]+')">'+ev.icon+'</div>'
+    +'<div class="ebody"><h3>'+esc(ev.title)+'</h3>'
+    +'<p>🗓 '+esc(ev.date)+'</p><p>📍 '+esc(ev.place)+'</p>'
+    +'<p>👥 '+count+' / '+ev.cap+' 人'+(count>=ev.cap?"（已額滿）":"")+'</p><p>💰 '+esc(ev.cost)+'</p>'
+    +'<div class="btnrow"><button class="btn '+(joined?"ghost":"primary")+' small" data-event="'+ev.id+'" '+(count>=ev.cap&&!joined?"disabled":"")+'>'+(joined?"✓ 已報名（點此取消）":"我要報名")+'</button></div>'
+    +'</div></div>';
+  }).join("");
+  $("eventHost").querySelectorAll("[data-event]").forEach(function(b){b.addEventListener("click",function(){
+    var id=b.getAttribute("data-event"),i=S.eventsJoined.indexOf(id);
+    if(i>=0){S.eventsJoined.splice(i,1);toast("已取消報名");}
+    else{S.eventsJoined.push(id);toast("報名成功 🎟 活動前一天會提醒你（示範）");}
+    save();renderEvents();
+  });});
+}
+</script>
+<script>
+"use strict";
+/* ================= CONFIRM SHEET ================= */
+function openConfirm(html){$("confirmSheetBody").innerHTML=html;openSheet("confirmSheet");}
+/* ================= CHATS ================= */
+function updateChatBadge(){
+  var n=S.matches.filter(function(id){return S.blocked.indexOf(id)<0;}).length;
+  $("chatBadge").innerHTML=n?'<span class="dot">'+n+'</span>':"";
+}
+function counts(id){
+  var msgs=S.chats[id]||[];
+  return {me:msgs.filter(function(m){return m.from==="me";}).length,
+          them:msgs.filter(function(m){return m.from==="them";}).length,
+          total:msgs.filter(function(m){return m.from!=="sys";}).length};
+}
+function renderChats(){
+  var host=$("chatHost");
+  if(S.chatOpen){renderThread(S.chatOpen);return;}
+  var list=S.matches.filter(function(id){return S.blocked.indexOf(id)<0;});
+  if(!list.length){
+    host.innerHTML='<div class="panel emptystate"><div class="big">💬</div><h3>還沒有配對</h3><p>去探索頁面對喜歡的人按愛心，<br>互相喜歡就會出現在這裡。</p><div class="btnrow" style="justify-content:center"><button class="btn primary" onclick="showView(\'discover\')">去探索</button></div></div>';return;
+  }
+  host.innerHTML='<div class="chatlist">'+list.map(function(id){
+    var p=prof(id),msgs=S.chats[id]||[],last=msgs[msgs.length-1];
+    var preview=last?(last.kind==="photo"?"📷 照片":last.kind==="voice"?"🎙 語音訊息":esc(last.text)):"打個招呼吧 👋";
+    return '<button class="chatrow" data-openchat="'+id+'">'+avatarHTML(p,54)
+    +'<span class="meta"><h4>'+esc(p.name)+'，'+p.age+(p.verified?'<span class="verified">✓ 認證</span>':"")+'</h4><p>'+preview+'</p></span><span style="color:var(--ink3)">›</span></button>';
+  }).join("")+'</div>';
+  host.querySelectorAll("[data-openchat]").forEach(function(b){b.addEventListener("click",function(){openThread(b.getAttribute("data-openchat"),"");});});
+}
+function openThread(id,prefill){
+  S.chatOpen=id;
+  /* 24h no-reply private reminder: shown once per match when a conversation has gone quiet (demo compresses the wait) */
+  var cc=counts(id);
+  if(cc.total>=4&&!S.reminded[id]){S.reminded[id]=true;}
+  save();renderThread(id);
+  if(prefill)setTimeout(function(){var inp=$("msgInput");if(inp){inp.value=prefill;inp.focus();}},60);
+}
+function msgHTML(m,id){
+  if(m.from==="sys")return '<div class="msg sys">'+esc(m.text)+'</div>';
+  var cls=m.from==="me"?"me":"them";
+  if(m.kind==="photo"){
+    var blurred=(m.from==="them"&&!m.revealed);
+    return '<div class="msg '+cls+'" style="padding:6px"><div class="msgphoto" data-reveal="'+(m.ts)+'" style="background:linear-gradient(135deg,'+m.grad[0]+','+m.grad[1]+')">'
+    +(m.src?'<img src="'+m.src+'" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover" alt="照片訊息">':'<span>'+m.scene+'</span>')
+    +(blurred?'<span class="blurveil">🔒 新配對的照片<br>點按顯示</span>':"")+'</div></div>';
+  }
+  if(m.kind==="voice"){
+    var bars="";for(var i=0;i<12;i++)bars+='<i style="height:'+(6+((i*7)%14))+'px"></i>';
+    return '<div class="msg '+cls+' voice"><span>▶</span><span class="bars">'+bars+'</span><span style="font-size:12.5px">0:'+String(m.dur||7).padStart(2,"0")+'</span></div>';
+  }
+  return '<div class="msg '+cls+'">'+esc(m.text)+'</div>';
+}
+function renderThread(id){
+  var p=prof(id);if(!p){S.chatOpen=null;renderChats();return;}
+  var host=$("chatHost"),msgs=S.chats[id]||[],c=counts(id),cm=commonInts(p);
+  var total=c.total;
+  var h='<button class="btn ghost small" id="backChats">← 所有對話</button>'
+  +'<div class="threadhead">'+avatarHTML(p,48)+'<div style="flex:1"><b>'+esc(p.name)+'，'+p.age+'</b>'+(p.verified?'<span class="verified">✓ 真人認證</span>':"")+'<div style="font-size:12.5px;color:var(--ink2)">'+esc(p.city)+distText(p)+' · <span class="demotag" style="margin:0">示範檔案</span></div></div>'
+  +'<button class="iconbtn" id="thReport" title="檢舉">⚑</button><button class="iconbtn" id="thBlock" title="封鎖">🚫</button></div>'
+  +(cm.length?'<div class="commonbar">✦ 你們的共同點：都喜歡'+cm.map(esc).join("、")+'，也都想「'+esc(p.intent)+'」。</div>':"")
+  +(S.reminded[id]?'<div class="commonbar" style="background:var(--amber-soft);border-color:var(--amber);color:#7A5200">⏰ 小提醒：這段對話已經 24 小時沒有新訊息了，丟個輕鬆的話題延續一下吧（只有你看得到）。</div>':"")
+  +'<div class="msgs" id="msgList">'
+  +(msgs.length?msgs.map(function(m){return msgHTML(m,id);}).join(""):'<div class="msg sys">你們配對成功了，說聲嗨吧 👋</div>')
+  +(total>=8&&total<=12&&!msgs.some(function(m){return m.kind==="datecard";})?dateCardHTML():"")
+  +'</div>'
+  +(total===0?'<p style="font-size:13px;font-weight:700;color:var(--ink2);margin:8px 0 2px">不知道怎麼開場？點一句直接帶入：</p>'+openersFor(p).map(function(o,i){return '<button class="opener" data-opener="'+i+'">'+esc(o)+'</button>';}).join(""):"")
+  +'<div class="composer"><button class="toolbtn" id="voiceBtn" title="語音訊息">🎙</button>'
+  +'<button class="toolbtn" id="photoBtn" title="傳照片">🖼</button>'
+  +'<input type="text" id="msgInput" aria-label="訊息內容" placeholder="輸入訊息…" maxlength="500">'
+  +'<button class="sendbtn" id="sendBtn" title="傳送">➤</button></div>'
+  +'<p style="font-size:12px;color:var(--ink3);line-height:1.6">安全小提醒：雙方各傳滿 5 則訊息前，訊息裡的聯絡方式與連結會被自動擋下，保護彼此。</p>';
+  host.innerHTML=h;
+  var list=$("msgList");list.scrollTop=list.scrollHeight;
+  $("backChats").addEventListener("click",function(){S.chatOpen=null;save();renderChats();});
+  $("thReport").addEventListener("click",function(){openReport(id,true);});
+  $("thBlock").addEventListener("click",function(){S.chatOpen=null;blockUser(id);showView("chats");});
+  host.querySelectorAll("[data-opener]").forEach(function(b){b.addEventListener("click",function(){
+    $("msgInput").value=openersFor(p)[parseInt(b.getAttribute("data-opener"),10)];$("msgInput").focus();
+  });});
+  host.querySelectorAll("[data-reveal]").forEach(function(el){el.addEventListener("click",function(){
+    var ts=+el.getAttribute("data-reveal");
+    (S.chats[id]||[]).forEach(function(m){if(m.ts===ts)m.revealed=true;});
+    save();renderThread(id);
+  });});
+  var dc=$("dateYes");if(dc)dc.addEventListener("click",function(){
+    pushMsg(id,{from:"sys",kind:"text",text:"☕ 已送出約會提議：找一天一起喝杯咖啡或逛夜市（對方回覆前不會自動代發任何訊息）",ts:Date.now()});
+    toast("約會提議已送出，等對方回覆 ☕");
+  });
+  var dn=$("dateNo");if(dn)dn.addEventListener("click",function(){
+    pushMsg(id,{from:"sys",kind:"text",text:"先繼續聊聊也很好，慢慢來。",ts:Date.now()});
+  });
+  $("sendBtn").addEventListener("click",function(){trySend(id);});
+  $("msgInput").addEventListener("keydown",function(e){if(e.key==="Enter")trySend(id);});
+  $("voiceBtn").addEventListener("click",function(){
+    pushMsg(id,{from:"me",kind:"voice",dur:3+Math.floor(Math.random()*10),ts:Date.now()});
+    toast("語音訊息已送出（示範，最長 30 秒）");
+    maybeReply(id);
+  });
+  $("photoBtn").addEventListener("click",function(){
+    var cc=counts(id);
+    if(cc.me<1||cc.them<1){toast("先交換至少 1 則文字或語音，再傳照片比較安全 📷");return;}
+    $("chatPhotoFile").click();
+  });
+}
+function dateCardHTML(){
+  return '<div class="datecard"><h4>聊得不錯耶 ☕</h4><p>要不要約個咖啡，或一起去逛夜市？<br>記得約在公開場所，並告訴朋友你的行程。</p><button class="btn primary small" id="dateYes">約個咖啡／夜市</button> <button class="btn ghost small" id="dateNo">先繼續聊</button></div>';
+}
+function pushMsg(id,m){
+  if(!S.chats[id])S.chats[id]=[];
+  S.chats[id].push(m);save();
+  if(S.chatOpen===id)renderThread(id);
+}
+var replyIdx={};
+function maybeReply(id){
+  setTimeout(function(){
+    if(S.blocked.indexOf(id)>=0)return;
+    var msgs=S.chats[id]||[];
+    var last=msgs[msgs.length-1];
+    if(!last||last.from!=="me")return;
+    var i=(replyIdx[id]||0);
+    var extra=null;
+    if(i===1){var p=prof(id);extra={from:"them",kind:"photo",grad:p.grad,scene:p.scene,ts:Date.now()+1};}
+    replyIdx[id]=i+1;
+    pushMsg(id,{from:"them",kind:"text",text:REPLIES[i%REPLIES.length],ts:Date.now()});
+    if(extra)setTimeout(function(){pushMsg(id,extra);},900);
+  },1100);
+}
+function hasContact(text){
+  var s=text.toLowerCase().replace(/\s/g,"");
+  if(/https?:\/\//.test(s)||/www\./.test(s)||/\.(com|tw|net|io|me)\b/.test(s))return true;
+  if(/line/.test(s)&&/(id|加|＠|@)/.test(s))return true;
+  if(/whatsapp|telegram|微信|wechat/.test(s))return true;
+  if(/ig[:：]|instagram|哀居/.test(s))return true;
+  if(/09\d{2}[-]?\d{3}[-]?\d{3}/.test(s))return true;
+  if(/@[a-z0-9_.]{3,}/.test(s))return true;
+  return false;
+}
+function scamHit(text){
+  var up=text.toUpperCase();
+  for(var i=0;i<SCAM_WORDS.length;i++){if(up.indexOf(SCAM_WORDS[i].toUpperCase())>=0)return SCAM_WORDS[i];}
+  if(/line/i.test(text))return "LINE";
+  if(text.indexOf("加我")>=0)return "加我";
+  return null;
+}
+function trySend(id){
+  var inp=$("msgInput");if(!inp)return;
+  var text=inp.value.trim();if(!text)return;
+  var c=counts(id);
+  if((c.me<5||c.them<5)&&hasContact(text)){
+    openConfirm('<h3>⚠ 這則訊息被擋下了</h3><p style="color:var(--ink2);line-height:1.7;font-size:14.5px">在雙方各傳滿 5 則訊息前，訊息裡不能包含 LINE、WhatsApp、Telegram、IG 帳號、電話或連結——這是為了保護你不要太快把聯絡方式給陌生人。先在這裡多聊幾句吧。</p><div class="btnrow"><button class="btn primary" onclick="closeSheet(\'confirmSheet\')">知道了</button></div>');
+    return;
+  }
+  var hit=scamHit(text);
+  if(hit){
+    openConfirm('<h3>🛡 你確定要傳送嗎？</h3><p style="color:var(--ink2);line-height:1.7;font-size:14.5px">這則訊息包含「'+esc(hit)+'」，這可能是詐騙話術。交友平台上談投資、匯款、保證獲利，幾乎都是詐騙。懷疑的話，先打 <b>165</b> 查證。</p><div class="btnrow"><button class="btn ghost" onclick="closeSheet(\'confirmSheet\')">取消</button><button class="btn ghost" id="scamReport">🚨 一鍵檢舉對方</button><button class="btn primary" id="scamSend">我確定，照常傳送</button></div>');
+    $("scamReport").addEventListener("click",function(){closeSheet("confirmSheet");openReport(id,true);});
+    $("scamSend").addEventListener("click",function(){closeSheet("confirmSheet");inp.value="";pushMsg(id,{from:"me",kind:"text",text:text,ts:Date.now()});maybeReply(id);});
+    return;
+  }
+  inp.value="";
+  pushMsg(id,{from:"me",kind:"text",text:text,ts:Date.now()});
+  maybeReply(id);
+}
+$("chatPhotoFile").addEventListener("change",function(){
+  var f=$("chatPhotoFile").files[0];var id=S.chatOpen;
+  $("chatPhotoFile").value="";
+  if(!f||!id)return;
+  var r=new FileReader();
+  r.onload=function(){pushMsg(id,{from:"me",kind:"photo",src:r.result,grad:GRADS[0],scene:"📷",ts:Date.now()});maybeReply(id);};
+  r.readAsDataURL(f);
+});
+/* ================= ME / SETTINGS ================= */
+function renderMe(){
+  var p=S.profile,c=completion(),age=ageOf(p.birth);
+  var host=$("meHost");
+  host.innerHTML='<div class="panel" style="text-align:center">'+myAvatarHTML(96)
+  +'<h2 style="margin-top:10px">'+esc(p.nickname||"")+(age?"，"+age:"")+(c>=100?' <span class="verified" style="background:var(--amber);color:#4A3200">🏅 完整檔案</span>':"")+'</h2>'
+  +'<p class="sub" style="margin-bottom:4px">'+esc(p.city||"")+' · '+esc(p.intent||"")+' · 想認識'+esc(p.seek||"")+'</p>'
+  +'<div class="progress" style="max-width:340px;margin:10px auto 4px"><i style="width:'+c+'%"></i></div>'
+  +'<p style="font-size:13px;color:var(--ink2);font-weight:700">檔案完成度 '+c+'%</p>'
+  +profilePreviewHTML()
+  +'<div class="btnrow" style="justify-content:center"><button class="btn ghost" id="editProfileBtn">✏️ 編輯檔案（回入門流程）</button></div></div>'
+  +'<div class="panel"><h2>設定</h2>'
+  +'<div class="setrow"><span>隱藏我的距離<br><small style="color:var(--ink2)">開啟後，別人看不到你顯示的約略距離，你看別人時也會隱藏。</small></span><label class="switch"><input type="checkbox" id="hideDistSw" aria-label="隱藏我的距離" '+(S.hideDist?"checked":"")+'><span class="tr"></span></label></div>'
+  +'<div class="setrow"><span>新配對／訊息通知（示範）</span><label class="switch"><input type="checkbox" id="notifySw" aria-label="新配對與訊息通知" '+(p.notify?"checked":"")+'><span class="tr"></span></label></div>'
+  +'<div class="setrow"><span>介面語言</span><span style="font-size:13.5px;color:var(--ink2)">用右上角選單切換</span></div>'
+  +'<div class="setrow"><span>Premium</span><button class="btn ghost small" id="mePricing">看定價（即將推出）</button></div>'
+  +'<div class="setrow"><span>安全中心</span><button class="btn ghost small" id="meSafety">🛡 打開</button></div>'
+  +'<div class="setrow"><span>重設示範資料<br><small style="color:var(--ink2)">清除配對、聊天、收藏與滑卡紀錄，回到全新狀態。</small></span><button class="btn ghost small" id="resetBtn">重設</button></div>'
+  +'<div class="setrow"><span style="color:var(--coral-d);font-weight:700">刪除帳號<br><small style="color:var(--ink2);font-weight:400">一鍵刪除，連同本機的全部資料一起清除，無法復原。</small></span><button class="btn small" id="deleteBtn" style="background:var(--coral);color:#fff">刪除帳號</button></div>'
+  +'</div>'
+  +'<div class="panel"><h2>我的紀錄</h2>'
+  +'<div class="kv"><span>配對數</span><b>'+S.matches.length+'</b></div>'
+  +'<div class="kv"><span>收藏數</span><b>'+S.favs.length+'</b></div>'
+  +'<div class="kv"><span>已報名活動</span><b>'+S.eventsJoined.length+' 場</b></div>'
+  +'<div class="kv"><span>檢舉紀錄（匿名）</span><b>'+S.reports.length+' 件</b></div>'
+  +'<div class="kv"><span>手機</span><b>'+esc(p.cc)+' '+esc(p.phone)+(p.verified?" ✓ 已驗證":"")+'</b></div>'
+  +'</div>';
+  $("editProfileBtn").addEventListener("click",function(){
+    $("appView").classList.add("hidden");$("mainNav").classList.add("hidden");$("onboardView").classList.remove("hidden");S.chatOpen=null;setStep(1);
+  });
+  $("hideDistSw").addEventListener("change",function(){S.hideDist=$("hideDistSw").checked;save();toast(S.hideDist?"已隱藏距離":"已顯示約略距離");});
+  $("notifySw").addEventListener("change",function(){S.profile.notify=$("notifySw").checked;save();});
+  $("mePricing").addEventListener("click",function(){showView("pricing");});
+  $("meSafety").addEventListener("click",function(){showView("safety");});
+  $("resetBtn").addEventListener("click",function(){
+    openConfirm('<h3>重設示範資料？</h3><p style="color:var(--ink2);line-height:1.7;font-size:14.5px">配對、聊天、收藏、活動報名和滑卡紀錄都會清除，你的檔案會保留。</p><div class="btnrow"><button class="btn ghost" onclick="closeSheet(\'confirmSheet\')">取消</button><button class="btn primary" id="doReset">確定重設</button></div>');
+    $("doReset").addEventListener("click",function(){
+      S.swiped={};S.lastSwipe=null;S.matches=[];S.favs=[];S.chats={};S.eventsJoined=[];S.likesLeft=25;S.superLeft=1;S.chatOpen=null;replyIdx={};
+      save();updateChatBadge();closeSheet("confirmSheet");showView("discover");toast("示範資料已重設");
+    });
+  });
+  $("deleteBtn").addEventListener("click",function(){
+    openConfirm('<h3>真的要刪除帳號嗎？</h3><p style="color:var(--ink2);line-height:1.7;font-size:14.5px">你的檔案、配對、聊天與全部本機資料都會被刪除，無法復原。</p><div class="btnrow"><button class="btn ghost" onclick="closeSheet(\'confirmSheet\')">再想想</button><button class="btn primary" id="doDelete" style="background:var(--coral-d)">確定刪除</button></div>');
+    $("doDelete").addEventListener("click",function(){
+      localStorage.removeItem(KEY);S=defState();save();
+      closeSheet("confirmSheet");
+      $("appView").classList.add("hidden");$("mainNav").classList.add("hidden");$("onboardView").classList.remove("hidden");
+      applyI18n();renderStep();toast("帳號已刪除，謝謝你來過 👋");
+    });
+  });
+}
+/* ================= INIT ================= */
+$("btnPremiumWait").addEventListener("click",function(){
+  S.premiumWait=true;save();toast("好的，Premium 推出時會通知你（示範，不會收費）");
+});
+applyI18n();updateChatBadge();
+if(S.onboarded){enterApp("discover");}
+else{renderStep();}
+</script>
+</body>
+</html>
