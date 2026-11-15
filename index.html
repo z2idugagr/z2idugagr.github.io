@@ -1,0 +1,966 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="color-scheme" content="light dark" />
+<meta name="description" content="Hank Chen 英文 ↔ 繁體中文（台灣）翻譯：文件、網站文案、Excel、英文字幕 SRT。$5 起，1–3 天交件，透過 Fiverr / Tasker 下單。" />
+<link rel="icon" href="data:," />
+<title>Hank 翻譯｜英文 ↔ 繁體中文（台灣）翻譯・排版</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Noto+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --navy:#0F2A44;
+    --navy-2:#16365A;
+    --navy-deep:#0A1E33;
+    --yellow:#FFC400;
+    --yellow-dark:#E0AA00;
+    --bg:#F6F7F9;
+    --surface:#FFFFFF;
+    --surface-2:#EEF2F6;
+    --ink:#14232F;
+    --ink-2:#435363;
+    --muted:#5A6B7A;
+    --line:#DCE3EA;
+    --radius:14px;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#0B1B2E;
+      --surface:#12293F;
+      --surface-2:#0F2A44;
+      --ink:#F2F5F8;
+      --muted:#A9BAC9;
+      --line:#24405C;
+      color-scheme: dark;
+    }
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    font-family:"Noto Sans TC","Noto Sans",system-ui,-apple-system,"PingFang TC","Microsoft JhengHei",sans-serif;
+    background:var(--bg);
+    color:var(--ink);
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit}
+  img{max-width:100%}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+
+  /* ---------- Nav ---------- */
+  .nav{
+    position:sticky;top:0;z-index:50;
+    background:var(--navy);
+    color:#fff;
+    border-bottom:3px solid var(--yellow);
+  }
+  .nav-inner{display:flex;align-items:center;gap:18px;min-height:60px;flex-wrap:wrap;padding-top:6px;padding-bottom:6px}
+  .brand{font-weight:900;font-size:1.08rem;letter-spacing:.02em;text-decoration:none;display:flex;align-items:center;gap:10px}
+  .brand .mark{background:var(--yellow);color:var(--navy);font-weight:900;padding:2px 9px;border-radius:6px;font-size:.95rem}
+  .brand small{font-weight:500;font-size:.78rem;color:#BFD0E0;display:block;line-height:1.2}
+  .nav-links{display:flex;gap:4px;margin-left:auto;flex-wrap:wrap}
+  .nav-links a{
+    text-decoration:none;font-size:.92rem;font-weight:500;color:#E7EEF5;
+    padding:9px 12px;border-radius:8px;min-height:38px;display:inline-flex;align-items:center;
+  }
+  .nav-links a:hover{background:var(--navy-2);color:#fff}
+  .nav-cta{
+    background:var(--yellow);color:var(--navy)!important;font-weight:700;
+  }
+  .nav-cta:hover{background:var(--yellow-dark)}
+
+  /* ---------- Hero ---------- */
+  .hero{background:var(--navy);color:#fff;padding:56px 0 64px;position:relative;overflow:hidden}
+  .hero::after{
+    content:"";position:absolute;right:-70px;top:-70px;width:280px;height:280px;border-radius:50%;
+    border:44px solid rgba(255,196,0,.14);pointer-events:none;
+  }
+  .hero-tag{
+    display:inline-block;background:rgba(255,196,0,.15);color:var(--yellow);
+    border:1px solid rgba(255,196,0,.5);font-size:.85rem;font-weight:700;
+    padding:5px 14px;border-radius:999px;margin-bottom:20px;
+  }
+  .hero h1{
+    font-size:2.55rem;line-height:1.28;font-weight:900;margin:0 0 16px;max-width:16em;letter-spacing:.01em;
+  }
+  .hero h1 .hl{color:var(--yellow)}
+  .hero p.lead{font-size:1.08rem;color:#C9D7E4;max-width:36em;margin:0 0 26px}
+  .hero-facts{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:30px}
+  .hero-facts span{
+    background:var(--navy-2);border:1px solid #2A4A6E;color:#fff;
+    font-size:.92rem;font-weight:700;padding:8px 16px;border-radius:8px;
+  }
+  .hero-facts span b{color:var(--yellow);font-size:1.05rem}
+  .hero-btns{display:flex;gap:12px;flex-wrap:wrap}
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:8px;
+    min-height:50px;padding:12px 26px;border-radius:10px;
+    font-weight:700;font-size:1rem;text-decoration:none;border:2px solid transparent;
+    transition:transform .12s ease, background .12s ease;
+  }
+  .btn:active{transform:scale(.98)}
+  .btn-yellow{background:var(--yellow);color:var(--navy)}
+  .btn-yellow:hover{background:var(--yellow-dark)}
+  .btn-outline{border-color:#7E97AE;color:#fff;background:transparent}
+  .btn-outline:hover{border-color:#fff}
+  .hero-note{margin-top:18px;font-size:.86rem;color:#8FA6BB}
+
+  /* ---------- Sections ---------- */
+  section{padding:58px 0 8px}
+  .sec-head{margin-bottom:26px}
+  .sec-head h2{font-size:1.65rem;font-weight:900;margin:0 0 6px;color:var(--ink)}
+  .sec-head h2 .bar{color:var(--yellow-dark)}
+  @media (prefers-color-scheme: dark){ .sec-head h2 .bar{color:var(--yellow)} }
+  .sec-head p{margin:0;color:var(--muted);max-width:42em}
+
+  .grid{display:grid;gap:16px}
+  .grid-4{grid-template-columns:repeat(4,1fr)}
+  .grid-3{grid-template-columns:repeat(3,1fr)}
+  .grid-2{grid-template-columns:repeat(2,1fr)}
+
+  .card{
+    background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+    padding:22px 20px;
+  }
+  .card .icon{
+    width:44px;height:44px;border-radius:10px;background:var(--navy);color:var(--yellow);
+    display:flex;align-items:center;justify-content:center;margin-bottom:14px;
+  }
+  .card .icon svg{width:24px;height:24px}
+  .card h3{margin:0 0 8px;font-size:1.06rem;font-weight:700}
+  .card p{margin:0;color:var(--muted);font-size:.94rem}
+  .card ul{margin:10px 0 0;padding-left:1.15em;color:var(--muted);font-size:.94rem}
+  .card ul li{margin:3px 0}
+
+  /* ---------- Pricing ---------- */
+  .price-card{position:relative;display:flex;flex-direction:column}
+  .price-card.popular{border:2px solid var(--yellow);box-shadow:0 10px 30px rgba(15,42,68,.12)}
+  .pop-badge{
+    position:absolute;top:-14px;left:20px;background:var(--yellow);color:var(--navy);
+    font-size:.8rem;font-weight:900;padding:4px 12px;border-radius:999px;letter-spacing:.04em;
+  }
+  .price-name{font-weight:700;font-size:1rem;color:var(--muted);letter-spacing:.06em}
+  .price-amt{font-size:2.3rem;font-weight:900;color:var(--ink);line-height:1.15;margin:6px 0 2px}
+  .price-amt small{font-size:.95rem;font-weight:500;color:var(--muted)}
+  .price-card ul{list-style:none;margin:16px 0 22px;padding:0}
+  .price-card ul li{padding:7px 0 7px 28px;position:relative;border-bottom:1px dashed var(--line);font-size:.95rem}
+  .price-card ul li:last-child{border-bottom:none}
+  .price-card ul li::before{
+    content:"";position:absolute;left:2px;top:12px;width:14px;height:8px;
+    border-left:3px solid var(--yellow-dark);border-bottom:3px solid var(--yellow-dark);transform:rotate(-45deg);
+  }
+  @media (prefers-color-scheme: dark){ .price-card ul li::before{border-color:var(--yellow)} }
+  .price-card .btn{margin-top:auto}
+  .btn-navy{background:var(--navy);color:#fff}
+  .btn-navy:hover{background:var(--navy-2)}
+  .custom-note{
+    margin-top:16px;background:var(--surface-2);border:1px dashed var(--muted);
+    border-radius:var(--radius);padding:16px 20px;font-size:.95rem;color:var(--muted);
+  }
+  .custom-note b{color:var(--ink)}
+
+  /* Calculator */
+  .calc{
+    margin-top:16px;background:var(--navy);color:#fff;border-radius:var(--radius);padding:24px;
+    display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:center;
+  }
+  .calc h3{margin:0 0 6px;font-size:1.1rem}
+  .calc p{margin:0;color:#B9CADA;font-size:.92rem}
+  .calc-form{display:flex;gap:10px;flex-wrap:wrap}
+  .calc-form input{
+    flex:1;min-width:150px;min-height:50px;border-radius:10px;border:2px solid #2A4A6E;
+    background:#fff;color:#14232F;font-size:1rem;padding:10px 14px;font-family:inherit;
+  }
+  .calc-result{
+    grid-column:1/-1;background:var(--navy-2);border-left:4px solid var(--yellow);
+    border-radius:8px;padding:14px 18px;font-size:.98rem;display:none;
+  }
+  .calc-result.show{display:block}
+  .calc-result b{color:var(--yellow)}
+
+  /* ---------- Global Gateway ---------- */
+  .gateway{
+    background:var(--navy);color:#fff;border-radius:18px;
+    padding:36px 32px;position:relative;overflow:hidden;
+  }
+  .gateway::after{
+    content:"";position:absolute;right:-60px;bottom:-60px;width:220px;height:220px;border-radius:50%;
+    border:36px solid rgba(255,196,0,.12);pointer-events:none;
+  }
+  .gateway-tag{
+    display:inline-block;background:rgba(255,196,0,.15);color:var(--yellow);
+    border:1px solid rgba(255,196,0,.5);font-size:.8rem;font-weight:700;letter-spacing:.08em;
+    padding:4px 13px;border-radius:999px;margin-bottom:16px;text-transform:uppercase;
+  }
+  .gateway h2{font-size:1.8rem;font-weight:900;line-height:1.3;margin:0 0 10px;max-width:22em}
+  .gateway h2 .hl{color:var(--yellow)}
+  .gateway .g-lead{color:#C9D7E4;font-size:1.02rem;margin:0 0 24px;max-width:44em}
+  .gateway .g-lead b{color:#fff}
+  .g-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:24px;position:relative;z-index:1}
+  .g-item{background:var(--navy-2);border:1px solid #2A4A6E;border-radius:12px;padding:18px}
+  .g-item h3{margin:0 0 5px;font-size:1rem;font-weight:700;color:#fff}
+  .g-item h3 .n{color:var(--yellow);font-weight:900;margin-right:8px}
+  .g-item p{margin:0;color:#B9CADA;font-size:.92rem}
+  .g-quote{
+    border-left:4px solid var(--yellow);background:var(--navy-2);
+    border-radius:0 8px 8px 0;padding:14px 18px;margin:0 0 24px;
+    font-size:1rem;color:#E7EEF5;position:relative;z-index:1;
+  }
+  .g-quote b{color:var(--yellow)}
+  .g-foot{display:flex;align-items:center;gap:18px;flex-wrap:wrap;position:relative;z-index:1}
+  .g-prices{display:flex;gap:8px;flex-wrap:wrap}
+  .g-prices span{
+    background:var(--navy-deep);border:1px solid #2A4A6E;color:#fff;
+    font-size:.9rem;font-weight:700;padding:7px 14px;border-radius:8px;
+  }
+  .g-prices span b{color:var(--yellow)}
+
+  /* ---------- Order Online ---------- */
+  .order-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .order-step{display:flex;flex-direction:column}
+  .order-step .num{
+    width:38px;height:38px;border-radius:50%;background:var(--yellow);color:var(--navy);
+    font-weight:900;display:flex;align-items:center;justify-content:center;font-size:1.05rem;margin-bottom:12px;
+  }
+  .order-step h3{margin:0 0 6px;font-size:1.05rem}
+  .order-step h3 .zh{color:var(--muted);font-weight:500;font-size:.9rem}
+  .order-step p{margin:0 0 14px;color:var(--muted);font-size:.93rem}
+  .order-picks{display:flex;flex-direction:column;gap:8px;margin-bottom:14px}
+  .order-pick{
+    display:flex;align-items:center;justify-content:space-between;gap:10px;
+    border:2px solid var(--line);border-radius:10px;padding:10px 14px;text-decoration:none;
+  }
+  .order-pick:hover{border-color:var(--yellow-dark)}
+  .order-pick .tier{font-weight:700;font-size:.95rem}
+  .order-pick .tier small{display:block;font-weight:500;color:var(--muted);font-size:.8rem}
+  .order-pick .amt{font-weight:900;font-size:1.15rem;color:var(--ink);white-space:nowrap}
+  .order-step .btn{margin-top:auto}
+  .order-note{
+    margin-top:16px;background:var(--surface-2);border:1px dashed var(--muted);
+    border-radius:var(--radius);padding:16px 20px;font-size:.95rem;color:var(--muted);
+  }
+  .order-note b{color:var(--ink)}
+
+  /* ---------- Samples ---------- */
+  .tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+  .tab-btn{
+    min-height:44px;padding:10px 20px;border-radius:999px;cursor:pointer;
+    border:2px solid var(--line);background:var(--surface);color:var(--ink);
+    font-family:inherit;font-size:.95rem;font-weight:700;
+  }
+  .tab-btn[aria-selected="true"]{background:var(--navy);color:#fff;border-color:var(--navy)}
+  @media (prefers-color-scheme: dark){ .tab-btn[aria-selected="true"]{background:var(--yellow);color:var(--navy);border-color:var(--yellow)} }
+  .sample-panel{display:none}
+  .sample-panel.active{display:block}
+  .sample-grid{display:grid;grid-template-columns:1fr auto 1fr;gap:14px;align-items:stretch}
+  .sample-box{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:20px}
+  .sample-box .lang{
+    display:inline-block;font-size:.78rem;font-weight:900;letter-spacing:.08em;
+    padding:3px 10px;border-radius:6px;margin-bottom:12px;
+  }
+  .lang-en{background:var(--surface-2);color:var(--muted)}
+  .lang-zh{background:var(--yellow);color:var(--navy)}
+  .sample-box p,.sample-box pre{margin:0;font-size:.95rem;white-space:pre-wrap;word-break:break-word}
+  .sample-box pre{font-family:"Noto Sans TC",monospace;line-height:1.7}
+  .sample-arrow{display:flex;align-items:center;justify-content:center;color:var(--yellow-dark);font-size:1.5rem;font-weight:900}
+  @media (prefers-color-scheme: dark){ .sample-arrow{color:var(--yellow)} }
+  .sample-note{margin-top:12px;font-size:.85rem;color:var(--muted)}
+
+  /* ---------- Flow ---------- */
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;counter-reset:step}
+  .step{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:22px 20px}
+  .step .num{
+    width:38px;height:38px;border-radius:50%;background:var(--yellow);color:var(--navy);
+    font-weight:900;display:flex;align-items:center;justify-content:center;font-size:1.05rem;margin-bottom:12px;
+  }
+  .step h3{margin:0 0 6px;font-size:1.02rem}
+  .step p{margin:0;color:var(--muted);font-size:.93rem}
+
+  /* ---------- About ---------- */
+  .about-box{
+    background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+    padding:28px;display:grid;grid-template-columns:auto 1fr;gap:26px;align-items:start;
+  }
+  .avatar{
+    width:92px;height:92px;border-radius:16px;background:var(--navy);color:var(--yellow);
+    display:flex;align-items:center;justify-content:center;font-size:2.1rem;font-weight:900;
+  }
+  .about-box h3{margin:0 0 4px;font-size:1.3rem;font-weight:900}
+  .about-box .role{color:var(--muted);margin:0 0 14px;font-size:.95rem}
+  .badges{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+  .badges span{
+    background:var(--surface-2);border:1px solid var(--line);border-radius:999px;
+    font-size:.85rem;font-weight:700;padding:5px 13px;
+  }
+  .badges span.verified{background:var(--yellow);border-color:var(--yellow);color:var(--navy)}
+  .about-box p.desc{margin:0;color:var(--muted);font-size:.96rem}
+
+  /* ---------- FAQ ---------- */
+  details.faq{
+    background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+    margin-bottom:10px;overflow:hidden;
+  }
+  details.faq summary{
+    cursor:pointer;font-weight:700;font-size:1rem;padding:16px 20px;min-height:52px;
+    display:flex;align-items:center;list-style:none;
+  }
+  details.faq summary::-webkit-details-marker{display:none}
+  details.faq summary::after{content:"＋";margin-left:auto;color:var(--yellow-dark);font-weight:900;font-size:1.15rem}
+  details.faq[open ] summary::after{content:"－"}
+  @media (prefers-color-scheme: dark){ details.faq summary::after{color:var(--yellow)} }
+  details.faq .a{padding:0 20px 18px;color:var(--muted);font-size:.95rem}
+  details.faq .a p{margin:0}
+
+  /* ---------- Contact ---------- */
+  .contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .contact-card{
+    background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+    padding:22px 20px;text-decoration:none;display:block;
+  }
+  a.contact-card:hover{border-color:var(--yellow-dark)}
+  .contact-card .plat{font-size:.8rem;font-weight:900;letter-spacing:.08em;color:var(--yellow-dark);margin-bottom:6px}
+  @media (prefers-color-scheme: dark){ .contact-card .plat{color:var(--yellow)} }
+  .contact-card .handle{font-size:1.12rem;font-weight:900;word-break:break-all}
+  .contact-card p{margin:6px 0 0;color:var(--muted);font-size:.9rem}
+  .contact-card .go{margin-top:12px;font-weight:700;font-size:.9rem;color:var(--navy)}
+  @media (prefers-color-scheme: dark){ .contact-card .go{color:var(--yellow)} }
+
+  footer{
+    margin-top:64px;background:var(--navy-deep);color:#9DB2C6;padding:30px 0 34px;font-size:.88rem;
+  }
+  footer .wrap{display:flex;gap:14px;flex-wrap:wrap;justify-content:space-between;align-items:center}
+  footer b{color:#fff}
+  footer a{color:var(--yellow);text-decoration:none;font-weight:700}
+
+  /* ---------- Sticky mobile bar ---------- */
+  .sticky-bar{
+    display:none;position:fixed;left:0;right:0;bottom:0;z-index:60;
+    background:var(--navy);border-top:3px solid var(--yellow);
+    padding:10px 12px calc(10px + env(safe-area-inset-bottom));
+    gap:10px;
+  }
+  .sticky-bar a{
+    flex:1;min-height:48px;display:flex;align-items:center;justify-content:center;
+    border-radius:10px;font-weight:700;text-decoration:none;font-size:.98rem;
+  }
+  .sticky-bar .s1{background:var(--yellow);color:var(--navy)}
+  .sticky-bar .s2{border:2px solid #7E97AE;color:#fff}
+
+  /* ---------- Responsive ---------- */
+  @media (max-width:900px){
+    .grid-4{grid-template-columns:repeat(2,1fr)}
+    .steps{grid-template-columns:repeat(2,1fr)}
+    .contact-grid{grid-template-columns:repeat(2,1fr)}
+  }
+  @media (max-width:640px){
+    body{padding-bottom:78px}
+    .hero{padding:40px 0 48px}
+    .hero h1{font-size:1.85rem}
+    .grid-4,.grid-3,.grid-2,.steps,.contact-grid,.calc,.order-steps{grid-template-columns:1fr}
+    .g-grid{grid-template-columns:1fr}
+    .gateway{padding:28px 20px}
+    .gateway h2{font-size:1.45rem}
+    .g-foot .btn{flex:1}
+    .sample-grid{grid-template-columns:1fr}
+    .sample-arrow{transform:rotate(90deg);padding:2px 0}
+    .about-box{grid-template-columns:1fr}
+    .nav-links a{padding:8px 9px;font-size:.88rem}
+    .sticky-bar{display:flex}
+    .hero-btns .btn{flex:1}
+    section{padding-top:44px}
+  }
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto}
+    .btn{transition:none}
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== Nav ===== -->
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="#top"><span class="mark">譯</span><span>Hank 翻譯<small>英文 ↔ 繁體中文（台灣）</small></span></a>
+    <nav class="nav-links" aria-label="主選單">
+      <a href="#gateway">Global Gateway</a>
+      <a href="#order">Order Online 線上訂單</a>
+      <a href="#why">為什麼選 Hank</a>
+      <a href="#services">服務</a>
+      <a href="#pricing">價格</a>
+      <a href="#products">模板商品</a>
+      <a href="#samples">範例</a>
+      <a href="#flow">下單流程</a>
+      <a href="#faq">FAQ</a>
+      <a class="nav-cta" href="#contact">聯絡下單</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ===== Hero ===== -->
+<div class="hero" id="top">
+  <div class="wrap">
+    <span class="hero-tag">Hank Chen ・ 英中翻譯／校對／排版</span>
+    <h1>英文文件，翻成<span class="hl">像台灣人寫的</span>中文。</h1>
+    <p class="lead">不只是逐字換語言，而是用台灣人平常真的會用的說法重新寫順。文件、網站文案、Excel 表格、英文字幕都能處理，翻譯連同排版一起交件。</p>
+    <div class="hero-facts">
+      <span><b>$5</b> 起</span>
+      <span><b>1–3 天</b> 交件</span>
+      <span>只做 <b>台灣繁體</b></span>
+      <span>英翻中 ・ 中翻英</span>
+    </div>
+    <div class="hero-btns">
+      <a class="btn btn-yellow" href="https://www.fiverr.com/chenhank372/writing-and-translation-expert" target="_blank" rel="noopener">在 Fiverr 下單 →</a>
+      <a class="btn btn-outline" href="https://www.tasker.com.tw/workroom/hank-layout" target="_blank" rel="noopener">在 Tasker 下單 →</a>
+    </div>
+    <p class="hero-note">本站不直接收款，所有交易都透過 Fiverr 或 Tasker 平台進行，付款與交件都有平台保障。</p>
+  </div>
+</div>
+
+<main class="wrap">
+
+  <!-- ===== Global Taiwan Gateway ===== -->
+  <section id="gateway" lang="en" style="padding-top:40px">
+    <div class="gateway">
+      <span class="gateway-tag">For Global Clients</span>
+      <h2>Global Taiwan Gateway — <span class="hl">Enter Taiwan, in Real Taiwanese</span></h2>
+      <p class="g-lead">For global brands, SaaS, games, and creators. <b>English → Taiwan Traditional Chinese localization — not just translation.</b> Your product, rewritten the way people in Taiwan actually speak, read, and buy.</p>
+      <div class="g-grid">
+        <div class="g-item">
+          <h3><span class="n">01</span>Website &amp; App UI Localization</h3>
+          <p>Interfaces, menus, and onboarding flows localized for Taiwan — correct terms, correct tone, within your layout limits.</p>
+        </div>
+        <div class="g-item">
+          <h3><span class="n">02</span>Marketing &amp; Product Copy</h3>
+          <p>Landing pages, product descriptions, and campaign copy that sounds Taiwanese — the wording local customers trust and click.</p>
+        </div>
+        <div class="g-item">
+          <h3><span class="n">03</span>Bilingual Subtitles (SRT)</h3>
+          <p>Timed, line-broken bilingual SRT files for YouTube, TikTok, and online courses — ready to upload, no re-editing needed.</p>
+        </div>
+        <div class="g-item">
+          <h3><span class="n">04</span>AI Translation Fix (MTPE)</h3>
+          <p>Already ran it through machine translation? Hank edits the raw output up to publishable quality — natural, accurate, on-brand.</p>
+        </div>
+      </div>
+      <p class="g-quote">Taiwan readers reject Mainland wording instantly. <b>Machine translation gets the characters right and the culture wrong.</b></p>
+      <div class="g-foot">
+        <div class="g-prices" aria-label="Pricing">
+          <span>Packages <b>$5 / $15 / $45</b></span>
+          <span>Translation <b>$0.08/word</b></span>
+          <span>MTPE <b>$30/hr</b></span>
+        </div>
+        <a class="btn btn-yellow" href="https://www.fiverr.com/chenhank372/writing-and-translation-expert" target="_blank" rel="noopener">Order on Fiverr →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Order Online ===== -->
+  <section id="order" lang="en">
+    <div class="sec-head">
+      <h2><span class="bar">▍</span>Order Online <span style="font-size:1.1rem;color:var(--muted);font-weight:700">線上訂單</span></h2>
+      <p>Order a translation in three steps — no account, no messages back and forth. Payment is handled securely by Gumroad; this site never takes your card details. 免註冊、免來回傳訊息，三步完成下單。付款由 Gumroad 安全處理，本站不經手卡號。</p>
+    </div>
+    <div class="order-steps">
+      <div class="card order-step">
+        <div class="num">1</div>
+        <h3>Choose a package &amp; pay <span class="zh">選方案並付款</span></h3>
+        <p>Pick the package that fits your word count and pay on Gumroad. Keep your Gumroad order number — you'll need it in Step 2. 依字數選方案，在 Gumroad 付款，並記下訂單編號，下一步要用。</p>
+        <div class="order-picks">
+          <a class="order-pick" href="https://zidug.gumroad.com/l/edawfk" target="_blank" rel="noopener">
+            <span class="tier">Basic<small>Up to 250 words ・ 1 day</small></span>
+            <span class="amt">$5</span>
+          </a>
+          <a class="order-pick" href="https://zidug.gumroad.com/l/lctjlk" target="_blank" rel="noopener">
+            <span class="tier">Standard<small>Up to 1,000 words ・ 2 days</small></span>
+            <span class="amt">$15</span>
+          </a>
+          <a class="order-pick" href="https://zidug.gumroad.com/l/qtcdvq" target="_blank" rel="noopener">
+            <span class="tier">Premium<small>Up to 3,000 words ・ 3 days</small></span>
+            <span class="amt">$45</span>
+          </a>
+        </div>
+      </div>
+      <div class="card order-step">
+        <div class="num">2</div>
+        <h3>Fill in the order form <span class="zh">填寫訂單表單</span></h3>
+        <p>After paying, open the order form link in your Gumroad product's description. Fill it in to upload your file (or paste the text), choose the translation direction, and enter your Gumroad order number so your payment can be matched to your order. The same link is also in the order-instructions PDF you download after checkout. 付款後，點 Gumroad 商品說明裡的訂單表連結填表：上傳文件（或貼上原文）、選翻譯方向，並填入 Gumroad 訂單編號；付款後下載的訂單說明 PDF 裡也有這個連結。</p>
+        <p style="margin-top:auto;font-weight:700;color:var(--ink)">✓ The order form link is in your Gumroad product description &amp; PDF. 表單連結在 Gumroad 商品說明與 PDF 裡。</p>
+      </div>
+      <div class="card order-step">
+        <div class="num">3</div>
+        <h3>Receive your translation <span class="zh">收譯稿</span></h3>
+        <p>Your translation is emailed to the address you gave on the form, within your package's delivery time. Every order is translated and proofread by a human before delivery — no raw machine output. 依方案天數內，譯稿寄到你在表單留的 Email；全程人工翻譯並經終審，不交機器直出的半成品。</p>
+        <p style="margin-top:auto;font-weight:700;color:var(--ink)">✓ Delivered by email — nothing else to do. 你不用做任何事，等收信即可。</p>
+      </div>
+    </div>
+    <div class="order-note">
+      <b>Bigger project or subtitles / Excel / website copy?</b> Those are quoted individually — message Hank on <a href="https://www.fiverr.com/chenhank372/writing-and-translation-expert" target="_blank" rel="noopener" style="font-weight:700">Fiverr</a> or <a href="https://www.tasker.com.tw/workroom/hank-layout" target="_blank" rel="noopener" style="font-weight:700">Tasker</a> first. 字數超過 3,000 或字幕、Excel、網站文案，請先到 Fiverr／Tasker 傳檔案走客製報價。
+    </div>
+  </section>
+
+  <!-- ===== Why Hank ===== -->
+  <section id="why">
+    <div class="sec-head">
+      <h2><span class="bar">▍</span>為什麼選 Hank</h2>
+      <p>機器翻譯翻得出字面，翻不出台灣人的語感。找 Hank，你拿到的是能直接拿去用的成品。</p>
+    </div>
+    <div class="grid grid-4">
+      <div class="card">
+        <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h9M8.5 3v2c0 3.5-2 6.5-4.5 8M6 8.5c1 2.5 3.5 5 6.5 6"/><path d="M12.5 21l4.5-10 4.5 10M14.2 17.5h5.6"/></svg></div>
+        <h3>只做台灣繁體</h3>
+        <p>用詞、標點、語序都照台灣習慣：是「軟體、品質、設定」，不是簡轉繁的半成品，也不會混進對岸用語。</p>
+      </div>
+      <div class="card">
+        <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 4v5"/></svg></div>
+        <h3>翻譯＋排版一起交</h3>
+        <p>文件版面、標題層級、表格格式都幫你整理好，收到檔案打開就能用，不用自己再重排一次。</p>
+      </div>
+      <div class="card">
+        <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 5-3.2 8.2-7 10-3.8-1.8-7-5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg></div>
+        <h3>實名認證接案者</h3>
+        <p>Hank 已在 Tasker 通過實名驗證，本人接案、本人交件，不是來路不明的外包帳號。</p>
+      </div>
+      <div class="card">
+        <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18M7 15h4"/></svg></div>
+        <h3>平台交易有保障</h3>
+        <p>一律透過 Fiverr 或 Tasker 下單付款，確認交件後平台才撥款，不私下匯款、不預收全額。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Services ===== -->
+  <section id="services">
+    <div class="sec-head">
+      <h2><span class="bar">▍</span>服務項目</h2>
+      <p>英文 ↔ 繁體中文（台灣）雙向翻譯，以下四類最常接：</p>
+    </div>
+    <div class="grid grid-4">
+      <div class="card">
+        <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2h9l5 5v15H6z"/><path d="M14 2v6h6M9 13h6M9 17h6"/></svg></div>
+        <h3>文件翻譯</h3>
+        <p>商務信件、合約摘要、說明書、履歷與求職信、學術與一般文件。</p>
+        <ul>
+          <li>Word / PDF / 純文字</li>
+          <li>保留原版面排版交件</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.7 3.8 9S14.5 18.4 12 21c-2.5-2.6-3.8-5.7-3.8-9S9.5 5.6 12 3z"/></svg></div>
+        <h3>網站文案翻譯</h3>
+        <p>官網、產品頁、電商商品說明、App 介面文案，翻成台灣消費者看得懂、會買單的說法。</p>
+        <ul>
+          <li>可配合字數與版面限制</li>
+          <li>客製報價</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9.3h18M3 14.6h18M9 4v16M15 4v16"/></svg></div>
+        <h3>Excel 表格翻譯</h3>
+        <p>產品清單、規格表、問卷、資料表欄位與內容翻譯，格式與公式欄位不動，只翻該翻的字。</p>
+        <ul>
+          <li>保留原表格格式</li>
+          <li>客製報價</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M6 15h4M14 15h4M6 11h7"/></svg></div>
+        <h3>英文字幕翻譯（SRT）</h3>
+        <p>影片英文字幕翻成繁體中文，交付標準 SRT 檔，時間軸對齊、斷句照口語節奏切。</p>
+        <ul>
+          <li>交付 .srt 字幕檔</li>
+          <li>客製報價（依影片長度）</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Pricing ===== -->
+  <section id="pricing">
+    <div class="sec-head">
+      <h2><span class="bar">▍</span>價格方案</h2>
+      <p>文件翻譯固定價，字數以原文計算，下單前先確認，不會中途加價。</p>
+    </div>
+    <div class="grid grid-3">
+      <div class="card price-card">
+        <div class="price-name">BASIC 入門</div>
+        <div class="price-amt">$5 <small>USD 起</small></div>
+        <ul>
+          <li>250 字以內</li>
+          <li>1 天交件</li>
+          <li>1 次修訂</li>
+          <li>適合短文件、信件、履歷</li>
+        </ul>
+        <a class="btn btn-navy" href="https://www.fiverr.com/chenhank372/writing-and-translation-expert" target="_blank" rel="noopener">在 Fiverr 下單</a>
+      </div>
+      <div class="card price-card popular">
+        <span class="pop-badge">最受歡迎</span>
+        <div class="price-name">STANDARD 標準</div>
+        <div class="price-amt">$15 <small>USD 起</small></div>
+        <ul>
+          <li>1,000 字以內</li>
+          <li>2 天交件</li>
+          <li>2 次修訂</li>
+          <li>適合一般文件與產品文案</li>
+        </ul>
+        <a class="btn btn-yellow" href="https://www.fiverr.com/chenhank372/writing-and-translation-expert" target="_blank" rel="noopener">在 Fiverr 下單</a>
+      </div>
+      <div class="card price-card">
+        <div class="price-name">PREMIUM 完整</div>
+        <div class="price-amt">$45 <small>USD 起</small></div>
+        <ul>
+          <li>3,000 字以內</li>
+          <li>3 天交件</li>
+          <li>範圍內無限次修訂</li>
+          <li>適合長文件與整份報告</li>
+        </ul>
+        <a class="btn btn-navy" href="https://www.fiverr.com/chenhank372/writing-and-translation-expert" target="_blank" rel="noopener">在 Fiverr 下單</a>
+      </div>
+    </div>
+    <div class="custom-note">
+      <b>字幕、Excel、網站文案採客製報價：</b>這三類的工時看長度與格式而定，請先透過 Fiverr 或 Tasker 傳檔案或連結，確認內容後回覆確定價格與交期，你同意再下單。
+    </div>
+
+    <div class="calc" aria-label="報價小工具">
+      <div>
+        <h3>報價小工具：先算算看</h3>
+        <p>輸入文件的英文單字數（約略即可），馬上對照適合的方案。字幕、Excel、網站文案不在此列，請走客製報價。</p>
+      </div>
+      <form class="calc-form" id="calcForm">
+        <input type="number" id="wordCount" min="1" max="100000" step="1" placeholder="例：800" inputmode="numeric" aria-label="英文單字數" />
+        <button type="submit" class="btn btn-yellow">估算方案</button>
+      </form>
+      <div class="calc-result" id="calcResult" role="status"></div>
+    </div>
+  </section>
+
+  <!-- ===== Products ===== -->
+  <section id="products">
+    <div class="sec-head">
+      <h2><span class="bar">▍</span>數位模板商品</h2>
+      <p>想自己動手、不想等翻譯？這些模板與術語表已在 Gumroad 上架，付款後直接下載，把內容換成你自己的就能用。</p>
+    </div>
+    <div class="grid grid-3">
+      <div class="card price-card">
+        <div class="price-name">GUMROAD ・ 數位下載</div>
+        <h3 style="margin-top:8px">SRT 雙語字幕模板包</h3>
+        <p>SRT Bilingual Subtitle Template Pack — English ↔ Traditional Chinese (Taiwan)</p>
+        <div class="price-amt">$7 <small>USD</small></div>
+        <ul>
+          <li>英中雙語 SRT 字幕模板</li>
+          <li>時間軸與斷句格式已設定好</li>
+          <li>換上自己的字幕內容即可使用</li>
+        </ul>
+        <a class="btn btn-navy" href="https://zidug.gumroad.com/l/srt-bilingual-subtitle-template-pack" target="_blank" rel="noopener">在 Gumroad 購買 →</a>
+      </div>
+      <div class="card price-card">
+        <div class="price-name">GUMROAD ・ 數位下載</div>
+        <h3 style="margin-top:8px">雙語履歷模板包</h3>
+        <p>Bilingual Resume Template Pack — English ↔ Traditional Chinese (Taiwan)</p>
+        <div class="price-amt">$12 <small>USD</small></div>
+        <ul>
+          <li>3 種履歷模板：簡潔版／現代版／創意版</li>
+          <li>附求職信模板</li>
+          <li>附履歷撰寫指南與 25 條常見錯譯對照</li>
+        </ul>
+        <a class="btn btn-navy" href="https://zidug.gumroad.com/l/bilingual-resume-template-pack" target="_blank" rel="noopener">在 Gumroad 購買 →</a>
+      </div>
+      <div class="card price-card">
+        <div class="price-name">GUMROAD ・ 數位下載</div>
+        <h3 style="margin-top:8px">英中術語表</h3>
+        <p>EN ↔ Taiwan Traditional Chinese Localization Glossary</p>
+        <div class="price-amt">$9 <small>USD</small></div>
+        <ul>
+          <li>商務／科技／字幕常用詞</li>
+          <li>台灣繁體中文對照</li>
+          <li>Excel + PDF 兩種格式</li>
+        </ul>
+        <a class="btn btn-navy" href="https://zidug.gumroad.com/l/sjtrr" target="_blank" rel="noopener">在 Gumroad 購買 →</a>
+      </div>
+    </div>
+    <div class="custom-note">
+      <b>購買與下載都透過 Gumroad 平台進行：</b>本站不經手模板商品的付款，結帳、檔案下載與收據都由 Gumroad 處理。
+    </div>
+  </section>
+
+  <!-- ===== Samples ===== -->
+  <section id="samples">
+    <div class="sec-head">
+      <h2><span class="bar">▍</span>翻譯範例</h2>
+      <p>以下為去識別化示範範例，呈現實際的翻譯方式與用詞：左邊英文原文，右邊繁體中文（台灣）譯文。</p>
+    </div>
+    <div class="tabs" role="tablist" aria-label="範例類別">
+      <button class="tab-btn" role="tab" aria-selected="true" data-tab="letter">商務信件</button>
+      <button class="tab-btn" role="tab" aria-selected="false" data-tab="srt">字幕 SRT</button>
+      <button class="tab-btn" role="tab" aria-selected="false" data-tab="resume">履歷</button>
+    </div>
+
+    <div class="sample-panel active" id="panel-letter" role="tabpanel">
+      <div class="sample-grid">
+        <div class="sample-box">
+          <span class="lang lang-en">ENGLISH 原文</span>
+          <p>Dear Ms. Lee,
+
+Thank you for your inquiry. We are pleased to confirm that your order has been received and will be shipped within three business days.
+
+If you need any further assistance, please feel free to contact us.
+
+Best regards,
+Customer Service Team</p>
+        </div>
+        <div class="sample-arrow" aria-hidden="true">→</div>
+        <div class="sample-box">
+          <span class="lang lang-zh">繁體中文（台灣）譯文</span>
+          <p>李小姐您好：
+
+感謝您的來信詢問。很高興向您確認，您的訂單已收到，將於三個工作天內出貨。
+
+如需進一步協助，歡迎隨時與我們聯繫。
+
+客服團隊 敬上</p>
+        </div>
+      </div>
+      <p class="sample-note">商務信件重點：稱謂與敬語照台灣書信習慣調整，日期與時程用語（business days → 工作天）不直譯。</p>
+    </div>
+
+    <div class="sample-panel" id="panel-srt" role="tabpanel">
+      <div class="sample-grid">
+        <div class="sample-box">
+          <span class="lang lang-en">ENGLISH 原文（SRT）</span>
+          <pre>1
+00:00:01,000 --&gt; 00:00:04,200
+Welcome back to our channel.
+
+2
+00:00:04,400 --&gt; 00:00:08,800
+Today we're going to show you how to
+set up your account in just two minutes.</pre>
+        </div>
+        <div class="sample-arrow" aria-hidden="true">→</div>
+        <div class="sample-box">
+          <span class="lang lang-zh">繁體中文（台灣）譯文（SRT）</span>
+          <pre>1
+00:00:01,000 --&gt; 00:00:04,200
+歡迎回到我們的頻道。
+
+2
+00:00:04,400 --&gt; 00:00:08,800
+今天我們要用短短兩分鐘，
+帶你完成帳號設定。</pre>
+        </div>
+      </div>
+      <p class="sample-note">字幕重點：時間軸完全不動，斷句照說話節奏切，每行長度控制在螢幕讀得完的範圍。</p>
+    </div>
+
+    <div class="sample-panel" id="panel-resume" role="tabpanel">
+      <div class="sample-grid">
+        <div class="sample-box">
+          <span class="lang lang-en">ENGLISH 原文</span>
+          <p>Administrative Assistant
+ABC Trading Co., 2022 – 2025
+
+• Coordinated schedules for a team of 12
+• Prepared bilingual meeting documents
+• Handled customer correspondence in English and Chinese</p>
+        </div>
+        <div class="sample-arrow" aria-hidden="true">→</div>
+        <div class="sample-box">
+          <span class="lang lang-zh">繁體中文（台灣）譯文</span>
+          <p>行政助理
+ABC 貿易公司，2022 – 2025
+
+• 為 12 人團隊安排與協調行程
+• 準備中英雙語會議文件
+• 處理中英文客戶往來信件</p>
+        </div>
+      </div>
+      <p class="sample-note">履歷重點：職稱與工作內容用台灣求職市場慣用說法，公司名保留原文或通用譯名，版面格式原樣保留。</p>
+    </div>
+  </section>
+
+  <!-- ===== Flow ===== -->
+  <section id="flow">
+    <div class="sec-head">
+      <h2><span class="bar">▍</span>下單流程</h2>
+      <p>四個步驟，從詢問到交件都在平台內完成，紀錄完整、付款有保障。</p>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="num">1</div>
+        <h3>選平台，傳原文</h3>
+        <p>到 Fiverr 或 Tasker 傳訊息，把要翻譯的檔案或文字附上，先不用付款。</p>
+      </div>
+      <div class="step">
+        <div class="num">2</div>
+        <h3>確認字數與價格</h3>
+        <p>Hank 確認字數、方案與交期，回覆確定價格，你同意後再正式下單。</p>
+      </div>
+      <div class="step">
+        <div class="num">3</div>
+        <h3>翻譯與排版</h3>
+        <p>依約定時間進行翻譯與排版，過程中如有專有名詞或用語偏好可隨時溝通。</p>
+      </div>
+      <div class="step">
+        <div class="num">4</div>
+        <h3>交件與修訂</h3>
+        <p>在平台交付成品，依方案次數修訂（入門 1 次／標準 2 次／完整版範圍內無限次）。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== About ===== -->
+  <section id="about">
+    <div class="sec-head">
+      <h2><span class="bar">▍</span>關於 Hank</h2>
+    </div>
+    <div class="about-box">
+      <div class="avatar" aria-hidden="true">H</div>
+      <div>
+        <h3>Hank Chen</h3>
+        <p class="role">英文 ↔ 繁體中文（台灣）翻譯・校對・排版</p>
+        <div class="badges">
+          <span>Fiverr 賣家：chenhank372</span>
+          <span>Tasker：Hank 排版翻譯</span>
+          <span class="verified">✓ Tasker 實名驗證</span>
+          <span>台灣接案・遠端交件</span>
+        </div>
+        <p class="desc">專做英文與台灣繁體中文之間的翻譯，強項是把英文的資訊，用台灣人自然的說法重新整理成讀起來順、用起來直接的中文。服務包含文件翻譯、網站文案、Excel 表格與英文字幕 SRT，並提供中文校對與排版。接案與收款都透過 Fiverr 與 Tasker 平台，本人回覆、本人交件。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FAQ ===== -->
+  <section id="faq">
+    <div class="sec-head">
+      <h2><span class="bar">▍</span>常見問題 FAQ</h2>
+    </div>
+    <details class="faq">
+      <summary>只做英翻中嗎？中翻英也可以嗎？</summary>
+      <div class="a"><p>兩個方向都做：英文 → 繁體中文（台灣），以及繁體中文 → 英文。中文一律只出台灣繁體與台灣用詞，不會交簡體或簡轉繁的成品。</p></div>
+    </details>
+    <details class="faq">
+      <summary>交件要多久？有急件嗎？</summary>
+      <div class="a"><p>依方案為 1–3 天：入門 1 天、標準 2 天、完整 3 天。有急件需求請先在 Fiverr 或 Tasker 傳訊息說明截止時間，確認排得進去再下單，不會先收錢再說做不到。</p></div>
+    </details>
+    <details class="faq">
+      <summary>字幕、Excel、網站文案為什麼沒有固定價？</summary>
+      <div class="a"><p>這三類的工時差異很大：字幕看影片長度與對話密度，Excel 看欄位與資料量，網站文案看頁面數量。所以採客製報價——先傳檔案或連結，確認後給你確定價格與交期，同意了才下單。</p></div>
+    </details>
+    <details class="faq">
+      <summary>修訂包含哪些？可以改幾次？</summary>
+      <div class="a"><p>修訂指針對已交譯文的用詞、語氣與小範圍內容調整：入門方案 1 次、標準 2 次、完整方案在原範圍內無限次。若要新增原文內容或整段重寫，會先跟你確認是否需要加價，不會默默收費。</p></div>
+    </details>
+    <details class="faq">
+      <summary>要怎麼付款？可以直接匯款給你嗎？</summary>
+      <div class="a"><p>不行，也不用。一律透過 Fiverr 或 Tasker 平台下單付款，本站不收款、不留你的付款資料。平台會在你確認交件後才撥款給 Hank，對你比較有保障。</p></div>
+    </details>
+  </section>
+
+  <!-- ===== Contact ===== -->
+  <section id="contact">
+    <div class="sec-head">
+      <h2><span class="bar">▍</span>聯絡與下單</h2>
+      <p>下單請走 Fiverr 或 Tasker；想先看看作品與日常更新，可以追蹤社群帳號。</p>
+    </div>
+    <div class="contact-grid">
+      <a class="contact-card" href="https://www.fiverr.com/chenhank372/writing-and-translation-expert" target="_blank" rel="noopener">
+        <div class="plat">FIVERR ・ 下單</div>
+        <div class="handle">chenhank372</div>
+        <p>文件翻譯固定方案 $5／$15／$45，直接下單或先傳訊息詢問。</p>
+        <div class="go">前往 Fiverr →</div>
+      </a>
+      <a class="contact-card" href="https://www.tasker.com.tw/workroom/hank-layout" target="_blank" rel="noopener">
+        <div class="plat">TASKER 出任務 ・ 下單</div>
+        <div class="handle">Hank 排版翻譯</div>
+        <p>台灣本地平台，翻譯＋排版、中文校對，已通過實名驗證。</p>
+        <div class="go">前往 Tasker →</div>
+      </a>
+      <a class="contact-card" href="https://www.instagram.com/a2idugagr/" target="_blank" rel="noopener">
+        <div class="plat">INSTAGRAM</div>
+        <div class="handle">@a2idugagr</div>
+        <p>服務介紹與翻譯小知識，不定期更新。</p>
+        <div class="go">前往 Instagram →</div>
+      </a>
+      <a class="contact-card" href="https://www.tiktok.com/@oni.exe7" target="_blank" rel="noopener">
+        <div class="plat">TIKTOK</div>
+        <div class="handle">@oni.exe7</div>
+        <p>短影音介紹翻譯服務與常見英文翻錯案例。</p>
+        <div class="go">前往 TikTok →</div>
+      </a>
+      <div class="contact-card">
+        <div class="plat">FACEBOOK</div>
+        <div class="handle">Hank Chen</div>
+        <p>在 Facebook 搜尋「Hank Chen」即可找到，服務貼文同步發布。</p>
+      </div>
+      <div class="contact-card">
+        <div class="plat">詢問方式</div>
+        <div class="handle">先傳檔案，再報價</div>
+        <p>把原文傳到 Fiverr 或 Tasker 訊息，確認字數與交期後才需要下單付款。</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div><b>Hank 翻譯</b> ・ 英文 ↔ 繁體中文（台灣）翻譯／校對／排版</div>
+    <div>本站不直接收款，所有交易透過 <a href="https://www.fiverr.com/chenhank372/writing-and-translation-expert" target="_blank" rel="noopener">Fiverr</a> 或 <a href="https://www.tasker.com.tw/workroom/hank-layout" target="_blank" rel="noopener">Tasker</a> 平台進行。</div>
+  </div>
+</footer>
+
+<!-- Sticky mobile bar -->
+<div class="sticky-bar">
+  <a class="s1" href="https://www.fiverr.com/chenhank372/writing-and-translation-expert" target="_blank" rel="noopener">Fiverr 下單 $5 起</a>
+  <a class="s2" href="https://www.tasker.com.tw/workroom/hank-layout" target="_blank" rel="noopener">Tasker 下單</a>
+</div>
+
+<script>
+  // Sample tabs
+  (function () {
+    var btns = document.querySelectorAll('.tab-btn');
+    btns.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        btns.forEach(function (b) { b.setAttribute('aria-selected', 'false'); });
+        btn.setAttribute('aria-selected', 'true');
+        document.querySelectorAll('.sample-panel').forEach(function (p) { p.classList.remove('active'); });
+        var panel = document.getElementById('panel-' + btn.getAttribute('data-tab'));
+        if (panel) panel.classList.add('active');
+      });
+    });
+  })();
+
+  // Pricing calculator
+  (function () {
+    var form = document.getElementById('calcForm');
+    var result = document.getElementById('calcResult');
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var n = parseInt(document.getElementById('wordCount').value, 10);
+      if (!n || n <= 0) {
+        result.innerHTML = '請先輸入大約的英文單字數，例如 800。';
+        result.classList.add('show');
+        return;
+      }
+      var msg;
+      if (n <= 250) {
+        msg = '約 <b>' + n + '</b> 字 → 適合 <b>BASIC 入門方案 $5</b>，1 天交件、1 次修訂。';
+      } else if (n <= 1000) {
+        msg = '約 <b>' + n + '</b> 字 → 適合 <b>STANDARD 標準方案 $15</b>，2 天交件、2 次修訂。';
+      } else if (n <= 3000) {
+        msg = '約 <b>' + n + '</b> 字 → 適合 <b>PREMIUM 完整方案 $45</b>，3 天交件、範圍內無限次修訂。';
+      } else {
+        var packs = Math.ceil(n / 3000);
+        msg = '約 <b>' + n + '</b> 字已超過單一方案上限（3,000 字），大約等於 <b>' + packs + ' 份 PREMIUM（約 $' + (packs * 45) + '）</b>。建議先透過 Fiverr 或 Tasker 傳檔案，確認分段方式與確定報價。';
+      }
+      result.innerHTML = msg + ' <a href="https://www.fiverr.com/chenhank372/writing-and-translation-expert" target="_blank" rel="noopener" style="color:#FFC400;font-weight:700">前往 Fiverr 下單 →</a>';
+      result.classList.add('show');
+    });
+  })();
+</script>
+</body>
+</html>
