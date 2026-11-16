@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hank Reels Uploader — TikTok Sandbox Demo</title>
+<style>
+  body { font-family: system-ui, -apple-system, sans-serif; max-width: 640px; margin: 2em auto; padding: 0 1em; line-height: 1.6; color: #111; }
+  h1 { font-size: 1.4em; }
+  .step { border: 1px solid #ccc; border-radius: 8px; padding: 1em; margin: 1em 0; }
+  button { background: #fe2c55; color: #fff; border: 0; border-radius: 6px; padding: .6em 1.2em; font-size: 1em; cursor: pointer; }
+  button:disabled { background: #999; cursor: default; }
+  input[type=text], input[type=url] { width: 100%; padding: .5em; margin: .3em 0; box-sizing: border-box; }
+  pre { background: #f4f4f4; padding: .8em; overflow-x: auto; white-space: pre-wrap; word-break: break-all; }
+  .ok { color: #0a7d2c; } .err { color: #c00; }
+  small { color: #555; }
+</style>
+</head>
+<body>
+<h1>Hank Reels Uploader — TikTok Sandbox Demo</h1>
+<p><small>Sandbox demo only. This page posts a short video as an inbox draft to the connected TikTok account via the Content Posting API (<code>video.upload</code> scope). Nothing is published publicly. The client secret is never stored on this page.</small></p>
+
+<div class="step" id="step1">
+  <h2>Step 1 — Connect TikTok (Login Kit)</h2>
+  <p>Sign in with the TikTok account added as a Sandbox target user (<code>@oni.exe7</code>) and authorize the <code>user.info.basic,video.upload</code> scopes.</p>
+  <button id="connectBtn">Connect TikTok</button>
+  <p id="codeBox"></p>
+</div>
+
+<div class="step" id="step2">
+  <h2>Step 2 — Exchange the code for an access token</h2>
+  <p>The exchange needs the client secret, so run this in a terminal (fill in the code from Step 1 and the sandbox client secret):</p>
+  <pre id="curlBox">curl -X POST https://open.tiktokapis.com/v2/oauth/token/ \
+  -H "Content-Type: application/x-www-form-urlencoded" \
+  -d "client_key=sbawh29cdai1tmeizv" \
+  -d "client_secret=PASTE_SANDBOX_CLIENT_SECRET" \
+  -d "code=PASTE_CODE_FROM_STEP_1" \
+  -d "grant_type=authorization_code" \
+  -d "redirect_uri=https://z2idugagr.github.io/tiktok-demo.html"</pre>
+  <label>Access token (from the curl response):</label>
+  <input type="text" id="tokenInput" placeholder="act.xxx..." autocomplete="off">
+</div>
+
+<div class="step" id="step3">
+  <h2>Step 3 — Upload a video to the TikTok inbox (draft)</h2>
+  <label>Video URL (must be on the verified domain z2idugagr.github.io):</label>
+  <input type="url" id="videoUrl" value="https://z2idugagr.github.io/demo-reel.mp4">
+  <button id="uploadBtn">Upload to TikTok inbox</button>
+  <p id="uploadResult"></p>
+  <p><small>After the upload, check the TikTok app inbox on @oni.exe7 — the video arrives as a draft to finish and post. Status is polled below.</small></p>
+  <p id="statusBox"></p>
+</div>
+
+<script>
+// ======== FILL THIS IN once the Sandbox client key is known ========
+const SANDBOX_CLIENT_KEY = "sbawh29cdai1tmeizv";
+// ===================================================================
+const REDIRECT_URI = "https://z2idugagr.github.io/tiktok-demo.html";
+const SCOPES = "user.info.basic,video.upload";
+
+const params = new URLSearchParams(location.search);
+const code = params.get("code");
+const err = params.get("error");
+
+document.getElementById("connectBtn").onclick = () => {
+  if (!SANDBOX_CLIENT_KEY || SANDBOX_CLIENT_KEY.indexOf("PASTE_") === 0) {
+    alert("Sandbox client key is not configured yet.");
+    return;
+  }
+  const state = "demo" + Math.random().toString(36).slice(2, 10);
+  const url = "https://www.tiktok.com/v2/auth/authorize/?" + new URLSearchParams({
+    client_key: SANDBOX_CLIENT_KEY,
+    scope: SCOPES,
+    response_type: "code",
+    redirect_uri: REDIRECT_URI,
+    state: state
+  }).toString();
+  location.href = url;
+};
+
+if (err) {
+  document.getElementById("codeBox").innerHTML = '<span class="err">Authorization failed: ' + err + '</span>';
+} else if (code) {
+  document.getElementById("codeBox").innerHTML = '<span class="ok">Authorized.</span> Code: <code>' + code + '</code><br><small>Copy it into the curl command in Step 2.</small>';
+  document.getElementById("curlBox").textContent = document.getElementById("curlBox").textContent
+    .replace("PASTE_CODE_FROM_STEP_1", code)
+    .replace("PASTE_SANDBOX_CLIENT_KEY", SANDBOX_CLIENT_KEY.indexOf("PASTE_") === 0 ? "PASTE_SANDBOX_CLIENT_KEY" : SANDBOX_CLIENT_KEY);
+}
+
+document.getElementById("uploadBtn").onclick = async () => {
+  const token = document.getElementById("tokenInput").value.trim();
+  const videoUrl = document.getElementById("videoUrl").value.trim();
+  const out = document.getElementById("uploadResult");
+  const statusBox = document.getElementById("statusBox");
+  if (!token) { out.innerHTML = '<span class="err">Paste the access token from Step 2 first.</span>'; return; }
+  if (!videoUrl) { out.innerHTML = '<span class="err">Enter a video URL.</span>'; return; }
+  out.textContent = "Initializing upload…";
+  try {
+    const initRes = await fetch("https://open.tiktokapis.com/v2/post/publish/inbox/video/init/", {
+      method: "POST",
+      headers: { "Authorization": "Bearer " + token, "Content-Type": "application/json; charset=UTF-8" },
+      body: JSON.stringify({ source_info: { source: "PULL_FROM_URL", video_url: videoUrl } })
+    });
+    const init = await initRes.json();
+    if (init.error && init.error.code !== "ok") {
+      out.innerHTML = '<span class="err">Init failed: ' + JSON.stringify(init.error) + '</span>';
+      return;
+    }
+    const publishId = init.data && init.data.publish_id;
+    out.innerHTML = '<span class="ok">Upload initialized.</span> publish_id: <code>' + publishId + '</code><br><small>TikTok is pulling the video from the URL. Polling status…</small>';
+    for (let i = 0; i < 10; i++) {
+      await new Promise(r => setTimeout(r, 5000));
+      const stRes = await fetch("https://open.tiktokapis.com/v2/post/publish/status/fetch/", {
+        method: "POST",
+        headers: { "Authorization": "Bearer " + token, "Content-Type": "application/json; charset=UTF-8" },
+        body: JSON.stringify({ publish_id: publishId })
+      });
+      const st = await stRes.json();
+      const s = st.data && st.data.status;
+      statusBox.textContent = "Status: " + s + " (" + new Date().toLocaleTimeString() + ")";
+      if (s === "SEND_TO_USER_INBOX" || s === "PUBLISH_COMPLETE") {
+        statusBox.innerHTML = '<span class="ok">Done — the video is in the TikTok inbox as a draft. Open the TikTok app on @oni.exe7 to see it.</span>';
+        break;
+      }
+      if (s === "FAILED") { statusBox.innerHTML = '<span class="err">Upload failed: ' + JSON.stringify(st.data) + '</span>'; break; }
+    }
+  } catch (e) {
+    out.innerHTML = '<span class="err">Request failed: ' + e.message + '</span>';
+  }
+};
+</script>
+</body>
+</html>
