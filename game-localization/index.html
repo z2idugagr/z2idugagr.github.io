@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="color-scheme" content="light dark" />
+<meta name="description" content="獨立遊戲翻成繁體中文（台灣）怎麼做？Hank Chen 幫獨立遊戲開發者做遊戲在地化：劇情文本、UI 字串、商店頁面文案。USD 0.08／字，免費試譯 500 字，透過 Fiverr 下單。" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="遊戲在地化｜Hank 翻譯" />
+<meta property="og:locale" content="zh_TW" />
+<meta property="og:title" content="遊戲在地化｜英文遊戲翻繁體中文（台灣）、UI 字串翻譯｜Hank 翻譯" />
+<meta property="og:description" content="獨立遊戲翻成繁體中文（台灣）怎麼做？Hank Chen 幫獨立遊戲開發者做遊戲在地化：劇情文本、UI 字串、商店頁面文案。USD 0.08／字，免費試譯 500 字，透過 Fiverr 下單。" />
+<meta property="og:url" content="https://z2idugagr.github.io/game-localization/" />
+<link rel="canonical" href="https://z2idugagr.github.io/game-localization/" />
+<link rel="icon" href="data:," />
+<title>遊戲在地化｜英文遊戲翻繁體中文（台灣）、UI 字串翻譯｜Hank 翻譯</title>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"WebSite","name":"遊戲在地化｜Hank 翻譯","url":"https://z2idugagr.github.io/game-localization/","inLanguage":"zh-Hant-TW"},{"@type":"ProfessionalService","name":"遊戲在地化｜Hank 翻譯","description":"Hank Chen 遊戲在地化：英文遊戲翻台灣繁體中文，劇情文本、UI 字串、商店頁面文案。","url":"https://z2idugagr.github.io/game-localization/","priceRange":"USD 0.08/word","areaServed":"TW","knowsLanguage":["en","zh-Hant-TW"],"sameAs":["https://www.fiverr.com/chenhank372/writing-and-translation-expert","https://z2idugagr.github.io/"]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"遊戲在地化跟一般翻譯差在哪？","acceptedAnswer":{"@type":"Answer","text":"一般翻譯翻對意思就好，遊戲在地化還要顧語氣、梗、文化參照跟字數限制。同一句對話，寫給玩家看的跟寫給文件看的，寫法完全不一樣。Hank 翻遊戲時會先問遊戲類型、目標玩家跟語氣（嚴肅、搞笑、黑暗），再決定每一句怎麼寫。"}},{"@type":"Question","name":"免費試譯 500 字怎麼算？","acceptedAnswer":{"@type":"Answer","text":"傳 500 字以內的遊戲文字給 Hank（對話、UI 字串、商店介紹都可以），1–2 天翻好給你看。滿意再談整篇合作，價錢按字計價 USD 0.08／字；不滿意不用付錢，也不用說明原因。"}},{"@type":"Question","name":"UI 字串有字數限制怎麼辦？","acceptedAnswer":{"@type":"Answer","text":"翻之前先把字串表跟字數限制（或按鈕寬度）給 Hank，翻的時候會照限制改寫，太長的句子換短的說法，不會讓介面破版。變數跟佔位符（例如 {player_name}、%d）會原樣保留，不會翻錯。"}},{"@type":"Question","name":"要怎麼付款？","acceptedAnswer":{"@type":"Answer","text":"一律透過 Fiverr 平台下單付款，本站不直接收款、不留你的付款資料。平台會在你確認交件後才撥款給 Hank，對你比較有保障。"}}]}]}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Noto+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --navy:#0F2A44;--navy-2:#16365A;--navy-deep:#0A1E33;
+    --yellow:#FFC400;--yellow-dark:#E0AA00;
+    --bg:#F6F7F9;--surface:#FFFFFF;--surface-2:#EEF2F6;
+    --ink:#14232F;--muted:#5A6B7A;--line:#DCE3EA;--radius:14px;
+    color-scheme:light;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{--bg:#0B1B2E;--surface:#12293F;--surface-2:#0F2A44;--ink:#F2F5F8;--muted:#A9BAC9;--line:#24405C;color-scheme:dark}
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;font-family:"Noto Sans TC","Noto Sans",system-ui,-apple-system,"PingFang TC","Microsoft JhengHei",sans-serif;background:var(--bg);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+  .nav{position:sticky;top:0;z-index:50;background:var(--navy);color:#fff;border-bottom:3px solid var(--yellow)}
+  .nav-inner{display:flex;align-items:center;gap:18px;min-height:60px;flex-wrap:wrap;padding-top:6px;padding-bottom:6px}
+  .brand{font-weight:900;font-size:1.08rem;text-decoration:none;display:flex;align-items:center;gap:10px}
+  .brand .mark{background:var(--yellow);color:var(--navy);font-weight:900;padding:2px 9px;border-radius:6px;font-size:.95rem}
+  .brand small{font-weight:500;font-size:.78rem;color:#BFD0E0;display:block;line-height:1.2}
+  .nav-links{display:flex;gap:4px;margin-left:auto;flex-wrap:wrap}
+  .nav-links a{text-decoration:none;font-size:.92rem;font-weight:500;color:#E7EEF5;padding:9px 12px;border-radius:8px;min-height:38px;display:inline-flex;align-items:center}
+  .nav-links a:hover{background:var(--navy-2);color:#fff}
+  .nav-cta{background:var(--yellow);color:var(--navy)!important;font-weight:700}
+  .hero{background:var(--navy);color:#fff;padding:56px 0 64px;position:relative;overflow:hidden}
+  .hero::after{content:"";position:absolute;right:-70px;top:-70px;width:280px;height:280px;border-radius:50%;border:44px solid rgba(255,196,0,.14);pointer-events:none}
+  .hero-tag{display:inline-block;background:rgba(255,196,0,.15);color:var(--yellow);border:1px solid rgba(255,196,0,.5);font-size:.85rem;font-weight:700;padding:5px 14px;border-radius:999px;margin-bottom:20px}
+  .hero h1{font-size:2.55rem;line-height:1.28;font-weight:900;margin:0 0 16px;max-width:16em}
+  .hero h1 .hl{color:var(--yellow)}
+  .hero p.lead{font-size:1.08rem;color:#C9D7E4;max-width:36em;margin:0 0 26px}
+  .hero-facts{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:30px}
+  .hero-facts span{background:var(--navy-2);border:1px solid #2A4A6E;color:#fff;font-size:.92rem;font-weight:700;padding:8px 16px;border-radius:8px}
+  .hero-facts span b{color:var(--yellow);font-size:1.05rem}
+  .hero-btns{display:flex;gap:12px;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:12px 26px;border-radius:10px;font-weight:700;font-size:1rem;text-decoration:none;border:2px solid transparent}
+  .btn-yellow{background:var(--yellow);color:var(--navy)}
+  .btn-outline{border-color:#7E97AE;color:#fff;background:transparent}
+  .hero-note{margin-top:18px;font-size:.86rem;color:#8FA6BB}
+  section{padding:58px 0 8px}
+  .sec-head{margin-bottom:26px}
+  .sec-head h2{font-size:1.65rem;font-weight:900;margin:0 0 6px}
+  .sec-head h2 .bar{color:var(--yellow-dark)}
+  @media (prefers-color-scheme: dark){.sec-head h2 .bar{color:var(--yellow)}}
+  .sec-head p{margin:0;color:var(--muted);max-width:42em}
+  .grid{display:grid;gap:16px}
+  .grid-3{grid-template-columns:repeat(3,1fr)}
+  .grid-2{grid-template-columns:repeat(2,1fr)}
+  .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:22px 20px}
+  .card h3{margin:0 0 8px;font-size:1.06rem;font-weight:700}
+  .card p{margin:0;color:var(--muted);font-size:.94rem}
+  .card ul{margin:10px 0 0;padding-left:1.15em;color:var(--muted);font-size:.94rem}
+  .card ul li{margin:3px 0}
+  .price-card{position:relative;display:flex;flex-direction:column}
+  .price-card.popular{border:2px solid var(--yellow);box-shadow:0 10px 30px rgba(15,42,68,.12)}
+  .pop-badge{position:absolute;top:-14px;left:20px;background:var(--yellow);color:var(--navy);font-size:.8rem;font-weight:900;padding:4px 12px;border-radius:999px}
+  .price-name{font-weight:700;font-size:1rem;color:var(--muted);letter-spacing:.06em}
+  .price-amt{font-size:2.3rem;font-weight:900;line-height:1.15;margin:6px 0 2px}
+  .price-amt small{font-size:.95rem;font-weight:500;color:var(--muted)}
+  .price-card ul{list-style:none;margin:16px 0 22px;padding:0}
+  .price-card ul li{padding:7px 0 7px 28px;position:relative;border-bottom:1px dashed var(--line);font-size:.95rem}
+  .price-card ul li:last-child{border-bottom:none}
+  .price-card ul li::before{content:"";position:absolute;left:2px;top:12px;width:14px;height:8px;border-left:3px solid var(--yellow-dark);border-bottom:3px solid var(--yellow-dark);transform:rotate(-45deg)}
+  .price-card .btn{margin-top:auto}
+  .btn-navy{background:var(--navy);color:#fff}
+  .custom-note{margin-top:16px;background:var(--surface-2);border:1px dashed var(--muted);border-radius:var(--radius);padding:16px 20px;font-size:.95rem;color:var(--muted)}
+  .custom-note b{color:var(--ink)}
+  details.faq{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);margin-bottom:10px;overflow:hidden}
+  details.faq summary{cursor:pointer;font-weight:700;font-size:1rem;padding:16px 20px;min-height:52px;display:flex;align-items:center;list-style:none}
+  details.faq summary::-webkit-details-marker{display:none}
+  details.faq summary::after{content:"＋";margin-left:auto;color:var(--yellow-dark);font-weight:900;font-size:1.15rem}
+  details.faq[open] summary::after{content:"－"}
+  @media (prefers-color-scheme: dark){details.faq summary::after{color:var(--yellow)}}
+  details.faq .a{padding:0 20px 18px;color:var(--muted);font-size:.95rem}
+  details.faq .a p{margin:0}
+  .about-box{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:28px;display:grid;grid-template-columns:auto 1fr;gap:26px;align-items:start}
+  .avatar{width:92px;height:92px;border-radius:16px;background:var(--navy);color:var(--yellow);display:flex;align-items:center;justify-content:center;font-size:2.1rem;font-weight:900}
+  .about-box h3{margin:0 0 4px;font-size:1.3rem;font-weight:900}
+  .about-box .role{color:var(--muted);margin:0 0 14px;font-size:.95rem}
+  .about-box p.desc{margin:0;color:var(--muted);font-size:.96rem}
+  footer{margin-top:64px;background:var(--navy-deep);color:#9DB2C6;padding:30px 0 34px;font-size:.88rem}
+  footer .wrap{display:flex;gap:14px;flex-wrap:wrap;justify-content:space-between;align-items:center}
+  footer b{color:#fff}
+  footer a{color:var(--yellow);text-decoration:none;font-weight:700}
+  .sticky-bar{display:none;position:fixed;left:0;right:0;bottom:0;z-index:60;background:var(--navy);border-top:3px solid var(--yellow);padding:10px 12px calc(10px + env(safe-area-inset-bottom));gap:10px}
+  .sticky-bar a{flex:1;min-height:48px;display:flex;align-items:center;justify-content:center;border-radius:10px;font-weight:700;text-decoration:none;font-size:.98rem}
+  .sticky-bar .s1{background:var(--yellow);color:var(--navy)}
+  .sticky-bar .s2{border:2px solid #7E97AE;color:#fff}
+  @media (max-width:640px){
+    body{padding-bottom:78px}
+    .hero{padding:40px 0 48px}
+    .hero h1{font-size:1.85rem}
+    .grid-3,.grid-2{grid-template-columns:1fr}
+    .about-box{grid-template-columns:1fr}
+    .nav-links a{padding:8px 9px;font-size:.88rem}
+    .sticky-bar{display:flex}
+    .hero-btns .btn{flex:1}
+    section{padding-top:44px}
+  }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="https://z2idugagr.github.io/game-localization/"><span class="mark">譯</span><span>遊戲在地化<small>Hank 翻譯 ・ 遊戲在地化</small></span></a>
+    <nav class="nav-links" aria-label="主選單">
+      <a href="#services">服務</a>
+      <a href="#pricing">價格</a>
+      <a href="#tips">在地化技巧</a>
+      <a href="#faq">FAQ</a>
+      <a class="nav-cta" href="https://www.fiverr.com/chenhank372/writing-and-translation-expert" target="_blank" rel="noopener">在 Fiverr 下單</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="wrap">
+    <span class="hero-tag">Hank Chen ・ 遊戲在地化／UI 字串翻譯</span>
+    <h1>讓你的遊戲，說台灣玩家<span class="hl">聽得懂的話</span>。</h1>
+    <p class="lead">我是 Hank Chen，台灣自由譯者，專做英文遊戲翻成台灣繁體中文。劇情文本、UI 字串、商店頁面文案都接——不是逐字直翻，是按台灣玩家的說法重寫，梗、語氣、文化參照都幫你顧到。</p>
+    <div class="hero-facts">
+      <span><b>USD 0.08</b>／字</span>
+      <span><b>免費試譯</b> 500 字</span>
+      <span>只做 <b>台灣繁體</b></span>
+      <span>英文 → 繁體中文（台灣）</span>
+    </div>
+    <div class="hero-btns">
+      <a class="btn btn-yellow" href="https://www.fiverr.com/chenhank372/writing-and-translation-expert" target="_blank" rel="noopener">在 Fiverr 下單 →</a>
+      <a class="btn btn-outline" href="https://z2idugagr.github.io/" target="_blank" rel="noopener">回主站作品集 →</a>
+    </div>
+    <p class="hero-note">本站不直接收款，所有翻譯交易都透過 Fiverr 平台進行，付款與交件都有平台保障。</p>
+  </div>
+</div>
+
+<main class="wrap">
+
+  <section id="services">
+    <div class="sec-head">
+      <h2><span class="bar">▍</span>服務項目</h2>
+      <p>獨立遊戲上架台灣，最常需要的就是下面三項：</p>
+    </div>
+    <div class="grid grid-3">
+      <div class="card">
+        <h3>遊戲劇情文本</h3>
+        <p>對話、任務說明、物品描述、結局文字，按台灣玩家的說法重寫，梗與語氣不走味，玩起來像本來就是中文遊戲。</p>
+        <ul>
+          <li>對話／任務／物品說明</li>
+          <li>專有名詞先做術語表</li>
+          <li>按字計價 USD 0.08／字</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>UI 字串</h3>
+        <p>按鈕、選單、設定、提示訊息，照字數限制改寫，不讓介面破版，變數與佔位符原樣保留。</p>
+        <ul>
+          <li>按鈕／選單／提示訊息</li>
+          <li>變數與佔位符原樣保留</li>
+          <li>先看字串表再報價</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>商店頁面文案</h3>
+        <p>Steam／手機商店的介紹頁、特色列表、更新日誌，寫成台灣玩家會想下載的版本，不只是逐字直翻。</p>
+        <ul>
+          <li>商店介紹與特色列表</li>
+          <li>更新日誌翻譯</li>
+          <li>客製報價，先傳檔案確認</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="pricing">
+    <div class="sec-head">
+      <h2><span class="bar">▍</span>價格方案</h2>
+      <p>遊戲在地化按字計價，USD 0.08／字；先免費試譯 500 字，看過品質再決定，試譯不用錢、不綁約。</p>
+    </div>
+    <div class="grid grid-3">
+      <div class="card price-card">
+        <div class="price-name">FREE 試譯</div>
+        <div class="price-amt">$0 <small>USD</small></div>
+        <ul>
+          <li>500 字免費試譯</li>
+          <li>1–2 天交件</li>
+          <li>先看品質再決定</li>
+          <li>不用先下單</li>
+        </ul>
+        <a class="btn btn-navy" href="https://www.fiverr.com/chenhank372/writing-and-translation-expert" target="_blank" rel="noopener">在 Fiverr 下單</a>
+      </div>
+      <div class="card price-card popular">
+        <span class="pop-badge">最受歡迎</span>
+        <div class="price-name">STANDARD 標準</div>
+        <div class="price-amt">USD 0.08 <small>/ 字</small></div>
+        <ul>
+          <li>劇情文本＋UI 字串</li>
+          <li>依字數計價</li>
+          <li>1 次修訂</li>
+          <li>適合獨立遊戲全篇</li>
+        </ul>
+        <a class="btn btn-yellow" href="https://www.fiverr.com/chenhank372/writing-and-translation-expert" target="_blank" rel="noopener">在 Fiverr 下單</a>
+      </div>
+      <div class="card price-card">
+        <div class="price-name">CUSTOM 客製</div>
+        <div class="price-amt">客製報價</div>
+        <ul>
+          <li>商店頁面＋更新日誌</li>
+          <li>長期合作優惠</li>
+          <li>範圍內修訂</li>
+          <li>適合持續更新的遊戲</li>
+        </ul>
+        <a class="btn btn-navy" href="https://www.fiverr.com/chenhank372/writing-and-translation-expert" target="_blank" rel="noopener">在 Fiverr 下單</a>
+      </div>
+    </div>
+    <div class="custom-note">
+      <b>免費試譯 500 字怎麼算？</b>先傳 500 字以內的遊戲文字（對話、UI 字串或商店介紹都可以），Hank 翻好給你看，滿意再談整篇合作。不滿意不用付錢、不用說明原因。
+    </div>
+  </section>
+
+  <section id="tips">
+    <div class="sec-head">
+      <h2><span class="bar">▍</span>遊戲在地化 3 個技巧</h2>
+      <p>先看這三點，翻出來的遊戲就不會像機器翻的。詳細做法在下面兩篇文章。</p>
+    </div>
+    <div class="grid grid-3">
+      <a class="card" href="indie-game-localization/" style="text-decoration:none;display:block">
+        <h3>1. 梗要改寫，不要直翻</h3>
+        <p>英文笑話直翻成中文通常不好笑，要換成台灣玩家懂的說法，意思到了、笑點還在。</p>
+        <p style="margin-top:12px;font-weight:700;color:var(--navy)">獨立遊戲翻譯怎麼做？ →</p>
+      </a>
+      <a class="card" href="ui-string-translation/" style="text-decoration:none;display:block">
+        <h3>2. UI 字數先算好再翻</h3>
+        <p>英文常常比中文長，翻完要實際貼回介面檢查，太長就改短。</p>
+        <p style="margin-top:12px;font-weight:700;color:var(--navy)">UI 字串字數限制怎麼處理 →</p>
+      </a>
+      <a class="card" href="indie-game-localization/" style="text-decoration:none;display:block">
+        <h3>3. 專有名詞先統一</h3>
+        <p>角色名、地名、道具名先做一張術語表，全篇同一譯法，玩家才不會看到一半出戲。</p>
+        <p style="margin-top:12px;font-weight:700;color:var(--navy)">獨立遊戲翻譯怎麼做？ →</p>
+      </a>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="sec-head">
+      <h2><span class="bar">▍</span>關於 Hank</h2>
+    </div>
+    <div class="about-box">
+      <div class="avatar" aria-hidden="true">H</div>
+      <div>
+        <h3>Hank Chen</h3>
+        <p class="role">英文 ↔ 繁體中文（台灣）自由譯者，Fiverr chenhank372</p>
+        <p class="desc">專做英文與台灣繁體中文之間的翻譯，遊戲劇情、UI 字串、商店頁面文案都接。先免費試譯 500 字，品質看過再決定。本人回覆、本人交件，交易透過 Fiverr 平台進行。</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="sec-head">
+      <h2><span class="bar">▍</span>常見問題 FAQ</h2>
+    </div>
+        <details class="faq">
+      <summary>遊戲在地化跟一般翻譯差在哪？</summary>
+      <div class="a"><p>一般翻譯翻對意思就好，遊戲在地化還要顧語氣、梗、文化參照跟字數限制。同一句對話，寫給玩家看的跟寫給文件看的，寫法完全不一樣。Hank 翻遊戲時會先問遊戲類型、目標玩家跟語氣（嚴肅、搞笑、黑暗），再決定每一句怎麼寫。</p></div>
+    </details>
+        <details class="faq">
+      <summary>免費試譯 500 字怎麼算？</summary>
+      <div class="a"><p>傳 500 字以內的遊戲文字給 Hank（對話、UI 字串、商店介紹都可以），1–2 天翻好給你看。滿意再談整篇合作，價錢按字計價 USD 0.08／字；不滿意不用付錢，也不用說明原因。</p></div>
+    </details>
+        <details class="faq">
+      <summary>UI 字串有字數限制怎麼辦？</summary>
+      <div class="a"><p>翻之前先把字串表跟字數限制（或按鈕寬度）給 Hank，翻的時候會照限制改寫，太長的句子換短的說法，不會讓介面破版。變數跟佔位符（例如 {player_name}、%d）會原樣保留，不會翻錯。</p></div>
+    </details>
+        <details class="faq">
+      <summary>要怎麼付款？</summary>
+      <div class="a"><p>一律透過 Fiverr 平台下單付款，本站不直接收款、不留你的付款資料。平台會在你確認交件後才撥款給 Hank，對你比較有保障。</p></div>
+    </details>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div><b>遊戲在地化｜Hank 翻譯</b> ・ 遊戲劇情／UI 字串／商店頁面文案</div>
+    <div>翻譯交易透過 <a href="https://www.fiverr.com/chenhank372/writing-and-translation-expert" target="_blank" rel="noopener">Fiverr</a> 進行；回<a href="https://z2idugagr.github.io/">主站作品集</a>。</div>
+  </div>
+</footer>
+
+<div class="sticky-bar">
+  <a class="s1" href="https://www.fiverr.com/chenhank372/writing-and-translation-expert" target="_blank" rel="noopener">Fiverr 下單 USD 0.08／字</a>
+  <a class="s2" href="https://z2idugagr.github.io/" target="_blank" rel="noopener">回主站作品集</a>
+</div>
+
+</body>
+</html>

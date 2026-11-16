@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="description" content="遊戲 UI 翻成繁體中文，最怕翻完貼回介面才發現字塞不下、按鈕破版。整理 UI 字串翻譯最要注意的 3 件事：字數、佔位符、語氣一致。" />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="Hank 翻譯" />
+<meta property="og:locale" content="zh_TW" />
+<meta property="og:title" content="遊戲 UI 字串翻譯：字數限制怎麼處理｜Hank 翻譯" />
+<meta property="og:description" content="遊戲 UI 翻成繁體中文，最怕翻完貼回介面才發現字塞不下、按鈕破版。整理 UI 字串翻譯最要注意的 3 件事：字數、佔位符、語氣一致。" />
+<meta property="og:url" content="https://z2idugagr.github.io/game-localization/ui-string-translation/" />
+<link rel="canonical" href="https://z2idugagr.github.io/game-localization/ui-string-translation/" />
+<title>遊戲 UI 字串翻譯：字數限制怎麼處理｜Hank 翻譯</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Noto+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"遊戲 UI 字串翻譯：字數限制怎麼處理","author":{"@type":"Person","name":"Hank Chen"},"datePublished":"2026-11-16","inLanguage":"zh-Hant-TW","mainEntityOfPage":"https://z2idugagr.github.io/game-localization/ui-string-translation/"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首頁","item":"https://z2idugagr.github.io/game-localization/"},{"@type":"ListItem","position":2,"name":"遊戲 UI 字串翻譯：字數限制怎麼處理","item":"https://z2idugagr.github.io/game-localization/ui-string-translation/"}]}
+</script>
+<style>
+  :root{--navy:#0F2A44;--navy-2:#16365A;--navy-deep:#0A1E33;--yellow:#FFC400;--yellow-dark:#E0AA00;--bg:#F6F7F9;--surface:#FFFFFF;--surface-2:#EEF2F6;--ink:#14232F;--muted:#5A6B7A;--line:#DCE3EA;--radius:14px;color-scheme:light}
+  @media (prefers-color-scheme: dark){:root{--bg:#0B1B2E;--surface:#12293F;--surface-2:#0F2A44;--ink:#F2F5F8;--muted:#A9BAC9;--line:#24405C;color-scheme:dark}}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:"Noto Sans TC","Noto Sans",system-ui,-apple-system,"PingFang TC","Microsoft JhengHei",sans-serif;background:var(--bg);color:var(--ink);line-height:1.8;-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  .wrap{max-width:760px;margin:0 auto;padding:0 20px}
+  .nav{position:sticky;top:0;z-index:50;background:var(--navy);color:#fff;border-bottom:3px solid var(--yellow)}
+  .nav-inner{display:flex;align-items:center;gap:18px;min-height:60px;flex-wrap:wrap;padding-top:6px;padding-bottom:6px;max-width:1080px;margin:0 auto;padding-left:20px;padding-right:20px}
+  .brand{font-weight:900;font-size:1.08rem;text-decoration:none;display:flex;align-items:center;gap:10px}
+  .brand .mark{background:var(--yellow);color:var(--navy);font-weight:900;padding:2px 9px;border-radius:6px;font-size:.95rem}
+  .nav-links{display:flex;gap:4px;margin-left:auto;flex-wrap:wrap}
+  .nav-links a{text-decoration:none;font-size:.92rem;font-weight:500;color:#E7EEF5;padding:9px 12px;border-radius:8px}
+  .nav-links a:hover{background:var(--navy-2);color:#fff}
+  article{padding:44px 0 8px}
+  .tag{display:inline-block;background:rgba(255,196,0,.2);color:var(--yellow-dark);border:1px solid var(--yellow-dark);font-size:.82rem;font-weight:700;padding:4px 13px;border-radius:999px;margin-bottom:14px}
+  @media (prefers-color-scheme: dark){.tag{color:var(--yellow)}}
+  h1{font-size:1.9rem;line-height:1.35;font-weight:900;margin:0 0 10px}
+  .meta{color:var(--muted);font-size:.9rem;margin:0 0 28px}
+  h2{font-size:1.35rem;font-weight:900;margin:36px 0 12px}
+  h2 .bar{color:var(--yellow-dark)}
+  p{margin:0 0 16px}
+  table{width:100%;border-collapse:collapse;margin:8px 0 20px;font-size:.95rem;background:var(--surface);border-radius:12px;overflow:hidden}
+  th,td{border:1px solid var(--line);padding:10px 14px;text-align:left}
+  th{background:var(--navy);color:#fff;font-weight:700}
+  td.tw{font-weight:700;color:var(--ink)}
+  .note{background:var(--surface-2);border-left:4px solid var(--yellow);border-radius:0 10px 10px 0;padding:14px 18px;margin:20px 0;font-size:.95rem;color:var(--muted)}
+  .note b{color:var(--ink)}
+  .cta{background:var(--navy);color:#fff;border-radius:16px;padding:28px;margin:36px 0}
+  .cta h3{margin:0 0 8px;font-size:1.15rem}
+  .cta h3 span{color:var(--yellow)}
+  .cta p{color:#C9D7E4;margin:0 0 18px;font-size:.95rem}
+  .cta .btns{display:flex;gap:12px;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:11px 24px;border-radius:10px;font-weight:700;font-size:.98rem;text-decoration:none}
+  .btn-yellow{background:var(--yellow);color:var(--navy)}
+  .btn-outline{border:2px solid #7E97AE;color:#fff}
+  .author{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:20px;display:flex;gap:16px;align-items:start;margin-bottom:20px}
+  .avatar{width:56px;height:56px;border-radius:12px;background:var(--navy);color:var(--yellow);display:flex;align-items:center;justify-content:center;font-size:1.5rem;font-weight:900;flex-shrink:0}
+  .author h3{margin:0 0 2px;font-size:1.05rem}
+  .author p{margin:0;color:var(--muted);font-size:.92rem}
+  .back{margin-bottom:40px}
+  .back a{font-weight:700;color:var(--navy);text-decoration:none}
+  @media (prefers-color-scheme: dark){.back a{color:var(--yellow)}}
+  footer{background:var(--navy-deep);color:#9DB2C6;padding:28px 0 32px;font-size:.88rem;margin-top:40px}
+  footer .wrap{display:flex;gap:14px;flex-wrap:wrap;justify-content:space-between;align-items:center}
+  footer b{color:#fff}
+  footer a{color:var(--yellow);text-decoration:none;font-weight:700}
+  @media (max-width:640px){h1{font-size:1.55rem}}
+</style>
+</head>
+<body>
+<header class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="https://z2idugagr.github.io/game-localization/"><span class="mark">譯</span>遊戲在地化</a>
+    <nav class="nav-links" aria-label="主選單">
+      <a href="https://z2idugagr.github.io/game-localization/#services">服務</a>
+      <a href="https://z2idugagr.github.io/game-localization/#pricing">價格</a>
+      <a href="https://z2idugagr.github.io/game-localization/">在地化技巧</a>
+      <a href="https://z2idugagr.github.io/game-localization/#faq">FAQ</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+<article>
+  <span class="tag">UI 字串翻譯</span>
+  <h1>遊戲 UI 字串翻譯：字數限制怎麼處理</h1>
+  <p class="meta">Hank Chen ・ 2026 年 11 月 16 日 ・ 約 4 分鐘閱讀</p>
+
+  <p>遊戲 UI 翻譯最常出問題的不是英文看不懂，是翻完貼回介面才發現字塞不下、按鈕破版、變數被翻壞。UI 字串有自己的規矩，下面三點先搞懂。</p>
+
+  <h2><span class="bar">▍</span>重點 1：英文比中文長，字數要先算好</h2>
+  <p>同一個意思，英文常常比中文長。「Settings」翻成「設定」沒問題，但「Are you sure you want to quit?」翻成「你確定要離開遊戲嗎？」就可能超出對話框。做法是翻之前先拿到字數限制或按鈕寬度，太長的句子換短的說法，意思不變、字變少。</p>
+
+  <h2><span class="bar">▍</span>重點 2：變數跟佔位符一個字都不能動</h2>
+  <p>UI 字串裡常有 {player_name}、%d、{0} 這種佔位符，程式會在執行時把玩家名字、數字填進去。這些符號不能翻、不能刪、不能換位置，翻壞一個，遊戲可能直接報錯。交件前把全篇佔位符拉出來，逐個跟原文核對。</p>
+
+  <h2><span class="bar">▍</span>重點 3：按鈕、選單、提示訊息，語氣要一致</h2>
+  <p>「確認」「取消」「返回」這種按鈕，全篇要用同一種說法；提示訊息的語氣也要統一，不能一下很正式、一下很口語。建議先做一張常用詞對照表，按鈕、選單、錯誤訊息分開列，翻的時候照表走。</p>
+
+  <h2><span class="bar">▍</span>遊戲 UI 翻譯要花多少錢</h2>
+  <p>UI 字串按字計價，USD 0.08／字，先免費試譯 500 字。字串數量多或有大量重複字串時，先傳字串表確認，報價以實際要翻的字數計算。收費方式可以參考主站的<a href="https://z2idugagr.github.io/blog/translation-pricing/">英翻中翻譯收費怎麼算？一字多少錢才合理</a>。UI 以外的劇情文本做法，可以看<a href="https://z2idugagr.github.io/game-localization/indie-game-localization/">獨立遊戲翻譯怎麼做？在地化最常忽略的 3 件事</a>。</p>
+
+  <div class="note"><b>一句話總結：</b>UI 字串翻譯的重點不是翻得漂亮，是翻完能直接用——字塞得下、變數沒壞、語氣一致。</div>
+
+  <div class="cta">
+    <h3>遊戲 UI 字串要翻成<span>繁體中文</span>嗎？</h3>
+    <p>按鈕、選單、提示訊息都接，USD 0.08／字，免費試譯 500 字，透過 Fiverr 下單有平台保障。</p>
+    <div class="btns">
+      <a class="btn btn-yellow" href="https://www.fiverr.com/chenhank372/writing-and-translation-expert" target="_blank" rel="noopener">在 Fiverr 下單 →</a>
+      <a class="btn btn-outline" href="https://z2idugagr.github.io/">回作品集首頁</a>
+    </div>
+  </div>
+
+  <div class="author">
+    <div class="avatar" aria-hidden="true">H</div>
+    <div>
+      <h3>Hank Chen</h3>
+      <p>英文 ↔ 繁體中文（台灣）自由譯者，Fiverr chenhank372。專做遊戲在地化、文件翻譯、網站文案與英文字幕 SRT，只出台灣繁體中文。</p>
+    </div>
+  </div>
+  <p class="back"><a href="https://z2idugagr.github.io/game-localization/">← 回遊戲在地化首頁</a></p>
+
+</article>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div><b>Hank 翻譯</b> ・ 英文 ↔ 繁體中文（台灣）翻譯／校對／排版</div>
+    <div>本站不直接收款，所有交易透過 <a href="https://www.fiverr.com/chenhank372/writing-and-translation-expert" target="_blank" rel="noopener">Fiverr</a> 平台進行。</div>
+  </div>
+</footer>
+</body>
+</html>
