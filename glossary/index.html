@@ -1,0 +1,453 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="color-scheme" content="light dark" />
+<meta name="description" content="免費英翻中術語表查詢工具：40 個商務、科技、字幕常用術語的台灣繁體中文對照，立即搜尋。完整版 337 個術語 $9，Excel + PDF，Hank 翻譯。" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Hank 翻譯術語表" />
+<meta property="og:locale" content="zh_TW" />
+<meta property="og:title" content="英翻中術語表｜免費查詢台灣繁體中文對照｜Hank 翻譯" />
+<meta property="og:description" content="免費查詢 40 個英翻中常用術語的台灣繁體中文對照：合約、發票、軟體、字幕。完整版 337 個術語 $9，Excel + PDF。" />
+<meta property="og:url" content="https://z2idugagr.github.io/glossary/" />
+<link rel="canonical" href="https://z2idugagr.github.io/glossary/" />
+<link rel="icon" href="data:," />
+<title>英翻中術語表｜免費查詢台灣繁體中文對照｜Hank 翻譯</title>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"WebSite","name":"Hank 翻譯術語表","url":"https://z2idugagr.github.io/glossary/","inLanguage":"zh-Hant-TW"},{"@type":"ProfessionalService","name":"Hank 翻譯","description":"Hank Chen 英文 ↔ 繁體中文（台灣）翻譯：文件、網站文案、Excel、英文字幕 SRT。術語表工具站提供免費英翻中術語查詢，完整版 337 個術語 $9。","url":"https://z2idugagr.github.io/","priceRange":"$5 - $45","areaServed":"TW","knowsLanguage":["en","zh-Hant-TW"],"sameAs":["https://www.fiverr.com/chenhank372/writing-and-translation-expert","https://www.instagram.com/a2idugagr/","https://www.tiktok.com/@oni.exe7","https://www.youtube.com/@HankChenTW-k8l"]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"免費版跟完整版有什麼差別？","acceptedAnswer":{"@type":"Answer","text":"免費版是這個頁面上的 40 個常用術語，直接查、不用付錢也不用留資料。完整版收錄 337 個術語，含商務、科技、字幕三大類，Excel + PDF 兩種格式，$9 在 Gumroad 購買後直接下載。"}},{"@type":"Question","name":"術語表裡的中文是台灣用詞嗎？","acceptedAnswer":{"@type":"Answer","text":"是。全部都是台灣繁體中文與台灣慣用說法，例如軟體、檔案、搜尋、影片，不會出現簡轉繁或對岸用語。"}},{"@type":"Question","name":"買了完整版可以商用嗎？","acceptedAnswer":{"@type":"Answer","text":"可以。完整版術語表買下後可用於你自己的翻譯工作、寫作與內部文件對照，不限次數使用。"}},{"@type":"Question","name":"術語表沒有我要的詞怎麼辦？","acceptedAnswer":{"@type":"Answer","text":"可以找 Hank 翻譯整份文件：文件翻譯 $5 起，1–3 天交件，術語會在譯稿裡統一處理。透過 Fiverr 下單，平台有交易保障。"}}]}]}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Noto+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --navy:#0F2A44;
+    --navy-2:#16365A;
+    --navy-deep:#0A1E33;
+    --yellow:#FFC400;
+    --yellow-dark:#E0AA00;
+    --bg:#F6F7F9;
+    --surface:#FFFFFF;
+    --surface-2:#EEF2F6;
+    --ink:#14232F;
+    --ink-2:#435363;
+    --muted:#5A6B7A;
+    --line:#DCE3EA;
+    --radius:14px;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#0B1B2E;
+      --surface:#12293F;
+      --surface-2:#0F2A44;
+      --ink:#F2F5F8;
+      --muted:#A9BAC9;
+      --line:#24405C;
+      color-scheme: dark;
+    }
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    font-family:"Noto Sans TC","Noto Sans",system-ui,-apple-system,"PingFang TC","Microsoft JhengHei",sans-serif;
+    background:var(--bg);
+    color:var(--ink);
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+
+  /* ---------- Nav ---------- */
+  .nav{
+    position:sticky;top:0;z-index:50;
+    background:var(--navy);
+    color:#fff;
+    border-bottom:3px solid var(--yellow);
+  }
+  .nav-inner{display:flex;align-items:center;gap:18px;min-height:60px;flex-wrap:wrap;padding-top:6px;padding-bottom:6px}
+  .brand{font-weight:900;font-size:1.08rem;letter-spacing:.02em;text-decoration:none;display:flex;align-items:center;gap:10px}
+  .brand .mark{background:var(--yellow);color:var(--navy);font-weight:900;padding:2px 9px;border-radius:6px;font-size:.95rem}
+  .brand small{font-weight:500;font-size:.78rem;color:#BFD0E0;display:block;line-height:1.2}
+  .nav-links{display:flex;gap:4px;margin-left:auto;flex-wrap:wrap}
+  .nav-links a{
+    text-decoration:none;font-size:.92rem;font-weight:500;color:#E7EEF5;
+    padding:9px 12px;border-radius:8px;min-height:38px;display:inline-flex;align-items:center;
+  }
+  .nav-links a:hover{background:var(--navy-2);color:#fff}
+  .nav-cta{background:var(--yellow);color:var(--navy)!important;font-weight:700}
+  .nav-cta:hover{background:var(--yellow-dark)}
+
+  /* ---------- Hero ---------- */
+  .hero{background:var(--navy);color:#fff;padding:56px 0 64px;position:relative;overflow:hidden}
+  .hero::after{
+    content:"";position:absolute;right:-70px;top:-70px;width:280px;height:280px;border-radius:50%;
+    border:44px solid rgba(255,196,0,.14);pointer-events:none;
+  }
+  .hero-tag{
+    display:inline-block;background:rgba(255,196,0,.15);color:var(--yellow);
+    border:1px solid rgba(255,196,0,.5);font-size:.85rem;font-weight:700;
+    padding:5px 14px;border-radius:999px;margin-bottom:20px;
+  }
+  .hero h1{
+    font-size:2.55rem;line-height:1.28;font-weight:900;margin:0 0 16px;max-width:16em;letter-spacing:.01em;
+  }
+  .hero h1 .hl{color:var(--yellow)}
+  .hero p.lead{font-size:1.08rem;color:#C9D7E4;max-width:36em;margin:0 0 26px}
+  .hero-facts{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:30px}
+  .hero-facts span{
+    background:var(--navy-2);border:1px solid #2A4A6E;color:#fff;
+    font-size:.92rem;font-weight:700;padding:8px 16px;border-radius:8px;
+  }
+  .hero-facts span b{color:var(--yellow);font-size:1.05rem}
+  .hero-btns{display:flex;gap:12px;flex-wrap:wrap}
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:8px;
+    min-height:50px;padding:12px 26px;border-radius:10px;
+    font-weight:700;font-size:1rem;text-decoration:none;border:2px solid transparent;
+    transition:transform .12s ease, background .12s ease;
+  }
+  .btn:active{transform:scale(.98)}
+  .btn-yellow{background:var(--yellow);color:var(--navy)}
+  .btn-yellow:hover{background:var(--yellow-dark)}
+  .btn-outline{border-color:#7E97AE;color:#fff;background:transparent}
+  .btn-outline:hover{border-color:#fff}
+  .hero-note{margin-top:18px;font-size:.86rem;color:#8FA6BB}
+
+  /* ---------- Sections ---------- */
+  section{padding:58px 0 8px}
+  .sec-head{margin-bottom:26px}
+  .sec-head h2{font-size:1.65rem;font-weight:900;margin:0 0 6px;color:var(--ink)}
+  .sec-head h2 .bar{color:var(--yellow-dark)}
+  @media (prefers-color-scheme: dark){ .sec-head h2 .bar{color:var(--yellow)} }
+  .sec-head p{margin:0;color:var(--muted);max-width:42em}
+
+  .grid{display:grid;gap:16px}
+  .grid-3{grid-template-columns:repeat(3,1fr)}
+
+  .card{
+    background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+    padding:22px 20px;
+  }
+  .card h3{margin:0 0 8px;font-size:1.06rem;font-weight:700}
+  .card p{margin:0;color:var(--muted);font-size:.94rem}
+  .card ul{margin:10px 0 0;padding-left:1.15em;color:var(--muted);font-size:.94rem}
+  .card ul li{margin:3px 0}
+
+  /* ---------- Tool ---------- */
+  .tool-box{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:24px}
+  .tool-search{
+    display:flex;gap:10px;flex-wrap:wrap;margin-bottom:8px;
+  }
+  .tool-search input{
+    flex:1;min-width:220px;min-height:52px;border-radius:10px;border:2px solid var(--line);
+    background:var(--surface);color:var(--ink);font-size:1.02rem;padding:10px 16px;font-family:inherit;
+  }
+  .tool-search input:focus{outline:none;border-color:var(--yellow-dark)}
+  .tool-count{font-size:.9rem;color:var(--muted);margin:0 0 16px}
+  .tool-count b{color:var(--ink)}
+  table.glossary{width:100%;border-collapse:collapse;font-size:.96rem;background:var(--surface)}
+  table.glossary th, table.glossary td{border:1px solid var(--line);padding:10px 14px;text-align:left}
+  table.glossary th{background:var(--navy);color:#fff;font-weight:700}
+  table.glossary td.en{font-weight:600}
+  table.glossary td.tw{font-weight:700;color:var(--ink)}
+  table.glossary td.cat{color:var(--muted);font-size:.88rem;white-space:nowrap}
+  table.glossary tr.hidden{display:none}
+  .no-result{display:none;margin:18px 0 4px;color:var(--muted);font-size:.95rem}
+  .no-result.show{display:block}
+  .tool-note{
+    margin-top:16px;background:var(--surface-2);border:1px dashed var(--muted);
+    border-radius:var(--radius);padding:16px 20px;font-size:.95rem;color:var(--muted);
+  }
+  .tool-note b{color:var(--ink)}
+
+  /* ---------- Full version CTA ---------- */
+  .full-cta{
+    background:var(--navy);color:#fff;border-radius:18px;
+    padding:36px 32px;position:relative;overflow:hidden;
+  }
+  .full-cta::after{
+    content:"";position:absolute;right:-60px;bottom:-60px;width:220px;height:220px;border-radius:50%;
+    border:36px solid rgba(255,196,0,.12);pointer-events:none;
+  }
+  .full-cta h2{font-size:1.8rem;font-weight:900;line-height:1.3;margin:0 0 10px;max-width:22em}
+  .full-cta h2 .hl{color:var(--yellow)}
+  .full-cta p{color:#C9D7E4;font-size:1.02rem;margin:0 0 24px;max-width:44em}
+  .full-cta p b{color:#fff}
+  .full-prices{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px}
+  .full-prices span{
+    background:var(--navy-2);border:1px solid #2A4A6E;color:#fff;
+    font-size:.9rem;font-weight:700;padding:7px 14px;border-radius:8px;
+  }
+  .full-prices span b{color:var(--yellow)}
+  .full-cta .btns{display:flex;gap:12px;flex-wrap:wrap;position:relative;z-index:1}
+  .btn-navy{background:var(--navy);color:#fff}
+  .btn-navy:hover{background:var(--navy-2)}
+
+  /* ---------- FAQ ---------- */
+  details.faq{
+    background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+    margin-bottom:10px;overflow:hidden;
+  }
+  details.faq summary{
+    cursor:pointer;font-weight:700;font-size:1rem;padding:16px 20px;min-height:52px;
+    display:flex;align-items:center;list-style:none;
+  }
+  details.faq summary::-webkit-details-marker{display:none}
+  details.faq summary::after{content:"＋";margin-left:auto;color:var(--yellow-dark);font-weight:900;font-size:1.15rem}
+  details.faq[open] summary::after{content:"－"}
+  @media (prefers-color-scheme: dark){ details.faq summary::after{color:var(--yellow)} }
+  details.faq .a{padding:0 20px 18px;color:var(--muted);font-size:.95rem}
+  details.faq .a p{margin:0}
+
+  footer{
+    margin-top:64px;background:var(--navy-deep);color:#9DB2C6;padding:30px 0 34px;font-size:.88rem;
+  }
+  footer .wrap{display:flex;gap:14px;flex-wrap:wrap;justify-content:space-between;align-items:center}
+  footer b{color:#fff}
+  footer a{color:var(--yellow);text-decoration:none;font-weight:700}
+
+  .sticky-bar{
+    display:none;position:fixed;left:0;right:0;bottom:0;z-index:60;
+    background:var(--navy);border-top:3px solid var(--yellow);
+    padding:10px 12px calc(10px + env(safe-area-inset-bottom));
+    gap:10px;
+  }
+  .sticky-bar a{
+    flex:1;min-height:48px;display:flex;align-items:center;justify-content:center;
+    border-radius:10px;font-weight:700;text-decoration:none;font-size:.98rem;
+  }
+  .sticky-bar .s1{background:var(--yellow);color:var(--navy)}
+  .sticky-bar .s2{border:2px solid #7E97AE;color:#fff}
+
+  @media (max-width:640px){
+    body{padding-bottom:78px}
+    .hero{padding:40px 0 48px}
+    .hero h1{font-size:1.85rem}
+    .grid-3{grid-template-columns:1fr}
+    .full-cta{padding:28px 20px}
+    .full-cta h2{font-size:1.45rem}
+    .nav-links a{padding:8px 9px;font-size:.88rem}
+    .sticky-bar{display:flex}
+    .hero-btns .btn{flex:1}
+    section{padding-top:44px}
+    table.glossary td.cat{display:none}
+    table.glossary th.cat{display:none}
+  }
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto}
+    .btn{transition:none}
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== Nav ===== -->
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="https://z2idugagr.github.io/glossary/"><span class="mark">譯</span><span>Hank 術語表<small>英翻中免費查詢工具</small></span></a>
+    <nav class="nav-links" aria-label="主選單">
+      <a href="#tool">查詢工具</a>
+      <a href="#full">完整版</a>
+      <a href="#tips">用法</a>
+      <a href="#faq">FAQ</a>
+      <a href="https://z2idugagr.github.io/">主站</a>
+      <a class="nav-cta" href="https://gumroad.com/l/sjtrr" target="_blank" rel="noopener">完整版 $9 →</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ===== Hero ===== -->
+<div class="hero" id="top">
+  <div class="wrap">
+    <span class="hero-tag">免費工具 ・ 台灣繁體中文</span>
+    <h1>英翻中術語，<span class="hl">查一下就對了。</span></h1>
+    <p class="lead">寫英文報告、翻文件、做字幕時，最怕同一個詞翻出三種說法。下面 40 個常用術語免費查，全部是台灣人平常真的會用的說法，不用註冊、不用留資料。</p>
+    <div class="hero-facts">
+      <span><b>40 個</b> 術語免費查</span>
+      <span>完整版 <b>337 個</b> 術語</span>
+      <span>只做 <b>台灣繁體</b></span>
+    </div>
+    <div class="hero-btns">
+      <a class="btn btn-yellow" href="https://gumroad.com/l/sjtrr" target="_blank" rel="noopener">完整版 337 個術語 $9 →</a>
+      <a class="btn btn-outline" href="https://www.fiverr.com/chenhank372/writing-and-translation-expert" target="_blank" rel="noopener">找 Hank 翻譯文件 →</a>
+    </div>
+    <p class="hero-note">完整版在 Gumroad 付款後直接下載 Excel + PDF，本站不經手付款。</p>
+  </div>
+</div>
+
+<main class="wrap">
+
+  <!-- ===== Tool ===== -->
+  <section id="tool" style="padding-top:40px">
+    <div class="sec-head">
+      <h2><span class="bar">▍</span>免費術語查詢</h2>
+      <p>輸入英文或中文，馬上找對應的台灣繁體中文說法。免費版收錄 40 個商務、科技、字幕常用術語。</p>
+    </div>
+    <div class="tool-box">
+      <div class="tool-search">
+        <input type="search" id="glossarySearch" placeholder="輸入英文或中文，例如：invoice、軟體、字幕…" aria-label="搜尋術語" autocomplete="off" />
+      </div>
+      <p class="tool-count" id="glossaryCount">共 <b>40</b> 個術語</p>
+      <table class="glossary" id="glossaryTable">
+        <thead>
+          <tr><th>英文</th><th>台灣繁體中文</th><th class="cat">分類</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="en">invoice</td><td class="tw">發票</td><td class="cat">商務</td></tr>
+          <tr><td class="en">receipt</td><td class="tw">收據</td><td class="cat">商務</td></tr>
+          <tr><td class="en">contract</td><td class="tw">合約</td><td class="cat">商務</td></tr>
+          <tr><td class="en">agreement</td><td class="tw">協議</td><td class="cat">商務</td></tr>
+          <tr><td class="en">deadline</td><td class="tw">截止日期</td><td class="cat">商務</td></tr>
+          <tr><td class="en">quotation</td><td class="tw">報價單</td><td class="cat">商務</td></tr>
+          <tr><td class="en">purchase order</td><td class="tw">採購單</td><td class="cat">商務</td></tr>
+          <tr><td class="en">delivery note</td><td class="tw">出貨單</td><td class="cat">商務</td></tr>
+          <tr><td class="en">terms and conditions</td><td class="tw">條款與條件</td><td class="cat">商務</td></tr>
+          <tr><td class="en">confidentiality agreement</td><td class="tw">保密協議</td><td class="cat">商務</td></tr>
+          <tr><td class="en">payment terms</td><td class="tw">付款條件</td><td class="cat">商務</td></tr>
+          <tr><td class="en">due date</td><td class="tw">到期日</td><td class="cat">商務</td></tr>
+          <tr><td class="en">bank transfer</td><td class="tw">銀行轉帳</td><td class="cat">商務</td></tr>
+          <tr><td class="en">refund</td><td class="tw">退款</td><td class="cat">商務</td></tr>
+          <tr><td class="en">warranty</td><td class="tw">保固</td><td class="cat">商務</td></tr>
+          <tr><td class="en">copyright</td><td class="tw">著作權</td><td class="cat">商務</td></tr>
+          <tr><td class="en">trademark</td><td class="tw">商標</td><td class="cat">商務</td></tr>
+          <tr><td class="en">patent</td><td class="tw">專利</td><td class="cat">商務</td></tr>
+          <tr><td class="en">software</td><td class="tw">軟體</td><td class="cat">科技</td></tr>
+          <tr><td class="en">hardware</td><td class="tw">硬體</td><td class="cat">科技</td></tr>
+          <tr><td class="en">user interface</td><td class="tw">使用者介面</td><td class="cat">科技</td></tr>
+          <tr><td class="en">settings</td><td class="tw">設定</td><td class="cat">科技</td></tr>
+          <tr><td class="en">password</td><td class="tw">密碼</td><td class="cat">科技</td></tr>
+          <tr><td class="en">username</td><td class="tw">使用者名稱</td><td class="cat">科技</td></tr>
+          <tr><td class="en">download</td><td class="tw">下載</td><td class="cat">科技</td></tr>
+          <tr><td class="en">upload</td><td class="tw">上傳</td><td class="cat">科技</td></tr>
+          <tr><td class="en">file</td><td class="tw">檔案</td><td class="cat">科技</td></tr>
+          <tr><td class="en">folder</td><td class="tw">資料夾</td><td class="cat">科技</td></tr>
+          <tr><td class="en">search</td><td class="tw">搜尋</td><td class="cat">科技</td></tr>
+          <tr><td class="en">delete</td><td class="tw">刪除</td><td class="cat">科技</td></tr>
+          <tr><td class="en">save</td><td class="tw">儲存</td><td class="cat">科技</td></tr>
+          <tr><td class="en">login</td><td class="tw">登入</td><td class="cat">科技</td></tr>
+          <tr><td class="en">logout</td><td class="tw">登出</td><td class="cat">科技</td></tr>
+          <tr><td class="en">notification</td><td class="tw">通知</td><td class="cat">科技</td></tr>
+          <tr><td class="en">update</td><td class="tw">更新</td><td class="cat">科技</td></tr>
+          <tr><td class="en">version</td><td class="tw">版本</td><td class="cat">科技</td></tr>
+          <tr><td class="en">subtitle</td><td class="tw">字幕</td><td class="cat">字幕</td></tr>
+          <tr><td class="en">closed caption</td><td class="tw">隱藏字幕</td><td class="cat">字幕</td></tr>
+          <tr><td class="en">transcript</td><td class="tw">逐字稿</td><td class="cat">字幕</td></tr>
+          <tr><td class="en">timeline</td><td class="tw">時間軸</td><td class="cat">字幕</td></tr>
+        </tbody>
+      </table>
+      <p class="no-result" id="noResult">沒有找到符合的術語。試試換一個關鍵字，或看看<a href="https://gumroad.com/l/sjtrr" target="_blank" rel="noopener" style="font-weight:700">完整版 337 個術語</a>有沒有你要的詞。</p>
+      <div class="tool-note">
+        <b>台灣用詞提醒：</b>同一個英文詞，台灣和對岸的說法常常不一樣，例如 software 是「軟體」（不是软件）、file 是「檔案」（不是文件）、search 是「搜尋」（不是搜索）、video 是「影片」（不是视频）。寫給台灣人看的內容，用台灣說法才不會一眼被看出是簡轉繁。
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Full version ===== -->
+  <section id="full">
+    <div class="full-cta">
+      <h2>免費版不夠用？<span class="hl">完整版 337 個術語，$9 一次帶走。</span></h2>
+      <p>完整版收錄 <b>337 個術語</b>，含商務、科技、字幕三大類，全部是台灣繁體中文對照。<b>Excel + PDF 兩種格式</b>，買下後可直接用在自己的翻譯工作與寫作對照，不限次數。</p>
+      <div class="full-prices" aria-label="完整版內容">
+        <span><b>337</b> 個術語</span>
+        <span><b>Excel + PDF</b></span>
+        <span>商務／科技／字幕</span>
+        <span>一次付費 <b>$9</b></span>
+      </div>
+      <div class="btns">
+        <a class="btn btn-yellow" href="https://gumroad.com/l/sjtrr" target="_blank" rel="noopener">在 Gumroad 購買 $9 →</a>
+        <a class="btn btn-outline" href="https://www.fiverr.com/chenhank372/writing-and-translation-expert" target="_blank" rel="noopener">找 Hank 翻譯整份文件</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Tips ===== -->
+  <section id="tips">
+    <div class="sec-head">
+      <h2><span class="bar">▍</span>術語表怎麼用才有效</h2>
+      <p>查一個詞只是開始。讓譯文看起來專業，靠的是整份文件用詞一致。</p>
+    </div>
+    <div class="grid grid-3">
+      <div class="card">
+        <h3>1. 先對表，再開始翻</h3>
+        <p>動筆前先把文件裡反覆出現的關鍵詞挑出來，對好中文譯法再開始翻，翻到一半就不用一直回頭改。</p>
+      </div>
+      <div class="card">
+        <h3>2. 一個詞，只用一種譯法</h3>
+        <p>同一個英文詞在同一份文件裡只對一種中文。前面翻「設定」，後面就不能突然變「設置」，讀者會以為是兩個東西。</p>
+      </div>
+      <div class="card">
+        <h3>3. 台灣用詞要一致</h3>
+        <p>軟體、檔案、搜尋、影片、品質——整份文件都用台灣說法，混進一個對岸用詞，整篇的台灣味就破了。詳細做法可以看<a href="https://z2idugagr.github.io/glossary/terminology-consistency/" style="font-weight:700">術語不統一怎麼辦</a>這篇文章。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FAQ ===== -->
+  <section id="faq">
+    <div class="sec-head">
+      <h2><span class="bar">▍</span>常見問題 FAQ</h2>
+    </div>
+    <details class="faq">
+      <summary>免費版跟完整版有什麼差別？</summary>
+      <div class="a"><p>免費版是這個頁面上的 40 個常用術語，直接查、不用付錢也不用留資料。完整版收錄 337 個術語，含商務、科技、字幕三大類，Excel + PDF 兩種格式，$9 在 Gumroad 購買後直接下載。</p></div>
+    </details>
+    <details class="faq">
+      <summary>術語表裡的中文是台灣用詞嗎？</summary>
+      <div class="a"><p>是。全部都是台灣繁體中文與台灣慣用說法，例如軟體、檔案、搜尋、影片，不會出現簡轉繁或對岸用語。</p></div>
+    </details>
+    <details class="faq">
+      <summary>買了完整版可以商用嗎？</summary>
+      <div class="a"><p>可以。完整版術語表買下後可用於你自己的翻譯工作、寫作與內部文件對照，不限次數使用。</p></div>
+    </details>
+    <details class="faq">
+      <summary>術語表沒有我要的詞怎麼辦？</summary>
+      <div class="a"><p>可以找 Hank 翻譯整份文件：文件翻譯 $5 起，1–3 天交件，術語會在譯稿裡統一處理。透過 Fiverr 下單，平台有交易保障。</p></div>
+    </details>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div><b>Hank 翻譯術語表</b> ・ 英文 ↔ 繁體中文（台灣）翻譯／校對／排版</div>
+    <div>本站不直接收款，商品與服務透過 <a href="https://gumroad.com/l/sjtrr" target="_blank" rel="noopener">Gumroad</a> 與 <a href="https://www.fiverr.com/chenhank372/writing-and-translation-expert" target="_blank" rel="noopener">Fiverr</a> 交易。</div>
+  </div>
+</footer>
+
+<div class="sticky-bar">
+  <a class="s1" href="https://gumroad.com/l/sjtrr" target="_blank" rel="noopener">完整版 $9</a>
+  <a class="s2" href="https://www.fiverr.com/chenhank372/writing-and-translation-expert" target="_blank" rel="noopener">找 Hank 翻譯</a>
+</div>
+
+<script>
+(function(){
+  var input = document.getElementById('glossarySearch');
+  var table = document.getElementById('glossaryTable');
+  var rows = table.getElementsByTagName('tbody')[0].getElementsByTagName('tr');
+  var count = document.getElementById('glossaryCount');
+  var noResult = document.getElementById('noResult');
+  var total = rows.length;
+  input.addEventListener('input', function(){
+    var q = input.value.trim().toLowerCase();
+    var shown = 0;
+    for (var i = 0; i < rows.length; i++) {
+      var text = rows[i].textContent.toLowerCase();
+      var match = q === '' || text.indexOf(q) !== -1;
+      rows[i].classList.toggle('hidden', !match);
+      if (match) shown++;
+    }
+    if (q === '') {
+      count.innerHTML = '共 <b>' + total + '</b> 個術語';
+    } else {
+      count.innerHTML = '找到 <b>' + shown + '</b> 個術語';
+    }
+    noResult.classList.toggle('show', shown === 0);
+  });
+})();
+</script>
+</body>
+</html>
