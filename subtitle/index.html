@@ -1,0 +1,473 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="color-scheme" content="light dark" />
+<meta name="description" content="Hank Chen 英文 ↔ 繁體中文（台灣）字幕翻譯：YouTube、Reels、Shorts、Podcast 的中英字幕 SRT。短片每支 $600 起，免費先做 30 秒 sample，透過 Fiverr 下單。" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Hank 字幕翻譯" />
+<meta property="og:locale" content="zh_TW" />
+<meta property="og:title" content="Hank 字幕翻譯｜英文 ↔ 繁體中文（台灣）SRT 字幕翻譯" />
+<meta property="og:description" content="你的影片，值得被全世界看到。YouTube、Reels、Shorts、Podcast 的中英字幕 SRT 翻譯，短片每支 $600 起，免費先做 30 秒 sample。" />
+<meta property="og:url" content="https://z2idugagr.github.io/subtitle/" />
+<link rel="canonical" href="https://z2idugagr.github.io/subtitle/" />
+<link rel="icon" href="data:," />
+<title>Hank 字幕翻譯｜英文 ↔ 繁體中文（台灣）SRT 字幕翻譯</title>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"WebSite","name":"Hank 字幕翻譯","url":"https://z2idugagr.github.io/subtitle/","inLanguage":"zh-Hant-TW"},{"@type":"ProfessionalService","name":"Hank 字幕翻譯","description":"Hank Chen 英文 ↔ 繁體中文（台灣）字幕翻譯：YouTube、Reels、Shorts、Podcast 的中英字幕 SRT，時間軸對齊、斷句照口語節奏。","url":"https://z2idugagr.github.io/subtitle/","priceRange":"$600 起","areaServed":"TW","knowsLanguage":["en","zh-Hant-TW"],"sameAs":["https://www.fiverr.com/chenhank372/writing-and-translation-expert","https://www.instagram.com/a2idugagr/","https://www.tiktok.com/@oni.exe7","https://www.youtube.com/@HankChenTW-k8l"]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"一支影片的字幕翻譯多少錢？怎麼算？","acceptedAnswer":{"@type":"Answer","text":"短片每支 $600 起，實際價格依影片長度與對話密度報價。先把影片連結或檔案傳來，確認內容後回覆確定價格與交期，你同意再下單，不會中途加價。"}},{"@type":"Question","name":"免費 30 秒 sample 是怎麼做的？","acceptedAnswer":{"@type":"Answer","text":"把影片連結傳來，免費先做前 30 秒的中英字幕給你看，時間軸、斷句、用詞都照正式交件的水準做。看過 sample 覺得可以，再談整支影片的報價。"}},{"@type":"Question","name":"交件要多久？","acceptedAnswer":{"@type":"Answer","text":"依影片長度，一般 1–3 天交件。有急件需求請先說截止時間，確認排得進去再下單，不會先收錢再說做不到。"}},{"@type":"Question","name":"交件時會拿到什麼檔案？","acceptedAnswer":{"@type":"Answer","text":"標準 .srt 字幕檔，時間軸對齊，可直接上傳 YouTube、TikTok、Instagram。單語字幕或中英雙語字幕都可以做，下單時說明即可。"}}]}]}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Noto+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --navy:#0F2A44;
+    --navy-2:#16365A;
+    --navy-deep:#0A1E33;
+    --yellow:#FFC400;
+    --yellow-dark:#E0AA00;
+    --bg:#F6F7F9;
+    --surface:#FFFFFF;
+    --surface-2:#EEF2F6;
+    --ink:#14232F;
+    --ink-2:#435363;
+    --muted:#5A6B7A;
+    --line:#DCE3EA;
+    --radius:14px;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#0B1B2E;
+      --surface:#12293F;
+      --surface-2:#0F2A44;
+      --ink:#F2F5F8;
+      --muted:#A9BAC9;
+      --line:#24405C;
+      color-scheme: dark;
+    }
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    font-family:"Noto Sans TC","Noto Sans",system-ui,-apple-system,"PingFang TC","Microsoft JhengHei",sans-serif;
+    background:var(--bg);
+    color:var(--ink);
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit}
+  img{max-width:100%}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+
+  /* ---------- Nav ---------- */
+  .nav{
+    position:sticky;top:0;z-index:50;
+    background:var(--navy);
+    color:#fff;
+    border-bottom:3px solid var(--yellow);
+  }
+  .nav-inner{display:flex;align-items:center;gap:18px;min-height:60px;flex-wrap:wrap;padding-top:6px;padding-bottom:6px}
+  .brand{font-weight:900;font-size:1.08rem;letter-spacing:.02em;text-decoration:none;display:flex;align-items:center;gap:10px}
+  .brand .mark{background:var(--yellow);color:var(--navy);font-weight:900;padding:2px 9px;border-radius:6px;font-size:.95rem}
+  .brand small{font-weight:500;font-size:.78rem;color:#BFD0E0;display:block;line-height:1.2}
+  .nav-links{display:flex;gap:4px;margin-left:auto;flex-wrap:wrap}
+  .nav-links a{
+    text-decoration:none;font-size:.92rem;font-weight:500;color:#E7EEF5;
+    padding:9px 12px;border-radius:8px;min-height:38px;display:inline-flex;align-items:center;
+  }
+  .nav-links a:hover{background:var(--navy-2);color:#fff}
+  .nav-cta{background:var(--yellow);color:var(--navy)!important;font-weight:700}
+  .nav-cta:hover{background:var(--yellow-dark)}
+
+  /* ---------- Hero ---------- */
+  .hero{background:var(--navy);color:#fff;padding:56px 0 64px;position:relative;overflow:hidden}
+  .hero::after{
+    content:"";position:absolute;right:-70px;top:-70px;width:280px;height:280px;border-radius:50%;
+    border:44px solid rgba(255,196,0,.14);pointer-events:none;
+  }
+  .hero-tag{
+    display:inline-block;background:rgba(255,196,0,.15);color:var(--yellow);
+    border:1px solid rgba(255,196,0,.5);font-size:.85rem;font-weight:700;
+    padding:5px 14px;border-radius:999px;margin-bottom:20px;
+  }
+  .hero h1{
+    font-size:2.55rem;line-height:1.28;font-weight:900;margin:0 0 16px;max-width:16em;letter-spacing:.01em;
+  }
+  .hero h1 .hl{color:var(--yellow)}
+  .hero p.lead{font-size:1.08rem;color:#C9D7E4;max-width:36em;margin:0 0 26px}
+  .hero-facts{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:30px}
+  .hero-facts span{
+    background:var(--navy-2);border:1px solid #2A4A6E;color:#fff;
+    font-size:.92rem;font-weight:700;padding:8px 16px;border-radius:8px;
+  }
+  .hero-facts span b{color:var(--yellow);font-size:1.05rem}
+  .hero-btns{display:flex;gap:12px;flex-wrap:wrap}
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:8px;
+    min-height:50px;padding:12px 26px;border-radius:10px;
+    font-weight:700;font-size:1rem;text-decoration:none;border:2px solid transparent;
+    transition:transform .12s ease, background .12s ease;
+  }
+  .btn:active{transform:scale(.98)}
+  .btn-yellow{background:var(--yellow);color:var(--navy)}
+  .btn-yellow:hover{background:var(--yellow-dark)}
+  .btn-outline{border-color:#7E97AE;color:#fff;background:transparent}
+  .btn-outline:hover{border-color:#fff}
+  .hero-note{margin-top:18px;font-size:.86rem;color:#8FA6BB}
+
+  /* ---------- Sections ---------- */
+  section{padding:58px 0 8px}
+  .sec-head{margin-bottom:26px}
+  .sec-head h2{font-size:1.65rem;font-weight:900;margin:0 0 6px;color:var(--ink)}
+  .sec-head h2 .bar{color:var(--yellow-dark)}
+  @media (prefers-color-scheme: dark){ .sec-head h2 .bar{color:var(--yellow)} }
+  .sec-head p{margin:0;color:var(--muted);max-width:42em}
+
+  .grid{display:grid;gap:16px}
+  .grid-3{grid-template-columns:repeat(3,1fr)}
+  .grid-2{grid-template-columns:repeat(2,1fr)}
+
+  .card{
+    background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+    padding:22px 20px;
+  }
+  .card .icon{
+    width:44px;height:44px;border-radius:10px;background:var(--navy);color:var(--yellow);
+    display:flex;align-items:center;justify-content:center;margin-bottom:14px;
+  }
+  .card .icon svg{width:24px;height:24px}
+  .card h3{margin:0 0 8px;font-size:1.06rem;font-weight:700}
+  .card p{margin:0;color:var(--muted);font-size:.94rem}
+  .card ul{margin:10px 0 0;padding-left:1.15em;color:var(--muted);font-size:.94rem}
+  .card ul li{margin:3px 0}
+
+  /* ---------- Pricing ---------- */
+  .price-card{position:relative;display:flex;flex-direction:column}
+  .price-card.popular{border:2px solid var(--yellow);box-shadow:0 10px 30px rgba(15,42,68,.12)}
+  .pop-badge{
+    position:absolute;top:-14px;left:20px;background:var(--yellow);color:var(--navy);
+    font-size:.8rem;font-weight:900;padding:4px 12px;border-radius:999px;letter-spacing:.04em;
+  }
+  .price-name{font-weight:700;font-size:1rem;color:var(--muted);letter-spacing:.06em}
+  .price-amt{font-size:2.3rem;font-weight:900;color:var(--ink);line-height:1.15;margin:6px 0 2px}
+  .price-amt small{font-size:.95rem;font-weight:500;color:var(--muted)}
+  .price-card ul{list-style:none;margin:16px 0 22px;padding:0}
+  .price-card ul li{padding:7px 0 7px 28px;position:relative;border-bottom:1px dashed var(--line);font-size:.95rem}
+  .price-card ul li:last-child{border-bottom:none}
+  .price-card ul li::before{
+    content:"";position:absolute;left:2px;top:12px;width:14px;height:8px;
+    border-left:3px solid var(--yellow-dark);border-bottom:3px solid var(--yellow-dark);transform:rotate(-45deg);
+  }
+  @media (prefers-color-scheme: dark){ .price-card ul li::before{border-color:var(--yellow)} }
+  .price-card .btn{margin-top:auto}
+  .btn-navy{background:var(--navy);color:#fff}
+  .btn-navy:hover{background:var(--navy-2)}
+  .custom-note{
+    margin-top:16px;background:var(--surface-2);border:1px dashed var(--muted);
+    border-radius:var(--radius);padding:16px 20px;font-size:.95rem;color:var(--muted);
+  }
+  .custom-note b{color:var(--ink)}
+
+  /* ---------- Tips ---------- */
+  .tip{display:flex;flex-direction:column}
+  .tip .num{
+    width:38px;height:38px;border-radius:50%;background:var(--yellow);color:var(--navy);
+    font-weight:900;display:flex;align-items:center;justify-content:center;font-size:1.05rem;margin-bottom:12px;
+  }
+  .tip h3{margin:0 0 6px;font-size:1.05rem}
+  .tip p{margin:0;color:var(--muted);font-size:.93rem}
+  .tip .eg{
+    margin-top:12px;background:var(--surface-2);border-radius:8px;padding:10px 14px;
+    font-size:.9rem;color:var(--muted);
+  }
+  .tip .eg b{color:var(--ink)}
+
+  /* ---------- FAQ ---------- */
+  details.faq{
+    background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+    margin-bottom:10px;overflow:hidden;
+  }
+  details.faq summary{
+    cursor:pointer;font-weight:700;font-size:1rem;padding:16px 20px;min-height:52px;
+    display:flex;align-items:center;list-style:none;
+  }
+  details.faq summary::-webkit-details-marker{display:none}
+  details.faq summary::after{content:"＋";margin-left:auto;color:var(--yellow-dark);font-weight:900;font-size:1.15rem}
+  details.faq[open ] summary::after{content:"－"}
+  @media (prefers-color-scheme: dark){ details.faq summary::after{color:var(--yellow)} }
+  details.faq .a{padding:0 20px 18px;color:var(--muted);font-size:.95rem}
+  details.faq .a p{margin:0}
+
+  /* ---------- CTA band ---------- */
+  .cta-band{
+    background:var(--navy);color:#fff;border-radius:18px;
+    padding:36px 32px;margin-top:48px;position:relative;overflow:hidden;
+  }
+  .cta-band::after{
+    content:"";position:absolute;right:-60px;bottom:-60px;width:220px;height:220px;border-radius:50%;
+    border:36px solid rgba(255,196,0,.12);pointer-events:none;
+  }
+  .cta-band h2{font-size:1.7rem;font-weight:900;line-height:1.3;margin:0 0 10px;max-width:22em}
+  .cta-band h2 .hl{color:var(--yellow)}
+  .cta-band p{color:#C9D7E4;font-size:1.02rem;margin:0 0 24px;max-width:44em}
+  .cta-band .btns{display:flex;gap:12px;flex-wrap:wrap;position:relative;z-index:1}
+
+  footer{
+    margin-top:64px;background:var(--navy-deep);color:#9DB2C6;padding:30px 0 34px;font-size:.88rem;
+  }
+  footer .wrap{display:flex;gap:14px;flex-wrap:wrap;justify-content:space-between;align-items:center}
+  footer b{color:#fff}
+  footer a{color:var(--yellow);text-decoration:none;font-weight:700}
+
+  /* ---------- Sticky mobile bar ---------- */
+  .sticky-bar{
+    display:none;position:fixed;left:0;right:0;bottom:0;z-index:60;
+    background:var(--navy);border-top:3px solid var(--yellow);
+    padding:10px 12px calc(10px + env(safe-area-inset-bottom));
+    gap:10px;
+  }
+  .sticky-bar a{
+    flex:1;min-height:48px;display:flex;align-items:center;justify-content:center;
+    border-radius:10px;font-weight:700;text-decoration:none;font-size:.98rem;
+  }
+  .sticky-bar .s1{background:var(--yellow);color:var(--navy)}
+  .sticky-bar .s2{border:2px solid #7E97AE;color:#fff}
+
+  /* ---------- Responsive ---------- */
+  @media (max-width:640px){
+    body{padding-bottom:78px}
+    .hero{padding:40px 0 48px}
+    .hero h1{font-size:1.85rem}
+    .grid-3,.grid-2{grid-template-columns:1fr}
+    .cta-band{padding:28px 20px}
+    .cta-band h2{font-size:1.45rem}
+    .nav-links a{padding:8px 9px;font-size:.88rem}
+    .sticky-bar{display:flex}
+    .hero-btns .btn{flex:1}
+    section{padding-top:44px}
+  }
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto}
+    .btn{transition:none}
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== Nav ===== -->
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="#top"><span class="mark">譯</span><span>Hank 字幕翻譯<small>英文 ↔ 繁體中文（台灣）SRT</small></span></a>
+    <nav class="nav-links" aria-label="主選單">
+      <a href="#services">服務</a>
+      <a href="#pricing">價格</a>
+      <a href="#tips">字幕小知識</a>
+      <a href="#articles">文章</a>
+      <a href="#faq">FAQ</a>
+      <a class="nav-cta" href="#cta">免費試做</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ===== Hero ===== -->
+<div class="hero" id="top">
+  <div class="wrap">
+    <span class="hero-tag">Hank Chen ・ YouTube／Reels／Shorts／Podcast 字幕</span>
+    <h1>你的影片，值得被<span class="hl">全世界看到</span>。</h1>
+    <p class="lead">英文影片加上繁體中文（台灣）字幕，中文影片翻成英文字幕，觀眾不再被語言擋在外面。時間軸對齊、斷句照說話節奏切，拿到 SRT 檔直接上傳就能用。</p>
+    <div class="hero-facts">
+      <span>短片 <b>$600</b> 起</span>
+      <span><b>免費 30 秒</b> sample</span>
+      <span><b>1–3 天</b> 交件</span>
+      <span>只做 <b>台灣繁體</b></span>
+    </div>
+    <div class="hero-btns">
+      <a class="btn btn-yellow" href="https://www.fiverr.com/chenhank372/writing-and-translation-expert" target="_blank" rel="noopener">在 Fiverr 下單 →</a>
+      <a class="btn btn-outline" href="https://zidug.gumroad.com" target="_blank" rel="noopener">Gumroad 字幕商品 →</a>
+    </div>
+    <p class="hero-note">本站不直接收款，翻譯服務透過 Fiverr 平台下單付款，付款與交件都有平台保障。</p>
+  </div>
+</div>
+
+<main class="wrap">
+
+  <!-- ===== Services ===== -->
+  <section id="services">
+    <div class="sec-head">
+      <h2><span class="bar">▍</span>服務項目</h2>
+      <p>英文 ↔ 繁體中文（台灣）雙向字幕翻譯，YouTube 長片、Reels、Shorts、Podcast 都接：</p>
+    </div>
+    <div class="grid grid-3">
+      <div class="card">
+        <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M6 15h4M14 15h4M6 11h7"/></svg></div>
+        <h3>中英字幕 SRT</h3>
+        <p>英文影片翻成繁體中文（台灣），或中文影片翻成英文，交付標準 .srt 字幕檔。</p>
+        <ul>
+          <li>時間軸對齊原音</li>
+          <li>斷句照口語節奏切</li>
+          <li>可直接上傳 YouTube／TikTok／IG</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16M4 12h16M4 19h10"/></svg></div>
+        <h3>雙語字幕</h3>
+        <p>中英對照上下兩行，一次滿足中文觀眾與海外觀眾，適合教學、訪談與課程影片。</p>
+        <ul>
+          <li>中英兩行同時顯示</li>
+          <li>上下行對齊不錯位</li>
+          <li>適合教學與訪談影片</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2M12 19v4M8 23h8"/></svg></div>
+        <h3>逐字稿字幕</h3>
+        <p>沒有逐字稿也沒關係：先把影片、Podcast 的對話聽打成逐字稿，再翻譯成字幕。</p>
+        <ul>
+          <li>聽打＋翻譯一次完成</li>
+          <li>適合 Podcast、演講、課程</li>
+          <li>逐字稿可另存文字檔給你</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Pricing ===== -->
+  <section id="pricing">
+    <div class="sec-head">
+      <h2><span class="bar">▍</span>價格</h2>
+      <p>短片每支 $600 起，實際價格依影片長度與對話密度報價，報價前先確認，不會中途加價。</p>
+    </div>
+    <div class="grid grid-2">
+      <div class="card price-card popular">
+        <span class="pop-badge">免費先試</span>
+        <div class="price-name">字幕翻譯</div>
+        <div class="price-amt">$600 <small>／支起</small></div>
+        <ul>
+          <li>免費先做 30 秒 sample，看過再決定</li>
+          <li>交付標準 .srt 字幕檔</li>
+          <li>時間軸對齊、斷句照口語節奏</li>
+          <li>1–3 天交件（依影片長度）</li>
+          <li>單語或中英雙語都可以做</li>
+        </ul>
+        <a class="btn btn-yellow" href="https://www.fiverr.com/chenhank372/writing-and-translation-expert" target="_blank" rel="noopener">在 Fiverr 下單</a>
+      </div>
+      <div class="card price-card">
+        <div class="price-name">GUMROAD ・ 數位下載</div>
+        <h3 style="margin-top:8px">SRT 字幕品檢清單</h3>
+        <p>自己做字幕時拿來逐項檢查的清單，時間軸、斷句、格式一次對完。</p>
+        <div class="price-amt">$7 <small>USD</small></div>
+        <ul>
+          <li>16 項檢查清單，照著勾就不會漏</li>
+          <li>3 種格式：PDF／Excel／SRT 範本</li>
+          <li>付款後直接下載</li>
+        </ul>
+        <a class="btn btn-navy" href="https://zidug.gumroad.com" target="_blank" rel="noopener">在 Gumroad 看看 →</a>
+      </div>
+    </div>
+    <div class="custom-note">
+      <b>長片、課程系列、大量影片採客製報價：</b>影片超過 15 分鐘，或一次要做多支影片，請先透過 Fiverr 傳影片連結或檔案，確認內容後回覆確定價格與交期，你同意再下單。
+    </div>
+  </section>
+
+  <!-- ===== Tips ===== -->
+  <section id="tips">
+    <div class="sec-head">
+      <h2><span class="bar">▍</span>好字幕的三個習慣</h2>
+      <p>字幕翻得對只是基本，觀眾讀不讀得完才是關鍵。這三點是每一支字幕交件前都會檢查的：</p>
+    </div>
+    <div class="grid grid-3">
+      <div class="card tip">
+        <div class="num">1</div>
+        <h3>每行不要太長</h3>
+        <p>中文字幕每行控制在 20 個字以內，一句話最多兩行。字太多，觀眾還沒讀完畫面就跳走了。</p>
+        <div class="eg"><b>例如：</b>一句話太長時，照意思切成兩行，不要硬塞成一行。</div>
+      </div>
+      <div class="card tip">
+        <div class="num">2</div>
+        <h3>斷句照說話節奏切</h3>
+        <p>字幕的斷句點要跟說話的停頓對上，不要在句子中間斷開。觀眾是邊聽邊讀，斷錯地方讀起來會卡住。</p>
+        <div class="eg"><b>例如：</b>「今天我們要去／台北玩」不要切成「今天我們要／去台北玩」。</div>
+      </div>
+      <div class="card tip">
+        <div class="num">3</div>
+        <h3>每句至少顯示 1 秒</h3>
+        <p>一句字幕出現的時間太短，眼睛來不及讀完。語速再快，每句字幕也至少留 1 秒讓觀眾讀。</p>
+        <div class="eg"><b>例如：</b>快速連珠炮的對話，寧可拆成兩句，也不要一句閃過去。</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Articles ===== -->
+  <section id="articles">
+    <div class="sec-head">
+      <h2><span class="bar">▍</span>字幕文章</h2>
+      <p>做字幕時真的會遇到的問題，寫成文章給你參考：</p>
+    </div>
+    <div class="grid grid-2">
+      <a class="card" href="youtube-english-subtitles/" style="text-decoration:none;display:block">
+        <h3>YouTube 字幕怎麼加英文字幕？3 個步驟觸及海外觀眾</h3>
+        <p>從準備逐字稿、翻譯斷句，到上傳 SRT 檔，三個步驟讓你的影片被海外觀眾搜到、看得懂。</p>
+        <p style="margin-top:12px;font-weight:700;color:var(--navy)">閱讀全文 →</p>
+      </a>
+      <a class="card" href="srt-timing-mismatch/" style="text-decoration:none;display:block">
+        <h3>SRT 字幕時間軸對不上？最常見的 3 個原因</h3>
+        <p>字幕比聲音快、比聲音慢，或越到後面越對不上——通常是這三個原因，附檢查方法。</p>
+        <p style="margin-top:12px;font-weight:700;color:var(--navy)">閱讀全文 →</p>
+      </a>
+    </div>
+  </section>
+
+  <!-- ===== FAQ ===== -->
+  <section id="faq">
+    <div class="sec-head">
+      <h2><span class="bar">▍</span>常見問題 FAQ</h2>
+    </div>
+    <details class="faq">
+      <summary>一支影片的字幕翻譯多少錢？怎麼算？</summary>
+      <div class="a"><p>短片每支 $600 起，實際價格依影片長度與對話密度報價。先把影片連結或檔案傳來，確認內容後回覆確定價格與交期，你同意再下單，不會中途加價。</p></div>
+    </details>
+    <details class="faq">
+      <summary>免費 30 秒 sample 是怎麼做的？</summary>
+      <div class="a"><p>把影片連結傳來，免費先做前 30 秒的中英字幕給你看，時間軸、斷句、用詞都照正式交件的水準做。看過 sample 覺得可以，再談整支影片的報價。</p></div>
+    </details>
+    <details class="faq">
+      <summary>交件要多久？</summary>
+      <div class="a"><p>依影片長度，一般 1–3 天交件。有急件需求請先說截止時間，確認排得進去再下單，不會先收錢再說做不到。</p></div>
+    </details>
+    <details class="faq">
+      <summary>交件時會拿到什麼檔案？</summary>
+      <div class="a"><p>標準 .srt 字幕檔，時間軸對齊，可直接上傳 YouTube、TikTok、Instagram。單語字幕或中英雙語字幕都可以做，下單時說明即可。</p></div>
+    </details>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <section id="cta">
+    <div class="cta-band">
+      <h2>先免費做 <span class="hl">30 秒</span>，看過再決定。</h2>
+      <p>把影片連結傳來，30 秒 sample 做好給你看。時間軸、斷句、用詞，滿意再談整支影片。</p>
+      <div class="btns">
+        <a class="btn btn-yellow" href="https://www.fiverr.com/chenhank372/writing-and-translation-expert" target="_blank" rel="noopener">在 Fiverr 下單 →</a>
+        <a class="btn btn-outline" href="https://zidug.gumroad.com" target="_blank" rel="noopener">Gumroad 字幕商品 →</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div><b>Hank 字幕翻譯</b> ・ 英文 ↔ 繁體中文（台灣）字幕翻譯／SRT</div>
+    <div>本站不直接收款，翻譯服務透過 <a href="https://www.fiverr.com/chenhank372/writing-and-translation-expert" target="_blank" rel="noopener">Fiverr</a> 平台進行；模板商品透過 <a href="https://zidug.gumroad.com" target="_blank" rel="noopener">Gumroad</a> 購買。</div>
+  </div>
+</footer>
+
+<div class="sticky-bar">
+  <a class="s1" href="https://www.fiverr.com/chenhank372/writing-and-translation-expert" target="_blank" rel="noopener">Fiverr 下單</a>
+  <a class="s2" href="https://zidug.gumroad.com" target="_blank" rel="noopener">Gumroad 商品</a>
+</div>
+
+</body>
+</html>

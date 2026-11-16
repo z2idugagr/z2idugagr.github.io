@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="description" content="SRT 字幕比聲音快、比聲音慢，或越到後面越對不上？整理最常見的 3 個原因：影片重剪後時間變了、影格率不同、時間格式錯誤，附檢查方法。" />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="Hank 字幕翻譯" />
+<meta property="og:locale" content="zh_TW" />
+<meta property="og:title" content="SRT 字幕時間軸對不上？最常見的 3 個原因｜Hank 字幕翻譯" />
+<meta property="og:description" content="SRT 字幕比聲音快、比聲音慢，或越到後面越對不上？整理最常見的 3 個原因：影片重剪後時間變了、影格率不同、時間格式錯誤，附檢查方法。" />
+<meta property="og:url" content="https://z2idugagr.github.io/subtitle/srt-timing-mismatch/" />
+<link rel="canonical" href="https://z2idugagr.github.io/subtitle/srt-timing-mismatch/" />
+<title>SRT 字幕時間軸對不上？最常見的 3 個原因｜Hank 字幕翻譯</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Noto+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"SRT 字幕時間軸對不上？最常見的 3 個原因","author":{"@type":"Person","name":"Hank Chen"},"datePublished":"2026-11-16","inLanguage":"zh-Hant-TW","mainEntityOfPage":"https://z2idugagr.github.io/subtitle/srt-timing-mismatch/"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首頁","item":"https://z2idugagr.github.io/subtitle/"},{"@type":"ListItem","position":2,"name":"SRT 字幕時間軸對不上？最常見的 3 個原因","item":"https://z2idugagr.github.io/subtitle/srt-timing-mismatch/"}]}
+</script>
+<style>
+  :root{--navy:#0F2A44;--navy-2:#16365A;--navy-deep:#0A1E33;--yellow:#FFC400;--yellow-dark:#E0AA00;--bg:#F6F7F9;--surface:#FFFFFF;--surface-2:#EEF2F6;--ink:#14232F;--muted:#5A6B7A;--line:#DCE3EA;--radius:14px;color-scheme:light}
+  @media (prefers-color-scheme: dark){:root{--bg:#0B1B2E;--surface:#12293F;--surface-2:#0F2A44;--ink:#F2F5F8;--muted:#A9BAC9;--line:#24405C;color-scheme:dark}}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:"Noto Sans TC","Noto Sans",system-ui,-apple-system,"PingFang TC","Microsoft JhengHei",sans-serif;background:var(--bg);color:var(--ink);line-height:1.8;-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  .wrap{max-width:760px;margin:0 auto;padding:0 20px}
+  .nav{position:sticky;top:0;z-index:50;background:var(--navy);color:#fff;border-bottom:3px solid var(--yellow)}
+  .nav-inner{display:flex;align-items:center;gap:18px;min-height:60px;flex-wrap:wrap;padding-top:6px;padding-bottom:6px;max-width:1080px;margin:0 auto;padding-left:20px;padding-right:20px}
+  .brand{font-weight:900;font-size:1.08rem;text-decoration:none;display:flex;align-items:center;gap:10px}
+  .brand .mark{background:var(--yellow);color:var(--navy);font-weight:900;padding:2px 9px;border-radius:6px;font-size:.95rem}
+  .nav-links{display:flex;gap:4px;margin-left:auto;flex-wrap:wrap}
+  .nav-links a{text-decoration:none;font-size:.92rem;font-weight:500;color:#E7EEF5;padding:9px 12px;border-radius:8px}
+  .nav-links a:hover{background:var(--navy-2);color:#fff}
+  article{padding:44px 0 8px}
+  .tag{display:inline-block;background:rgba(255,196,0,.2);color:var(--yellow-dark);border:1px solid var(--yellow-dark);font-size:.82rem;font-weight:700;padding:4px 13px;border-radius:999px;margin-bottom:14px}
+  @media (prefers-color-scheme: dark){.tag{color:var(--yellow)}}
+  h1{font-size:1.9rem;line-height:1.35;font-weight:900;margin:0 0 10px}
+  .meta{color:var(--muted);font-size:.9rem;margin:0 0 28px}
+  h2{font-size:1.35rem;font-weight:900;margin:36px 0 12px}
+  h2 .bar{color:var(--yellow-dark)}
+  p{margin:0 0 16px}
+  .note{background:var(--surface-2);border-left:4px solid var(--yellow);border-radius:0 10px 10px 0;padding:14px 18px;margin:20px 0;font-size:.95rem;color:var(--muted)}
+  .note b{color:var(--ink)}
+  .cta{background:var(--navy);color:#fff;border-radius:16px;padding:28px;margin:36px 0}
+  .cta h3{margin:0 0 8px;font-size:1.15rem}
+  .cta h3 span{color:var(--yellow)}
+  .cta p{color:#C9D7E4;margin:0 0 18px;font-size:.95rem}
+  .cta .btns{display:flex;gap:12px;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:11px 24px;border-radius:10px;font-weight:700;font-size:.98rem;text-decoration:none}
+  .btn-yellow{background:var(--yellow);color:var(--navy)}
+  .btn-outline{border:2px solid #7E97AE;color:#fff}
+  .author{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:20px;display:flex;gap:16px;align-items:start;margin-bottom:20px}
+  .avatar{width:56px;height:56px;border-radius:12px;background:var(--navy);color:var(--yellow);display:flex;align-items:center;justify-content:center;font-size:1.5rem;font-weight:900;flex-shrink:0}
+  .author h3{margin:0 0 2px;font-size:1.05rem}
+  .author p{margin:0;color:var(--muted);font-size:.92rem}
+  .back{margin-bottom:40px}
+  .back a{font-weight:700;color:var(--navy);text-decoration:none}
+  @media (prefers-color-scheme: dark){.back a{color:var(--yellow)}}
+  footer{background:var(--navy-deep);color:#9DB2C6;padding:28px 0 32px;font-size:.88rem;margin-top:40px}
+  footer .wrap{display:flex;gap:14px;flex-wrap:wrap;justify-content:space-between;align-items:center}
+  footer b{color:#fff}
+  footer a{color:var(--yellow);text-decoration:none;font-weight:700}
+  @media (max-width:640px){h1{font-size:1.55rem}}
+</style>
+</head>
+<body>
+<header class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="https://z2idugagr.github.io/subtitle/"><span class="mark">譯</span>Hank 字幕翻譯</a>
+    <nav class="nav-links" aria-label="主選單">
+      <a href="https://z2idugagr.github.io/subtitle/#services">服務</a>
+      <a href="https://z2idugagr.github.io/subtitle/#pricing">價格</a>
+      <a href="https://z2idugagr.github.io/subtitle/#articles">文章</a>
+      <a href="https://z2idugagr.github.io/subtitle/#faq">FAQ</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+<article>
+  <span class="tag">SRT 字幕</span>
+  <h1>SRT 字幕時間軸對不上？最常見的 3 個原因</h1>
+  <p class="meta">Hank Chen ・ 2026 年 11 月 16 日 ・ 約 4 分鐘閱讀</p>
+
+  <p>字幕上傳之後，前面幾句都對，看到一半開始對不上；或是整支影片字幕都比聲音快半拍。時間軸對不上不是翻譯翻錯了，是時間出了問題。先判斷是哪一種對不上，再決定怎麼修。</p>
+
+  <h2><span class="bar">▍</span>原因 1：影片重新剪輯過，字幕還是舊版的時間</h2>
+  <p>最常見的情況：字幕做好之後，影片又剪掉一段開頭、換了一段配樂，或重新輸出了一版。影片的時間變了，字幕檔的時間還是舊的，整支字幕就會全部錯位。檢查方法很簡單：看第一句字幕出現的時間有沒有對上第一句話。如果第一句就對不上，而且後面每一句都差差不多的秒數，通常就是影片改過版。解法是拿新版影片重新對一次時間軸，不要只修幾句，整份字幕的時間都要重算。</p>
+
+  <h2><span class="bar">▍</span>原因 2：影格率不同，時間越到後面差越多</h2>
+  <p>如果前面幾句是對的，越到後面差越多，而且差距越來越大，通常是影格率的問題。影片剪輯時用的影格率（例如每秒 30 格）和輸出時用的影格率不一樣，時間換算就會慢慢跑掉。檢查方法：看影片最後一句字幕差了幾秒，如果差距是慢慢累積出來的，就是這個原因。解法是在字幕軟體裡把影格率設成跟影片輸出時一樣的數值，再重新輸出字幕檔。做字幕之前先確認影片的影格率，比事後修快得多。</p>
+
+  <h2><span class="bar">▍</span>原因 3：時間格式或編碼寫錯了</h2>
+  <p>如果只有幾句字幕的時間亂掉，其他都正常，常常是 SRT 檔本身的格式問題。SRT 的時間寫法是「時：分：秒，毫秒」，中間用逗號隔開毫秒，例如 00:00:04,200。有人寫成句號、少寫一位毫秒，或是字幕編號跳號、時間重疊，播放器讀到那幾句就會亂掉。另外檔案編碼要用 UTF-8，用錯編碼不只時間會出問題，中文字還可能變成亂碼。檢查方法：用純文字編輯器打開 SRT 檔，從頭看一次時間格式和編號，錯的地方一眼就看得出來。</p>
+
+  <h2><span class="bar">▍</span>對時間軸的檢查清單</h2>
+  <p>交件之前照這四步檢查一次：第一句字幕的時間有沒有對上第一句話；最後一句字幕的時間有沒有對上最後一句話；中間挑三句檢查；整支影片按播放看一次。頭尾都對、中間抽查也對，時間軸就沒什麼問題。想一次把英文字幕做好，可以參考<a href="https://z2idugagr.github.io/subtitle/youtube-english-subtitles/">加英文字幕的三個步驟</a>，從逐字稿、翻譯斷句到上傳 SRT，照順序做比較不會出錯。</p>
+
+  <div class="note"><b>一句話總結：</b>時間軸對不上有三種：整支都差一樣的秒數是影片改過版，越到後面差越多是影格率不同，只有幾句亂掉是格式或編碼寫錯——先判斷是哪一種，再動手修。</div>
+
+  <div class="cta">
+    <h3>字幕時間軸修不好？<span>免費先做 30 秒看看。</span></h3>
+    <p>把影片連結傳來，免費先做前 30 秒的中英字幕，時間軸對齊、斷句照口語節奏，短片每支 $600 起，1–3 天交件，透過 Fiverr 下單有平台保障。</p>
+    <div class="btns">
+      <a class="btn btn-yellow" href="https://www.fiverr.com/chenhank372/writing-and-translation-expert" target="_blank" rel="noopener">在 Fiverr 下單 →</a>
+      <a class="btn btn-outline" href="https://z2idugagr.github.io/subtitle/">回字幕翻譯首頁</a>
+    </div>
+  </div>
+
+  <div class="author">
+    <div class="avatar" aria-hidden="true">H</div>
+    <div>
+      <h3>Hank Chen</h3>
+      <p>英文 ↔ 繁體中文（台灣）自由譯者，Fiverr chenhank372。專做英文字幕 SRT、中英雙語字幕與逐字稿字幕，只出台灣繁體中文。</p>
+    </div>
+  </div>
+  <p class="back"><a href="https://z2idugagr.github.io/subtitle/">← 回字幕翻譯首頁</a></p>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div><b>Hank 字幕翻譯</b> ・ 英文 ↔ 繁體中文（台灣）字幕翻譯／SRT</div>
+    <div>本站不直接收款，所有交易透過 <a href="https://www.fiverr.com/chenhank372/writing-and-translation-expert" target="_blank" rel="noopener">Fiverr</a> 平台進行。</div>
+  </div>
+</footer>
+</body>
+</html>
