@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="description" content="遊戲翻譯不是把台詞翻對就好。整理遊戲在地化最常忽略的 4 件事：角色語氣、字數限制、文化梗、術語一致，玩起來的感覺才對。" />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="Hank 翻譯" />
+<meta property="og:locale" content="zh_TW" />
+<meta property="og:title" content="遊戲在地化：英文遊戲翻成台灣繁體中文，4 個要注意的地方｜Hank 翻譯" />
+<meta property="og:description" content="遊戲翻譯不是把台詞翻對就好。整理遊戲在地化最常忽略的 4 件事：角色語氣、字數限制、文化梗、術語一致，玩起來的感覺才對。" />
+<meta property="og:url" content="https://z2idugagr.github.io/blog/game-localization/" />
+<link rel="canonical" href="https://z2idugagr.github.io/blog/game-localization/" />
+<title>遊戲在地化：英文遊戲翻成台灣繁體中文，4 個要注意的地方｜Hank 翻譯</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Noto+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"遊戲在地化：英文遊戲翻成台灣繁體中文，4 個要注意的地方","author":{"@type":"Person","name":"Hank Chen"},"datePublished":"2026-11-16","inLanguage":"zh-Hant-TW","mainEntityOfPage":"https://z2idugagr.github.io/blog/game-localization/"}
+</script>
+<style>
+  :root{--navy:#0F2A44;--navy-2:#16365A;--navy-deep:#0A1E33;--yellow:#FFC400;--yellow-dark:#E0AA00;--bg:#F6F7F9;--surface:#FFFFFF;--surface-2:#EEF2F6;--ink:#14232F;--muted:#5A6B7A;--line:#DCE3EA;--radius:14px;color-scheme:light}
+  @media (prefers-color-scheme: dark){:root{--bg:#0B1B2E;--surface:#12293F;--surface-2:#0F2A44;--ink:#F2F5F8;--muted:#A9BAC9;--line:#24405C;color-scheme:dark}}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:"Noto Sans TC","Noto Sans",system-ui,-apple-system,"PingFang TC","Microsoft JhengHei",sans-serif;background:var(--bg);color:var(--ink);line-height:1.8;-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  .wrap{max-width:760px;margin:0 auto;padding:0 20px}
+  .nav{position:sticky;top:0;z-index:50;background:var(--navy);color:#fff;border-bottom:3px solid var(--yellow)}
+  .nav-inner{display:flex;align-items:center;gap:18px;min-height:60px;flex-wrap:wrap;padding-top:6px;padding-bottom:6px;max-width:1080px;margin:0 auto;padding-left:20px;padding-right:20px}
+  .brand{font-weight:900;font-size:1.08rem;text-decoration:none;display:flex;align-items:center;gap:10px}
+  .brand .mark{background:var(--yellow);color:var(--navy);font-weight:900;padding:2px 9px;border-radius:6px;font-size:.95rem}
+  .nav-links{display:flex;gap:4px;margin-left:auto;flex-wrap:wrap}
+  .nav-links a{text-decoration:none;font-size:.92rem;font-weight:500;color:#E7EEF5;padding:9px 12px;border-radius:8px}
+  .nav-links a:hover{background:var(--navy-2);color:#fff}
+  article{padding:44px 0 8px}
+  .tag{display:inline-block;background:rgba(255,196,0,.2);color:var(--yellow-dark);border:1px solid var(--yellow-dark);font-size:.82rem;font-weight:700;padding:4px 13px;border-radius:999px;margin-bottom:14px}
+  @media (prefers-color-scheme: dark){.tag{color:var(--yellow)}}
+  h1{font-size:1.9rem;line-height:1.35;font-weight:900;margin:0 0 10px}
+  .meta{color:var(--muted);font-size:.9rem;margin:0 0 28px}
+  h2{font-size:1.35rem;font-weight:900;margin:36px 0 12px}
+  h2 .bar{color:var(--yellow-dark)}
+  p{margin:0 0 16px}
+  table{width:100%;border-collapse:collapse;margin:8px 0 20px;font-size:.95rem;background:var(--surface);border-radius:12px;overflow:hidden}
+  th,td{border:1px solid var(--line);padding:10px 14px;text-align:left}
+  th{background:var(--navy);color:#fff;font-weight:700}
+  td.tw{font-weight:700;color:var(--ink)}
+  .note{background:var(--surface-2);border-left:4px solid var(--yellow);border-radius:0 10px 10px 0;padding:14px 18px;margin:20px 0;font-size:.95rem;color:var(--muted)}
+  .note b{color:var(--ink)}
+  .cta{background:var(--navy);color:#fff;border-radius:16px;padding:28px;margin:36px 0}
+  .cta h3{margin:0 0 8px;font-size:1.15rem}
+  .cta h3 span{color:var(--yellow)}
+  .cta p{color:#C9D7E4;margin:0 0 18px;font-size:.95rem}
+  .cta .btns{display:flex;gap:12px;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:11px 24px;border-radius:10px;font-weight:700;font-size:.98rem;text-decoration:none}
+  .btn-yellow{background:var(--yellow);color:var(--navy)}
+  .btn-outline{border:2px solid #7E97AE;color:#fff}
+  .author{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:20px;display:flex;gap:16px;align-items:start;margin-bottom:20px}
+  .avatar{width:56px;height:56px;border-radius:12px;background:var(--navy);color:var(--yellow);display:flex;align-items:center;justify-content:center;font-size:1.5rem;font-weight:900;flex-shrink:0}
+  .author h3{margin:0 0 2px;font-size:1.05rem}
+  .author p{margin:0;color:var(--muted);font-size:.92rem}
+  .back{margin-bottom:40px}
+  .back a{font-weight:700;color:var(--navy);text-decoration:none}
+  @media (prefers-color-scheme: dark){.back a{color:var(--yellow)}}
+  footer{background:var(--navy-deep);color:#9DB2C6;padding:28px 0 32px;font-size:.88rem;margin-top:40px}
+  footer .wrap{display:flex;gap:14px;flex-wrap:wrap;justify-content:space-between;align-items:center}
+  footer b{color:#fff}
+  footer a{color:var(--yellow);text-decoration:none;font-weight:700}
+  @media (max-width:640px){h1{font-size:1.55rem}}
+</style>
+</head>
+<body>
+<header class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="https://z2idugagr.github.io/"><span class="mark">譯</span>Hank 翻譯</a>
+    <nav class="nav-links" aria-label="主選單">
+      <a href="https://z2idugagr.github.io/#services">服務</a>
+      <a href="https://z2idugagr.github.io/#pricing">價格</a>
+      <a href="https://z2idugagr.github.io/blog/">翻譯小知識</a>
+      <a href="https://z2idugagr.github.io/#faq">FAQ</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+<article>
+  <span class="tag">遊戲在地化</span>
+  <h1>遊戲在地化：英文遊戲翻成台灣繁體中文，4 個要注意的地方</h1>
+  <p class="meta">Hank Chen ・ 2026 年 11 月 16 日 ・ 約 4 分鐘閱讀</p>
+
+  <p>遊戲翻譯不是把台詞翻對就好。玩家在意的不是英文對不對，是角色說話像不像台灣人、按鈕上的字塞不塞得下、笑點看不看得懂。遊戲在地化翻的是體驗，不是文字。</p>
+
+  <h2><span class="bar">▍</span>注意 1：角色說話要有個性，不能全部同一種口吻</h2>
+  <p>主角、商人 NPC、反派，說話方式應該不一樣。英文原文裡角色的語氣差別，翻成中文時要保留下來，不能全部翻成一樣的「你好，請問需要什麼？」翻之前先把每個角色的說話習慣寫下來，翻完一段就回頭對一次。</p>
+
+  <h2><span class="bar">▍</span>注意 2：字數限制——UI 按鈕、選單的字要放得下</h2>
+  <p>中文通常比英文長，同一個按鈕英文寫 "Settings"，中文寫「設定」沒問題，但 "Continue" 翻成「繼續遊戲」可能就超出按鈕寬度。UI 文字、選單、道具名稱都要先問字數上限，翻完照上限修短。字幕翻譯也有同樣的限制，<a href="https://z2idugagr.github.io/blog/subtitle-translation/">英文字幕翻譯怎麼做？SRT 字幕翻譯的 5 個實務重點</a>那篇提到的每行字數原則，遊戲 UI 一樣適用。</p>
+
+  <h2><span class="bar">▍</span>注意 3：文化梗要改寫，不是直譯</h2>
+  <p>英文笑話、雙關語、流行文化梗，直譯成中文通常不好笑，甚至看不懂。在地化是把梗換成台灣玩家看得懂的說法，意思可以換，效果不能丟。這是最花時間的部分，也是遊戲翻譯跟文件翻譯最大的差別。</p>
+
+  <h2><span class="bar">▍</span>注意 4：用詞一致——術語表先建好再翻</h2>
+  <p>道具名、技能名、地名、角色名，全篇只能有一種譯法。開工前先做一張術語表，翻的過程中隨時更新，交件前再全篇掃一次，確認沒有同一個詞出現兩種翻法。商務、科技、遊戲常用詞的對照，可以參考<a href="https://zidug.gumroad.com/l/sjtrr" target="_blank" rel="noopener">英中術語表（$9）</a>，Excel＋PDF 兩種格式。台灣 vs 大陸用詞的差別也可以先對照<a href="https://z2idugagr.github.io/blog/tw-vs-cn-words/">台灣 vs 大陸用詞對照：為什麼翻譯要用台灣說法？</a>，不要把對岸的詞翻進遊戲裡。</p>
+
+  <div class="note"><b>一句話總結：</b>遊戲在地化翻的是「玩起來的感覺」，台詞順、字放得下、笑點看得懂，才算翻好了。</div>
+
+  <div class="cta">
+    <h3>需要把遊戲文案翻成<span>台灣繁體中文</span>嗎？</h3>
+    <p>遊戲對白、Steam 頁面、UI 文字都接，$5 起，1–3 天交件，透過 Fiverr 下單有平台保障。</p>
+    <div class="btns">
+      <a class="btn btn-yellow" href="https://www.fiverr.com/chenhank372/writing-and-translation-expert" target="_blank" rel="noopener">在 Fiverr 下單 →</a>
+      <a class="btn btn-outline" href="https://z2idugagr.github.io/">回作品集首頁</a>
+    </div>
+  </div>
+
+  <div class="author">
+    <div class="avatar" aria-hidden="true">H</div>
+    <div>
+      <h3>Hank Chen</h3>
+      <p>英文 ↔ 繁體中文（台灣）自由譯者，Fiverr chenhank372。專做文件翻譯、網站文案、Excel 表格與英文字幕 SRT，只出台灣繁體中文。</p>
+    </div>
+  </div>
+  <p class="back"><a href="https://z2idugagr.github.io/">← 回作品集首頁</a></p>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div><b>Hank 翻譯</b> ・ 英文 ↔ 繁體中文（台灣）翻譯／校對／排版</div>
+    <div>本站不直接收款，所有交易透過 <a href="https://www.fiverr.com/chenhank372/writing-and-translation-expert" target="_blank" rel="noopener">Fiverr</a> 平台進行。</div>
+  </div>
+</footer>
+</body>
+</html>
