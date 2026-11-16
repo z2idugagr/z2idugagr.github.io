@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://z2idugagr.github.io/sitemap.xml
