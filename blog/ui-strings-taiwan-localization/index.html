@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="description" content="按鈕、選單、錯誤訊息——介面是使用者最先碰到的文案。默認、打印、屏幕、緩存，整理 App 與軟體進台灣市場最常踩的 7 個 UI 用詞對照，加上變數、日期格式與上線前自查清單。" />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="Hank 翻譯" />
+<meta property="og:locale" content="zh_TW" />
+<meta property="og:title" content="介面字串在地化｜App・軟體進台灣先檢查的 7 個 UI 用詞｜Hank 翻譯" />
+<meta property="og:description" content="按鈕、選單、錯誤訊息——介面是使用者最先碰到的文案。默認、打印、屏幕、緩存，整理 App 與軟體進台灣市場最常踩的 7 個 UI 用詞對照，加上變數、日期格式與上線前自查清單。" />
+<meta property="og:url" content="https://z2idugagr.github.io/blog/ui-strings-taiwan-localization/" />
+<meta property="og:image" content="https://z2idugagr.github.io/assets/og-cover.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="介面字串在地化｜App・軟體進台灣先檢查的 7 個 UI 用詞｜Hank 翻譯" />
+<meta name="twitter:description" content="按鈕、選單、錯誤訊息——介面是使用者最先碰到的文案。默認、打印、屏幕、緩存，整理 App 與軟體進台灣市場最常踩的 7 個 UI 用詞對照，加上變數、日期格式與上線前自查清單。" />
+<meta name="twitter:image" content="https://z2idugagr.github.io/assets/og-cover.png" />
+<link rel="canonical" href="https://z2idugagr.github.io/blog/ui-strings-taiwan-localization/" />
+<title>介面字串在地化｜App・軟體進台灣先檢查的 7 個 UI 用詞｜Hank 翻譯</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Noto+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"介面翻成繁體還不夠：台灣人一眼出戲的 7 個 UI 用詞","author":{"@type":"Person","name":"Hank Chen"},"datePublished":"2026-11-17","inLanguage":"zh-Hant-TW","mainEntityOfPage":"https://z2idugagr.github.io/blog/ui-strings-taiwan-localization/"}
+</script>
+<style>
+  :root{--navy:#0F2A44;--navy-2:#16365A;--navy-deep:#0A1E33;--yellow:#FFC400;--yellow-dark:#E0AA00;--bg:#F6F7F9;--surface:#FFFFFF;--surface-2:#EEF2F6;--ink:#14232F;--muted:#5A6B7A;--line:#DCE3EA;--radius:14px;color-scheme:light}
+  @media (prefers-color-scheme: dark){:root{--bg:#0B1B2E;--surface:#12293F;--surface-2:#0F2A44;--ink:#F2F5F8;--muted:#A9BAC9;--line:#24405C;color-scheme:dark}}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:"Noto Sans TC","Noto Sans",system-ui,-apple-system,"PingFang TC","Microsoft JhengHei",sans-serif;background:var(--bg);color:var(--ink);line-height:1.8;-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  .wrap{max-width:760px;margin:0 auto;padding:0 20px}
+  .nav{position:sticky;top:0;z-index:50;background:var(--navy);color:#fff;border-bottom:3px solid var(--yellow)}
+  .nav-inner{display:flex;align-items:center;gap:18px;min-height:60px;flex-wrap:wrap;padding-top:6px;padding-bottom:6px;max-width:1080px;margin:0 auto;padding-left:20px;padding-right:20px}
+  .brand{font-weight:900;font-size:1.08rem;text-decoration:none;display:flex;align-items:center;gap:10px}
+  .brand .mark{background:var(--yellow);color:var(--navy);font-weight:900;padding:2px 9px;border-radius:6px;font-size:.95rem}
+  .nav-links{display:flex;gap:4px;margin-left:auto;flex-wrap:wrap}
+  .nav-links a{text-decoration:none;font-size:.92rem;font-weight:500;color:#E7EEF5;padding:9px 12px;border-radius:8px}
+  .nav-links a:hover{background:var(--navy-2);color:#fff}
+  article{padding:44px 0 8px}
+  .tag{display:inline-block;background:rgba(255,196,0,.2);color:var(--yellow-dark);border:1px solid var(--yellow-dark);font-size:.82rem;font-weight:700;padding:4px 13px;border-radius:999px;margin-bottom:14px}
+  @media (prefers-color-scheme: dark){.tag{color:var(--yellow)}}
+  h1{font-size:1.9rem;line-height:1.35;font-weight:900;margin:0 0 10px}
+  .meta{color:var(--muted);font-size:.9rem;margin:0 0 28px}
+  h2{font-size:1.35rem;font-weight:900;margin:36px 0 12px}
+  h2 .bar{color:var(--yellow-dark)}
+  p{margin:0 0 16px}
+  table{width:100%;border-collapse:collapse;margin:8px 0 20px;font-size:.95rem;background:var(--surface);border-radius:12px;overflow:hidden}
+  th,td{border:1px solid var(--line);padding:10px 14px;text-align:left}
+  th{background:var(--navy);color:#fff;font-weight:700}
+  td.tw{font-weight:700;color:var(--ink)}
+  .note{background:var(--surface-2);border-left:4px solid var(--yellow);border-radius:0 10px 10px 0;padding:14px 18px;margin:20px 0;font-size:.95rem;color:var(--muted)}
+  .note b{color:var(--ink)}
+  .cta{background:var(--navy);color:#fff;border-radius:16px;padding:28px;margin:36px 0}
+  .cta h3{margin:0 0 8px;font-size:1.15rem}
+  .cta h3 span{color:var(--yellow)}
+  .cta p{color:#C9D7E4;margin:0 0 18px;font-size:.95rem}
+  .cta .btns{display:flex;gap:12px;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:11px 24px;border-radius:10px;font-weight:700;font-size:.98rem;text-decoration:none}
+  .btn-yellow{background:var(--yellow);color:var(--navy)}
+  .btn-outline{border:2px solid #7E97AE;color:#fff}
+  .author{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:20px;display:flex;gap:16px;align-items:start;margin-bottom:20px}
+  .avatar{width:56px;height:56px;border-radius:12px;background:var(--navy);color:var(--yellow);display:flex;align-items:center;justify-content:center;font-size:1.5rem;font-weight:900;flex-shrink:0}
+  .author h3{margin:0 0 2px;font-size:1.05rem}
+  .author p{margin:0;color:var(--muted);font-size:.92rem}
+  .back{margin-bottom:40px}
+  .back a{font-weight:700;color:var(--navy);text-decoration:none}
+  @media (prefers-color-scheme: dark){.back a{color:var(--yellow)}}
+  footer{background:var(--navy-deep);color:#9DB2C6;padding:28px 0 32px;font-size:.88rem;margin-top:40px}
+  footer .wrap{display:flex;gap:14px;flex-wrap:wrap;justify-content:space-between;align-items:center}
+  footer b{color:#fff}
+  footer a{color:var(--yellow);text-decoration:none;font-weight:700}
+  @media (max-width:640px){h1{font-size:1.55rem}}
+</style>
+</head>
+<body>
+<header class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="https://z2idugagr.github.io/"><span class="mark">譯</span>Hank 翻譯</a>
+    <nav class="nav-links" aria-label="主選單">
+      <a href="https://z2idugagr.github.io/#services">服務</a>
+      <a href="https://z2idugagr.github.io/#pricing">價格</a>
+      <a href="https://z2idugagr.github.io/blog/">翻譯小知識</a>
+      <a href="https://z2idugagr.github.io/#faq">FAQ</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+<article>
+  <span class="tag">翻譯小知識</span>
+  <h1>介面翻成繁體還不夠：台灣人一眼出戲的 7 個 UI 用詞</h1>
+  <p class="meta">Hank Chen ・ 2026 年 11 月 17 日 ・ 約 5 分鐘閱讀</p>
+
+  <p>官網文案翻得很用心，產品介面卻露了餡——這是很多團隊進台灣市場時最可惜的一步。使用者每天碰到的不是你的品牌故事，是按鈕、選單、錯誤訊息和通知。介面是產品對使用者說的第一句話，第一句就帶著外地口音，後面寫得再好都補不回來。</p>
+  <p>介面字串會出問題，通常不是沒翻，而是翻的人手邊只有一串一串抽離畫面的文字：來源可能是英文直譯，也可能是把簡中介面簡轉繁。以下七組，是 App、軟體與網站介面進台灣市場時最常踩的用詞——全部都是字沒錯、詞不對，測試流程放行、使用者一眼出戲的那種。</p>
+
+  <h2><span class="bar">▍</span>地雷一覽表</h2>
+  <table>
+    <tr><th>簡中／直譯常見說法</th><th>台灣的說法</th><th>說明</th></tr>
+    <tr><td>默認</td><td class="tw">預設</td><td>default 在台灣介面一律是「預設」：預設值、預設瀏覽器</td></tr>
+    <tr><td>打印</td><td class="tw">列印</td><td>print 在台灣說「列印」；「打印」是對岸用法</td></tr>
+    <tr><td>屏幕</td><td class="tw">螢幕</td><td>screen 在台灣是「螢幕」，螢幕截圖、螢幕保護程式都用這個詞</td></tr>
+    <tr><td>緩存</td><td class="tw">快取</td><td>cache 在台灣是「快取」，「清除緩存」一看就知道不是台灣版</td></tr>
+    <tr><td>用戶</td><td class="tw">使用者</td><td>user 在台灣介面慣用「使用者」；「用戶」多出現在電信、金融合約語境</td></tr>
+    <tr><td>保存</td><td class="tw">儲存</td><td>save 在台灣軟體介面慣用「儲存」：儲存變更、儲存檔案</td></tr>
+    <tr><td>卸載</td><td class="tw">解除安裝</td><td>uninstall 在台灣多寫「解除安裝」或「移除」，「卸載」是簡中說法</td></tr>
+  </table>
+  <div class="note"><b>文案那一邊的地雷：</b>品牌文案與行銷頁面的用詞問題，我整理在<a href="https://z2idugagr.github.io/blog/jianzhuanfan-not-localization/">〈簡轉繁不是在地化〉</a>一文；介面裡的「設定、登入」等基本字串也在那篇的對照表裡。完整的兩岸用詞差異可查站內的<a href="https://z2idugagr.github.io/glossary/">術語對照頁</a>。</div>
+
+  <h2><span class="bar">▍</span>逐組說明</h2>
+  <p><b>默認 → 預設</b><br />「默認值」「默認瀏覽器」是簡中介面最標誌性的詞之一。台灣的軟體、手機系統和瀏覽器裡，這個位置寫的都是「預設」：預設值、預設搜尋引擎、恢復預設。出現「默認」，使用者不用看第二眼就知道這版介面不是為台灣做的。</p>
+  <p><b>打印 → 列印</b><br />「打印機」「打印文件」在台灣幾乎不會出現在介面上。台灣說「印表機」和「列印」：列印文件、列印設定。這個詞常躲在設定頁深處，但只要被看到一次，出戲感就成立。</p>
+  <p><b>屏幕 → 螢幕</b><br />「屏幕截圖」「全屏幕」是另一個一眼破功的組合。台灣說「螢幕」：螢幕截圖、全螢幕、螢幕亮度。順帶一提，screenshot 在台灣最常見的說法是「截圖」，「螢幕截圖」次之，兩個都比「屏幕截圖」自然。</p>
+  <p><b>緩存 → 快取</b><br />「清除緩存」大概是台灣使用者最熟悉的簡中介面詞。台灣的技術與產品語境裡，cache 一律是「快取」：快取資料、清除快取。如果你的產品客群包含工程師或進階使用者，這個詞用錯，專業感直接打折。</p>
+  <p><b>用戶 → 使用者</b><br />「用戶名」「用戶協議」在台灣介面裡讀起來像電信合約。台灣軟體介面慣用「使用者」：使用者名稱、使用者條款。「用戶」不是完全不能用——電信、銀行等合約語境會出現——但一般 App 和網站產品裡，「使用者」才是日常說法。</p>
+  <p><b>保存 → 儲存</b><br />「保存」在台灣不是錯字，但軟體介面的 save 按鈕，台灣慣用的是「儲存」：儲存、儲存變更、未儲存的變更。這個差異很細微，卻是母語使用者天天按、天天看的那一顆按鈕，最值得優先檢查。</p>
+  <p><b>卸載 → 解除安裝</b><br />uninstall 在台灣的系統與軟體介面多寫「解除安裝」，口語或簡化版介面也會用「移除」；「卸載」是簡中用法。這組常出現在說明文件和解除安裝流程裡，是文件在地化時最容易整批漏改的詞。</p>
+
+  <h2><span class="bar">▍</span>介面字串特有的三個坑</h2>
+  <p>用詞換對只是第一層。介面字串和一般文章不一樣，它還有三個只有在產品裡才會遇到的坑：</p>
+  <p><b>一、脫離上下文的短字串。</b>譯者拿到的通常是表格裡一行一行的字串，沒有畫面。同一個英文詞在不同位置意思完全不同——例如 "Post" 在按鈕上是「發布」，在名詞位置是「貼文」；"Save" 是「儲存」，但 "Save as" 要寫「另存新檔」。沒有上下文就逐字對譯，翻對率再高也會在這種地方翻車。交付字串時附上畫面截圖或用途註解，是成本最低的防呆。</p>
+  <p><b>二、變數與數量句型。</b>介面裡很多句子是程式組出來的："{count} items selected" 這種句型，英文靠單複數變化處理，中文沒有複數變化，句型要整句重寫成「已選取 {count} 個項目」。如果照英文語序硬套加上變數，組出來的句子會卡在奇怪的位置。這類字串不能只看原文，要把變數代入實際數字讀一遍才算檢查完。</p>
+  <p><b>三、日期、數字與錯誤訊息的格式和語氣。</b>台灣慣用「2026 年 11 月 17 日」或 2026/11/17 的日期寫法，金額標示習慣加上 NT$ 與千分位逗號；錯誤訊息的語氣也有差別——台灣使用者熟悉的是「連線逾時，請稍後再試」這類中性說明，而不是把責任推給使用者的句式。格式和語氣不對，功能再完整都像半成品。</p>
+  <div class="note"><b>如果是遊戲介面：</b>遊戲 UI 還有字數限制與版面截斷的專門問題，我另外寫在<a href="https://z2idugagr.github.io/game-localization/ui-string-translation/">〈遊戲 UI 字串翻譯：字數限制怎麼處理〉</a>一頁。</div>
+
+  <h2><span class="bar">▍</span>上線前自查 5 步（今天就能做）</h2>
+  <p>1. <b>全文搜尋地雷詞</b>：把上面七組的左欄詞彙在你的字串表裡逐一搜尋，搜到就標記，連同「設置、登錄」等基本款一起清。<br />
+  2. <b>走一次主流程</b>：註冊、登入、購買或訂閱、登出——把使用者最常走的流程在繁中介面實際點一遍，出戲的詞通常集中在這幾條路線上。<br />
+  3. <b>把變數代進去讀</b>：挑出所有含 {count}、{name} 等變數的字串，代入實際數字和名字唸出來，確認組出來的句子通順。<br />
+  4. <b>檢查格式</b>：日期、金額、百分比、檔案大小的單位與寫法是否符合台灣習慣，全介面是否一致。<br />
+  5. <b>找一個台灣使用者實際用一天</b>：不用是譯者，一般使用者能不能指出「這裡怪怪的」，就是最誠實的檢測——介面是給人用的，不是給檢查工具看的。</p>
+
+  <h2><span class="bar">▍</span>哪些自己改、哪些該找人審閱</h2>
+  <p>地雷詞替換有標準答案，照對照表自己改完全沒問題。但「同一個功能在整個產品裡是否都用同一個詞」的一致性、變數字串整句重寫、錯誤訊息的語氣拿捏，需要的是逐條審閱加上一份全產品統一的術語表——介面字串的數量動輒上千條，沒有術語表，改完前面後面又會長出新的不一致。</p>
+  <p>我是 Hank Chen，台灣自由譯者，專做英文與簡中內容的台灣在地化，包含軟體與雲端／API 內容。我的<a href="https://z2idugagr.github.io/simplified-to-taiwan-review/">在地化審閱服務</a>是逐條改成台灣人真正會用的說法，並標註修改理由，讓你的團隊之後自己維護字串時有依據可循。</p>
+
+  <div class="cta">
+    <h3>你的 App 或網站介面準備進台灣，想先知道<span>「離能直接上線還差多遠」</span>？</h3>
+    <p>先寄一組畫面字串過來，我做給你看——或在 IG 私訊關鍵字「試譯」，看完再決定要不要把整批交給我審閱。</p>
+    <div class="btns">
+      <a class="btn btn-yellow" href="https://z2idugagr.github.io/simplified-to-taiwan-review/">看在地化審閱服務 →</a>
+      <a class="btn btn-outline" href="https://z2idugagr.github.io/blog/jianzhuanfan-not-localization/">先看文案地雷文章</a>
+    </div>
+  </div>
+
+  <div class="author">
+    <div class="avatar" aria-hidden="true">H</div>
+    <div>
+      <h3>Hank Chen</h3>
+      <p>台灣自由譯者，專做英文與簡中內容的台灣在地化：英 ↔ 台灣繁中翻譯、簡中 → 台灣繁中在地化審閱、字幕與遊戲在地化，只出台灣繁體中文。</p>
+    </div>
+  </div>
+  <p class="back"><a href="https://z2idugagr.github.io/blog/">← 回翻譯小知識列表</a></p>
+</article>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div><b>Hank 翻譯</b> ・ 英文 ↔ 繁體中文（台灣）翻譯／在地化審閱</div>
+    <div>本站不直接收款，所有交易透過 <a href="https://www.fiverr.com/chenhank372/writing-and-translation-expert" target="_blank" rel="noopener">Fiverr</a> 平台進行。</div>
+  </div>
+</footer>
+</body>
+</html>
