@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="description" content="獨立遊戲要進台灣市場，繁中在地化不是把文本丟去翻譯就好。從文本盤點、術語表、字串格式、商店頁到實機 LQA，整理上架前要做完的 8 件事與檢查清單。" />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="Hank 翻譯" />
+<meta property="og:locale" content="zh_TW" />
+<meta property="og:title" content="獨立遊戲繁中在地化清單｜進台灣市場上架前要做完的 8 件事｜Hank 翻譯" />
+<meta property="og:description" content="獨立遊戲要進台灣市場，繁中在地化不是把文本丟去翻譯就好。從文本盤點、術語表、字串格式、商店頁到實機 LQA，整理上架前要做完的 8 件事與檢查清單。" />
+<meta property="og:url" content="https://z2idugagr.github.io/blog/indie-game-taiwan-localization-checklist/" />
+<meta property="og:image" content="https://z2idugagr.github.io/assets/og-cover.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="獨立遊戲繁中在地化清單｜進台灣市場上架前要做完的 8 件事｜Hank 翻譯" />
+<meta name="twitter:description" content="獨立遊戲要進台灣市場，繁中在地化不是把文本丟去翻譯就好。從文本盤點、術語表、字串格式、商店頁到實機 LQA，整理上架前要做完的 8 件事與檢查清單。" />
+<meta name="twitter:image" content="https://z2idugagr.github.io/assets/og-cover.png" />
+<link rel="canonical" href="https://z2idugagr.github.io/blog/indie-game-taiwan-localization-checklist/" />
+<title>獨立遊戲繁中在地化清單｜進台灣市場上架前要做完的 8 件事｜Hank 翻譯</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Noto+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"獨立遊戲進台灣市場：繁中在地化要做哪些事（上架前完整清單）","author":{"@type":"Person","name":"Hank Chen"},"datePublished":"2026-11-17","inLanguage":"zh-Hant-TW","mainEntityOfPage":"https://z2idugagr.github.io/blog/indie-game-taiwan-localization-checklist/"}
+</script>
+<style>
+  :root{--navy:#0F2A44;--navy-2:#16365A;--navy-deep:#0A1E33;--yellow:#FFC400;--yellow-dark:#E0AA00;--bg:#F6F7F9;--surface:#FFFFFF;--surface-2:#EEF2F6;--ink:#14232F;--muted:#5A6B7A;--line:#DCE3EA;--radius:14px;color-scheme:light}
+  @media (prefers-color-scheme: dark){:root{--bg:#0B1B2E;--surface:#12293F;--surface-2:#0F2A44;--ink:#F2F5F8;--muted:#A9BAC9;--line:#24405C;color-scheme:dark}}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:"Noto Sans TC","Noto Sans",system-ui,-apple-system,"PingFang TC","Microsoft JhengHei",sans-serif;background:var(--bg);color:var(--ink);line-height:1.8;-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  .wrap{max-width:760px;margin:0 auto;padding:0 20px}
+  .nav{position:sticky;top:0;z-index:50;background:var(--navy);color:#fff;border-bottom:3px solid var(--yellow)}
+  .nav-inner{display:flex;align-items:center;gap:18px;min-height:60px;flex-wrap:wrap;padding-top:6px;padding-bottom:6px;max-width:1080px;margin:0 auto;padding-left:20px;padding-right:20px}
+  .brand{font-weight:900;font-size:1.08rem;text-decoration:none;display:flex;align-items:center;gap:10px}
+  .brand .mark{background:var(--yellow);color:var(--navy);font-weight:900;padding:2px 9px;border-radius:6px;font-size:.95rem}
+  .nav-links{display:flex;gap:4px;margin-left:auto;flex-wrap:wrap}
+  .nav-links a{text-decoration:none;font-size:.92rem;font-weight:500;color:#E7EEF5;padding:9px 12px;border-radius:8px}
+  .nav-links a:hover{background:var(--navy-2);color:#fff}
+  article{padding:44px 0 8px}
+  .tag{display:inline-block;background:rgba(255,196,0,.2);color:var(--yellow-dark);border:1px solid var(--yellow-dark);font-size:.82rem;font-weight:700;padding:4px 13px;border-radius:999px;margin-bottom:14px}
+  @media (prefers-color-scheme: dark){.tag{color:var(--yellow)}}
+  h1{font-size:1.9rem;line-height:1.35;font-weight:900;margin:0 0 10px}
+  .meta{color:var(--muted);font-size:.9rem;margin:0 0 28px}
+  h2{font-size:1.35rem;font-weight:900;margin:36px 0 12px}
+  h2 .bar{color:var(--yellow-dark)}
+  p{margin:0 0 16px}
+  table{width:100%;border-collapse:collapse;margin:8px 0 20px;font-size:.95rem;background:var(--surface);border-radius:12px;overflow:hidden}
+  th,td{border:1px solid var(--line);padding:10px 14px;text-align:left}
+  th{background:var(--navy);color:#fff;font-weight:700}
+  td.tw{font-weight:700;color:var(--ink)}
+  .note{background:var(--surface-2);border-left:4px solid var(--yellow);border-radius:0 10px 10px 0;padding:14px 18px;margin:20px 0;font-size:.95rem;color:var(--muted)}
+  .note b{color:var(--ink)}
+  .cta{background:var(--navy);color:#fff;border-radius:16px;padding:28px;margin:36px 0}
+  .cta h3{margin:0 0 8px;font-size:1.15rem}
+  .cta h3 span{color:var(--yellow)}
+  .cta p{color:#C9D7E4;margin:0 0 18px;font-size:.95rem}
+  .cta .btns{display:flex;gap:12px;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:11px 24px;border-radius:10px;font-weight:700;font-size:.98rem;text-decoration:none}
+  .btn-yellow{background:var(--yellow);color:var(--navy)}
+  .btn-outline{border:2px solid #7E97AE;color:#fff}
+  .author{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:20px;display:flex;gap:16px;align-items:start;margin-bottom:20px}
+  .avatar{width:56px;height:56px;border-radius:12px;background:var(--navy);color:var(--yellow);display:flex;align-items:center;justify-content:center;font-size:1.5rem;font-weight:900;flex-shrink:0}
+  .author h3{margin:0 0 2px;font-size:1.05rem}
+  .author p{margin:0;color:var(--muted);font-size:.92rem}
+  .back{margin-bottom:40px}
+  .back a{font-weight:700;color:var(--navy);text-decoration:none}
+  @media (prefers-color-scheme: dark){.back a{color:var(--yellow)}}
+  footer{background:var(--navy-deep);color:#9DB2C6;padding:28px 0 32px;font-size:.88rem;margin-top:40px}
+  footer .wrap{display:flex;gap:14px;flex-wrap:wrap;justify-content:space-between;align-items:center}
+  footer b{color:#fff}
+  footer a{color:var(--yellow);text-decoration:none;font-weight:700}
+  @media (max-width:640px){h1{font-size:1.55rem}}
+</style>
+</head>
+<body>
+<header class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="https://z2idugagr.github.io/"><span class="mark">譯</span>Hank 翻譯</a>
+    <nav class="nav-links" aria-label="主選單">
+      <a href="https://z2idugagr.github.io/#services">服務</a>
+      <a href="https://z2idugagr.github.io/#pricing">價格</a>
+      <a href="https://z2idugagr.github.io/blog/">翻譯小知識</a>
+      <a href="https://z2idugagr.github.io/#faq">FAQ</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+<article>
+  <span class="tag">遊戲在地化</span>
+  <h1>獨立遊戲進台灣市場：繁中在地化要做哪些事（上架前完整清單）</h1>
+  <p class="meta">Hank Chen ・ 2026 年 11 月 17 日 ・ 約 6 分鐘閱讀</p>
+
+  <p>很多獨立開發者把「做繁中版」想成一個動作：把文本丟去翻譯，翻完放進遊戲。實際上它是一個小型專案——要翻的東西散在遊戲本體、商店頁和各種系統文字裡，漏掉任何一類，玩家都會在某個畫面撞見英文或簡體中文，然後在心裡把這款遊戲歸類成「沒有認真做繁中版」。</p>
+  <p>這篇不講翻譯技巧（角色語氣、文化梗那些，我寫在<a href="https://z2idugagr.github.io/blog/game-localization/">〈遊戲在地化：4 個要注意的地方〉</a>），講的是專案流程：進台灣市場之前，繁中在地化要盤點什麼、準備什麼、照什麼順序做、上架前怎麼檢查。特別是打算趕 Steam 冬季特賣這類檔期的團隊，越早照清單倒推，越不會在上架前一週才發現商店頁還沒翻。</p>
+
+  <h2><span class="bar">▍</span>先盤點：要翻的東西有五類</h2>
+  <p>動手之前，先把「所有會被玩家看到的文字」列出來。最常被漏掉的，是後兩類：</p>
+  <table>
+    <tr><th>類別</th><th>包含什麼</th><th>最常出問題的地方</th></tr>
+    <tr><td class="tw">遊戲內文本</td><td>對話、任務、物品與技能說明、圖鑑、結局文字</td><td>專有名詞前後不一致、角色語氣全都一樣</td></tr>
+    <tr><td class="tw">UI 字串</td><td>按鈕、選單、設定、教學提示、錯誤訊息</td><td>字數超框、變數位置錯誤、用詞是簡中說法</td></tr>
+    <tr><td class="tw">商店頁</td><td>遊戲簡介、特色列表、截圖說明、更新公告</td><td>整頁沒翻，或逐字直翻看不出賣點</td></tr>
+    <tr><td class="tw">系統文字</td><td>成就名稱與說明、排行榜、通知、系統訊息</td><td>整類被忘記，上架後才被玩家截圖指出</td></tr>
+    <tr><td class="tw">影音文字</td><td>預告片字幕、宣傳圖上的標語</td><td>圖內文字沒做繁中版，商店頁看起來像半成品</td></tr>
+  </table>
+  <p>盤點完，你才知道總字數和範圍，也才能正確估時程與預算。跳過這一步直接發包，是後面所有返工的源頭。</p>
+
+  <h2><span class="bar">▍</span>上架前要做完的 8 件事</h2>
+  <p><b>一、先定範圍與優先順序。</b>預算或時間有限時，不要整款平均用力。優先級通常是：商店頁（玩家決定買不買的地方）→ UI 與教學（玩家第一小時碰到的文字）→ 主線對話 → 支線與圖鑑。如果只能先做一部分，寧可範圍小但做完整，也不要全翻但每處都半套。</p>
+  <p><b>二、把檔案整理成譯者能用的樣子。</b>字串表附上三樣東西：每條字串出現在哪個畫面（或截圖）、字數上限、變數的意義（{player_name} 是玩家名、{0} 是數量）。沒有上下文的短字串是翻錯率最高的一類，這部分的準備成本最低、防呆效果最大。UI 字串的字數限制怎麼處理，我另外寫在<a href="https://z2idugagr.github.io/game-localization/ui-string-translation/">〈遊戲 UI 字串翻譯：字數限制怎麼處理〉</a>。</p>
+  <p><b>三、先建術語表，先定語氣。</b>角色名、地名、道具、技能，開翻之前先定好譯法寫進術語表，翻的過程中新名詞即時補進去；同時定下整款遊戲的語氣基調（正經、幽默、黑暗）和每個主要角色的說話方式。這件事的完整作法，我寫在<a href="https://z2idugagr.github.io/game-localization/indie-game-localization/">〈獨立遊戲翻譯怎麼做？在地化最常忽略的 3 件事〉</a>，這裡只提醒順序：術語表要在翻譯之前，不是交件之後。</p>
+  <p><b>四、台灣用詞檢查，尤其是「已經有簡中版」的情況。</b>如果你的遊戲已經有簡體中文版，最省事的做法看起來是簡轉繁——但那只是換字形。用詞、句式、語氣都還是簡中的，台灣玩家一眼就看得出來。正確的作法是把簡中版當底稿做一次在地化審閱，逐句換成台灣說法；介面按鈕那一層最容易露餡的詞，我整理在<a href="https://z2idugagr.github.io/blog/ui-strings-taiwan-localization/">〈介面字串在地化〉</a>，文案那一層的地雷在<a href="https://z2idugagr.github.io/blog/jianzhuanfan-not-localization/">〈簡轉繁不是在地化〉</a>。</p>
+  <p><b>五、商店頁當成獨立文案來翻。</b>商店頁不是遊戲文本的附屬品，它是廣告。簡介第一段要讓台灣玩家在幾秒內知道這是什麼遊戲、好玩在哪；特色列表要寫成玩家語言，不是開發者語言。宣傳圖、截圖上的文字如果來不及重做，至少把圖說與簡介做到位，不要讓商店頁成為全繁中版裡唯一的英文孤島。</p>
+  <p><b>六、把譯文放回實機裡看一遍（LQA）。</b>表格裡看起來沒問題的句子，放進遊戲裡可能截斷、溢出對話框、換行斷在奇怪的地方，或變數代入後整句不通。至少把主線流程、新手教學和所有選單在繁中版實際走一遍，截圖記錄問題再統一修正。這一步最常被省略，也是玩家評價裡最容易被點名的。</p>
+  <p><b>七、字型與格式檢查。</b>確認遊戲使用的字型支援繁體中文，缺字會變成空白或豆腐方塊，上架前用一份涵蓋生僻字的測試文本掃一遍；日期、數字、貨幣與百分比的寫法也要跟台灣習慣一致，全遊戲統一。常見的兩岸格式差異，可以對照站內的<a href="https://z2idugagr.github.io/glossary/">術語對照頁</a>一起檢查。</p>
+  <p><b>八、先想好上線後的維護流程。</b>遊戲會更新，更新就會有新字串。先約定好：新字串多久送翻一次、用同一個術語表、玩家回報的翻譯問題由誰修、商店頁的更新公告要不要同步繁中版。維護流程沒先定，繁中版通常在第一次大更新後就開始落後英文版。</p>
+
+  <h2><span class="bar">▍</span>時程怎麼倒推</h2>
+  <p>以目標上架日或特賣開始日為終點，順序往回排：商店頁文案最先定稿（它還要經過平台審核與你自己的校對），再來是試譯與風格確認，然後才是全量翻譯，接著實機 LQA、修正、最終確認。最常見的錯誤排法是把翻譯排到最後一刻開始，結果 LQA 發現的問題完全沒有時間修。原則很簡單：<b>翻譯完成日不是在地化完成日</b>，後面至少要留一輪實機檢查與修正的位置。</p>
+  <div class="note"><b>已經有簡中版、只差台灣版？</b>你的流程可以縮短成：簡中版盤點 → 在地化審閱 → 實機 LQA。審閱的作法與收費方式，我整理在<a href="https://z2idugagr.github.io/simplified-to-taiwan-review/">簡中 → 台灣繁中在地化審閱服務頁</a>。</div>
+
+  <h2><span class="bar">▍</span>上線前自查清單</h2>
+  <table>
+    <tr><th>檢查項</th><th>通過標準</th></tr>
+    <tr><td>五類文字盤點</td><td>遊戲內、UI、商店頁、系統文字、影音文字都已列入範圍，沒有整類遺漏</td></tr>
+    <tr><td>術語表</td><td>角色、地名、道具、技能全數定稿，全文只有一種譯法</td></tr>
+    <tr><td>台灣用詞</td><td>全文搜尋過常見簡中詞（軟體、影片、網路、設定、登入等），介面與文案都已換成台灣說法</td></tr>
+    <tr><td>變數與格式</td><td>所有變數代入實際值唸過一遍；日期、數字、貨幣寫法全遊戲一致</td></tr>
+    <tr><td>實機 LQA</td><td>主線、教學、選單在繁中版實際走完一遍，截斷與溢出都已修正</td></tr>
+    <tr><td>字型</td><td>繁中字型無缺字，測試文本掃過沒有豆腐方塊</td></tr>
+    <tr><td>商店頁</td><td>簡介、特色列表、圖說皆為繁中，語氣是玩家語言不是直譯</td></tr>
+    <tr><td>維護流程</td><td>更新字串的送翻節奏與負責人已約定，玩家回報有處理管道</td></tr>
+  </table>
+
+  <h2><span class="bar">▍</span>哪些自己做、哪些該外包</h2>
+  <p>盤點、檔案整理、術語表維護、實機 LQA，這些是開發團隊自己做最有效率的部分，重點是細心和熟悉自己的遊戲。真正該外包的是翻譯與在地化審閱本身：台灣用詞、語氣拿捏、文化梗改寫，需要的是以台灣繁中為母語、又懂遊戲文本的譯者——尤其你的團隊裡沒有台灣成員時，自己硬翻通常比不翻更傷，因為玩家分得出「沒做」和「做錯」，後者更扣分。</p>
+  <p>我是 Hank Chen，台灣自由譯者，專做英文遊戲翻成台灣繁體中文：劇情文本、UI 字串、商店頁面文案都接，也接已有簡中版的在地化審閱。服務範圍與作法，都寫在<a href="https://z2idugagr.github.io/game-localization/">遊戲在地化服務頁</a>。</p>
+
+  <div class="cta">
+    <h3>你的遊戲準備進台灣，想先確認<span>「繁中版做起來長什麼樣」</span>？</h3>
+    <p>先傳 500 字以內的遊戲文字過來（對話、UI 字串或商店介紹都可以），我免費試譯給你看——或在 IG 私訊關鍵字「試譯」。看完品質，再決定要不要把整款交給我。</p>
+    <p>想先自己檢查團隊的文案？<a href="https://zidug.gumroad.com/l/tortsw" target="_blank" rel="noopener">台灣用詞自查清單（PDF＋CSV，US$7）</a>整理了品牌與產品文案最常踩的台灣用詞地雷，商店頁文案上線前先掃一遍。</p>
+    <div class="btns">
+      <a class="btn btn-yellow" href="https://z2idugagr.github.io/game-localization/">看遊戲在地化服務 →</a>
+      <a class="btn btn-outline" href="https://z2idugagr.github.io/game-localization/indie-game-localization/">先看獨立遊戲翻譯重點</a>
+    </div>
+  </div>
+
+  <div class="author">
+    <div class="avatar" aria-hidden="true">H</div>
+    <div>
+      <h3>Hank Chen</h3>
+      <p>台灣自由譯者，專做英文與簡中內容的台灣在地化：英 ↔ 台灣繁中翻譯、簡中 → 台灣繁中在地化審閱、字幕與遊戲在地化，只出台灣繁體中文。</p>
+    </div>
+  </div>
+  <p class="back"><a href="https://z2idugagr.github.io/blog/">← 回翻譯小知識列表</a></p>
+</article>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div><b>Hank 翻譯</b> ・ 英文 ↔ 繁體中文（台灣）翻譯／在地化審閱</div>
+    <div>本站不直接收款，所有交易透過 <a href="https://www.fiverr.com/chenhank372/writing-and-translation-expert" target="_blank" rel="noopener">Fiverr</a> 平台進行。</div>
+  </div>
+</footer>
+</body>
+</html>
