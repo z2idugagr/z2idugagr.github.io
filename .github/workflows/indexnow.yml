@@ -1,0 +1,28 @@
+name: IndexNow ping on deploy
+on:
+  push:
+    branches: [main]
+    paths:
+      - '**.html'
+      - 'sitemap.xml'
+jobs:
+  indexnow:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+      - name: Ping IndexNow with changed page URLs
+        run: |
+          KEY="da517001c9729087214fd833b798fd49"
+          URLS=$(git diff --name-only HEAD~1 HEAD -- '*.html' 'sitemap.xml' 2>/dev/null | while read f; do
+            case "$f" in
+              index.html) echo "https://z2idugagr.github.io/";;
+              */index.html) echo "https://z2idugagr.github.io/${f%index.html}";;
+              sitemap.xml) echo "https://z2idugagr.github.io/sitemap.xml";;
+              *.html) echo "https://z2idugagr.github.io/$f";;
+            esac
+          done | head -100)
+          if [ -z "$URLS" ]; then echo "no page changes"; exit 0; fi
+          LIST=$(printf '%s\n' "$URLS" | python3 -c "import sys,json; print(json.dumps([l.strip() for l in sys.stdin if l.strip()]))")
+          curl -s -X POST "https://api.indexnow.org/indexnow" -H "Content-Type: application/json; charset=utf-8" -d "{\"host\":\"z2idugagr.github.io\",\"key\":\"$KEY\",\"keyLocation\":\"https://z2idugagr.github.io/$KEY.txt\",\"urlList\":$LIST}" || true
