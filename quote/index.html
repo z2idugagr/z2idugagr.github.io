@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>翻譯報價計算器｜Hank Chen 翻譯・在地化</title>
+<meta name="description" content="輸入字數立刻估算英文翻台灣繁中、在地化、字幕與簡轉繁審閱的價格。透明計價、免費試譯一頁，先試再決定。" />
+<script type="text/javascript">
+(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","zfovpixisr");
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet" />
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: "Noto Sans TC", sans-serif; background: #0F2A44; color: #E7EEF5; min-height: 100vh; }
+  .wrap { max-width: 640px; margin: 0 auto; padding: 40px 20px 60px; }
+  a.back { color: #7E97AE; text-decoration: none; font-size: 14px; }
+  h1 { font-size: 30px; font-weight: 900; margin: 16px 0 8px; }
+  h1 .accent { color: #FFC400; }
+  p.lead { color: #B9CADA; line-height: 1.7; margin-bottom: 28px; }
+  .card { background: #14232F; border: 1px solid #2A4A6E; border-radius: 16px; padding: 24px; }
+  label { display: block; font-weight: 700; margin: 18px 0 8px; font-size: 15px; }
+  label:first-child { margin-top: 0; }
+  select, input[type="number"] { width: 100%; padding: 12px; border-radius: 10px; border: 1px solid #2A4A6E; background: #0F2A44; color: #E7EEF5; font-size: 16px; font-family: inherit; }
+  .unit-note { color: #7E97AE; font-size: 13px; margin-top: 6px; }
+  .rush { display: flex; align-items: center; gap: 10px; margin-top: 20px; font-weight: 500; }
+  .rush input { width: 20px; height: 20px; accent-color: #FFC400; }
+  .result { margin-top: 24px; background: #0F2A44; border: 1px dashed #FFC400; border-radius: 12px; padding: 18px; text-align: center; }
+  .result .usd { font-size: 34px; font-weight: 900; color: #FFC400; }
+  .result .twd { color: #B9CADA; margin-top: 4px; }
+  .result .detail { color: #7E97AE; font-size: 13px; margin-top: 8px; line-height: 1.6; }
+  .cta { display: block; margin-top: 22px; background: #FFC400; color: #14232F; text-align: center; font-weight: 900; font-size: 17px; padding: 15px; border-radius: 12px; text-decoration: none; }
+  .fine { color: #7E97AE; font-size: 13px; line-height: 1.7; margin-top: 20px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="/">← 回首頁</a>
+  <h1>翻譯報價<span class="accent">計算器</span></h1>
+  <p class="lead">選服務、輸入數量，立刻看到估算價格。正式報價以看到檔案後確認為準 — 而且第一頁試譯免費，先試再決定。</p>
+
+  <div class="card">
+    <label for="service">服務項目</label>
+    <select id="service">
+      <option value="translate">英 → 台灣繁中 翻譯（US$0.06／英文字）</option>
+      <option value="localize">英 → 台灣繁中 在地化（US$0.07／英文字）</option>
+      <option value="toen">台灣繁中 → 英文（US$0.07／中文字）</option>
+      <option value="review">簡中 → 台灣繁中 在地化審閱（US$0.03／字）</option>
+      <option value="subtitle">字幕翻譯（US$6.00／分鐘）</option>
+    </select>
+
+    <label for="qty" id="qtyLabel">數量（英文字數）</label>
+    <input type="number" id="qty" min="0" step="1" value="1000" />
+    <div class="unit-note" id="qtyNote">不確定字數？把檔案貼到 Word 或 Google 文件，左下角就會顯示字數。</div>
+
+    <div class="rush">
+      <input type="checkbox" id="rush" />
+      <label for="rush" style="margin:0;">急件（+30%，優先排程）</label>
+    </div>
+
+    <div class="result">
+      <div class="usd" id="usd">US$60</div>
+      <div class="twd" id="twd">約 NT$1,890</div>
+      <div class="detail" id="detail"></div>
+    </div>
+
+    <a class="cta" href="https://docs.google.com/forms/d/e/1FAIpQLScYyVF_c5Gff_RI0wbq-aU-gZYIBshqu8loctsuPNAahaXyGA/viewform" target="_blank" rel="noopener">免費試譯一頁 → 送出需求</a>
+  </div>
+
+  <p class="fine">
+    計價說明：翻譯最低 US$30／案、在地化 US$40／案、審閱 US$20／案、字幕 US$30／案，未達最低以最低計。
+    台幣金額以約 31.5 匯率估算，僅供參考，實際以美元報價為準。
+    遊戲在地化另有公開方案價（US$0.08／字，含 500 字免費試譯），歡迎直接來信洽詢：z2idugagr@gmail.com
+  </p>
+</div>
+
+<script>
+  var RATES = {
+    translate: { rate: 0.06, min: 30, unit: "英文字數", note: "不確定字數？把檔案貼到 Word 或 Google 文件，左下角就會顯示字數。" },
+    localize:  { rate: 0.07, min: 40, unit: "英文字數", note: "在地化包含台灣用詞轉換與語氣調整，不只是翻譯。" },
+    toen:      { rate: 0.07, min: 30, unit: "中文字數", note: "以來源中文計算字數（含標點）。" },
+    review:    { rate: 0.03, min: 20, unit: "中文字數", note: "檢查簡轉繁常見錯誤：用詞、量詞、專有名詞台灣化。" },
+    subtitle:  { rate: 6.00, min: 30, unit: "影片分鐘數", note: "以影片總長度計（含時間軸製作）。不足 1 分鐘以 1 分鐘計。" }
+  };
+  var TWD = 31.5;
+  var svc = document.getElementById("service");
+  var qty = document.getElementById("qty");
+  var rush = document.getElementById("rush");
+  function calc() {
+    var r = RATES[svc.value];
+    document.getElementById("qtyLabel").textContent = "數量（" + r.unit + "）";
+    document.getElementById("qtyNote").textContent = r.note;
+    var q = parseFloat(qty.value) || 0;
+    var base = q * r.rate;
+    var appliedMin = base < r.min;
+    var total = Math.max(base, r.min);
+    if (rush.checked) total = total * 1.3;
+    total = Math.round(total * 100) / 100;
+    document.getElementById("usd").textContent = "US$" + total.toLocaleString("en-US");
+    document.getElementById("twd").textContent = "約 NT$" + Math.round(total * TWD).toLocaleString("zh-Hant-TW");
+    var d = "單價 US$" + r.rate + " × " + q.toLocaleString() + " ＝ US$" + (Math.round(base * 100) / 100).toLocaleString("en-US");
+    if (appliedMin) d += "，未達最低 US$" + r.min + "，以最低計";
+    if (rush.checked) d += "；急件 ×1.3";
+    document.getElementById("detail").textContent = d;
+  }
+  svc.addEventListener("change", calc);
+  qty.addEventListener("input", calc);
+  rush.addEventListener("change", calc);
+  calc();
+</script>
+</body>
+</html>
