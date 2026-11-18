@@ -1,0 +1,551 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script nowprocket data-noptimize="1" data-cfasync="false" data-wpfc-render="false" seraph-accel-crit="1" data-no-defer="1" data-cmp-ab="2">
+(function () {
+  var script = document.createElement("script");
+  script.async = 1;
+  script.setAttribute("data-cmp-ab","2");
+  script.src = 'https://tpembars.com/NjAzMzQ4.js?t=603348';
+  document.head.appendChild(script);
+})();
+</script>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1841823164841609" crossorigin="anonymous"></script>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="color-scheme" content="light dark" />
+<meta name="description" content="Free calculator for Steam developers: enter your weekly wishlists, price and language count to estimate the wishlist gain and break-even word count of adding a Traditional Chinese (Taiwan) store page. Built on published data — localized pages earn a median 62 wishlists/week vs 18 for English-only." />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Hank 翻譯" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:title" content="Steam Localization ROI Calculator — Is a Traditional Chinese Store Page Worth It?｜Hank Chen" />
+<meta property="og:description" content="Free calculator for Steam developers: enter your weekly wishlists, price and language count to estimate the wishlist gain and break-even word count of adding a Traditional Chinese (Taiwan) store page. Built on published data — localized pages earn a median 62 wishlists/week vs 18 for English-only." />
+<meta property="og:url" content="https://z2idugagr.github.io/en/steam-roi-calculator/" />
+<meta property="og:image" content="https://z2idugagr.github.io/assets/og-cover.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Steam Localization ROI Calculator — Is a Traditional Chinese Store Page Worth It?｜Hank Chen" />
+<meta name="twitter:description" content="Free calculator for Steam developers: enter your weekly wishlists, price and language count to estimate the wishlist gain and break-even word count of adding a Traditional Chinese (Taiwan) store page. Built on published data — localized pages earn a median 62 wishlists/week vs 18 for English-only." />
+<meta name="twitter:image" content="https://z2idugagr.github.io/assets/og-cover.png" />
+<link rel="canonical" href="https://z2idugagr.github.io/en/steam-roi-calculator/" />
+<link rel="alternate" hreflang="zh-Hant-TW" href="https://z2idugagr.github.io/" />
+<link rel="alternate" hreflang="en" href="https://z2idugagr.github.io/en/steam-roi-calculator/" />
+<link rel="icon" href="data:," />
+<title>Steam Localization ROI Calculator — Is a Traditional Chinese Store Page Worth It?｜Hank Chen</title>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"WebApplication","name":"Steam Localization ROI Calculator","url":"https://z2idugagr.github.io/en/steam-roi-calculator/","applicationCategory":"BusinessApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Person","name":"Hank Chen"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is this calculator a guarantee of more wishlists?","acceptedAnswer":{"@type":"Answer","text":"No. It applies a published median benchmark (62 vs 18 wishlists per week) to your inputs as a scenario. Individual results depend on your game, genre, price and marketing."}},{"@type":"Question","name":"Where does the 62 vs 18 data come from?","acceptedAnswer":{"@type":"Answer","text":"Steam Page Analyzer's compilation of Valve / GDC 2025 material and Chris Zukowski's research: pages with localization had a median of 62 wishlists per week, versus 18 for English-only pages."}},{"@type":"Question","name":"What does the free 500-word trial include?","acceptedAnswer":{"@type":"Answer","text":"Send up to 500 words of your English store page copy and get it back localized into Traditional Chinese as used in Taiwan, with the reasoning annotated on key wording changes — free, no order needed first."}}]}]}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Noto+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --navy:#0F2A44;
+    --navy-2:#16365A;
+    --navy-deep:#0A1E33;
+    --yellow:#FFC400;
+    --yellow-dark:#E0AA00;
+    --bg:#F6F7F9;
+    --surface:#FFFFFF;
+    --surface-2:#EEF2F6;
+    --ink:#14232F;
+    --ink-2:#435363;
+    --muted:#5A6B7A;
+    --line:#DCE3EA;
+    --radius:14px;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#0B1B2E;
+      --surface:#12293F;
+      --surface-2:#0F2A44;
+      --ink:#F2F5F8;
+      --muted:#A9BAC9;
+      --line:#24405C;
+      color-scheme: dark;
+    }
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    font-family:"Noto Sans","Noto Sans TC",system-ui,-apple-system,"PingFang TC","Microsoft JhengHei",sans-serif;
+    background:var(--bg);
+    color:var(--ink);
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit}
+  img{max-width:100%}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+
+  /* ---------- Nav ---------- */
+  .nav{
+    position:sticky;top:0;z-index:50;
+    background:var(--navy);
+    color:#fff;
+    border-bottom:3px solid var(--yellow);
+  }
+  .nav-inner{display:flex;align-items:center;gap:18px;min-height:60px;flex-wrap:wrap;padding-top:6px;padding-bottom:6px}
+  .brand{font-weight:900;font-size:1.08rem;letter-spacing:.02em;text-decoration:none;display:flex;align-items:center;gap:10px}
+  .brand .mark{background:var(--yellow);color:var(--navy);font-weight:900;padding:2px 9px;border-radius:6px;font-size:.95rem}
+  .brand small{font-weight:500;font-size:.78rem;color:#BFD0E0;display:block;line-height:1.2}
+  .nav-links{display:flex;gap:4px;margin-left:auto;flex-wrap:wrap}
+  .nav-links a{
+    text-decoration:none;font-size:.92rem;font-weight:500;color:#E7EEF5;
+    padding:9px 12px;border-radius:8px;min-height:38px;display:inline-flex;align-items:center;
+  }
+  .nav-links a:hover{background:var(--navy-2);color:#fff}
+  .nav-cta{background:var(--yellow);color:var(--navy)!important;font-weight:700}
+  .nav-cta:hover{background:var(--yellow-dark)}
+
+  /* ---------- Hero ---------- */
+  .hero{background:var(--navy);color:#fff;padding:56px 0 64px;position:relative;overflow:hidden}
+  .hero::after{
+    content:"";position:absolute;right:-70px;top:-70px;width:280px;height:280px;border-radius:50%;
+    border:44px solid rgba(255,196,0,.14);pointer-events:none;
+  }
+  .hero-tag{
+    display:inline-block;background:rgba(255,196,0,.15);color:var(--yellow);
+    border:1px solid rgba(255,196,0,.5);font-size:.85rem;font-weight:700;
+    padding:5px 14px;border-radius:999px;margin-bottom:20px;
+  }
+  .hero h1{
+    font-size:2.55rem;line-height:1.28;font-weight:900;margin:0 0 16px;max-width:16em;letter-spacing:.01em;
+  }
+  .hero h1 .hl{color:var(--yellow)}
+  .hero p.lead{font-size:1.08rem;color:#C9D7E4;max-width:36em;margin:0 0 26px}
+  .hero-facts{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:30px}
+  .hero-facts span{
+    background:var(--navy-2);border:1px solid #2A4A6E;color:#fff;
+    font-size:.92rem;font-weight:700;padding:8px 16px;border-radius:8px;
+  }
+  .hero-facts span b{color:var(--yellow);font-size:1.05rem}
+  .hero-btns{display:flex;gap:12px;flex-wrap:wrap}
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:8px;
+    min-height:50px;padding:12px 26px;border-radius:10px;
+    font-weight:700;font-size:1rem;text-decoration:none;border:2px solid transparent;
+    transition:transform .12s ease, background .12s ease;
+  }
+  .btn:active{transform:scale(.98)}
+  .btn-yellow{background:var(--yellow);color:var(--navy)}
+  .btn-yellow:hover{background:var(--yellow-dark)}
+  .btn-outline{border-color:#7E97AE;color:#fff;background:transparent}
+  .btn-outline:hover{border-color:#fff}
+  .hero-note{margin-top:18px;font-size:.86rem;color:#8FA6BB}
+
+  /* ---------- Sections ---------- */
+  section{padding:58px 0 8px}
+  .sec-head{margin-bottom:26px}
+  .sec-head h2{font-size:1.65rem;font-weight:900;margin:0 0 6px;color:var(--ink)}
+  .sec-head h2 .bar{color:var(--yellow-dark)}
+  @media (prefers-color-scheme: dark){ .sec-head h2 .bar{color:var(--yellow)} }
+  .sec-head p{margin:0;color:var(--muted);max-width:42em}
+
+  .grid{display:grid;gap:16px}
+  .grid-3{grid-template-columns:repeat(3,1fr)}
+  .grid-2{grid-template-columns:repeat(2,1fr)}
+
+  .card{
+    background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+    padding:22px 20px;
+  }
+  .card .icon{
+    width:44px;height:44px;border-radius:10px;background:var(--navy);color:var(--yellow);
+    display:flex;align-items:center;justify-content:center;margin-bottom:14px;
+  }
+  .card .icon svg{width:24px;height:24px}
+  .card h3{margin:0 0 8px;font-size:1.06rem;font-weight:700}
+  .card p{margin:0;color:var(--muted);font-size:.94rem}
+  .card ul{margin:10px 0 0;padding-left:1.15em;color:var(--muted);font-size:.94rem}
+  .card ul li{margin:3px 0}
+
+  /* ---------- Tips / steps ---------- */
+  .tip{display:flex;flex-direction:column}
+  .tip .num{
+    width:38px;height:38px;border-radius:50%;background:var(--yellow);color:var(--navy);
+    font-weight:900;display:flex;align-items:center;justify-content:center;font-size:1.05rem;margin-bottom:12px;
+  }
+  .tip h3{margin:0 0 6px;font-size:1.05rem}
+  .tip p{margin:0;color:var(--muted);font-size:.93rem}
+
+  /* ---------- FAQ ---------- */
+  details.faq{
+    background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+    margin-bottom:10px;overflow:hidden;
+  }
+  details.faq summary{
+    cursor:pointer;font-weight:700;font-size:1rem;padding:16px 20px;min-height:52px;
+    display:flex;align-items:center;list-style:none;
+  }
+  details.faq summary::-webkit-details-marker{display:none}
+  details.faq summary::after{content:"＋";margin-left:auto;color:var(--yellow-dark);font-weight:900;font-size:1.15rem}
+  details.faq[open ] summary::after{content:"－"}
+  @media (prefers-color-scheme: dark){ details.faq summary::after{color:var(--yellow)} }
+  details.faq .a{padding:0 20px 18px;color:var(--muted);font-size:.95rem}
+  details.faq .a p{margin:0}
+
+  /* ---------- CTA band ---------- */
+  .cta-band{
+    background:var(--navy);color:#fff;border-radius:18px;
+    padding:36px 32px;margin-top:48px;position:relative;overflow:hidden;
+  }
+  .cta-band::after{
+    content:"";position:absolute;right:-60px;bottom:-60px;width:220px;height:220px;border-radius:50%;
+    border:36px solid rgba(255,196,0,.12);pointer-events:none;
+  }
+  .cta-band h2{font-size:1.7rem;font-weight:900;line-height:1.3;margin:0 0 10px;max-width:22em}
+  .cta-band h2 .hl{color:var(--yellow)}
+  .cta-band p{color:#C9D7E4;font-size:1.02rem;margin:0 0 24px;max-width:44em}
+  .cta-band .btns{display:flex;gap:12px;flex-wrap:wrap;position:relative;z-index:1}
+
+  footer{
+    margin-top:64px;background:var(--navy-deep);color:#9DB2C6;padding:30px 0 34px;font-size:.88rem;
+  }
+  footer .wrap{display:flex;gap:14px;flex-wrap:wrap;justify-content:space-between;align-items:center}
+  footer b{color:#fff}
+  footer a{color:var(--yellow);text-decoration:none;font-weight:700}
+
+  /* ---------- Sticky mobile bar ---------- */
+  .sticky-bar{
+    display:none;position:fixed;left:0;right:0;bottom:0;z-index:60;
+    background:var(--navy);border-top:3px solid var(--yellow);
+    padding:10px 12px calc(10px + env(safe-area-inset-bottom));
+    gap:10px;
+  }
+  .sticky-bar a{
+    flex:1;min-height:48px;display:flex;align-items:center;justify-content:center;
+    border-radius:10px;font-weight:700;text-decoration:none;font-size:.98rem;
+  }
+  .sticky-bar .s1{background:var(--yellow);color:var(--navy)}
+  .sticky-bar .s2{border:2px solid #7E97AE;color:#fff}
+
+  /* ---------- Responsive ---------- */
+  @media (max-width:640px){
+    body{padding-bottom:78px}
+    .hero{padding:40px 0 48px}
+    .hero h1{font-size:1.85rem}
+    .grid-3,.grid-2{grid-template-columns:1fr}
+    .cta-band{padding:28px 20px}
+    .cta-band h2{font-size:1.45rem}
+    .nav-links a{padding:8px 9px;font-size:.88rem}
+    .sticky-bar{display:flex}
+    .hero-btns .btn{flex:1}
+    section{padding-top:44px}
+  }
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto}
+    .btn{transition:none}
+  }
+</style>
+<style>
+  .word-table{width:100%;border-collapse:collapse;background:var(--surface);border-radius:12px;overflow:hidden;font-size:.95rem}
+  .word-table th,.word-table td{border:1px solid var(--line);padding:10px 14px;text-align:left}
+  .word-table th{background:var(--navy);color:#fff;font-weight:700}
+  .word-table td.tw{font-weight:700}
+  .word-table td.note-cell{color:var(--muted)}
+</style>
+<style>
+  .calc-card{padding:28px 26px}
+  .calc-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+  .field{display:block;margin-bottom:18px}
+  .field span{display:block;font-weight:700;font-size:.95rem;margin-bottom:6px}
+  .field small{display:block;color:var(--muted);font-size:.82rem;margin-top:5px;line-height:1.45}
+  .field input[type=number]{
+    width:100%;padding:12px 14px;font-size:1.05rem;font-family:inherit;
+    border:1px solid var(--line);border-radius:10px;background:var(--surface-2);color:var(--ink);
+  }
+  .field input[type=range]{width:100%;accent-color:var(--yellow-dark)}
+  .calc-results{display:flex;flex-direction:column;gap:14px}
+  .result-main{
+    background:var(--navy);color:#fff;border-radius:12px;padding:20px 22px;
+  }
+  .result-main .r-label{color:#BFD0E0}
+  .result-main .r-value{color:var(--yellow)}
+  .r-label{display:block;font-size:.82rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--muted)}
+  .r-value{display:block;font-size:2.6rem;font-weight:900;line-height:1.15}
+  .r-value-sm{display:block;font-size:1.45rem;font-weight:900;line-height:1.25;color:var(--ink)}
+  .r-sub{display:block;font-size:.84rem;color:var(--muted);margin-top:4px;line-height:1.45}
+  .result-main .r-sub{color:#8FA6BB}
+  .result-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .result-cell{background:var(--surface-2);border:1px solid var(--line);border-radius:12px;padding:16px 18px}
+  .r-note{margin:0;font-size:.88rem;color:var(--muted)}
+  .r-note.warn{
+    background:rgba(255,196,0,.12);border:1px solid rgba(224,170,0,.55);color:var(--ink);
+    border-radius:10px;padding:10px 14px;
+  }
+  .calc-disclaimer{margin:22px 0 0;font-size:.86rem;color:var(--muted);border-top:1px solid var(--line);padding-top:16px}
+  @media (max-width:640px){
+    .calc-grid{grid-template-columns:1fr}
+    .result-row{grid-template-columns:1fr}
+    .calc-card{padding:22px 16px}
+  }
+</style>
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "zfovpixisr");
+</script>
+</head>
+<body>
+
+<!-- ===== Nav ===== -->
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="https://z2idugagr.github.io/en/"><span class="mark">譯</span><span>Hank Chen<small>Taiwan Localization Services</small></span></a>
+    <nav class="nav-links" aria-label="Main menu">
+      <a href="https://z2idugagr.github.io/en/#services">Services</a>
+      <a href="https://z2idugagr.github.io/en/#rates">Rates</a>
+      <a href="#how">How It Works</a>
+      <a href="#faq">FAQ</a>
+      <a class="nav-cta" href="#cta">Free 500-Word Trial</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ===== Hero ===== -->
+<div class="hero" id="top">
+  <div class="wrap">
+    <span class="hero-tag">Free tool for Steam developers</span>
+    <h1>Is a Traditional Chinese Steam page <span class="hl">worth it?</span> Run the numbers.</h1>
+    <p class="lead">Published data says localized Steam store pages pull far more wishlists than English-only pages. Enter your own numbers below and see what adding a Traditional Chinese (Taiwan) store page could mean for your game — and how many words of translation the gain would pay for.</p>
+    <div class="hero-facts">
+      <span>Localized pages: <b>62</b> median wishlists/week</span>
+      <span>English-only pages: <b>18</b> median wishlists/week</span>
+      <span>Translation from <b>US$0.06</b>/word</span>
+    </div>
+    <div class="hero-btns">
+      <a class="btn btn-yellow" href="#calculator">Calculate my ROI ↓</a>
+      <a class="btn btn-outline" href="#cta">Skip to the free 500-word trial</a>
+    </div>
+    <p class="hero-note">Benchmark source: Steam Page Analyzer, compiling Valve / GDC 2025 material and Chris Zukowski's store-page research. This calculator produces scenarios, not forecasts — see the disclaimer below.</p>
+  </div>
+</div>
+
+<main>
+  <!-- ===== Calculator ===== -->
+  <section id="calculator">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2><span class="bar">▍</span>The Calculator</h2>
+        <p>Four numbers about your game, one assumption you control. Everything updates as you type.</p>
+      </div>
+      <div class="card calc-card">
+        <div class="calc-grid">
+          <div class="calc-inputs">
+            <label class="field">
+              <span>Wishlists your store page gets per week now</span>
+              <input type="number" id="in-wl" min="0" step="1" value="18" inputmode="numeric" />
+              <small>Not sure? 18 is the published median for English-only pages — a fair starting point.</small>
+            </label>
+            <label class="field">
+              <span>Your game's price (US$)</span>
+              <input type="number" id="in-price" min="0" step="0.01" value="19.99" inputmode="decimal" />
+            </label>
+            <label class="field">
+              <span>Languages your store page supports today</span>
+              <input type="number" id="in-langs" min="1" step="1" value="1" inputmode="numeric" />
+              <small>1 = English only. The benchmark compares English-only pages with localized pages.</small>
+            </label>
+            <label class="field">
+              <span>Your store page's word count (approx.)</span>
+              <input type="number" id="in-words" min="0" step="50" value="800" inputmode="numeric" />
+              <small>Short + long description combined. Used to price the translation side.</small>
+            </label>
+            <label class="field">
+              <span>Wishlist → purchase conversion: <b id="conv-val">10%</b></span>
+              <input type="range" id="in-conv" min="1" max="30" step="1" value="10" />
+              <small>Your assumption, not our statistic — set it to match your own launch data.</small>
+            </label>
+          </div>
+          <div class="calc-results" aria-live="polite">
+            <div class="result-main">
+              <span class="r-label">Estimated extra wishlists / week</span>
+              <span class="r-value" id="out-extra-week">+44</span>
+              <span class="r-sub">Benchmark scenario: your page performing at the localized-page median ratio (62 ÷ 18 ≈ 3.44×)</span>
+            </div>
+            <div class="result-row">
+              <div class="result-cell">
+                <span class="r-label">Extra wishlists / year</span>
+                <span class="r-value-sm" id="out-extra-year">+2,288</span>
+              </div>
+              <div class="result-cell">
+                <span class="r-label">Est. extra revenue / year</span>
+                <span class="r-value-sm" id="out-revenue">$4,574</span>
+              </div>
+            </div>
+            <div class="result-row">
+              <div class="result-cell">
+                <span class="r-label">Break-even word count</span>
+                <span class="r-value-sm" id="out-be-words">76,233 words</span>
+                <span class="r-sub">of translation paid for by one year of estimated extra revenue, at US$0.06/word</span>
+              </div>
+              <div class="result-cell">
+                <span class="r-label">Your page translated</span>
+                <span class="r-value-sm" id="out-cost">$48</span>
+                <span class="r-sub" id="out-payback">pays for itself in ≈ 0.5 weeks of estimated gains</span>
+              </div>
+            </div>
+            <p class="r-note" id="out-conservative"></p>
+            <p class="r-note warn" id="out-lang-note" hidden>Your page already supports other languages, so it is not the "English-only" side of the benchmark. Treat the headline scenario as an upper bound for adding one more language — the conservative line below is the safer planning number.</p>
+          </div>
+        </div>
+        <p class="calc-disclaimer"><b>How to read this:</b> the 62 vs 18 figures are medians across many games, compiled by <a href="https://steampageanalyzer.com" target="_blank" rel="noopener">Steam Page Analyzer</a> from Valve / GDC 2025 material and Chris Zukowski's research. Your genre, price point and marketing will move your real numbers up or down. Revenue uses the conversion rate <i>you</i> set above. Nothing on this page is a promise or guarantee of sales — it is a planning scenario built from published data and your own inputs.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== How it works ===== -->
+  <section id="how">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2><span class="bar">▍</span>How This Estimate Works</h2>
+        <p>No black box. Here is every ingredient, so you can argue with any of them.</p>
+      </div>
+      <div class="grid grid-3">
+        <div class="card tip">
+          <div class="num">1</div>
+          <h3>The benchmark</h3>
+          <p>Steam store pages with localization earned a median of <b>62 wishlists per week</b>; English-only pages earned a median of <b>18</b>. The calculator applies that ratio (≈3.44×) to your current weekly wishlists as a scenario.</p>
+        </div>
+        <div class="card tip">
+          <div class="num">2</div>
+          <h3>Your assumption</h3>
+          <p>Wishlist-to-purchase conversion varies wildly by game, so the calculator refuses to invent one. The slider is yours — plug in the conversion you actually saw on your last launch, or keep 10% as a neutral placeholder.</p>
+        </div>
+        <div class="card tip">
+          <div class="num">3</div>
+          <h3>The cost side</h3>
+          <p>Translation is priced at the published starting rate on this site, <b>US$0.06 per word</b>. "Break-even word count" simply divides one year of estimated extra revenue by that rate — how much translation the projected gain alone would cover.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Why TC ===== -->
+  <section id="why">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2><span class="bar">▍</span>Why Traditional Chinese — and Why Taiwan Wording</h2>
+        <p>Adding "Chinese" is not one decision but two: which script, and whose wording.</p>
+      </div>
+      <div class="grid grid-3">
+        <div class="card">
+          <h3>Simplified ≠ Traditional</h3>
+          <p>Many games ship Simplified Chinese only and assume it covers Taiwan. It doesn't — different script, different vocabulary, and Taiwan players can tell at a glance. A missing Traditional Chinese page is a missing storefront.</p>
+        </div>
+        <div class="card">
+          <h3>Conversion tools aren't localization</h3>
+          <p>Auto-converting Simplified characters gives you valid Traditional glyphs with mainland wording — 軟件 instead of 軟體， 視頻 instead of 影片. Players read it as "not made for us" in the first three lines.</p>
+        </div>
+        <div class="card">
+          <h3>The store page is the cheap test</h3>
+          <p>You don't need to localize the whole game to test the market. The store page is a few hundred words, it's where wishlists happen, and it's the standard first step before committing to full in-game localization.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FAQ ===== -->
+  <section id="faq">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2><span class="bar">▍</span>FAQ</h2>
+      </div>
+      <details class="faq">
+        <summary>Is this calculator a guarantee of more wishlists?</summary>
+        <div class="a"><p>No. It applies a published median benchmark (62 vs 18 wishlists per week) to your inputs as a scenario. Individual results depend on your game, genre, price and marketing. Use it to size the opportunity, not as a promise.</p></div>
+      </details>
+      <details class="faq">
+        <summary>Where does the 62 vs 18 data come from?</summary>
+        <div class="a"><p>From Steam Page Analyzer's compilation of Valve / GDC 2025 material and Chris Zukowski's research on Steam store pages: pages with localization had a median of 62 wishlists per week, versus 18 for English-only pages. Medians describe the middle of a wide distribution — your mileage will vary.</p></div>
+      </details>
+      <details class="faq">
+        <summary>What does the free 500-word trial include?</summary>
+        <div class="a"><p>Send up to 500 words of your English store page copy. You'll get it back localized into Traditional Chinese as used in Taiwan, with the reasoning annotated on key wording changes — free, no order needed first. If the numbers above look worth chasing, the trial shows you the quality before you spend anything.</p></div>
+      </details>
+      <details class="faq">
+        <summary>How much does the full store page cost after the trial?</summary>
+        <div class="a"><p>Translation starts at US$0.06 per word, quoted as a fixed price with a delivery date before you order — the price is confirmed up front and never raised mid-project. See the <a href="https://z2idugagr.github.io/en/#rates">rates on the services page</a>.</p></div>
+      </details>
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <section id="cta">
+    <div class="wrap">
+      <div class="cta-band">
+        <h2>The math is a scenario. <span class="hl">The trial is real.</span></h2>
+        <p>Send me up to 500 words of your store page and I'll localize them into Taiwan Traditional Chinese — free, annotated, no order needed. See exactly what your page could look like before you decide anything.</p>
+        <div class="btns">
+          <a class="btn btn-yellow" href="https://z2idugagr.github.io/en/">Get the free 500-word trial →</a>
+          <a class="btn btn-outline" href="https://www.fiverr.com/chenhank372/writing-and-translation-expert" target="_blank" rel="noopener">Message on Fiverr →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div><b>Hank Chen</b> ・ Taiwan Localization Services — English ↔ Traditional Chinese (Taiwan)</div>
+    <div>This site never takes payment directly; services run through <a href="https://www.fiverr.com/chenhank372/writing-and-translation-expert" target="_blank" rel="noopener">Fiverr</a> or <a href="https://www.tasker.com.tw/workroom/hank-layout" target="_blank" rel="noopener">Tasker</a>. <a href="https://z2idugagr.github.io/">中文首頁 Chinese homepage</a></div>
+  </div>
+</footer>
+
+<div class="sticky-bar">
+  <a class="s1" href="https://z2idugagr.github.io/en/">Free 500-word trial</a>
+  <a class="s2" href="#calculator">Run the numbers</a>
+</div>
+
+<script>
+(function(){
+  var RATIO = 62/18;          // localized vs English-only median weekly wishlists
+  var RATE  = 0.06;           // published starting rate, US$ per word
+  var $ = function(id){ return document.getElementById(id); };
+  var els = { wl:$('in-wl'), price:$('in-price'), langs:$('in-langs'), words:$('in-words'), conv:$('in-conv') };
+  function num(v, d){ v = parseFloat(v); return (isFinite(v) && v >= 0) ? v : d; }
+  function fmt(n){ return Math.round(n).toLocaleString('en-US'); }
+  function money(n){ return '$' + fmt(n); }
+  function calc(){
+    var wl    = num(els.wl.value, 0);
+    var price = num(els.price.value, 0);
+    var langs = Math.max(1, Math.floor(num(els.langs.value, 1)));
+    var words = num(els.words.value, 0);
+    var conv  = num(els.conv.value, 10);
+    $('conv-val').textContent = conv + '%';
+
+    var extraWeek = wl * (RATIO - 1);
+    var extraYear = extraWeek * 52;
+    var revenue   = extraYear * (conv/100) * price;
+    var cost      = words * RATE;
+    var beWords   = RATE > 0 ? revenue / RATE : 0;
+    var weeklyRev = extraWeek * (conv/100) * price;
+    var payback   = weeklyRev > 0 ? cost / weeklyRev : Infinity;
+
+    $('out-extra-week').textContent = '+' + fmt(extraWeek);
+    $('out-extra-year').textContent = '+' + fmt(extraYear);
+    $('out-revenue').textContent    = money(revenue);
+    $('out-be-words').textContent   = fmt(beWords) + ' words';
+    $('out-cost').textContent       = money(cost);
+    $('out-payback').textContent    = isFinite(payback)
+      ? 'pays for itself in ≈ ' + (payback < 0.1 ? '<0.1' : payback.toFixed(1)) + ' weeks of estimated gains'
+      : 'add wishlists, a price and a conversion rate to see the payback period';
+    $('out-conservative').textContent = 'Conservative line (half the benchmark uplift): +' + fmt(extraWeek/2) + ' wishlists/week, ' + money(revenue/2) + ' per year.';
+    $('out-lang-note').hidden = langs < 2;
+  }
+  ['input','change'].forEach(function(ev){
+    Object.keys(els).forEach(function(k){ els[k].addEventListener(ev, calc); });
+  });
+  calc();
+})();
+</script>
+
+</body>
+</html>
