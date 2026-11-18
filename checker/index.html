@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>簡轉繁用詞檢查工具｜免費線上檢查大陸用詞｜Hank Chen 翻譯</title>
+<meta name="description" content="免費線上工具：貼上文字，自動找出軟件、視頻、質量等大陸用詞與簡轉繁地雷，給你台灣正確說法。42 組高頻對照即時檢查。" />
+<script type="text/javascript">
+(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","zfovpixisr");
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet" />
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: "Noto Sans TC", sans-serif; background: #0F2A44; color: #E7EEF5; min-height: 100vh; }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 40px 20px 60px; }
+  a.back { color: #7E97AE; text-decoration: none; font-size: 14px; }
+  h1 { font-size: 29px; font-weight: 900; margin: 16px 0 8px; line-height: 1.4; }
+  h1 .accent { color: #FFC400; }
+  p.lead { color: #B9CADA; line-height: 1.8; margin-bottom: 22px; }
+  textarea { width: 100%; min-height: 170px; padding: 14px; border-radius: 12px; border: 1px solid #2A4A6E; background: #14232F; color: #E7EEF5; font-size: 16px; font-family: inherit; line-height: 1.7; resize: vertical; }
+  .row { display: flex; gap: 10px; margin-top: 14px; flex-wrap: wrap; }
+  button { cursor: pointer; border: none; border-radius: 10px; padding: 13px 22px; font-size: 16px; font-weight: 900; font-family: inherit; }
+  .primary { background: #FFC400; color: #14232F; }
+  .ghost { background: transparent; color: #B9CADA; border: 1px solid #2A4A6E; }
+  .summary { margin-top: 20px; font-size: 17px; font-weight: 700; display: none; }
+  .summary .n { color: #FFC400; font-size: 22px; }
+  .preview { display: none; margin-top: 14px; background: #14232F; border: 1px solid #2A4A6E; border-radius: 12px; padding: 16px 18px; line-height: 1.9; white-space: pre-wrap; word-break: break-all; }
+  .preview mark { background: #FFC400; color: #14232F; border-radius: 3px; padding: 0 2px; }
+  .hits { margin-top: 16px; display: none; }
+  .hit { background: #14232F; border-left: 4px solid #FFC400; border-radius: 8px; padding: 12px 16px; margin-bottom: 10px; line-height: 1.7; }
+  .hit .w { color: #FF8A80; font-weight: 900; }
+  .hit .r { color: #FFC400; font-weight: 900; }
+  .hit .note { color: #B9CADA; font-size: 14px; }
+  .hit .cnt { color: #7E97AE; font-size: 13px; }
+  .cta-box { margin-top: 26px; background: #14232F; border: 1px dashed #FFC400; border-radius: 12px; padding: 18px; text-align: center; line-height: 1.8; color: #B9CADA; }
+  .cta-box a { color: #FFC400; font-weight: 700; }
+  .fine { color: #7E97AE; font-size: 13px; line-height: 1.7; margin-top: 18px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="/">← 回首頁</a>
+  <h1>簡轉繁用詞<span class="accent">檢查工具</span></h1>
+  <p class="lead">把文字貼進來，立刻找出 42 組最常見的大陸用詞與簡轉繁地雷，並給你台灣正確說法。免費、不用註冊、文字不會離開你的瀏覽器。</p>
+
+  <textarea id="input" placeholder="把要檢查的文字貼在這裡，例如：這款軟件的視頻質量很好，支持在線搜索和打印。"></textarea>
+  <div class="row">
+    <button class="primary" id="checkBtn">開始檢查</button>
+    <button class="ghost" id="fixBtn" style="display:none;">一鍵全改成台灣說法</button>
+    <button class="ghost" id="sampleBtn">放一段範例試試</button>
+  </div>
+
+  <div class="summary" id="summary"></div>
+  <div class="preview" id="preview"></div>
+  <div class="hits" id="hits"></div>
+
+  <div class="cta-box">
+    檢查只是第一步 — 完整版《台灣用詞自查清單》含逐項檢查流程與改稿範例：<a href="https://zidug.gumroad.com/l/tortsw" target="_blank" rel="noopener">Gumroad 完整版 US$7</a><br/>
+    先拿免費的：<a href="/free/">《台灣用詞對照精華表》免費下載</a> ｜ 想要真人審閱？<a href="/quote/">報價計算器</a>（第一頁免費試審）
+  </div>
+
+  <p class="fine">說明：本工具以詞彙比對找出常見用詞問題，語境判斷（例如「菜單」在餐廳情境是正確的）仍需人工確認；工具標出的是「值得檢查」的位置。檢查在你的瀏覽器本機進行，不上傳任何文字。</p>
+</div>
+
+<script>
+var DICT = [{"wrong": "觀看視頻", "right": "看影片", "note": "「視頻」在台灣說「影片」"}, {"wrong": "網絡行銷", "right": "網路行銷", "note": "「網絡」在台灣說「網路」"}, {"wrong": "信息通知", "right": "訊息通知", "note": "「信息」在台灣說「訊息／資訊」"}, {"wrong": "在線客服", "right": "線上客服", "note": "台灣說「線上」"}, {"wrong": "大年三十", "right": "除夕", "note": "台灣說「除夕」"}, {"wrong": "高質量", "right": "高品質", "note": "「質量」在台灣指物理的 mass，品質才用「高品質」"}, {"wrong": "性價比", "right": "CP 值", "note": "台灣行銷與口語都說 CP 值"}, {"wrong": "方便面", "right": "泡麵", "note": "instant noodles 台灣叫泡麵"}, {"wrong": "出租車", "right": "計程車", "note": "taxi 台灣叫計程車"}, {"wrong": "公交車", "right": "公車", "note": "bus 台灣叫公車"}, {"wrong": "倒計時", "right": "倒數", "note": "countdown 台灣說「倒數」"}, {"wrong": "接地氣", "right": "親民", "note": "品牌文案說「親民／貼近在地」"}, {"wrong": "軟件", "right": "軟體", "note": "software 台灣一律說「軟體」"}, {"wrong": "視頻", "right": "影片", "note": "video 台灣說「影片」"}, {"wrong": "網絡", "right": "網路", "note": "network 台灣說「網路」"}, {"wrong": "信息", "right": "訊息", "note": "message 台灣說「訊息」；正式文件用「資訊」"}, {"wrong": "搜索", "right": "搜尋", "note": "search 台灣說「搜尋」"}, {"wrong": "打印", "right": "列印", "note": "print 台灣說「列印」，機器叫印表機"}, {"wrong": "默認", "right": "預設", "note": "default 台灣說「預設」"}, {"wrong": "設置", "right": "設定", "note": "settings 台灣說「設定」"}, {"wrong": "登錄", "right": "登入", "note": "log in 台灣說「登入」"}, {"wrong": "賬戶", "right": "帳戶", "note": "account 用「帳」不「賬」"}, {"wrong": "賬單", "right": "帳單", "note": "bill 用「帳」不「賬」"}, {"wrong": "用戶", "right": "使用者", "note": "user 消費端說「使用者」"}, {"wrong": "短信", "right": "簡訊", "note": "SMS 台灣說「簡訊」"}, {"wrong": "屏幕", "right": "螢幕", "note": "screen 台灣說「螢幕」"}, {"wrong": "鼠標", "right": "滑鼠", "note": "mouse 台灣說「滑鼠」"}, {"wrong": "菜單", "right": "選單", "note": "軟體介面的 menu 是「選單」；餐廳的才是菜單"}, {"wrong": "程序", "right": "程式", "note": "program 台灣說「程式」；「程序」指行政流程"}, {"wrong": "激活", "right": "啟用", "note": "activate 台灣說「啟用／啟動」"}, {"wrong": "質量", "right": "品質", "note": "quality 台灣說「品質」"}, {"wrong": "土豆", "right": "馬鈴薯", "note": "potato 是「馬鈴薯」；台語的土豆指花生"}, {"wrong": "盒飯", "right": "便當", "note": "boxed meal 台灣叫便當"}, {"wrong": "地鐵", "right": "捷運", "note": "台北、高雄的系統叫捷運"}, {"wrong": "小區", "right": "社區", "note": "residential community 台灣說「社區」"}, {"wrong": "空調", "right": "冷氣", "note": "日常說「冷氣」；「空調」偏工程用語"}, {"wrong": "酸奶", "right": "優酪乳", "note": "yogurt drink 台灣叫優酪乳"}, {"wrong": "水平", "right": "水準", "note": "指程度時用「水準」，如服務水準"}, {"wrong": "包郵", "right": "免運", "note": "free shipping 台灣說「免運」"}, {"wrong": "爆款", "right": "熱銷商品", "note": "台灣說「熱銷／人氣商品」"}, {"wrong": "大促", "right": "促銷", "note": "台灣說「促銷／優惠活動」"}, {"wrong": "手信", "right": "伴手禮", "note": "souvenir 台灣說「伴手禮」"}];
+function esc(s){return s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");}
+function findHits(text){
+  var hits=[]; var occupied=[];
+  DICT.forEach(function(d){
+    var idx=0;
+    while(true){
+      var i=text.indexOf(d.wrong, idx);
+      if(i<0) break;
+      var overlap=occupied.some(function(o){return i<o.end && i+d.wrong.length>o.start;});
+      if(!overlap){ hits.push({start:i,end:i+d.wrong.length,d:d}); occupied.push({start:i,end:i+d.wrong.length}); }
+      idx=i+1;
+    }
+  });
+  hits.sort(function(a,b){return a.start-b.start;});
+  return hits;
+}
+function run(){
+  var text=document.getElementById("input").value;
+  var hits=findHits(text);
+  var summary=document.getElementById("summary"), preview=document.getElementById("preview"), box=document.getElementById("hits");
+  if(!text.trim()){ summary.style.display="block"; summary.textContent="先貼一段文字進來吧。"; preview.style.display="none"; box.style.display="none"; return; }
+  summary.style.display="block";
+  summary.innerHTML = hits.length ? '找到 <span class="n">'+hits.length+'</span> 處值得檢查的用詞' : '這段文字沒有發現常見的大陸用詞，做得好！';
+  var html="", last=0;
+  hits.forEach(function(h){ html+=esc(text.slice(last,h.start))+"<mark>"+esc(text.slice(h.start,h.end))+"</mark>"; last=h.end; });
+  html+=esc(text.slice(last));
+  preview.innerHTML=html; preview.style.display="block";
+  var byWord={};
+  hits.forEach(function(h){ var k=h.d.wrong; if(!byWord[k]) byWord[k]={d:h.d,count:0}; byWord[k].count++; });
+  box.innerHTML=Object.keys(byWord).map(function(k){ var e=byWord[k];
+    return '<div class="hit"><span class="w">'+esc(e.d.wrong)+'</span> → <span class="r">'+esc(e.d.right)+'</span> <span class="cnt">×'+e.count+'</span><br/><span class="note">'+esc(e.d.note)+'</span></div>';
+  }).join("");
+  box.style.display = hits.length ? "block" : "none";
+  document.getElementById("fixBtn").style.display = hits.length ? "inline-block" : "none";
+}
+document.getElementById("checkBtn").addEventListener("click", run);
+document.getElementById("fixBtn").addEventListener("click", function(){
+  var text=document.getElementById("input").value;
+  var hits=findHits(text); var out="", last=0;
+  hits.forEach(function(h){ out+=text.slice(last,h.start)+h.d.right; last=h.end; });
+  out+=text.slice(last);
+  document.getElementById("input").value=out; run();
+});
+document.getElementById("sampleBtn").addEventListener("click", function(){
+  document.getElementById("input").value="這款軟件的視頻質量很好，支持在線搜索、打印文件，還有默認的短信通知。用戶登錄賬戶後，可以觀看視頻，網絡速度也很快。";
+  run();
+});
+</script>
+</body>
+</html>
