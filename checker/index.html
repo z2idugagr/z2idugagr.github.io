@@ -14,7 +14,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>簡轉繁用詞檢查工具｜免費線上檢查大陸用詞｜Hank Chen 翻譯</title>
-<meta name="description" content="免費線上工具：貼上文字，自動找出軟件、視頻、質量等大陸用詞與簡轉繁地雷，給你台灣正確說法。42 組高頻對照即時檢查。" />
+<meta name="description" content="免費線上工具：貼上文字，先看問題數量與前 3 項摘要，再留 email 領取完整對照精華表。42 組高頻對照即時檢查台灣用詞與簡轉繁地雷。" />
 <script type="text/javascript">
 (function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","zfovpixisr");
 </script>
@@ -44,6 +44,16 @@
   .hit .cnt { color: #7E97AE; font-size: 13px; }
   .cta-box { margin-top: 26px; background: #14232F; border: 1px dashed #FFC400; border-radius: 12px; padding: 18px; text-align: center; line-height: 1.8; color: #B9CADA; }
   .cta-box a { color: #FFC400; font-weight: 700; }
+  .report-gate, .upgrade-box { display: none; margin-top: 18px; border-radius: 12px; padding: 18px; line-height: 1.8; }
+  .report-gate { background: #1B1710; border: 1px solid #FFC400; }
+  .report-gate h2, .upgrade-box h2 { font-size: 20px; margin-bottom: 6px; }
+  .report-gate p, .upgrade-box p { color: #B9CADA; }
+  .gate-btn, .upgrade-btn { display: inline-block; margin-top: 12px; border-radius: 10px; padding: 12px 18px; font-weight: 900; text-decoration: none; }
+  .gate-btn { background: #FFC400; color: #14232F; }
+  .systeme-slot { min-height: 0; }
+  .upgrade-box { background: #14232F; border: 1px dashed #FFC400; }
+  .upgrade-box .price { color: #FFC400; font-size: 24px; font-weight: 900; }
+  .upgrade-btn { background: transparent; color: #FFC400; border: 1px solid #FFC400; }
   .fine { color: #7E97AE; font-size: 13px; line-height: 1.7; margin-top: 18px; }
 
   .tbl-h { font-size: 21px; font-weight: 900; margin: 34px 0 12px; line-height: 1.5; }
@@ -63,7 +73,7 @@
 <div class="wrap">
   <a class="back" href="/">← 回首頁</a>
   <h1>簡轉繁用詞<span class="accent">檢查工具</span></h1>
-  <p class="lead">把文字貼進來，立刻找出 42 組最常見的大陸用詞與簡轉繁地雷，並給你台灣正確說法。免費、不用註冊、文字不會離開你的瀏覽器。</p>
+  <p class="lead">把文字貼進來，先免費看問題數量與前 3 項摘要；完整對照與逐項檢查流程，可留 email 領取。檢查在瀏覽器本機進行，文字不會上傳。</p>
 
   <textarea id="input" placeholder="把要檢查的文字貼在這裡，例如：這款軟件的視頻質量很好，支持在線搜索和打印。"></textarea>
   <div class="row">
@@ -75,6 +85,22 @@
   <div class="summary" id="summary"></div>
   <div class="preview" id="preview"></div>
   <div class="hits" id="hits"></div>
+
+  <section class="report-gate" id="reportGate" aria-live="polite">
+    <h2>完整報告，先留 email 再領取</h2>
+    <p id="gateText">這裡先顯示摘要與前 3 項。完整 42 組對照、逐項檢查流程與改稿範例，已整理在免費精華表與完整版清單中。</p>
+    <!-- Systeme main-list form embed slot: source=checker; insert the approved Systeme embed code here when available. -->
+    <div id="systeme-checker-form" class="systeme-slot" data-form-source="checker" data-magnet="fostxk"></div>
+    <a class="gate-btn" href="/free/?source=checker">前往留 email 領取 →</a>
+    <p class="fine">目前先接既有 /free/ 領取流程；若你需要針對剛貼文字的真人逐項審閱，可申請第一頁免費試審。</p>
+  </section>
+
+  <section class="upgrade-box" id="siteAuditUpgrade">
+    <h2>不只這一段，整站一起健檢</h2>
+    <p><span class="price">NT$3,600</span>｜簡中 → 台灣繁中全站健檢包（最多 10 頁）</p>
+    <p>交付大陸用詞標記報告、全數改為台灣用詞的乾淨版文案，以及一份品牌用詞表；3 天交付。</p>
+    <a class="upgrade-btn" href="/quote/">前往報價／申請第一頁免費試審 →</a>
+  </section>
 
   <div class="cta-box">
     檢查只是第一步 — 完整版《台灣用詞自查清單》含逐項檢查流程與改稿範例：<a href="https://zidug.gumroad.com/l/tortsw" target="_blank" rel="noopener">Gumroad 完整版 US$7</a><br/>
@@ -156,20 +182,32 @@ function run(){
   var text=document.getElementById("input").value;
   var hits=findHits(text);
   var summary=document.getElementById("summary"), preview=document.getElementById("preview"), box=document.getElementById("hits");
-  if(!text.trim()){ summary.style.display="block"; summary.textContent="先貼一段文字進來吧。"; preview.style.display="none"; box.style.display="none"; return; }
+  var gate=document.getElementById("reportGate"), gateText=document.getElementById("gateText"), upgrade=document.getElementById("siteAuditUpgrade");
+  if(!text.trim()){ summary.style.display="block"; summary.textContent="先貼一段文字進來吧。"; preview.style.display="none"; box.style.display="none"; gate.style.display="none"; upgrade.style.display="none"; return; }
+  var byWord={}, wordOrder=[];
+  hits.forEach(function(h){ var k=h.d.wrong; if(!byWord[k]){ byWord[k]={d:h.d,count:0}; wordOrder.push(k); } byWord[k].count++; });
+  var shownWords=wordOrder.slice(0,3), hiddenCount=Math.max(0, wordOrder.length-shownWords.length);
   summary.style.display="block";
-  summary.innerHTML = hits.length ? '找到 <span class="n">'+hits.length+'</span> 處值得檢查的用詞' : '這段文字沒有發現常見的大陸用詞，做得好！';
+  summary.innerHTML = hits.length ? '摘要：找到 <span class="n">'+hits.length+'</span> 處值得檢查的用詞，共 '+wordOrder.length+' 種；先顯示前 '+shownWords.length+' 項' : '這段文字沒有發現常見的大陸用詞，做得好！';
+  var previewEnd=text.length;
+  if(hiddenCount){
+    var seen={};
+    for(var i=0;i<hits.length;i++){ seen[hits[i].d.wrong]=true; if(Object.keys(seen).length===shownWords.length){ previewEnd=hits[i].end; break; } }
+  }
+  var previewText=text.slice(0,previewEnd), previewHits=hits.filter(function(h){ return h.end<=previewEnd; });
   var html="", last=0;
-  hits.forEach(function(h){ html+=esc(text.slice(last,h.start))+"<mark>"+esc(text.slice(h.start,h.end))+"</mark>"; last=h.end; });
-  html+=esc(text.slice(last));
+  previewHits.forEach(function(h){ html+=esc(previewText.slice(last,h.start))+"<mark>"+esc(previewText.slice(h.start,h.end))+"</mark>"; last=h.end; });
+  html+=esc(previewText.slice(last));
+  if(hiddenCount) html+='\n…（其餘內容與逐項說明收進完整報告）';
   preview.innerHTML=html; preview.style.display="block";
-  var byWord={};
-  hits.forEach(function(h){ var k=h.d.wrong; if(!byWord[k]) byWord[k]={d:h.d,count:0}; byWord[k].count++; });
-  box.innerHTML=Object.keys(byWord).map(function(k){ var e=byWord[k];
+  box.innerHTML=shownWords.map(function(k){ var e=byWord[k];
     return '<div class="hit"><span class="w">'+esc(e.d.wrong)+'</span> → <span class="r">'+esc(e.d.right)+'</span> <span class="cnt">×'+e.count+'</span><br/><span class="note">'+esc(e.d.note)+'</span></div>';
   }).join("");
   box.style.display = hits.length ? "block" : "none";
-  document.getElementById("fixBtn").style.display = hits.length ? "inline-block" : "none";
+  gateText.textContent = hiddenCount ? '這裡先顯示前 3 項；還有 '+hiddenCount+' 種問題未展開。完整 42 組對照、逐項檢查流程與改稿範例，可留 email 領取。' : '這段文字的逐項結果已在上方顯示。完整 42 組對照、逐項檢查流程與改稿範例，可留 email 領取精華表。';
+  gate.style.display = hits.length ? "block" : "none";
+  upgrade.style.display = "block";
+  document.getElementById("fixBtn").style.display = "none";
 }
 document.getElementById("checkBtn").addEventListener("click", run);
 document.getElementById("fixBtn").addEventListener("click", function(){
