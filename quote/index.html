@@ -59,10 +59,10 @@
   <div class="card">
     <label for="service">服務項目</label>
     <select id="service">
-      <option value="translate">英 → 台灣繁中 翻譯（US$0.06／英文字）</option>
-      <option value="localize">英 → 台灣繁中 在地化（US$0.07／英文字）</option>
-      <option value="toen">台灣繁中 → 英文（US$0.07／中文字）</option>
-      <option value="review">簡中 → 台灣繁中 在地化審閱（US$0.03／字）</option>
+      <option value="translate">英 → 台灣繁中 翻譯（US$0.08／英文字）</option>
+      <option value="localize">英 → 台灣繁中 在地化（US$0.08／英文字）</option>
+      <option value="toen">台灣繁中 → 英文（US$0.08／中文字）</option>
+      <option value="review">簡中 → 台灣繁中 在地化審閱（US$0.04／字）</option>
       <option value="subtitle">字幕翻譯（US$6.00／分鐘）</option>
     </select>
 
@@ -76,8 +76,8 @@
     </div>
 
     <div class="result">
-      <div class="usd" id="usd">US$60</div>
-      <div class="twd" id="twd">約 NT$1,890</div>
+      <div class="usd" id="usd">US$80</div>
+      <div class="twd" id="twd">約 NT$2,520</div>
       <div class="detail" id="detail"></div>
     </div>
 
@@ -117,10 +117,10 @@
 
 <script>
   var RATES = {
-    translate: { rate: 0.06, min: 30, unit: "英文字數", note: "不確定字數？把檔案貼到 Word 或 Google 文件，左下角就會顯示字數。" },
-    localize:  { rate: 0.07, min: 40, unit: "英文字數", note: "在地化包含台灣用詞轉換與語氣調整，不只是翻譯。" },
-    toen:      { rate: 0.07, min: 30, unit: "中文字數", note: "以來源中文計算字數（含標點）。" },
-    review:    { rate: 0.03, min: 20, unit: "中文字數", note: "檢查簡轉繁常見錯誤：用詞、量詞、專有名詞台灣化。" },
+    translate: { rate: 0.08, min: 30, unit: "英文字數", note: "不確定字數？把檔案貼到 Word 或 Google 文件，左下角就會顯示字數。" },
+    localize:  { rate: 0.08, min: 40, unit: "英文字數", note: "在地化包含台灣用詞轉換與語氣調整，不只是翻譯。" },
+    toen:      { rate: 0.08, min: 30, unit: "中文字數", note: "以來源中文計算字數（含標點）。" },
+    review:    { rate: 0.04, min: 20, unit: "中文字數", note: "檢查簡轉繁常見錯誤：用詞、量詞、專有名詞台灣化。" },
     subtitle:  { rate: 6.00, min: 30, unit: "影片分鐘數", note: "以影片總長度計（含時間軸製作）。不足 1 分鐘以 1 分鐘計。" }
   };
   var TWD = 31.5;
