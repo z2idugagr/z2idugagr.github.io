@@ -26,12 +26,12 @@
   small { color: #555; }
 </style>
 <meta property="og:title" content="Hank Reels Uploader — TikTok Sandbox Demo" />
-<meta property="og:image" content="https://z2idugagr.github.io/assets/og-cover.png" />
+<meta property="og:image" content="https://hankloc.com/assets/og-cover.png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Hank Reels Uploader — TikTok Sandbox Demo" />
-<meta name="twitter:image" content="https://z2idugagr.github.io/assets/og-cover.png" />
+<meta name="twitter:image" content="https://hankloc.com/assets/og-cover.png" />
 </head>
 <body>
 <h1>Hank Reels Uploader — TikTok Sandbox Demo</h1>
@@ -53,7 +53,7 @@
   -d "client_secret=PASTE_SANDBOX_CLIENT_SECRET" \
   -d "code=PASTE_CODE_FROM_STEP_1" \
   -d "grant_type=authorization_code" \
-  -d "redirect_uri=https://z2idugagr.github.io/tiktok-demo.html"</pre>
+  -d "redirect_uri=https://hankloc.com/tiktok-demo.html"</pre>
   <label>Access token (from the curl response):</label>
   <input type="text" id="tokenInput" placeholder="act.xxx..." autocomplete="off">
 </div>
@@ -61,7 +61,7 @@
 <div class="step" id="step3">
   <h2>Step 3 — Upload a video to the TikTok inbox (draft)</h2>
   <label>Video URL (must be on the verified domain z2idugagr.github.io):</label>
-  <input type="url" id="videoUrl" value="https://z2idugagr.github.io/demo-reel.mp4">
+  <input type="url" id="videoUrl" value="https://hankloc.com/demo-reel.mp4">
   <button id="uploadBtn">Upload to TikTok inbox</button>
   <p id="uploadResult"></p>
   <p><small>After the upload, check the TikTok app inbox on @oni.exe7 — the video arrives as a draft to finish and post. Status is polled below.</small></p>
@@ -72,7 +72,7 @@
 // ======== FILL THIS IN once the Sandbox client key is known ========
 const SANDBOX_CLIENT_KEY = "sbawh29cdai1tmeizv";
 // ===================================================================
-const REDIRECT_URI = "https://z2idugagr.github.io/tiktok-demo.html";
+const REDIRECT_URI = "https://hankloc.com/tiktok-demo.html";
 const SCOPES = "user.info.basic,video.upload";
 
 const params = new URLSearchParams(location.search);
