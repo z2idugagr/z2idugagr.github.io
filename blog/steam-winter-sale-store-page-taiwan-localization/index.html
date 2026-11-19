@@ -24,7 +24,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Noto+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","headline":"Steam 冬季特賣商店頁進台灣市場：冬特前要修好的 6 件事","author":{"@type":"Person","name":"Hank Chen"},"datePublished":"2026-11-18","inLanguage":"zh-Hant-TW","mainEntityOfPage":"https://hankloc.com/blog/steam-winter-sale-store-page-taiwan-localization/"}
+{"@context":"https://schema.org","@type":"Article","headline":"Steam 冬季特賣商店頁進台灣市場：冬特前要修好的 6 件事","author":{"@type":"Person","name":"Hank Chen"},"datePublished":"2026-11-18","dateModified":"2026-11-19","inLanguage":"zh-Hant-TW","mainEntityOfPage":"https://hankloc.com/blog/steam-winter-sale-store-page-taiwan-localization/"}
 </script>
 <style>
   :root{--navy:#0F2A44;--navy-2:#16365A;--navy-deep:#0A1E33;--yellow:#FFC400;--yellow-dark:#E0AA00;--bg:#F6F7F9;--surface:#FFFFFF;--surface-2:#EEF2F6;--ink:#14232F;--muted:#5A6B7A;--line:#DCE3EA;--radius:14px;color-scheme:light}
@@ -101,11 +101,24 @@
 <article>
   <span class="tag">遊戲在地化</span>
   <h1>Steam 冬季特賣商店頁進台灣市場：冬特前要修好的 6 件事</h1>
-  <p class="meta">Hank Chen ・ 2026 年 11 月 18 日 ・ 約 6 分鐘閱讀</p>
+  <p class="meta">Hank Chen ・ 2026 年 11 月 18 日發表，11 月 19 日更新黑五 hub 段落 ・ 約 7 分鐘閱讀</p>
 
   <p>Steam 冬季特賣 2026 年 12 月 17 日星期四開跑，到 2027 年 1 月 4 日星期一結束，一共 18 天，是 Steam 一年最長的季節特賣。台灣時間是 12 月 18 日凌晨 2 點開始、2027 年 1 月 5 日凌晨 2 點結束（Steam 以太平洋時間 10:00 切換）。對獨立遊戲來說，冬特是一年裡台灣玩家最可能點進你商店頁的 18 天——而玩家買不買，往往在商店頁的前 30 秒就決定了。</p>
   <p>先說一件誠實的事：11 月 17 日是趕上首日折扣的最後上市／調漲日——今天是 11 月 18 日，已經過了。還沒上市的遊戲，上市滿 30 天後可以用自訂折扣中途加入冬特。但商店頁文字的修改不受這條折扣規則限制，隨時可以在 Steamworks 更新——所以商店頁在地化現在做，還來得及趕上冬特開打。</p>
   <p>這篇不講翻譯技巧（在地化專案的完整流程，我寫在<a href="https://hankloc.com/blog/indie-game-taiwan-localization-checklist/">〈獨立遊戲繁中在地化清單〉</a>），講的是商店頁這個場景：簡介、折扣寫法、日期、標籤與系統需求、成就 DLC、預告片字幕，六類冬特前要修好的地方，以及上線前照著勾的檢查清單。</p>
+
+  <h2><span class="bar">▍</span>先看黑五 hub：11 月底這波折扣，冷卻期照算</h2>
+  <p>冬特之前還有一波：Steam 2026 年的黑五活動是 11 月 26 日星期四太平洋時間 10:00 到 11 月 30 日星期一太平洋時間 10:00，台灣時間是 11 月 27 日星期五凌晨 2 點到 12 月 1 日星期二凌晨 2 點。先講清楚一件事——<b>這不是 Steam 官方辦的季節特賣</b>，只是折扣與活動頁（Discounts &amp; Events）集中展示黑五折扣的 hub。Steamworks 官方文件原文寫明：跟 2025 年一樣，Steam 不辦自己的黑五特賣，hub 只是把各遊戲的黑五折扣收在一起。</p>
+  <p>差別在折扣冷卻期。<b>季節特賣（春、夏、秋、冬四檔）不計入 30 天折扣冷卻期</b>——參加冬特不會因為剛打過折就被擋，冬特折扣也不會替下一檔折扣啟動新的冷卻。但黑五 hub 不是季節特賣，<b>這五天裡的折扣，30 天冷卻期照常算</b>：上一檔折扣結束不到 30 天，hub 這波就不能打；hub 這波打了，下一檔自己排的折扣要等 30 天後才能開始。</p>
+  <p>排程時要算的三條線：</p>
+  <table>
+    <tr><th>情況</th><th>能不能打</th></tr>
+    <tr><td>上一檔折扣在 10/27 之後才結束</td><td>黑五 hub 這波不能打（距上一檔結束不到 30 天）</td></tr>
+    <tr><td>黑五 hub 打折，11/30 結束</td><td>下一檔自排折扣最早 12/30 才能開始；冬特本身是季節特賣，不受這條冷卻限制，仍可參加</td></tr>
+    <tr><td>上市或調漲價格不到 30 天</td><td>黑五 hub 與冬特都不能打折（這兩條冷卻沒有季節特賣豁免）</td></tr>
+  </table>
+  <p>一句話總結：<b>黑五 hub 的折扣是一般折扣，冬特的折扣才是豁免折扣。</b>不要把 hub 當成特賣來排檔期——先打黑五、再排一檔 12 月初的自排折扣衝冬特前熱度，這個組合排不出來。商店頁文字本身不受折扣規則限制，黑五期間先把繁中商店頁修好，冬特開打時直接上陣。</p>
+  <div class="note"><b>同一週還有 Steam Awards 提名：</b>2026 年第 10 屆 Steam Awards 提名期是 11 月 23 日星期一到 11 月 30 日星期一，與黑五 hub 完全重疊。提名期間玩家會大量瀏覽商店頁投票，商店頁繁中寫得好不好，直接影響這週的曝光品質。</div>
 
   <h2><span class="bar">▍</span>第一件：商店頁簡介，把英文行銷句寫成台灣中文</h2>
   <p>商店頁簡介（About This Game）是玩家點進商店頁第一眼看到的文字。英文行銷句最容易直譯出事：dive into、embark on an epic journey 這類句式，在台灣中文裡沒有對應的說法，硬翻只會像機器翻譯，玩家一眼就知道這頁不是寫給他的。</p>
@@ -153,6 +166,7 @@
     <tr><td>台灣用詞</td><td>全文搜尋過常見簡中詞（視頻、軟件、網絡、質量、激活、默認），簡介與圖片文字都已換成台灣說法</td></tr>
     <tr><td>折扣寫法</td><td>折扣數字與門檻寫法無誤，up to 寫成「最高」，幣別標 NT$</td></tr>
     <tr><td>日期與時間</td><td>檔期起訖＋星期＋台灣時間都寫清楚，倒數寫法全頁一致</td></tr>
+    <tr><td>黑五折扣排程</td><td>上一檔折扣結束已滿 30 天才排黑五 hub 折扣；hub 打完後下一檔自排折扣排在 12/30 之後；上市／調漲未滿 30 天不排任何折扣</td></tr>
     <tr><td>Steam 官方用詞</td><td>搶先體驗、加入願望清單等寫法與 Steam 介面一致</td></tr>
     <tr><td>成就與 DLC</td><td>成就名、DLC 名、更新公告標題皆已在地化，無殘留英文或簡中</td></tr>
     <tr><td>預告片與圖片</td><td>預告片有繁中字幕，主視覺圖片文字已換成繁中並重出圖</td></tr>
