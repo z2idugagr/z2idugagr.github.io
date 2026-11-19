@@ -37,18 +37,18 @@
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Noto+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=Noto+Sans+TC:wght@400;500;700;900&family=Noto+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
 <style>
   :root{
-    --navy:#0F2A44;
-    --navy-2:#16365A;
-    --navy-deep:#0A1E33;
-    --yellow:#FFC400;
-    --yellow-dark:#E0AA00;
+    --navy:#10201E;
+    --navy-2:#1B3330;
+    --navy-deep:#0A1715;
+    --yellow:#2DD4BF;
+    --yellow-dark:#0F766E;
     --bg:#F6F7F9;
     --surface:#FFFFFF;
     --surface-2:#EEF2F6;
-    --ink:#14232F;
+    --ink:#111827;
     --ink-2:#435363;
     --muted:#5A6B7A;
     --line:#DCE3EA;
@@ -57,12 +57,12 @@
   }
   @media (prefers-color-scheme: dark){
     :root{
-      --bg:#0B1B2E;
-      --surface:#12293F;
-      --surface-2:#0F2A44;
+      --bg:#0A1715;
+      --surface:#132E2A;
+      --surface-2:#10201E;
       --ink:#F2F5F8;
       --muted:#A9BAC9;
-      --line:#24405C;
+      --line:#1F403A;
       color-scheme: dark;
     }
   }
@@ -70,7 +70,7 @@
   html{scroll-behavior:smooth}
   body{
     margin:0;
-    font-family:"Noto Sans TC","Noto Sans",system-ui,-apple-system,"PingFang TC","Microsoft JhengHei",sans-serif;
+    font-family:"Inter","Noto Sans TC","Noto Sans",system-ui,-apple-system,"PingFang TC","Microsoft JhengHei",sans-serif;
     background:var(--bg);
     color:var(--ink);
     line-height:1.65;
@@ -78,7 +78,7 @@
   }
   a{color:inherit}
   img{max-width:100%}
-  .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+  .wrap{max-width:1200px;margin:0 auto;padding:0 20px}
 
   /* ---------- Nav ---------- */
   .nav{
@@ -118,7 +118,7 @@
   .hero p.lead{font-size:1.08rem;color:#C9D7E4;max-width:36em;margin:0 0 26px}
   .hero-facts{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:30px}
   .hero-facts span{
-    background:var(--navy-2);border:1px solid #2A4A6E;color:#fff;
+    background:var(--navy-2);border:1px solid #1F403A;color:#fff;
     font-size:.92rem;font-weight:700;padding:8px 16px;border-radius:8px;
   }
   .hero-facts span b{color:var(--yellow);font-size:1.05rem}
@@ -132,7 +132,7 @@
   .btn:active{transform:scale(.98)}
   .btn-yellow{background:var(--yellow);color:var(--navy)}
   .btn-yellow:hover{background:var(--yellow-dark)}
-  .btn-outline{border-color:#7E97AE;color:#fff;background:transparent}
+  .btn-outline{border-color:#A9BAC9;color:#fff;background:transparent}
   .btn-outline:hover{border-color:#fff}
   .hero-note{margin-top:18px;font-size:.86rem;color:#8FA6BB}
 
@@ -252,7 +252,7 @@
     border-radius:10px;font-weight:700;text-decoration:none;font-size:.98rem;
   }
   .sticky-bar .s1{background:var(--yellow);color:var(--navy)}
-  .sticky-bar .s2{border:2px solid #7E97AE;color:#fff}
+  .sticky-bar .s2{border:2px solid #A9BAC9;color:#fff}
 
   /* ---------- Responsive ---------- */
   @media (max-width:640px){
@@ -293,8 +293,8 @@
   .en-summary{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:24px 22px}
   .en-summary h2{font-size:1.3rem;font-weight:900;margin:0 0 10px}
   .en-summary p{margin:0;color:var(--muted);font-size:.97rem}
-  .cta-box { margin-top: 28px; background: #14232F; border: 1px dashed #FFC400; border-radius: 12px; padding: 18px; text-align: center; line-height: 1.8; color: #B9CADA; }
-  .cta-box a { color: #FFC400; font-weight: 700; }
+  .cta-box { margin-top: 28px; background: #132E2A; border: 1px dashed #2DD4BF; border-radius: 12px; padding: 18px; text-align: center; line-height: 1.8; color: #B9CADA; }
+  .cta-box a { color: #2DD4BF; font-weight: 700; }
   .cta-box.sample { text-align: left; padding: 22px; margin-top: 0; }
   .cta-box.sample p { margin: 0 0 10px; }
   .cta-box.sample p:last-child { margin-bottom: 0; }
@@ -413,7 +413,7 @@
     <p class="sec-sub">幫我賣產品的人，不用自己做產品：你負責把對的買家帶進來，成交後 Gumroad 自動分你 30%。</p>
     <div class="partner-card">
       <h3>徵授權經銷夥伴｜賣台灣在地化清單，分潤 30%</h3>
-      <p>我出版的兩份台灣用詞自查清單（各 US$7，Gumroad 上架中）開放授權經銷：你會拿到一條專屬聯盟連結，有人透過你的連結購買，Gumroad 自動把售價的 30% 記到你名下並直接撥付給你，不經我的手。推廣文案和圖片我都準備好了，照用就好。</p>
+      <p>我在 Gumroad 上架的兩份台灣用詞自查清單（各 US$7，Gumroad 上架中）開放授權經銷：你會拿到一條專屬聯盟連結，有人透過你的連結購買，Gumroad 自動把售價的 30% 記到你名下並直接撥付給你，不經我的手。推廣文案和圖片我都準備好了，照用就好。</p>
       <p>規則說清楚：只能透過你的專屬連結銷售，產品永遠從我的官方商店交付，你不會拿到產品檔案；不得冒充作者、不得編造折扣或假評價；違反規則我可隨時撤銷授權。這不是賺快錢的機會，我不保證任何收入——就是好產品，多一雙手幫它找到買家。</p>
       <p class="plink">申請入口：<a href="https://zidug.gumroad.com/affiliates" target="_blank" rel="noopener">zidug.gumroad.com/affiliates</a></p>
       <p class="note">Authorized resellers wanted: promote my Taiwan localization checklists (US$7 each on Gumroad) through your own affiliate link and earn 30% of every sale, credited and paid by Gumroad directly. Ready-made promo copy and images are provided. Sell only through your link — product files never change hands, no authorship claims, honest promotion only, authorization revocable. Apply at zidug.gumroad.com/affiliates.</p>
@@ -445,10 +445,10 @@
     </div>
   </section>
 
-  <div style="margin:28px auto;max-width:720px;background:#14232F;border:1px dashed #FFC400;border-radius:12px;padding:18px;text-align:center;line-height:1.8;color:#B9CADA;">
-    免費工具：<a href="/checker/" style="color:#FFC400;font-weight:700;">簡轉繁用詞檢查工具</a>（42 組即時檢查）<br/>
-    先拿免費的：<a href="/free/" style="color:#FFC400;font-weight:700;">《台灣用詞對照精華表》</a> ｜ 完整版：<a href="https://zidug.gumroad.com/l/tortsw" target="_blank" rel="noopener" style="color:#FFC400;font-weight:700;">《台灣用詞自查清單》US$7</a><br/>
-    想要真人審閱？<a href="/quote/" style="color:#FFC400;font-weight:700;">報價計算器</a>（第一頁免費試審）
+  <div style="margin:28px auto;max-width:720px;background:#132E2A;border:1px dashed #2DD4BF;border-radius:12px;padding:18px;text-align:center;line-height:1.8;color:#B9CADA;">
+    免費工具：<a href="/checker/" style="color:#2DD4BF;font-weight:700;">簡轉繁用詞檢查工具</a>（42 組即時檢查）<br/>
+    先拿免費的：<a href="/free/" style="color:#2DD4BF;font-weight:700;">《台灣用詞對照精華表》</a> ｜ 完整版：<a href="https://zidug.gumroad.com/l/tortsw" target="_blank" rel="noopener" style="color:#2DD4BF;font-weight:700;">《台灣用詞自查清單》US$7</a><br/>
+    想要真人審閱？<a href="/quote/" style="color:#2DD4BF;font-weight:700;">報價計算器</a>（第一頁免費試審）
   </div>
 
 </main>

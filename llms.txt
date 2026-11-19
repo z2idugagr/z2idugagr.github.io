@@ -3,15 +3,15 @@
 > Hank Chen is a Taiwan-based localizer who converts English and Simplified Chinese content into Traditional Chinese as actually used in Taiwan — not character conversion, but Taiwan wording, tone, and usage. Services: website and app localization, marketing copy, bilingual subtitles (SRT), and Simplified-to-Taiwan review. First page free trial.
 
 ## Tools
-- [Taiwan Wording Checker (free)](https://z2idugagr.github.io/checker/): Free online checker that flags 42 common Mainland-China wording and Simplified-conversion pitfalls and gives the Taiwan-correct term.
+- [Taiwan Wording Checker (free)](https://hankloc.com/checker/): Free online checker that flags 42 common Mainland-China wording and Simplified-conversion pitfalls and gives the Taiwan-correct term.
 
 ## Services
-- [English services, rates and FAQ](https://z2idugagr.github.io/en/): English to Taiwan Traditional Chinese localization for brands, SaaS, and indie games.
-- [Simplified Chinese to Taiwan review](https://z2idugagr.github.io/simplified-to-taiwan-review/): Review service that rewrites Simplified-converted text into natural Taiwan usage.
-- [Quote calculator](https://z2idugagr.github.io/quote/): Instant estimate and free first-page trial request.
-- [Retainer review](https://z2idugagr.github.io/retainer/): Monthly Simplified-to-Taiwan review retainer.
+- [English services, rates and FAQ](https://hankloc.com/en/): English to Taiwan Traditional Chinese localization for brands, SaaS, and indie games.
+- [Simplified Chinese to Taiwan review](https://hankloc.com/simplified-to-taiwan-review/): Review service that rewrites Simplified-converted text into natural Taiwan usage.
+- [Quote calculator](https://hankloc.com/quote/): Instant estimate and free first-page trial request.
+- [Retainer review](https://hankloc.com/retainer/): Monthly Simplified-to-Taiwan review retainer.
 
 ## Resources
-- [Free Taiwan wording cheat sheet](https://z2idugagr.github.io/free/): Free sample of the Taiwan terminology checklist; the full version is on Gumroad.
-- [Partner tools](https://z2idugagr.github.io/tools/): Tools and partner resources for localization work.
-- [Podcast: Taiwan Wording Clinic](https://z2idugagr.github.io/podcast/feed.xml): Short episodes dissecting one Taiwan wording pitfall at a time (Traditional Chinese).
+- [Free Taiwan wording cheat sheet](https://hankloc.com/free/): Free sample of the Taiwan terminology checklist; the full version is on Gumroad.
+- [Partner tools](https://hankloc.com/tools/): Tools and partner resources for localization work.
+- [Podcast: Taiwan Wording Clinic](https://hankloc.com/podcast/feed.xml): Short episodes dissecting one Taiwan wording pitfall at a time (Traditional Chinese).

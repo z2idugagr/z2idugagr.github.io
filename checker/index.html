@@ -18,51 +18,53 @@
 <script type="text/javascript">
 (function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","zfovpixisr");
 </script>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet" />
+<link rel="canonical" href="https://hankloc.com/checker/" />
+<meta property="og:url" content="https://hankloc.com/checker/" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet" />
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: "Noto Sans TC", sans-serif; background: #0F2A44; color: #E7EEF5; min-height: 100vh; }
+  body { font-family: "Inter", "Noto Sans TC", sans-serif; background: #10201E; color: #E7EEF5; min-height: 100vh; }
   .wrap { max-width: 720px; margin: 0 auto; padding: 40px 20px 60px; }
-  a.back { color: #7E97AE; text-decoration: none; font-size: 14px; }
+  a.back { color: #A9BAC9; text-decoration: none; font-size: 14px; }
   h1 { font-size: 29px; font-weight: 900; margin: 16px 0 8px; line-height: 1.4; }
-  h1 .accent { color: #FFC400; }
+  h1 .accent { color: #2DD4BF; }
   p.lead { color: #B9CADA; line-height: 1.8; margin-bottom: 22px; }
-  textarea { width: 100%; min-height: 170px; padding: 14px; border-radius: 12px; border: 1px solid #2A4A6E; background: #14232F; color: #E7EEF5; font-size: 16px; font-family: inherit; line-height: 1.7; resize: vertical; }
+  textarea { width: 100%; min-height: 170px; padding: 14px; border-radius: 12px; border: 1px solid #1F403A; background: #132E2A; color: #E7EEF5; font-size: 16px; font-family: inherit; line-height: 1.7; resize: vertical; }
   .row { display: flex; gap: 10px; margin-top: 14px; flex-wrap: wrap; }
   button { cursor: pointer; border: none; border-radius: 10px; padding: 13px 22px; font-size: 16px; font-weight: 900; font-family: inherit; }
-  .primary { background: #FFC400; color: #14232F; }
-  .ghost { background: transparent; color: #B9CADA; border: 1px solid #2A4A6E; }
+  .primary { background: #2DD4BF; color: #132E2A; }
+  .ghost { background: transparent; color: #B9CADA; border: 1px solid #1F403A; }
   .summary { margin-top: 20px; font-size: 17px; font-weight: 700; display: none; }
-  .summary .n { color: #FFC400; font-size: 22px; }
-  .preview { display: none; margin-top: 14px; background: #14232F; border: 1px solid #2A4A6E; border-radius: 12px; padding: 16px 18px; line-height: 1.9; white-space: pre-wrap; word-break: break-all; }
-  .preview mark { background: #FFC400; color: #14232F; border-radius: 3px; padding: 0 2px; }
+  .summary .n { color: #2DD4BF; font-size: 22px; }
+  .preview { display: none; margin-top: 14px; background: #132E2A; border: 1px solid #1F403A; border-radius: 12px; padding: 16px 18px; line-height: 1.9; white-space: pre-wrap; word-break: break-all; }
+  .preview mark { background: #2DD4BF; color: #132E2A; border-radius: 3px; padding: 0 2px; }
   .hits { margin-top: 16px; display: none; }
-  .hit { background: #14232F; border-left: 4px solid #FFC400; border-radius: 8px; padding: 12px 16px; margin-bottom: 10px; line-height: 1.7; }
+  .hit { background: #132E2A; border-left: 4px solid #2DD4BF; border-radius: 8px; padding: 12px 16px; margin-bottom: 10px; line-height: 1.7; }
   .hit .w { color: #FF8A80; font-weight: 900; }
-  .hit .r { color: #FFC400; font-weight: 900; }
+  .hit .r { color: #2DD4BF; font-weight: 900; }
   .hit .note { color: #B9CADA; font-size: 14px; }
-  .hit .cnt { color: #7E97AE; font-size: 13px; }
-  .cta-box { margin-top: 26px; background: #14232F; border: 1px dashed #FFC400; border-radius: 12px; padding: 18px; text-align: center; line-height: 1.8; color: #B9CADA; }
-  .cta-box a { color: #FFC400; font-weight: 700; }
+  .hit .cnt { color: #A9BAC9; font-size: 13px; }
+  .cta-box { margin-top: 26px; background: #132E2A; border: 1px dashed #2DD4BF; border-radius: 12px; padding: 18px; text-align: center; line-height: 1.8; color: #B9CADA; }
+  .cta-box a { color: #2DD4BF; font-weight: 700; }
   .report-gate, .upgrade-box { display: none; margin-top: 18px; border-radius: 12px; padding: 18px; line-height: 1.8; }
-  .report-gate { background: #1B1710; border: 1px solid #FFC400; }
+  .report-gate { background: #132E2A; border: 1px solid #2DD4BF; }
   .report-gate h2, .upgrade-box h2 { font-size: 20px; margin-bottom: 6px; }
   .report-gate p, .upgrade-box p { color: #B9CADA; }
   .gate-btn, .upgrade-btn { display: inline-block; margin-top: 12px; border-radius: 10px; padding: 12px 18px; font-weight: 900; text-decoration: none; }
-  .gate-btn { background: #FFC400; color: #14232F; }
+  .gate-btn { background: #2DD4BF; color: #132E2A; }
   .systeme-slot { min-height: 0; }
-  .upgrade-box { background: #14232F; border: 1px dashed #FFC400; }
-  .upgrade-box .price { color: #FFC400; font-size: 24px; font-weight: 900; }
-  .upgrade-btn { background: transparent; color: #FFC400; border: 1px solid #FFC400; }
-  .fine { color: #7E97AE; font-size: 13px; line-height: 1.7; margin-top: 18px; }
+  .upgrade-box { background: #132E2A; border: 1px dashed #2DD4BF; }
+  .upgrade-box .price { color: #2DD4BF; font-size: 24px; font-weight: 900; }
+  .upgrade-btn { background: transparent; color: #2DD4BF; border: 1px solid #2DD4BF; }
+  .fine { color: #A9BAC9; font-size: 13px; line-height: 1.7; margin-top: 18px; }
 
   .tbl-h { font-size: 21px; font-weight: 900; margin: 34px 0 12px; line-height: 1.5; }
   table.dict { width: 100%; border-collapse: collapse; font-size: 15px; }
-  table.dict th, table.dict td { border: 1px solid #2A4A6E; padding: 9px 11px; text-align: left; line-height: 1.6; vertical-align: top; }
-  table.dict th { background: #16365A; color: #E7EEF5; }
+  table.dict th, table.dict td { border: 1px solid #1F403A; padding: 9px 11px; text-align: left; line-height: 1.6; vertical-align: top; }
+  table.dict th { background: #1B3330; color: #E7EEF5; }
   table.dict td.tw { color: #FF8A80; font-weight: 700; white-space: nowrap; }
   table.dict td.tw a { color: #FF8A80; }
-  table.dict td.tr2 { color: #FFC400; font-weight: 700; white-space: nowrap; }
+  table.dict td.tr2 { color: #2DD4BF; font-weight: 700; white-space: nowrap; }
   table.dict td.tn { color: #B9CADA; }
 </style>
 <script type="application/ld+json">

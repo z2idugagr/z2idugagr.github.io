@@ -18,36 +18,38 @@
 <script type="text/javascript">
 (function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","zfovpixisr");
 </script>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet" />
+<link rel="canonical" href="https://hankloc.com/quote/" />
+<meta property="og:url" content="https://hankloc.com/quote/" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet" />
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: "Noto Sans TC", sans-serif; background: #0F2A44; color: #E7EEF5; min-height: 100vh; }
+  body { font-family: "Inter", "Noto Sans TC", sans-serif; background: #10201E; color: #E7EEF5; min-height: 100vh; }
   .wrap { max-width: 640px; margin: 0 auto; padding: 40px 20px 60px; }
-  a.back { color: #7E97AE; text-decoration: none; font-size: 14px; }
+  a.back { color: #A9BAC9; text-decoration: none; font-size: 14px; }
   h1 { font-size: 30px; font-weight: 900; margin: 16px 0 8px; }
-  h1 .accent { color: #FFC400; }
+  h1 .accent { color: #2DD4BF; }
   p.lead { color: #B9CADA; line-height: 1.7; margin-bottom: 28px; }
-  .card { background: #14232F; border: 1px solid #2A4A6E; border-radius: 16px; padding: 24px; }
+  .card { background: #132E2A; border: 1px solid #1F403A; border-radius: 16px; padding: 24px; }
   label { display: block; font-weight: 700; margin: 18px 0 8px; font-size: 15px; }
   label:first-child { margin-top: 0; }
-  select, input[type="number"] { width: 100%; padding: 12px; border-radius: 10px; border: 1px solid #2A4A6E; background: #0F2A44; color: #E7EEF5; font-size: 16px; font-family: inherit; }
-  .unit-note { color: #7E97AE; font-size: 13px; margin-top: 6px; }
+  select, input[type="number"] { width: 100%; padding: 12px; border-radius: 10px; border: 1px solid #1F403A; background: #10201E; color: #E7EEF5; font-size: 16px; font-family: inherit; }
+  .unit-note { color: #A9BAC9; font-size: 13px; margin-top: 6px; }
   .rush { display: flex; align-items: center; gap: 10px; margin-top: 20px; font-weight: 500; }
-  .rush input { width: 20px; height: 20px; accent-color: #FFC400; }
-  .result { margin-top: 24px; background: #0F2A44; border: 1px dashed #FFC400; border-radius: 12px; padding: 18px; text-align: center; }
-  .result .usd { font-size: 34px; font-weight: 900; color: #FFC400; }
+  .rush input { width: 20px; height: 20px; accent-color: #2DD4BF; }
+  .result { margin-top: 24px; background: #10201E; border: 1px dashed #2DD4BF; border-radius: 12px; padding: 18px; text-align: center; }
+  .result .usd { font-size: 34px; font-weight: 900; color: #2DD4BF; }
   .result .twd { color: #B9CADA; margin-top: 4px; }
-  .result .detail { color: #7E97AE; font-size: 13px; margin-top: 8px; line-height: 1.6; }
-  .cta { display: block; margin-top: 22px; background: #FFC400; color: #14232F; text-align: center; font-weight: 900; font-size: 17px; padding: 15px; border-radius: 12px; text-decoration: none; }
-  .fine { color: #7E97AE; font-size: 13px; line-height: 1.7; margin-top: 20px; }
-  .pay { margin-top: 24px; background: #14232F; border: 1px solid #2A4A6E; border-radius: 16px; padding: 24px; line-height: 1.8; color: #B9CADA; font-size: 15px; }
-  .pay h2 { color: #FFC400; font-size: 18px; margin-bottom: 8px; }
+  .result .detail { color: #A9BAC9; font-size: 13px; margin-top: 8px; line-height: 1.6; }
+  .cta { display: block; margin-top: 22px; background: #2DD4BF; color: #132E2A; text-align: center; font-weight: 900; font-size: 17px; padding: 15px; border-radius: 12px; text-decoration: none; }
+  .fine { color: #A9BAC9; font-size: 13px; line-height: 1.7; margin-top: 20px; }
+  .pay { margin-top: 24px; background: #132E2A; border: 1px solid #1F403A; border-radius: 16px; padding: 24px; line-height: 1.8; color: #B9CADA; font-size: 15px; }
+  .pay h2 { color: #2DD4BF; font-size: 18px; margin-bottom: 8px; }
   .pay ul { list-style: none; margin-top: 8px; }
   .pay li { padding: 5px 0 5px 24px; position: relative; }
-  .pay li::before { content: "✓"; position: absolute; left: 2px; color: #FFC400; font-weight: 900; }
-  .pay .en { margin-top: 16px; border-top: 1px solid #2A4A6E; padding-top: 14px; font-size: 14px; }
-  .cta-box { margin-top: 28px; background: #14232F; border: 1px dashed #FFC400; border-radius: 12px; padding: 18px; text-align: center; line-height: 1.8; color: #B9CADA; }
-  .cta-box a { color: #FFC400; font-weight: 700; }
+  .pay li::before { content: "✓"; position: absolute; left: 2px; color: #2DD4BF; font-weight: 900; }
+  .pay .en { margin-top: 16px; border-top: 1px solid #1F403A; padding-top: 14px; font-size: 14px; }
+  .cta-box { margin-top: 28px; background: #132E2A; border: 1px dashed #2DD4BF; border-radius: 12px; padding: 18px; text-align: center; line-height: 1.8; color: #B9CADA; }
+  .cta-box a { color: #2DD4BF; font-weight: 700; }
 </style>
 </head>
 <body>

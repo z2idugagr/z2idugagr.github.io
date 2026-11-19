@@ -2,8 +2,8 @@
 <rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>台灣用詞診療室｜Hank Chen</title>
-    <link>https://z2idugagr.github.io/podcast/</link>
-    <atom:link href="https://z2idugagr.github.io/podcast/feed.xml" rel="self" type="application/rss+xml" />
+    <link>https://hankloc.com/podcast/</link>
+    <atom:link href="https://hankloc.com/podcast/feed.xml" rel="self" type="application/rss+xml" />
     <description>幫品牌把英文和簡中內容，在地化成台灣人真正會用的繁體中文。每一集拆解一組最常見的用詞地雷：字翻對了，為什麼台灣人還是出戲？主持：Hank Chen（EN ↔ 台灣繁體在地化）。</description>
     <language>zh-tw</language>
     <copyright>© 2026 Hank Chen</copyright>
@@ -15,7 +15,7 @@
     <itunes:explicit>false</itunes:explicit>
     <item>
       <title>EP1｜軟件、視頻、網絡：3 個詞讓台灣人秒出戲</title>
-      <description>第一集拆解三個最常見的地雷詞：軟件（→軟體）、視頻（→影片）、網絡（→網路）。字形全對、用詞全錯，就是簡轉繁最典型的翻車現場。免費檢查工具：https://z2idugagr.github.io/checker/</description>
+      <description>第一集拆解三個最常見的地雷詞：軟件（→軟體）、視頻（→影片）、網絡（→網路）。字形全對、用詞全錯，就是簡轉繁最典型的翻車現場。免費檢查工具：https://hankloc.com/checker/</description>
       <pubDate>Thu, 19 Nov 2026 03:20:00 +0800</pubDate>
       <enclosure url="https://drive.google.com/uc?export=download&amp;id=1mgm5X5XI3rdmNBUVsGGlR6m6aDSNOQkG" length="596047" type="audio/mpeg" />
       <guid isPermaLink="false">podcast-ep1-2026-11-19</guid>

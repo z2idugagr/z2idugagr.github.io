@@ -40,18 +40,18 @@
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Noto+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=Noto+Sans+TC:wght@400;500;700;900&family=Noto+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
 <style>
   :root{
-    --navy:#0F2A44;
-    --navy-2:#16365A;
-    --navy-deep:#0A1E33;
-    --yellow:#FFC400;
-    --yellow-dark:#E0AA00;
+    --navy:#10201E;
+    --navy-2:#1B3330;
+    --navy-deep:#0A1715;
+    --yellow:#2DD4BF;
+    --yellow-dark:#0F766E;
     --bg:#F6F7F9;
     --surface:#FFFFFF;
     --surface-2:#EEF2F6;
-    --ink:#14232F;
+    --ink:#111827;
     --ink-2:#435363;
     --muted:#5A6B7A;
     --line:#DCE3EA;
@@ -60,12 +60,12 @@
   }
   @media (prefers-color-scheme: dark){
     :root{
-      --bg:#0B1B2E;
-      --surface:#12293F;
-      --surface-2:#0F2A44;
+      --bg:#0A1715;
+      --surface:#132E2A;
+      --surface-2:#10201E;
       --ink:#F2F5F8;
       --muted:#A9BAC9;
-      --line:#24405C;
+      --line:#1F403A;
       color-scheme: dark;
     }
   }
@@ -73,7 +73,7 @@
   html{scroll-behavior:smooth}
   body{
     margin:0;
-    font-family:"Noto Sans","Noto Sans TC",system-ui,-apple-system,"PingFang TC","Microsoft JhengHei",sans-serif;
+    font-family:"Inter","Noto Sans","Noto Sans TC",system-ui,-apple-system,"PingFang TC","Microsoft JhengHei",sans-serif;
     background:var(--bg);
     color:var(--ink);
     line-height:1.65;
@@ -81,7 +81,7 @@
   }
   a{color:inherit}
   img{max-width:100%}
-  .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+  .wrap{max-width:1200px;margin:0 auto;padding:0 20px}
 
   /* ---------- Nav ---------- */
   .nav{
@@ -121,7 +121,7 @@
   .hero p.lead{font-size:1.08rem;color:#C9D7E4;max-width:36em;margin:0 0 26px}
   .hero-facts{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:30px}
   .hero-facts span{
-    background:var(--navy-2);border:1px solid #2A4A6E;color:#fff;
+    background:var(--navy-2);border:1px solid #1F403A;color:#fff;
     font-size:.92rem;font-weight:700;padding:8px 16px;border-radius:8px;
   }
   .hero-facts span b{color:var(--yellow);font-size:1.05rem}
@@ -135,7 +135,7 @@
   .btn:active{transform:scale(.98)}
   .btn-yellow{background:var(--yellow);color:var(--navy)}
   .btn-yellow:hover{background:var(--yellow-dark)}
-  .btn-outline{border-color:#7E97AE;color:#fff;background:transparent}
+  .btn-outline{border-color:#A9BAC9;color:#fff;background:transparent}
   .btn-outline:hover{border-color:#fff}
   .hero-note{margin-top:18px;font-size:.86rem;color:#8FA6BB}
 
@@ -223,7 +223,7 @@
     border-radius:10px;font-weight:700;text-decoration:none;font-size:.98rem;
   }
   .sticky-bar .s1{background:var(--yellow);color:var(--navy)}
-  .sticky-bar .s2{border:2px solid #7E97AE;color:#fff}
+  .sticky-bar .s2{border:2px solid #A9BAC9;color:#fff}
 
   /* ---------- Responsive ---------- */
   @media (max-width:640px){
@@ -457,18 +457,18 @@
 
   <!-- ===== Join the list (Systeme) ===== -->
   <section id="join">
-    <div style="margin:28px auto;max-width:720px;background:#14232F;border:1px solid #2A4A6E;border-radius:12px;padding:22px;text-align:center;line-height:1.8;color:#B9CADA;">
+    <div style="margin:28px auto;max-width:720px;background:#132E2A;border:1px solid #1F403A;border-radius:12px;padding:22px;text-align:center;line-height:1.8;color:#B9CADA;">
       <h2 style="color:#E7EEF5;font-size:1.3rem;font-weight:900;margin:0 0 8px;">Join the list</h2>
       <p>Get the free Taiwan Wording Cheat Sheet, plus occasional emails on Taiwan localization — new wording traps, checklist updates and free tools. No spam, unsubscribe anytime.</p>
       <p style="margin-top:14px;"><a class="btn btn-yellow" href="https://z2idugagr.systeme.io/form-en-clean" target="_blank" rel="noopener">Subscribe free →</a></p>
-      <p style="font-size:.85rem;color:#7E97AE;margin-top:10px;">You will receive a confirmation email first — click the link in it to complete your subscription.</p>
+      <p style="font-size:.85rem;color:#A9BAC9;margin-top:10px;">You will receive a confirmation email first — click the link in it to complete your subscription.</p>
     </div>
   </section>
 
-  <div style="margin:28px auto;max-width:720px;background:#14232F;border:1px dashed #FFC400;border-radius:12px;padding:18px;text-align:center;line-height:1.8;color:#B9CADA;">
-    Free tool: <a href="/checker/" style="color:#FFC400;font-weight:700;">Simplified → Taiwan Chinese checker</a> (42 term pairs, instant)<br/>
-    Free download: <a href="/free/" style="color:#FFC400;font-weight:700;">Taiwan Wording Cheat Sheet</a> ｜ Full version: <a href="https://zidug.gumroad.com/l/tortsw" target="_blank" rel="noopener" style="color:#FFC400;font-weight:700;">Taiwan Wording Self-Check Checklist — US$7</a><br/>
-    Want a human review? <a href="/quote/" style="color:#FFC400;font-weight:700;">Quote calculator</a> (first page free)
+  <div style="margin:28px auto;max-width:720px;background:#132E2A;border:1px dashed #2DD4BF;border-radius:12px;padding:18px;text-align:center;line-height:1.8;color:#B9CADA;">
+    Free tool: <a href="/checker/" style="color:#2DD4BF;font-weight:700;">Simplified → Taiwan Chinese checker</a> (42 term pairs, instant)<br/>
+    Free download: <a href="/free/" style="color:#2DD4BF;font-weight:700;">Taiwan Wording Cheat Sheet</a> ｜ Full version: <a href="https://zidug.gumroad.com/l/tortsw" target="_blank" rel="noopener" style="color:#2DD4BF;font-weight:700;">Taiwan Wording Self-Check Checklist — US$7</a><br/>
+    Want a human review? <a href="/quote/" style="color:#2DD4BF;font-weight:700;">Quote calculator</a> (first page free)
   </div>
 
 </main>
