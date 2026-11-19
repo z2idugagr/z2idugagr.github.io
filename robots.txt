@@ -52,4 +52,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://z2idugagr.github.io/sitemap.xml
+Sitemap: https://hankloc.com/sitemap.xml
