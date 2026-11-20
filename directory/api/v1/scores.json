@@ -99,8 +99,41 @@
      "model": "not exposed by endpoint; recorded by access date",
      "channel": "public web endpoint translate.googleapis.com/translate_a/single (client=gtx)",
      "run_at": "2026-11-21 00:48:19 CST"
+    },
+    "deepl": {
+     "score": 95,
+     "grade": "A",
+     "purity": 99.0,
+     "wording": 92.5,
+     "terminology": 91.4,
+     "residue_rate_pct": 0.25,
+     "mainland_hits": 3,
+     "hits_per_100_cjk": 0.75,
+     "term_preferred": 32,
+     "term_mainland": 3,
+     "segments_scored": 24,
+     "model": "not exposed by web UI; recorded by access date",
+     "channel": "real browser session, deepl.com web translator (free tier, not logged in)",
+     "run_at": "2026-11-21 00:52-00:57 CST"
+    },
+    "microsoft-translator": {
+     "score": 98,
+     "grade": "A",
+     "purity": 99.0,
+     "wording": 94.8,
+     "terminology": 100.0,
+     "residue_rate_pct": 0.26,
+     "mainland_hits": 2,
+     "hits_per_100_cjk": 0.52,
+     "term_preferred": 35,
+     "term_mainland": 0,
+     "segments_scored": 24,
+     "model": "web UI; model not exposed, recorded by access date",
+     "channel": "real browser session, bing.com/translator (free, not logged in)",
+     "run_at": "2026-11-21 00:52-00:57 CST"
     }
-   }
+   },
+   "supplement": "Supplement (same run, 2026-11-21 00:52-00:57 CST): DeepL and Microsoft Translator (Bing) were measured afterwards through a real-browser route - free web translators, not logged in - after their scripted channels proved unreachable; the failed attempts remain archived. Bing condition disclosure: the translator's tone preset was left at its default 'casual' setting, so its output uses the informal address form throughout with colloquial phrasing. The benchmark's three metrics (script residue, mainland wording, terminology) do not score register or tone; read Bing's score with that condition attached."
   }
  ]
 }

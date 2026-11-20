@@ -5,19 +5,19 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 <meta name="color-scheme" content="light dark" />
-<meta name="description" content="Measured Traditional Chinese output quality for translation tools: simplified-residue, mainland-wording and terminology scores from a public 24-segment corpus. Run 2026-11-21: Gemini 99, Groq 96, Google Translate 89." />
+<meta name="description" content="Measured Traditional Chinese output quality for translation tools: simplified-residue, mainland-wording and terminology scores from a public 24-segment corpus. Run 2026-11-21: Gemini 99, Microsoft Translator (Bing) 98, Groq 96, DeepL 95, Google Translate 89." />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="LocIndex" />
 <meta property="og:locale" content="en_US" />
 <meta property="og:title" content="Traditional Chinese Quality Benchmark — Results &amp; Run Archive | LocIndex" />
-<meta property="og:description" content="Measured Traditional Chinese output quality for translation tools: simplified-residue, mainland-wording and terminology scores from a public 24-segment corpus. Run 2026-11-21: Gemini 99, Groq 96, Google Translate 89." />
+<meta property="og:description" content="Measured Traditional Chinese output quality for translation tools: simplified-residue, mainland-wording and terminology scores from a public 24-segment corpus. Run 2026-11-21: Gemini 99, Microsoft Translator (Bing) 98, Groq 96, DeepL 95, Google Translate 89." />
 <meta property="og:url" content="https://hankloc.com/directory/benchmarks/zh-hant/" />
 <meta property="og:image" content="https://hankloc.com/assets/og-cover.png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Traditional Chinese Quality Benchmark — Results &amp; Run Archive | LocIndex" />
-<meta name="twitter:description" content="Measured Traditional Chinese output quality for translation tools: simplified-residue, mainland-wording and terminology scores from a public 24-segment corpus. Run 2026-11-21: Gemini 99, Groq 96, Google Translate 89." />
+<meta name="twitter:description" content="Measured Traditional Chinese output quality for translation tools: simplified-residue, mainland-wording and terminology scores from a public 24-segment corpus. Run 2026-11-21: Gemini 99, Microsoft Translator (Bing) 98, Groq 96, DeepL 95, Google Translate 89." />
 <meta name="twitter:image" content="https://hankloc.com/assets/og-cover.png" />
 <link rel="canonical" href="https://hankloc.com/directory/benchmarks/zh-hant/" />
 <link rel="icon" href="data:," />
@@ -165,12 +165,14 @@ footer .fine{font-size:.85rem;color:#8FA6B8;margin-top:16px;line-height:1.7}
       <h2>Latest results — run 2026-11-21</h2>
       <div class="tbl-wrap"><table class="tbl">
         <thead><tr><th>Tool / Engine</th><th>Score</th><th>Script purity</th><th>Wording</th><th>Terminology</th><th>Version tested</th><th>Date</th></tr></thead>
-        <tbody><tr><td><a href="/directory/gemini/">Gemini</a></td><td><b>99</b> (Grade A)</td><td>100.0</td><td>97.4</td><td>100.0</td><td>gemini-3.5-flash-lite</td><td>2026-11-21</td></tr><tr><td><a href="/directory/groq/">Groq</a></td><td><b>96</b> (Grade A)</td><td>100.0</td><td>91.8</td><td>97.2</td><td>openai/gpt-oss-120b</td><td>2026-11-21</td></tr><tr><td><a href="/directory/google-translate/">Google Translate</a></td><td><b>89</b> (Grade B)</td><td>99.0</td><td>82.3</td><td>83.3</td><td>not exposed by endpoint; recorded by access date</td><td>2026-11-21</td></tr></tbody></table></div>
+        <tbody><tr><td><a href="/directory/gemini/">Gemini</a></td><td><b>99</b> (Grade A)</td><td>100.0</td><td>97.4</td><td>100.0</td><td>gemini-3.5-flash-lite</td><td>2026-11-21</td></tr><tr><td><a href="/directory/microsoft-translator/">Microsoft Translator</a></td><td><b>98</b> (Grade A)</td><td>99.0</td><td>94.8</td><td>100.0</td><td>web UI; model not exposed, recorded by access date</td><td>2026-11-21</td></tr><tr><td><a href="/directory/groq/">Groq</a></td><td><b>96</b> (Grade A)</td><td>100.0</td><td>91.8</td><td>97.2</td><td>openai/gpt-oss-120b</td><td>2026-11-21</td></tr><tr><td><a href="/directory/deepl/">DeepL</a></td><td><b>95</b> (Grade A)</td><td>99.0</td><td>92.5</td><td>91.4</td><td>not exposed by web UI; recorded by access date</td><td>2026-11-21</td></tr><tr><td><a href="/directory/google-translate/">Google Translate</a></td><td><b>89</b> (Grade B)</td><td>99.0</td><td>82.3</td><td>83.3</td><td>not exposed by endpoint; recorded by access date</td><td>2026-11-21</td></tr></tbody></table></div>
       <div class="box" style="margin-top:16px"><h3 style="margin-bottom:6px">Conditions disclosure (part of the measurement)</h3>
       <p style="margin:0">AI/LLM engines received the corpus with one shared neutral prompt (&#x27;Translate into Traditional Chinese as used in Taiwan&#x27; plus fixed formatting instructions). Machine-translation engines received the source text directly, with no prompt. The groups were measured under different conditions; this disclosure travels with the scores wherever they appear.</p></div>
-      <p style="color:var(--ink-2)">Eight further first-batch tools are <b>test pending</b> with documented reasons on their pages (account-gated platforms, blocked free channels, rate limits). Full per-segment evidence for this run: <a href="/directory/benchmarks/zh-hant/2026-11-21/">run archive 2026-11-21</a>. Method: <a href="/directory/methodology/">methodology</a>.</p>
+      <div class="box" style="margin-top:12px"><h3 style="margin-bottom:6px">Supplement &amp; Bing condition</h3>
+      <p style="margin:0">Supplement (same run, 2026-11-21 00:52-00:57 CST): DeepL and Microsoft Translator (Bing) were measured afterwards through a real-browser route - free web translators, not logged in - after their scripted channels proved unreachable; the failed attempts remain archived. Bing condition disclosure: the translator&#x27;s tone preset was left at its default &#x27;casual&#x27; setting, so its output uses the informal address form throughout with colloquial phrasing. The benchmark&#x27;s three metrics (script residue, mainland wording, terminology) do not score register or tone; read Bing&#x27;s score with that condition attached.</p></div>
+      <p style="color:var(--ink-2)">Seven further first-batch tools are <b>test pending</b> with documented reasons on their pages (account-gated platforms, blocked free channels, rate limits). Full per-segment evidence for this run: <a href="/directory/benchmarks/zh-hant/2026-11-21/">run archive 2026-11-21</a>. Method: <a href="/directory/methodology/">methodology</a>.</p>
       <h2 style="margin-top:30px">Run history (append-only)</h2>
-      <div class="tbl-wrap"><table class="tbl"><thead><tr><th>Date</th><th>Benchmark version</th><th>Corpus</th><th>Coverage</th></tr></thead><tbody><tr><td><a href="/directory/benchmarks/zh-hant/2026-11-21/">2026-11-21</a></td><td>v1.0</td><td>Corpus v1.0</td><td>3 engines scored</td></tr></tbody></table></div>
+      <div class="tbl-wrap"><table class="tbl"><thead><tr><th>Date</th><th>Benchmark version</th><th>Corpus</th><th>Coverage</th></tr></thead><tbody><tr><td><a href="/directory/benchmarks/zh-hant/2026-11-21/">2026-11-21</a></td><td>v1.0</td><td>Corpus v1.0</td><td>5 engines scored</td></tr></tbody></table></div>
     </section>
   </div>
   

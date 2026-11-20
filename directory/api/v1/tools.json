@@ -414,7 +414,15 @@
    "page": "/directory/deepl/",
    "page_type": "review",
    "test": {
-    "status": "pending"
+    "status": "tested",
+    "score": 95,
+    "grade": "A",
+    "purity": 99.0,
+    "wording": 92.5,
+    "terminology": 91.4,
+    "benchmark": "Traditional Chinese Quality Benchmark",
+    "benchmark_version": "1.0",
+    "run_date": "2026-11-21"
    },
    "description": "DeepL is a machine translation service known for European-language quality, offered as a web/app translator, document translation, and an API. Paid plans add glossaries, tone control, larger character allowances and a no-training-on-your-data commitment.",
    "pricing_model": "Subscription per user with monthly character allowances; prices shown in EUR on the vendor's pricing page.",
@@ -523,7 +531,15 @@
    "page": "/directory/microsoft-translator/",
    "page_type": "review",
    "test": {
-    "status": "pending"
+    "status": "tested",
+    "score": 98,
+    "grade": "A",
+    "purity": 99.0,
+    "wording": 94.8,
+    "terminology": 100.0,
+    "benchmark": "Traditional Chinese Quality Benchmark",
+    "benchmark_version": "1.0",
+    "run_date": "2026-11-21"
    },
    "description": "Microsoft Translator (Azure Translator in Foundry Tools) is Microsoft's machine translation API: text and document translation, language detection, transliteration and custom models trained on your own parallel data.",
    "pricing_model": "Per-character API pricing with a generous free tier; commitment tiers lower the per-million rate at volume.",
