@@ -6,7 +6,7 @@
   var cfg = window.LOCINDEX || {};
   var indexUrl = cfg.indexUrl || "/directory/index.json";
   var limit = cfg.limit || 0;
-  var state = { tools: [], cats: {}, q: "", cat: "all", testedOnly: false, sort: "rank", compare: [] };
+  var state = { tools: [], cats: {}, picks: {}, q: "", cat: "all", testedOnly: false, sort: "rank", compare: [] };
 
   function $(id) { return document.getElementById(id); }
   function esc(s) {
@@ -52,10 +52,16 @@
     return '<div class="score-badge pending"><span class="score-num">—</span>' +
       '<span class="score-grade">Test pending</span><span class="score-lab">Not yet measured</span></div>';
   }
+  function pickLine(t) {
+    var pk = state.picks[t.slug];
+    if (!pk) return "";
+    return '<p style="margin:0 0 8px"><span style="display:inline-block;background:var(--yellow);color:var(--navy);font-weight:800;font-size:.72rem;letter-spacing:.06em;padding:3px 10px;border-radius:999px">\u2605 TOP PICK</span> ' +
+      '<span style="font-size:.8rem;color:var(--muted)">' + esc(pk.basis) + '</span></p>';
+  }
   function card(t) {
     var inCmp = state.compare.indexOf(t.slug) !== -1;
     return '<article class="card">' +
-      '<div class="card-head"><h3><a href="/directory/' + esc(t.slug) + '/">' + esc(t.name) + '</a></h3>' + badge(t) + '</div>' +
+      '<div class="card-head"><h3><a href="/directory/' + esc(t.slug) + '/">' + esc(t.name) + '</a></h3>' + badge(t) + '</div>' + pickLine(t) +
       '<p class="card-meta">' + esc(t.vendor) + ' · ' + esc(state.cats[t.category] || t.category) + '</p>' +
       '<p class="card-tag">' + esc(t.tagline) + '</p>' +
       '<p class="card-price">' + esc(t.starting_price) + '</p>' +
@@ -152,6 +158,7 @@
     .then(function (r) { return r.json(); })
     .then(function (data) {
       state.tools = data.tools || [];
+      (data.top_picks || []).forEach(function (pk) { state.picks[pk.slug] = pk; });
       (data.categories || []).forEach(function (c) { state.cats[c.id] = c.label; });
       bind(); render();
     })

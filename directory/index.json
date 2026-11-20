@@ -80,6 +80,50 @@
    "blurb": "Marketplaces and service platforms where translation and localization work is ordered, staffed and delivered."
   }
  ],
+ "top_picks": [
+ {
+  "category": "website-localization",
+  "slug": "weglot",
+  "kind": "editorial",
+  "basis": "Editorial pick — verified feature completeness, benchmark test pending"
+ },
+ {
+  "category": "tms",
+  "slug": "phrase",
+  "kind": "editorial",
+  "basis": "Editorial pick — verified feature completeness, benchmark test pending"
+ },
+ {
+  "category": "machine-translation",
+  "slug": "microsoft-translator",
+  "kind": "benchmark",
+  "basis": "Top Pick — highest measured TCQ Benchmark score in this category: 98 (Grade A), run 2026-11-21"
+ },
+ {
+  "category": "ai-translation",
+  "slug": "gemini",
+  "kind": "benchmark",
+  "basis": "Top Pick — highest measured TCQ Benchmark score in this category: 99 (Grade A), run 2026-11-21"
+ },
+ {
+  "category": "subtitles-video",
+  "slug": "sonix",
+  "kind": "editorial",
+  "basis": "Editorial pick — verified feature completeness, benchmark test pending"
+ },
+ {
+  "category": "qa-terminology",
+  "slug": "trados-studio",
+  "kind": "editorial",
+  "basis": "Editorial pick — verified feature completeness, benchmark test pending"
+ },
+ {
+  "category": "service-platforms",
+  "slug": "proz",
+  "kind": "editorial",
+  "basis": "Editorial pick — verified marketplace structure, benchmark test pending"
+ }
+],
  "tools": [
   {
    "slug": "weglot",
