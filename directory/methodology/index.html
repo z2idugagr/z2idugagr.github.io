@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1841823164841609" crossorigin="anonymous"></script>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="color-scheme" content="light dark" />
+<meta name="description" content="The public method behind LocIndex scores: fixed corpus, OpenCC-based simplified-residue detection, a 131-term wording rule set, terminology consistency checks, and append-only run archives." />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="LocIndex" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:title" content="Benchmark Methodology — How LocIndex Tests Localization Technology" />
+<meta property="og:description" content="The public method behind LocIndex scores: fixed corpus, OpenCC-based simplified-residue detection, a 131-term wording rule set, terminology consistency checks, and append-only run archives." />
+<meta property="og:url" content="https://hankloc.com/directory/methodology/" />
+<meta property="og:image" content="https://hankloc.com/assets/og-cover.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Benchmark Methodology — How LocIndex Tests Localization Technology" />
+<meta name="twitter:description" content="The public method behind LocIndex scores: fixed corpus, OpenCC-based simplified-residue detection, a 131-term wording rule set, terminology consistency checks, and append-only run archives." />
+<meta name="twitter:image" content="https://hankloc.com/assets/og-cover.png" />
+<link rel="canonical" href="https://hankloc.com/directory/methodology/" />
+<link rel="icon" href="data:," />
+<title>Benchmark Methodology — How LocIndex Tests Localization Technology</title>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "Benchmark Methodology — How LocIndex Tests Localization Technology", "url": "https://hankloc.com/directory/methodology/", "datePublished": "2026-11-21", "author": {"@type": "Organization", "name": "LocIndex"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "LocIndex", "item": "https://hankloc.com/"}, {"@type": "ListItem", "position": 2, "name": "Directory", "item": "https://hankloc.com/directory/"}, {"@type": "ListItem", "position": 3, "name": "Methodology", "item": "https://hankloc.com/directory/methodology/"}]}]}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=Noto+Sans+TC:wght@400;500;700;900&family=Noto+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+<style>
+:root{--navy:#10201E;--navy-2:#1B3330;--navy-deep:#0A1715;--yellow:#2DD4BF;--yellow-dark:#0F766E;--bg:#F6F7F9;--surface:#FFFFFF;--surface-2:#EEF2F6;--ink:#111827;--ink-2:#435363;--muted:#5A6B7A;--line:#DCE3EA;--radius:14px;color-scheme:light}
+@media (prefers-color-scheme: dark){:root{--bg:#0A1715;--surface:#132E2A;--surface-2:#10201E;--ink:#F2F5F8;--ink-2:#C9D7E4;--muted:#A9BAC9;--line:#1F403A;color-scheme:dark}}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:"Inter","Noto Sans","Noto Sans TC",system-ui,-apple-system,"PingFang TC","Microsoft JhengHei",sans-serif;background:var(--bg);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:inherit}.wrap{max-width:1200px;margin:0 auto;padding:0 20px}
+.nav{position:sticky;top:0;z-index:50;background:var(--navy);color:#fff;border-bottom:3px solid var(--yellow)}
+.nav-inner{display:flex;align-items:center;gap:18px;min-height:60px;flex-wrap:wrap;padding-top:6px;padding-bottom:6px}
+.brand{font-weight:900;font-size:1.08rem;letter-spacing:.02em;text-decoration:none;display:flex;align-items:center;gap:10px}
+.brand .mark{background:var(--yellow);color:var(--navy);font-weight:900;padding:2px 9px;border-radius:6px;font-size:.95rem}
+.brand small{font-weight:500;font-size:.78rem;color:#BFD0E0;display:block;line-height:1.2}
+.nav-links{display:flex;gap:4px;margin-left:auto;flex-wrap:wrap}
+.nav-links a{text-decoration:none;font-size:.92rem;font-weight:500;color:#E7EEF5;padding:9px 12px;border-radius:8px;min-height:38px;display:inline-flex;align-items:center}
+.nav-links a:hover{background:var(--navy-2);color:#fff}
+.nav-cta{background:var(--yellow);color:var(--navy)!important;font-weight:700}
+.hero{background:var(--navy);color:#fff;padding:64px 0 56px;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;right:-70px;top:-70px;width:280px;height:280px;border-radius:50%;border:44px solid rgba(45,212,191,.14);pointer-events:none}
+.hero-tag{display:inline-block;background:rgba(45,212,191,.15);color:var(--yellow);border:1px solid rgba(45,212,191,.5);font-size:.85rem;font-weight:700;padding:5px 14px;border-radius:999px;margin-bottom:20px}
+.hero h1{font-size:2.5rem;line-height:1.25;font-weight:900;margin:0 0 14px;max-width:20em}
+.hero h1 .hl{color:var(--yellow)}
+.hero p.lead{font-size:1.08rem;color:#C9D7E4;max-width:44em;margin:0 0 26px}
+.search-box{display:flex;gap:10px;max-width:760px;background:#fff;border-radius:14px;padding:8px;box-shadow:0 12px 32px rgba(0,0,0,.28)}
+.search-box input{flex:1;border:0;outline:0;font-size:1.1rem;padding:12px 14px;color:#111827;background:transparent;min-width:0}
+.search-box button{background:var(--yellow-dark);color:#fff;border:0;font-weight:800;font-size:1.02rem;padding:12px 26px;border-radius:10px;cursor:pointer}
+.search-box button:hover{background:var(--yellow);color:var(--navy)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}
+.chip{background:rgba(255,255,255,.08);color:#E7EEF5;border:1px solid rgba(255,255,255,.25);padding:7px 14px;border-radius:999px;font-size:.9rem;cursor:pointer;font-weight:600}
+.chip:hover{border-color:var(--yellow);color:#fff}
+.chip.active{background:var(--yellow);color:var(--navy);border-color:var(--yellow)}
+.hero-stats{display:flex;gap:22px;flex-wrap:wrap;margin-top:26px;color:#BFD0E0;font-size:.95rem}
+.hero-stats b{color:#fff;font-size:1.15rem}
+section{padding:44px 0}
+.sec-head{max-width:46em}
+.sec-head h2{font-size:1.7rem;font-weight:900;margin:0 0 8px}
+.sec-head p{color:var(--ink-2);margin:0 0 20px}
+.controls{display:flex;gap:16px;flex-wrap:wrap;align-items:center;margin:0 0 18px;color:var(--ink-2);font-size:.95rem}
+.controls select{font-size:.95rem;padding:7px 10px;border-radius:8px;border:1px solid var(--line);background:var(--surface);color:var(--ink)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:16px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:20px;display:flex;flex-direction:column}
+.card-head{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}
+.card h3{margin:0;font-size:1.22rem;font-weight:900}
+.card h3 a{text-decoration:none}.card h3 a:hover{color:var(--yellow-dark)}
+.card-meta{color:var(--muted);font-size:.88rem;margin:2px 0 8px}
+.card-tag{color:var(--ink-2);margin:0 0 10px;flex:0 1 auto}
+.card-price{font-weight:800;margin:0 0 14px}
+.card-foot{margin-top:auto;display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--line);padding-top:12px}
+.card-link{color:var(--yellow-dark);font-weight:700;text-decoration:none}
+.cmp{font-size:.9rem;color:var(--ink-2);cursor:pointer}
+.score-badge{text-align:center;background:var(--surface-2);border:1px solid var(--line);border-radius:10px;padding:8px 12px;min-width:104px;flex:none}
+.score-badge .score-num{display:block;font-size:1.7rem;font-weight:900;line-height:1.05;color:var(--yellow-dark)}
+.score-badge .score-grade{display:block;font-size:.8rem;font-weight:800}
+.score-badge .score-lab{display:block;font-size:.68rem;color:var(--muted);letter-spacing:.04em;text-transform:uppercase}
+.score-badge.pending .score-num{color:var(--muted)}
+.no-results{color:var(--ink-2);padding:22px;border:1px dashed var(--line);border-radius:var(--radius);background:var(--surface)}
+.tbl-wrap{overflow-x:auto}
+.tbl{width:100%;border-collapse:collapse;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+.tbl th,.tbl td{padding:11px 14px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+.tbl thead th{background:var(--surface-2);font-weight:800}
+.tbl tr:last-child td{border-bottom:0}
+.cmp-note{color:var(--ink-2)}
+.band{background:var(--navy);color:#E7EEF5;border-radius:var(--radius);padding:30px;margin:8px 0}
+.band h2{color:#fff;margin:0 0 8px;font-size:1.45rem;font-weight:900}
+.band p{color:#B9CADA;margin:0 0 6px;max-width:52em}
+.band ul{color:#B9CADA;margin:8px 0 16px;padding-left:20px}
+.btn{display:inline-block;text-decoration:none;font-weight:800;padding:12px 24px;border-radius:10px}
+.btn-yellow{background:var(--yellow);color:var(--navy)}
+.btn-yellow:hover{background:var(--yellow-dark);color:#fff}
+.btn-outline{border:1.5px solid var(--yellow);color:var(--yellow)}
+.btn-dark{background:var(--yellow-dark);color:#fff}
+.bench-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}
+.bench-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:20px}
+.bench-card h3{margin:0 0 6px;font-size:1.12rem}
+.status{display:inline-block;font-size:.75rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;padding:3px 10px;border-radius:999px}
+.status.live{background:var(--yellow);color:var(--navy)}
+.status.dev{background:var(--surface-2);color:var(--ink-2);border:1px solid var(--line)}
+.svc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}
+.svc{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:22px}
+.svc h3{margin:0 0 8px}.svc p{color:var(--ink-2);margin:0 0 14px}
+.crumbs{font-size:.9rem;color:var(--muted);padding:18px 0 0}
+.crumbs a{text-decoration:none}.crumbs a:hover{color:var(--yellow-dark)}
+.page-head{padding:26px 0 6px}
+.page-head h1{font-size:2.15rem;font-weight:900;margin:0 0 8px;line-height:1.25}
+.page-head p.lead{color:var(--ink-2);font-size:1.05rem;max-width:46em;margin:0}
+.score-panel{display:flex;gap:22px;flex-wrap:wrap;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:22px;margin:20px 0}
+.score-big{text-align:center;min-width:150px}
+.score-big .n{font-size:3.4rem;font-weight:900;line-height:1;color:var(--yellow-dark)}
+.score-big .g{font-weight:800}
+.meters{flex:1;min-width:260px}
+.meter{margin-bottom:12px}
+.meter .lab{display:flex;justify-content:space-between;font-size:.9rem;font-weight:700;margin-bottom:4px}
+.meter .track{background:var(--surface-2);border-radius:999px;height:10px;overflow:hidden}
+.meter .fill{background:var(--yellow-dark);height:100%}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media (max-width:760px){.cols{grid-template-columns:1fr}.hero h1{font-size:1.9rem}.page-head h1{font-size:1.7rem}}
+.box{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:20px}
+.box h2,.box h3{margin-top:0}
+.box ul{margin:8px 0;padding-left:20px}
+.box li{margin-bottom:6px}
+.pending-box{border-style:dashed}
+pre.code{background:var(--navy-deep);color:#D7F5EE;padding:16px;border-radius:10px;overflow-x:auto;font-size:.85rem;line-height:1.55}
+.run-tbl{font-size:.88rem}
+.run-tbl td.out{font-family:"Noto Sans TC",sans-serif}
+.flag{color:#B45309;font-weight:700}
+footer{background:var(--navy-deep);color:#B9CADA;padding:36px 0;margin-top:20px}
+footer a{color:#E7EEF5;text-decoration:none}
+footer a:hover{color:var(--yellow)}
+footer .cols2{display:flex;gap:28px;flex-wrap:wrap;justify-content:space-between}
+footer .fine{font-size:.85rem;color:#8FA6B8;margin-top:16px;line-height:1.7}
+.kicker{font-size:.82rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--yellow-dark)}
+</style>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XJ2395TWPE"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XJ2395TWPE');</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="/"><span class="mark">L</span><span>LocIndex<small>Localization Technology Index</small></span></a>
+    <nav class="nav-links" aria-label="Main menu">
+      <a href="/directory/">Directory</a>
+      <a href="/directory/benchmarks/">Benchmarks</a>
+      <a href="/directory/methodology/">Methodology</a>
+      <a href="/directory/api/docs/">API</a>
+      <a href="/en/">Services</a>
+      <a class="nav-cta" href="/checker/">Free Checker</a>
+    </nav>
+  </div>
+</header>
+<div class="wrap"><nav class="crumbs" aria-label="Breadcrumb"><a href="/">LocIndex</a> › <a href="/directory/">Directory</a> › Methodology</nav></div>
+<main>
+  <div class="wrap">
+    <div class="page-head">
+      <p class="kicker">Flagship Methodology · Framework v1.0</p>
+      <h1>How we test: the Global Language Quality Benchmark Framework</h1>
+      <p class="lead">Every score on LocIndex comes from a fixed public corpus, a deterministic scoring script, and archived raw outputs. No sponsored placements, no star ratings, no estimates. If a tool has not been run, its page says “test pending” and explains exactly why.</p>
+    </div>
+    <section style="padding-top:18px">
+      <h2>Principles</h2>
+      <div class="cols">
+        <div class="box"><h3>Measured, never sponsored</h3><p>Vendors cannot pay for a score, a ranking or a review. Tool links on this site are plain official links; LocIndex earns no affiliate commission from them (status as of 2026-11-21, disclosed on every page).</p></div>
+        <div class="box"><h3>Append-only evidence</h3><p>Each benchmark run is published as a dated, permanent archive page with the full raw outputs. Runs are never edited after publication; corrections and re-tests ship as new runs. Historical data is the asset — it cannot be recreated retroactively.</p></div>
+        <div class="box"><h3>Reproducible by anyone</h3><p>The corpus, the term lists, the formulas and the scoring weights are published on this page. Anyone with the same inputs gets the same numbers.</p></div>
+        <div class="box"><h3>Conflicts, disclosed</h3><p>LocIndex is published by HankLoc, which sells localization services. That is exactly why the method is mechanical: a deterministic script scores archived outputs, and no commercial relationship enters the formula.</p></div>
+      </div>
+    </section>
+    <section>
+      <h2>The framework: one architecture, many language benchmarks</h2>
+      <p>A benchmark is a (language, corpus, rule set, scoring script) bundle with its own version number. The framework defines the shared metrics — script purity, wording density, terminology consistency — and each language benchmark supplies its own corpus and norm references. The Traditional Chinese Quality Benchmark (TCQ) is the flagship and the first live instance; Simplified Chinese is in development, and Japanese, Korean and Spanish slots are reserved in the same architecture. A language with no completed run publishes no scores.</p>
+    </section>
+    <section>
+      <h2>Traditional Chinese Quality Benchmark — v1.0 specification</h2>
+      <p><b>Norm reference:</b> Traditional Chinese as written in Taiwan. <b>Input:</b> 24 fixed English segments across four content types (marketing, UI strings, game dialogue, customer support), chosen to contain known cross-strait wording traps and repeated key terms. <b>Access:</b> each engine is called through its public or API access path, once per segment, with no human editing; the access path is recorded on each tool page and in the run archive.</p>
+      <h3>The three metrics</h3>
+      <div class="tbl-wrap"><table class="tbl">
+        <thead><tr><th>Metric</th><th>Definition</th><th>Formula</th><th>Weight</th></tr></thead>
+        <tbody>
+          <tr><td><b>Script purity</b></td><td>Share of CJK characters in the output that are simplified-only characters, detected character-by-character with the OpenCC s2t conversion table.</td><td>max(0, 100 − residue% × 4)</td><td>40%</td></tr>
+          <tr><td><b>Wording</b></td><td>Density of mainland-China wording, matched greedily (longest-first) against a 131-term rule list — the same list that powers this site's free wording checker.</td><td>max(0, 100 − hits per 100 CJK chars × 10)</td><td>35%</td></tr>
+          <tr><td><b>Terminology</b></td><td>For each tagged term occurrence: the preferred Taiwan rendering scores 1, a mainland variant scores 0, any other rendering is excluded and disclosed.</td><td>preferred / (preferred + mainland) × 100</td><td>25%</td></tr>
+        </tbody></table></div>
+      <p><b>Composite score</b> = 0.40 × purity + 0.35 × wording + 0.25 × terminology, rounded to the nearest integer. <b>Grades:</b> A ≥ 90 · B ≥ 80 · C ≥ 70 · D ≥ 60 · F &lt; 60.</p>
+      <h3>Worked example (segment M1, run of 2026-11-21)</h3>
+      <div class="tbl-wrap"><table class="tbl">
+        <thead><tr><th>Engine</th><th>Raw output (archived)</th><th>Flags</th></tr></thead>
+        <tbody>
+          <tr><td>Google Translate</td><td class="out">觀看視頻，了解我們的軟體如何幫助您的團隊在線上工作。</td><td><span class="flag">視頻</span> (mainland term for “video”), <span class="flag">在線</span> (mainland phrasing)</td></tr>
+          <tr><td>Gemini</td><td class="out">觀看影片，了解我們的軟體如何協助您的團隊進行線上協作。</td><td>None</td></tr>
+        </tbody></table></div>
+      <p>Full per-segment evidence: <a href="/directory/benchmarks/zh-hant/2026-11-21/">Benchmark run 2026-11-21 (v1.0)</a>.</p>
+    </section>
+    <section>
+      <h2>The corpus (v1.0, frozen)</h2>
+      <div class="tbl-wrap"><table class="tbl run-tbl">
+        <thead><tr><th>ID</th><th>Type</th><th>English source segment</th><th>Tagged terms</th></tr></thead>
+        <tbody><tr><td>M1</td><td>marketing</td><td>Watch the video to see how our software helps your team work online.</td><td>video, software, online</td></tr><tr><td>M2</td><td>marketing</td><td>High-quality sound and unbeatable value for money — download the app today.</td><td>quality, value for money</td></tr><tr><td>M3</td><td>marketing</td><td>Get instant message notifications and free shipping on every order.</td><td>message</td></tr><tr><td>M4</td><td>marketing</td><td>Our network covers the whole city, so you can take a taxi or a bus to get anywhere.</td><td>network</td></tr><tr><td>M5</td><td>marketing</td><td>Sign up now and print your boarding pass before the countdown ends.</td><td>print</td></tr><tr><td>M6</td><td>marketing</td><td>This smartphone has a bigger screen and a smarter default search.</td><td>screen, default, search</td></tr><tr><td>U1</td><td>ui</td><td>Settings</td><td>settings</td></tr><tr><td>U2</td><td>ui</td><td>Log in to your account</td><td>log in</td></tr><tr><td>U3</td><td>ui</td><td>Search settings and message notifications</td><td>search, settings, message</td></tr><tr><td>U4</td><td>ui</td><td>Download the software update</td><td>software</td></tr><tr><td>U5</td><td>ui</td><td>Watch the video in high quality</td><td>video, quality</td></tr><tr><td>U6</td><td>ui</td><td>Default network settings</td><td>default, network, settings</td></tr><tr><td>G1</td><td>game</td><td>Watch the opening video, then open settings to adjust the screen brightness.</td><td>video, settings, screen</td></tr><tr><td>G2</td><td>game</td><td>Collect 100 coins to level up and unlock the secret level.</td><td>—</td></tr><tr><td>G3</td><td>game</td><td>The final countdown begins! Your team must protect the crystal at all costs.</td><td>—</td></tr><tr><td>G4</td><td>game</td><td>Check your messages — the guild leader has sent you a new quest.</td><td>message</td></tr><tr><td>G5</td><td>game</td><td>This boss drops high-quality gear with excellent value for money.</td><td>quality, value for money</td></tr><tr><td>G6</td><td>game</td><td>Download the update to play online with friends around the world.</td><td>online</td></tr><tr><td>S1</td><td>support</td><td>Please contact our online support team if you cannot log in.</td><td>online, log in</td></tr><tr><td>S2</td><td>support</td><td>You can print your receipt from the account settings page.</td><td>print, settings</td></tr><tr><td>S3</td><td>support</td><td>We will send you a text message to verify your phone number.</td><td>text message</td></tr><tr><td>S4</td><td>support</td><td>If the video will not play, check your network connection.</td><td>video, network</td></tr><tr><td>S5</td><td>support</td><td>Your software license expires in 7 days. Download the latest version now.</td><td>software</td></tr><tr><td>S6</td><td>support</td><td>Thank you for your message. Our support team will reply within 24 hours.</td><td>message</td></tr></tbody></table></div>
+      <h3 style="margin-top:26px">Terminology checks</h3>
+      <div class="tbl-wrap"><table class="tbl">
+        <thead><tr><th>English term</th><th>Preferred (Taiwan)</th><th>Mainland variants</th></tr></thead>
+        <tbody><tr><td>default</td><td>預設</td><td>默認 / 默认</td></tr><tr><td>log in</td><td>登入</td><td>登錄 / 登录</td></tr><tr><td>message</td><td>訊息</td><td>信息</td></tr><tr><td>network</td><td>網路</td><td>網絡 / 网络</td></tr><tr><td>online</td><td>線上</td><td>在線 / 在线</td></tr><tr><td>print</td><td>列印</td><td>打印</td></tr><tr><td>quality</td><td>品質</td><td>質量 / 质量</td></tr><tr><td>screen</td><td>螢幕</td><td>屏幕</td></tr><tr><td>search</td><td>搜尋</td><td>搜索</td></tr><tr><td>settings</td><td>設定</td><td>設置 / 设置</td></tr><tr><td>software</td><td>軟體</td><td>軟件 / 软件</td></tr><tr><td>text message</td><td>簡訊</td><td>短信</td></tr><tr><td>value for money</td><td>CP 值 / CP值</td><td>性價比 / 性价比</td></tr><tr><td>video</td><td>影片</td><td>視頻 / 视频</td></tr></tbody></table></div>
+    </section>
+    <section>
+      <h2>How platforms (TMS) are scored</h2>
+      <p>A translation management system does not itself translate: it routes work to MT engines and humans. Scoring a TMS therefore means running its built-in or default pre-translation path on the same corpus, inside a real account, and scoring what comes out — with the access path disclosed. Until that account-based run is executed, a TMS entry shows “test pending”. We do not borrow the score of an engine a TMS can connect to; connections are configuration, not output.</p>
+      <h2>Limitations, stated plainly</h2>
+      <ul>
+        <li>One run per engine per benchmark version; engines change without notice, so scores are dated and re-tested quarterly.</li>
+        <li>The corpus is 24 segments. It is designed to discriminate script and wording quality, not to grade literary translation.</li>
+        <li>LLM scores belong to the exact model version and prompt archived in the run — a different prompt is a different configuration.</li>
+        <li>Wording hits are machine flags from a published rule list; a human reviewer can dispute a flag, and disputes are resolved in the next run, never by editing a published one.</li>
+      </ul>
+      <h2>Cite this benchmark</h2>
+      <div class="box"><p style="margin:0">LocIndex, <i>Traditional Chinese Quality Benchmark</i>, v1.0 (2026-11-21). Corpus, method and run archive: hankloc.com/directory/methodology/ and hankloc.com/directory/benchmarks/zh-hant/2026-11-21/. Linking and citation are welcome; scores consumed programmatically should follow the <a href="/directory/api/docs/">API terms</a> (attribution required).</p></div>
+    </section>
+  </div>
+  
+  <section aria-label="Benchmark report by email">
+    <div class="wrap">
+      <div class="band">
+        <h2>Get the full benchmark dataset — and every future score — by email</h2>
+        <p>The public pages show the headline scores. The email edition carries the complete dataset behind them:</p>
+        <ul>
+          <li>The full per-segment benchmark dataset for every run (all 24 segments, every engine, every flag)</li>
+          <li>New-tool test alerts — the day a pending tool gets its first measured score</li>
+          <li>Quarterly re-test results, including score changes and what caused them</li>
+        </ul>
+        <p><a class="btn btn-yellow" href="https://z2idugagr.systeme.io/form-en-clean" target="_blank" rel="noopener">Get the benchmark report →</a></p>
+        <p style="font-size:.85rem">Free. One list, no spam, unsubscribe anytime. You will receive a confirmation email first.</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="cols2">
+      <div><b style="color:#fff">LocIndex</b> — the test-based index of localization technology.<br/>
+      <a href="/directory/">Tool directory</a> · <a href="/directory/benchmarks/">Benchmark archive</a> · <a href="/directory/methodology/">Methodology</a> · <a href="/directory/api/docs/">API</a></div>
+      <div>Services by HankLoc: <a href="/en/">Localization services</a> · <a href="/quote/">Quote &amp; free trial</a> · <a href="/checker/">Wording checker</a> · <a href="/retainer/">Retainers</a> · <a href="/blog/">Blog</a></div>
+    </div>
+    <div class="fine">LocIndex is published by HankLoc, which also sells localization services — that conflict is disclosed, and it is why every score here is computed by a published, deterministic method from archived raw outputs. Scores are measured, never sponsored. Tool links are plain official links: LocIndex earns no affiliate commission from them as of 2026-11-21. Pricing checked 2026-11-21 against official vendor pages; vendors change prices without notice.<br/>
+    Languages: <a href="/">EN (index)</a>｜<a href="/en/">Services EN</a>｜<a href="/ja/">日本語</a>｜<a href="/ko/">한국어</a>｜<a href="/de/">Deutsch</a>｜<a href="/fr/">Français</a>｜<a href="/es/">Español</a></div>
+  </div>
+</footer>
+<script src="/assets/widget.js" data-api="https://hankloc-ai-support.z2idugagr.workers.dev" defer></script>
+</body>
+</html>

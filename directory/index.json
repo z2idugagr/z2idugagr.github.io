@@ -1,0 +1,2255 @@
+{
+ "schema_version": "1.0",
+ "generated": "2026-11-21",
+ "benchmarks": [
+  {
+   "id": "zh-Hant",
+   "lang_label": "Traditional Chinese",
+   "name": "Traditional Chinese Quality Benchmark",
+   "status": "live",
+   "summary": "Measures how clean a tool's Traditional Chinese output is against Taiwan usage norms: simplified-character residue, mainland-China wording, and terminology consistency. Fixed 24-segment corpus (marketing, UI strings, game dialogue, customer support), deterministic scoring script, raw outputs archived per run.",
+   "version": "1.0"
+  },
+  {
+   "id": "zh-Hans",
+   "lang_label": "Simplified Chinese",
+   "name": "Simplified Chinese Quality Benchmark",
+   "status": "in-development",
+   "summary": "Architecture slot reserved. Corpus and rule set in preparation; no scores published until the first run is executed.",
+   "version": null
+  },
+  {
+   "id": "ja",
+   "lang_label": "Japanese",
+   "name": "Japanese Quality Benchmark",
+   "status": "planned",
+   "summary": "Architecture slot reserved in the Global Language Quality Benchmark Framework. No scores published.",
+   "version": null
+  },
+  {
+   "id": "ko",
+   "lang_label": "Korean",
+   "name": "Korean Quality Benchmark",
+   "status": "planned",
+   "summary": "Architecture slot reserved in the Global Language Quality Benchmark Framework. No scores published.",
+   "version": null
+  },
+  {
+   "id": "es",
+   "lang_label": "Spanish",
+   "name": "Spanish Quality Benchmark",
+   "status": "planned",
+   "summary": "Architecture slot reserved in the Global Language Quality Benchmark Framework. No scores published.",
+   "version": null
+  }
+ ],
+ "categories": [
+  {
+   "id": "website-localization",
+   "label": "Website Localization",
+   "blurb": "Plugins, proxies and services that translate a whole website and serve each language under its own URLs."
+  },
+  {
+   "id": "tms",
+   "label": "Translation Management Systems",
+   "blurb": "Platforms that manage localization work: translation memory, terminology, workflow, vendors and QA. They coordinate translation rather than generate it."
+  },
+  {
+   "id": "machine-translation",
+   "label": "Machine Translation Engines",
+   "blurb": "Engines that translate text directly — consumer services and per-character APIs."
+  },
+  {
+   "id": "ai-translation",
+   "label": "AI Translation & Localization Startups",
+   "blurb": "LLM-based and AI-first translation products: dubbing, live interpreting, instruction-following engines and new entrants."
+  },
+  {
+   "id": "subtitles-video",
+   "label": "Subtitles & Video Localization",
+   "blurb": "Transcription, subtitling, caption translation and video localization tools, from open-source editors to enterprise platforms."
+  },
+  {
+   "id": "qa-terminology",
+   "label": "Translation QA & Terminology",
+   "blurb": "Quality-assurance checkers, terminology management and content-governance tools that catch errors before delivery."
+  },
+  {
+   "id": "service-platforms",
+   "label": "Localization Service Platforms",
+   "blurb": "Marketplaces and service platforms where translation and localization work is ordered, staffed and delivered."
+  }
+ ],
+ "tools": [
+  {
+   "slug": "weglot",
+   "name": "Weglot",
+   "vendor": "Weglot",
+   "category": "website-localization",
+   "url": "https://www.weglot.com",
+   "pricing_url": "https://www.weglot.com/pricing-v3",
+   "tagline": "Website translation that serves each language under its own URLs, with an editing layer on top.",
+   "best_for": "Site owners who need a multilingual website live quickly, from personal sites to high-traffic stores (vendor's own tier positioning).",
+   "tags": [
+    "website",
+    "proxy",
+    "wordpress",
+    "shopify",
+    "seo",
+    "multilingual"
+   ],
+   "starting_price": "Free · paid from €15/mo",
+   "free_tier": "Free plan: 2,000 total words, 1 translated language",
+   "trial": "14-day free trial of paid plans, no credit card required",
+   "page": "/directory/weglot/",
+   "page_type": "review",
+   "test": {
+    "status": "pending"
+   },
+   "description": "Weglot detects a website's content, translates it, and serves each language version under its own URL structure with multilingual SEO metadata. A first machine-translated layer can be edited by humans in a visual editor, and professional translators can be ordered inside the product.",
+   "pricing_model": "Subscription by total translated words × languages. USD estimates shown by the vendor: $17 / $32 / $87 / $329 / $769. Annual billing gives 2 months free.",
+   "plans": [
+    {
+     "name": "Free",
+     "note": "2,000 total words · 1 language",
+     "price": "€0"
+    },
+    {
+     "name": "Starter",
+     "note": "10,000 total words · 1 language",
+     "price": "€15/mo"
+    },
+    {
+     "name": "Business",
+     "note": "50,000 total words · 3 languages",
+     "price": "€29/mo"
+    },
+    {
+     "name": "Pro",
+     "note": "200,000 total words · 5 languages",
+     "price": "€79/mo"
+    },
+    {
+     "name": "Advanced",
+     "note": "1,000,000 total words · 10 languages",
+     "price": "€299/mo"
+    },
+    {
+     "name": "Extended",
+     "note": "5,000,000 total words · 20 languages",
+     "price": "€699/mo"
+    },
+    {
+     "name": "Enterprise",
+     "note": "Custom terms, SSO, SLA",
+     "price": "On request"
+    }
+   ],
+   "affiliate": {
+    "status": "program-verified",
+    "program": "Weglot Affiliate Program",
+    "evidence": "https://www.weglot.com/affiliate-program/terms",
+    "joined": false,
+    "url": null
+   }
+  },
+  {
+   "slug": "crowdin",
+   "name": "Crowdin",
+   "vendor": "Crowdin",
+   "category": "tms",
+   "url": "https://crowdin.com",
+   "pricing_url": "https://crowdin.com/pricing",
+   "tagline": "Localization platform for software and games, with unlimited translator seats on every plan.",
+   "best_for": "Indie developers and open-source projects (Free/Pro) up to multi-product organizations (Team+/Business), per the vendor's plan structure.",
+   "tags": [
+    "tms",
+    "software",
+    "games",
+    "open-source",
+    "strings",
+    "integrations"
+   ],
+   "starting_price": "Free · paid from $50/mo",
+   "free_tier": "Free plan: 60,000 hosted words, 1 private project, unlimited translators",
+   "trial": "14-day free trial of Team; 30-day trial of Enterprise (vendor FAQ)",
+   "page": "/directory/crowdin/",
+   "page_type": "review",
+   "test": {
+    "status": "pending"
+   },
+   "description": "Crowdin is a cloud localization platform for software, apps, games and documentation. Teams manage strings and files, translation memory and glossaries, invite translators or crowdsource, and connect repositories and design tools through integrations.",
+   "pricing_model": "Subscription metered by hosted words and manager seats; translator seats unlimited on every plan. Prices exclude VAT/GST.",
+   "plans": [
+    {
+     "name": "Free",
+     "note": "60,000 hosted words · 1 private project · unlimited translators",
+     "price": "$0"
+    },
+    {
+     "name": "Pro",
+     "note": "From $59 billed monthly",
+     "price": "From $50/mo billed annually"
+    },
+    {
+     "name": "Team",
+     "note": "From $179 billed monthly · manager seats",
+     "price": "From $150/mo billed annually"
+    },
+    {
+     "name": "Team+",
+     "note": "Crowdin Enterprise · annual billing only",
+     "price": "From $450/mo"
+    },
+    {
+     "name": "Business",
+     "note": "SSO, SCIM, SLA · sales-led",
+     "price": "Custom"
+    }
+   ],
+   "affiliate": {
+    "status": "unknown"
+   }
+  },
+  {
+   "slug": "phrase",
+   "name": "Phrase",
+   "vendor": "Phrase",
+   "category": "tms",
+   "url": "https://phrase.com",
+   "pricing_url": "https://phrase.com/pricing",
+   "tagline": "Enterprise localization suite combining a full TMS with software-string management.",
+   "best_for": "Freelancers and LSPs (Freelancer/Professional), product teams (Software UI/UX), and enterprises running multi-vendor programs (Team and above).",
+   "tags": [
+    "tms",
+    "enterprise",
+    "cat",
+    "memsource",
+    "strings",
+    "lsp"
+   ],
+   "starting_price": "From $27/mo billed annually",
+   "free_tier": "No free plan — 14-day trial only",
+   "trial": "14-day free trial of the platform",
+   "page": "/directory/phrase/",
+   "page_type": "review",
+   "test": {
+    "status": "pending"
+   },
+   "description": "Phrase is a localization platform suite (Phrase TMS, formerly Memsource, plus Phrase Strings) covering CAT editing, translation memory, term bases, QA, workflow automation and vendor management for software and business content.",
+   "pricing_model": "Annual subscription by product capacities (processed words, managed words, MT units) and seats.",
+   "plans": [
+    {
+     "name": "Freelancer",
+     "note": "1 TMS seat · core products",
+     "price": "$27/mo billed annually"
+    },
+    {
+     "name": "Professional",
+     "note": "For LSPs · unlimited TMS seats",
+     "price": "$525/mo billed annually"
+    },
+    {
+     "name": "Software UI/UX",
+     "note": "For product teams · Strings seats included",
+     "price": "$525/mo billed annually"
+    },
+    {
+     "name": "Team",
+     "note": "Unlimited TMS seats · higher capacities",
+     "price": "$1,245/mo billed annually"
+    },
+    {
+     "name": "Business / Enterprise",
+     "note": "SSO, advanced capacities · sales-led",
+     "price": "Custom"
+    }
+   ],
+   "affiliate": {
+    "status": "program-verified",
+    "program": "Phrase Partner Programme",
+    "evidence": "https://phrase.com/partners-inquiries/",
+    "joined": false,
+    "url": null
+   }
+  },
+  {
+   "slug": "lokalise",
+   "name": "Lokalise",
+   "vendor": "Lokalise",
+   "category": "tms",
+   "url": "https://lokalise.com",
+   "pricing_url": "https://lokalise.com/pricing",
+   "tagline": "TMS built around developer and design workflows, with in-context editing.",
+   "best_for": "Product and marketing teams localizing apps and websites who want strong design-tool and repository integrations.",
+   "tags": [
+    "tms",
+    "apps",
+    "figma",
+    "github",
+    "design",
+    "workflow"
+   ],
+   "starting_price": "From $149/mo billed annually",
+   "free_tier": "No free plan — 14-day trial only (free for qualifying open-source nonprofits on request)",
+   "trial": "14-day free trial, no credit card required",
+   "page": "/directory/lokalise/",
+   "page_type": "review",
+   "test": {
+    "status": "pending"
+   },
+   "description": "Lokalise is a translation management system for apps, websites, games and marketing content, with a collaborative editor, translation memory, glossaries, in-context previews, screenshots, and 60+ integrations including GitHub, Figma and content platforms.",
+   "pricing_model": "Subscription by tier, metered by allowances such as hosted words, projects, languages and seats.",
+   "plans": [
+    {
+     "name": "Explorer",
+     "note": "Essentials for getting started",
+     "price": "$149/mo billed annually"
+    },
+    {
+     "name": "Growth",
+     "note": "Automation and workflow control",
+     "price": "$379/mo billed annually"
+    },
+    {
+     "name": "Advanced",
+     "note": "Multi-product workflows",
+     "price": "$1,049/mo billed annually"
+    },
+    {
+     "name": "Enterprise",
+     "note": "Custom security and SLA",
+     "price": "Custom"
+    }
+   ],
+   "affiliate": {
+    "status": "program-verified",
+    "program": "Lokalise Partner Program",
+    "evidence": "https://lokalise.com/partners/",
+    "joined": false,
+    "url": null
+   }
+  },
+  {
+   "slug": "smartling",
+   "name": "Smartling",
+   "vendor": "Smartling",
+   "category": "tms",
+   "url": "https://www.smartling.com",
+   "pricing_url": "https://www.smartling.com/plans",
+   "tagline": "Enterprise TMS bundled with buy-it-here translation services, priced per word.",
+   "best_for": "Enterprises that want the platform and the translation services from one vendor, including regulated, high-volume programs.",
+   "tags": [
+    "tms",
+    "enterprise",
+    "services",
+    "human-translation",
+    "per-word"
+   ],
+   "starting_price": "Free to start · services from $0.0075/word",
+   "free_tier": "Core tier is 'free to start' (vendor plans page); translation services are metered per word",
+   "trial": "Core tier free to start",
+   "page": "/directory/smartling/",
+   "page_type": "review",
+   "test": {
+    "status": "pending"
+   },
+   "description": "Smartling is an enterprise translation management platform combined with a language-services business: customers can run their own translators or buy machine, AI-assisted and human translation per word inside the same system.",
+   "pricing_model": "Platform tiers plus per-word service pricing; upper platform tiers are sales-led.",
+   "plans": [
+    {
+     "name": "Core",
+     "note": "Basic workflow and project management · TM for 180 days",
+     "price": "Free to start"
+    },
+    {
+     "name": "Machine Translation services",
+     "note": "Per-word service pricing",
+     "price": "From $0.0075/word"
+    },
+    {
+     "name": "AI Translation services",
+     "note": "Per-word service pricing",
+     "price": "From $0.06/word"
+    },
+    {
+     "name": "AI + Human Translation",
+     "note": "Per-word service pricing",
+     "price": "From $0.12/word"
+    },
+    {
+     "name": "Human Translation",
+     "note": "Per-word service pricing",
+     "price": "From $0.20/word"
+    },
+    {
+     "name": "Higher platform tiers",
+     "note": "Prices not published",
+     "price": "Custom"
+    }
+   ],
+   "affiliate": {
+    "status": "unknown"
+   }
+  },
+  {
+   "slug": "deepl",
+   "name": "DeepL",
+   "vendor": "DeepL",
+   "category": "machine-translation",
+   "url": "https://www.deepl.com",
+   "pricing_url": "https://www.deepl.com/en/pro",
+   "tagline": "Machine translation service with a strong reputation in European languages, plus an API.",
+   "best_for": "Individuals and teams who want high-quality European-language machine translation and document translation with data-protection guarantees.",
+   "tags": [
+    "mt",
+    "api",
+    "documents",
+    "european-languages",
+    "glossary"
+   ],
+   "starting_price": "Free · paid from €7.49/mo",
+   "free_tier": "Free version: 50,000 characters/month, 1 file translation/month",
+   "trial": "30-day free trial of Individual and Team plans",
+   "page": "/directory/deepl/",
+   "page_type": "review",
+   "test": {
+    "status": "pending"
+   },
+   "description": "DeepL is a machine translation service known for European-language quality, offered as a web/app translator, document translation, and an API. Paid plans add glossaries, tone control, larger character allowances and a no-training-on-your-data commitment.",
+   "pricing_model": "Subscription per user with monthly character allowances; prices shown in EUR on the vendor's pricing page.",
+   "plans": [
+    {
+     "name": "Free",
+     "note": "50,000 characters/month",
+     "price": "€0"
+    },
+    {
+     "name": "Individual",
+     "note": "300,000 characters/month · 3 file translations/month · 1 glossary",
+     "price": "€7.49/mo billed annually"
+    },
+    {
+     "name": "Team",
+     "note": "1,000,000 characters/user/month · 20 file translations/month · SSO",
+     "price": "€24.99/user/mo billed annually"
+    },
+    {
+     "name": "Business / Enterprise",
+     "note": "Unlimited characters (per vendor terms) · custom options",
+     "price": "Higher / custom"
+    }
+   ],
+   "affiliate": {
+    "status": "unknown"
+   }
+  },
+  {
+   "slug": "google-translate",
+   "name": "Google Translate",
+   "vendor": "Google",
+   "category": "machine-translation",
+   "url": "https://translate.google.com",
+   "pricing_url": "https://cloud.google.com/translate/pricing",
+   "tagline": "The default machine translation engine — free on the web, per-character pricing on the API.",
+   "best_for": "High-volume, cost-sensitive translation via API, and everyday web translation where Traditional Chinese output will be human-reviewed.",
+   "tags": [
+    "mt",
+    "api",
+    "free",
+    "google",
+    "nmt",
+    "high-volume"
+   ],
+   "starting_price": "Free · API $20 per million characters",
+   "free_tier": "Consumer translator is free; Cloud Translation includes 500,000 characters/month free",
+   "trial": "500,000 characters/month free on the API",
+   "page": "/directory/google-translate/",
+   "page_type": "review",
+   "test": {
+    "status": "tested",
+    "score": 89,
+    "grade": "B",
+    "purity": 99.0,
+    "wording": 82.3,
+    "terminology": 83.3,
+    "benchmark": "Traditional Chinese Quality Benchmark",
+    "benchmark_version": "1.0",
+    "run_date": "2026-11-21"
+   },
+   "description": "Google Translate is the world's most-used machine translation service, available as a free web/app translator and as Cloud Translation API (Basic NMT and Advanced, including LLM-based translation) priced per character.",
+   "pricing_model": "Consumer product is free; the API is metered per character with a monthly free allowance.",
+   "plans": [
+    {
+     "name": "Consumer (web/app)",
+     "note": "The endpoint family used in our benchmark run",
+     "price": "Free"
+    },
+    {
+     "name": "Cloud Translation — NMT",
+     "note": "First 500,000 characters/month free (as a monthly credit)",
+     "price": "$20 per million characters"
+    },
+    {
+     "name": "Cloud Translation — Translation LLM",
+     "note": "$10 per million input + $10 per million output characters",
+     "price": "$10 + $10 per million characters"
+    }
+   ],
+   "affiliate": {
+    "status": "unknown"
+   }
+  },
+  {
+   "slug": "microsoft-translator",
+   "name": "Microsoft Translator",
+   "vendor": "Microsoft",
+   "category": "machine-translation",
+   "url": "https://azure.microsoft.com/en-us/pricing/details/cognitive-services/translator/",
+   "pricing_url": "https://azure.microsoft.com/en-us/pricing/details/cognitive-services/translator/",
+   "tagline": "Azure's translation API with the largest free tier in its class.",
+   "best_for": "Microsoft-stack organizations and API users who want a large free monthly allowance before paying per character.",
+   "tags": [
+    "mt",
+    "api",
+    "azure",
+    "microsoft",
+    "custom-models",
+    "documents"
+   ],
+   "starting_price": "Free tier 2M chars/mo · then $10 per million characters",
+   "free_tier": "F0 free tier: 2 million characters/month free",
+   "trial": "F0 free tier (2M characters/month)",
+   "page": "/directory/microsoft-translator/",
+   "page_type": "review",
+   "test": {
+    "status": "pending"
+   },
+   "description": "Microsoft Translator (Azure Translator in Foundry Tools) is Microsoft's machine translation API: text and document translation, language detection, transliteration and custom models trained on your own parallel data.",
+   "pricing_model": "Per-character API pricing with a generous free tier; commitment tiers lower the per-million rate at volume.",
+   "plans": [
+    {
+     "name": "F0 — Free",
+     "note": "Standard + custom translation training, 2M characters/month",
+     "price": "$0"
+    },
+    {
+     "name": "S1 — Pay as you go",
+     "note": "Text translation",
+     "price": "$10 per million characters"
+    },
+    {
+     "name": "S1 — Document translation",
+     "note": "Per million characters",
+     "price": "$15 per million characters"
+    },
+    {
+     "name": "S1 — Custom translation",
+     "note": "Per million characters",
+     "price": "$40 per million characters"
+    }
+   ],
+   "affiliate": {
+    "status": "unknown"
+   }
+  },
+  {
+   "slug": "gemini",
+   "name": "Gemini",
+   "vendor": "Google",
+   "category": "ai-translation",
+   "url": "https://ai.google.dev",
+   "pricing_url": "https://ai.google.dev",
+   "tagline": "Google's LLM, used as an instruction-following translation engine via API.",
+   "best_for": "Teams already using LLM APIs who want translation quality that follows instructions (glossaries, tone) without a separate MT contract.",
+   "tags": [
+    "llm",
+    "ai",
+    "api",
+    "google",
+    "prompt",
+    "glossary"
+   ],
+   "starting_price": "Free tier · paid token-based",
+   "free_tier": "Free tier available through Google AI Studio / Gemini API",
+   "trial": "Free tier available",
+   "page": "/directory/gemini/",
+   "page_type": "review",
+   "test": {
+    "status": "tested",
+    "score": 99,
+    "grade": "A",
+    "purity": 100.0,
+    "wording": 97.4,
+    "terminology": 100.0,
+    "benchmark": "Traditional Chinese Quality Benchmark",
+    "benchmark_version": "1.0",
+    "run_date": "2026-11-21"
+   },
+   "description": "Gemini is Google's large language model family, accessible through Google AI Studio and the Gemini API. Used as a translation engine, it takes natural-language instructions — target variety, glossary and tone — in the same call as the source text.",
+   "pricing_model": "Token-based API pricing with a free tier.",
+   "plans": [
+    {
+     "name": "API free tier",
+     "note": "Rate-limited; the tier used for our benchmark run",
+     "price": "Free"
+    },
+    {
+     "name": "API paid tiers",
+     "note": "Per-token pricing on Google's official pricing page",
+     "price": "Token-based"
+    }
+   ]
+  },
+  {
+   "slug": "mymemory",
+   "name": "MyMemory",
+   "vendor": "Translated",
+   "category": "machine-translation",
+   "url": "https://mymemory.translated.net",
+   "pricing_url": "https://mymemory.translated.net/doc/usagelimits.php",
+   "tagline": "Translation-memory API with a free daily quota, by Translated.",
+   "best_for": "Developers who need a free, low-volume translation-memory API and can work within a small daily quota.",
+   "tags": [
+    "mt",
+    "api",
+    "translation-memory",
+    "free",
+    "translated"
+   ],
+   "starting_price": "Free (5,000 chars/day)",
+   "free_tier": "Free anonymous API usage: 5,000 characters/day (official usage-limits document)",
+   "trial": "Free daily quota",
+   "page": "/directory/mymemory/",
+   "page_type": "review",
+   "test": {
+    "status": "pending"
+   },
+   "description": "MyMemory is a translation-memory service by Translated: it searches a large archive of human translations and falls back to machine translation, exposed through a free API with daily usage limits and paid plans via RapidAPI.",
+   "pricing_model": "Free daily quota; paid volume through RapidAPI.",
+   "plans": [
+    {
+     "name": "Free API",
+     "note": "Anonymous usage, word-weighted",
+     "price": "5,000 chars/day free"
+    },
+    {
+     "name": "RapidAPI plans",
+     "note": "For larger volumes",
+     "price": "Paid tiers"
+    }
+   ]
+  },
+  {
+   "slug": "groq",
+   "name": "Groq",
+   "vendor": "Groq",
+   "category": "ai-translation",
+   "url": "https://groq.com",
+   "pricing_url": "https://groq.com",
+   "tagline": "High-speed LLM inference API — openai/gpt-oss-120b, benchmarked here as a translation engine.",
+   "best_for": "Developers who want LLM translation through a fast API with a free tier, and can work with open-weight models.",
+   "tags": [
+    "llm",
+    "ai",
+    "api",
+    "open-weight",
+    "inference",
+    "free-tier"
+   ],
+   "starting_price": "Free tier · paid token-based",
+   "free_tier": "Free tier available",
+   "trial": "Free tier available",
+   "page": "/directory/groq/",
+   "page_type": "review",
+   "test": {
+    "status": "tested",
+    "score": 96,
+    "grade": "A",
+    "purity": 100.0,
+    "wording": 91.8,
+    "terminology": 97.2,
+    "benchmark": "Traditional Chinese Quality Benchmark",
+    "benchmark_version": "1.0",
+    "run_date": "2026-11-21"
+   },
+   "description": "Groq is an AI inference platform that serves open and proprietary LLMs through an API, including a free tier. In this benchmark its hosted openai/gpt-oss-120b model was run as a translation engine on the same corpus and the same neutral prompt as every other AI engine.",
+   "pricing_model": "API with a free tier; paid usage is token-based (see Groq's official site for current rates).",
+   "plans": [
+    {
+     "name": "API free tier",
+     "price": "Free",
+     "note": "Rate-limited; the tier used for our benchmark run"
+    },
+    {
+     "name": "API paid tiers",
+     "price": "Token-based",
+     "note": "Per-token pricing on the vendor's site"
+    }
+   ]
+  },
+  {
+   "slug": "openrouter",
+   "name": "OpenRouter",
+   "vendor": "OpenRouter",
+   "category": "ai-translation",
+   "url": "https://openrouter.ai",
+   "pricing_url": "https://openrouter.ai",
+   "tagline": "A single API routing to many LLMs, including free-tier models.",
+   "best_for": "Developers who want to compare or switch LLM translation engines through one API.",
+   "tags": [
+    "llm",
+    "ai",
+    "api",
+    "router",
+    "multi-model"
+   ],
+   "starting_price": "Free models · paid token-based",
+   "free_tier": "Free models available",
+   "trial": "Free models available",
+   "page": "/directory/openrouter/",
+   "page_type": "review",
+   "test": {
+    "status": "pending"
+   },
+   "description": "OpenRouter provides one API interface to a large catalog of large language models from many providers, including free-tier models, with per-model token pricing.",
+   "pricing_model": "Token-based, varies by model; free models available.",
+   "plans": [
+    {
+     "name": "Free models",
+     "price": "Free",
+     "note": "Rate-limited"
+    },
+    {
+     "name": "Paid models",
+     "price": "Token-based",
+     "note": "Price varies by model"
+    }
+   ]
+  },
+  {
+   "slug": "translatepress",
+   "name": "TranslatePress",
+   "vendor": "TranslatePress",
+   "category": "website-localization",
+   "url": "https://translatepress.com/",
+   "pricing_url": "https://translatepress.com/pricing/",
+   "tagline": "WordPress plugin for translating pages, themes and WooCommerce content in a front-end visual editor.",
+   "best_for": "",
+   "tags": [],
+   "starting_price": "Pricing on the official site",
+   "free_tier": "—",
+   "trial": "—",
+   "page": "/directory/translatepress/",
+   "page_type": "profile",
+   "test": {
+    "status": "pending"
+   },
+   "affiliate": {
+    "status": "program-verified",
+    "program": "TranslatePress Affiliate Program",
+    "evidence": "https://translatepress.com/affiliate-program/",
+    "joined": false,
+    "url": null
+   }
+  },
+  {
+   "slug": "wpml",
+   "name": "WPML",
+   "vendor": "WPML",
+   "category": "website-localization",
+   "url": "https://wpml.org/",
+   "pricing_url": "https://app.wpml.org/purchase",
+   "tagline": "WordPress plugin that turns a single WordPress site multilingual, with a translation editor, string translation and translation management.",
+   "best_for": "",
+   "tags": [],
+   "starting_price": "Pricing on the official site",
+   "free_tier": "—",
+   "trial": "—",
+   "page": "/directory/wpml/",
+   "page_type": "profile",
+   "test": {
+    "status": "pending"
+   },
+   "affiliate": {
+    "status": "unknown"
+   }
+  },
+  {
+   "slug": "conveythis",
+   "name": "ConveyThis",
+   "vendor": "ConveyThis",
+   "category": "website-localization",
+   "url": "https://www.conveythis.com/",
+   "pricing_url": "https://www.conveythis.com/pricing",
+   "tagline": "Translates an entire website via a JavaScript snippet or CMS plugins, with editable translations.",
+   "best_for": "",
+   "tags": [],
+   "starting_price": "Pricing on the official site",
+   "free_tier": "—",
+   "trial": "—",
+   "page": "/directory/conveythis/",
+   "page_type": "profile",
+   "test": {
+    "status": "pending"
+   },
+   "affiliate": {
+    "status": "program-verified",
+    "program": "ConveyThis Affiliate Program",
+    "evidence": "https://www.conveythis.com/conveythis-affiliate-program",
+    "joined": false,
+    "url": null
+   }
+  },
+  {
+   "slug": "linguise",
+   "name": "Linguise",
+   "vendor": "Linguise",
+   "category": "website-localization",
+   "url": "https://www.linguise.com/",
+   "pricing_url": "https://www.linguise.com/yearly-prices/",
+   "tagline": "Cloud automatic translation service using neural/AI translation, with a front-end editor and SEO URL translation.",
+   "best_for": "",
+   "tags": [],
+   "starting_price": "Pricing on the official site",
+   "free_tier": "—",
+   "trial": "—",
+   "page": "/directory/linguise/",
+   "page_type": "profile",
+   "test": {
+    "status": "pending"
+   },
+   "affiliate": {
+    "status": "unknown"
+   }
+  },
+  {
+   "slug": "gtranslate",
+   "name": "GTranslate",
+   "vendor": "GTranslate",
+   "category": "website-localization",
+   "url": "https://gtranslate.io/",
+   "pricing_url": "https://gtranslate.io/#pricing",
+   "tagline": "Automatically translates HTML websites into many languages; paid tiers serve indexable language URLs through a translation proxy.",
+   "best_for": "",
+   "tags": [],
+   "starting_price": "Pricing on the official site",
+   "free_tier": "—",
+   "trial": "—",
+   "page": "/directory/gtranslate/",
+   "page_type": "profile",
+   "test": {
+    "status": "pending"
+   },
+   "affiliate": {
+    "status": "unknown"
+   }
+  },
+  {
+   "slug": "polylang",
+   "name": "Polylang",
+   "vendor": "Polylang",
+   "category": "website-localization",
+   "url": "https://polylang.pro/",
+   "pricing_url": null,
+   "tagline": "WordPress plugin that stores each language's content as native WordPress posts and pages, with a language switcher.",
+   "best_for": "",
+   "tags": [],
+   "starting_price": "No public pricing page",
+   "free_tier": "—",
+   "trial": "—",
+   "page": "/directory/polylang/",
+   "page_type": "profile",
+   "test": {
+    "status": "pending"
+   },
+   "affiliate": {
+    "status": "unknown"
+   }
+  },
+  {
+   "slug": "multilingualpress",
+   "name": "MultilingualPress",
+   "vendor": "MultilingualPress",
+   "category": "website-localization",
+   "url": "https://multilingualpress.org/",
+   "pricing_url": null,
+   "tagline": "WordPress Multisite plugin: each language is its own site, connected through a content-relations layer.",
+   "best_for": "",
+   "tags": [],
+   "starting_price": "No public pricing page",
+   "free_tier": "—",
+   "trial": "—",
+   "page": "/directory/multilingualpress/",
+   "page_type": "profile",
+   "test": {
+    "status": "pending"
+   },
+   "affiliate": {
+    "status": "unknown"
+   }
+  },
+  {
+   "slug": "bablic",
+   "name": "Bablic",
+   "vendor": "Bablic",
+   "category": "website-localization",
+   "url": "https://bablic.com/",
+   "pricing_url": "https://bablic.com/pricing",
+   "tagline": "Translates websites with one line of code, with a visual in-context editor, translation memory and multilingual SEO.",
+   "best_for": "",
+   "tags": [],
+   "starting_price": "Pricing on the official site",
+   "free_tier": "—",
+   "trial": "—",
+   "page": "/directory/bablic/",
+   "page_type": "profile",
+   "test": {
+    "status": "pending"
+   },
+   "affiliate": {
+    "status": "unknown"
+   }
+  },
+  {
+   "slug": "localize",
+   "name": "Localize",
+   "vendor": "Localize",
+   "category": "website-localization",
+   "url": "https://localizejs.com/",
+   "pricing_url": "https://zh.localizejs.com/pricing",
+   "tagline": "Lightweight JavaScript snippet that detects page content, delivers translations, and supports in-context review and multilingual SEO.",
+   "best_for": "",
+   "tags": [],
+   "starting_price": "Pricing on the official site",
+   "free_tier": "—",
+   "trial": "—",
+   "page": "/directory/localize/",
+   "page_type": "profile",
+   "test": {
+    "status": "pending"
+   },
+   "affiliate": {
+    "status": "unknown"
+   }
+  },
+  {
+   "slug": "transifex",
+   "name": "Transifex",
+   "vendor": "Transifex",
+   "category": "tms",
+   "url": "https://www.transifex.com/",
+   "pricing_url": "https://www.transifex.com/pricing",
+   "tagline": "AI-driven translation management system for continuous localization of software, websites and documents, with translation memory, glossaries and a quality index; includes Transifex Live for websites.",
+   "best_for": "",
+   "tags": [],
+   "starting_price": "Pricing on the official site",
+   "free_tier": "—",
+   "trial": "—",
+   "page": "/directory/transifex/",
+   "page_type": "profile",
+   "test": {
+    "status": "pending"
+   },
+   "affiliate": {
+    "status": "program-verified",
+    "program": "Transifex Partner / Referral Program",
+    "evidence": "https://go.transifex.com/partners-program",
+    "joined": false,
+    "url": null
+   }
+  },
+  {
+   "slug": "poeditor",
+   "name": "POEditor",
+   "vendor": "POEditor",
+   "category": "tms",
+   "url": "https://poeditor.com/",
+   "pricing_url": "https://poeditor.com/pricing/",
+   "tagline": "Developer-oriented localization platform managing translation strings for websites, apps and games via API and Git integrations.",
+   "best_for": "",
+   "tags": [],
+   "starting_price": "Pricing on the official site",
+   "free_tier": "—",
+   "trial": "—",
+   "page": "/directory/poeditor/",
+   "page_type": "profile",
+   "test": {
+    "status": "pending"
+   },
+   "affiliate": {
+    "status": "unknown"
+   }
+  },
+  {
+   "slug": "weblate",
+   "name": "Weblate",
+   "vendor": "Weblate",
+   "category": "tms",
+   "url": "https://weblate.org/",
+   "pricing_url": "https://weblate.org/en/hosting/",
+   "tagline": "Open-source, Git-native continuous localization platform — manage translation files, review and checks in the browser; self-hosted or official hosting.",
+   "best_for": "",
+   "tags": [],
+   "starting_price": "Pricing on the official site",
+   "free_tier": "—",
+   "trial": "—",
+   "page": "/directory/weblate/",
+   "page_type": "profile",
+   "test": {
+    "status": "pending"
+   },
+   "affiliate": {
+    "status": "unknown"
+   }
+  },
+  {
+   "slug": "tolgee",
+   "name": "Tolgee",
+   "vendor": "Tolgee",
+   "category": "tms",
+   "url": "https://tolgee.io/",
+   "pricing_url": "https://tolgee.io/pricing",
+   "tagline": "Open-source localization platform with in-context translation (edit text by clicking it in the running app), AI/machine translation, CLI and API.",
+   "best_for": "",
+   "tags": [],
+   "starting_price": "Pricing on the official site",
+   "free_tier": "—",
+   "trial": "—",
+   "page": "/directory/tolgee/",
+   "page_type": "profile",
+   "test": {
+    "status": "pending"
+   },
+   "affiliate": {
+    "status": "unknown"
+   }
+  },
+  {
+   "slug": "simplelocalize",
+   "name": "SimpleLocalize",
+   "vendor": "SimpleLocalize",
+   "category": "tms",
+   "url": "https://simplelocalize.io/",
+   "pricing_url": "https://simplelocalize.io/pricing",
+   "tagline": "Translation management platform using translation keys for software and website translation, with a web editor, auto-translation and translation memory.",
+   "best_for": "",
+   "tags": [],
+   "starting_price": "Pricing on the official site",
+   "free_tier": "—",
+   "trial": "—",
+   "page": "/directory/simplelocalize/",
+   "page_type": "profile",
+   "test": {
+    "status": "pending"
+   },
+   "affiliate": {
+    "status": "unknown"
+   }
+  },
+  {
+   "slug": "lingohub",
+   "name": "LingoHub",
+   "vendor": "LingoHub",
+   "category": "tms",
+   "url": "https://lingohub.com/",
+   "pricing_url": "https://lingohub.com/pricing",
+   "tagline": "Translation management platform combining glossaries, translation memory, style guides and quality checks into a delivery workflow for software teams.",
+   "best_for": "",
+   "tags": [],
+   "starting_price": "Pricing on the official site",
+   "free_tier": "—",
+   "trial": "—",
+   "page": "/directory/lingohub/",
+   "page_type": "profile",
+   "test": {
+    "status": "pending"
+   },
+   "affiliate": {
+    "status": "unknown"
+   }
+  },
+  {
+   "slug": "amazon-translate",
+   "name": "Amazon Translate",
+   "vendor": "Amazon Translate",
+   "category": "machine-translation",
+   "url": "https://aws.amazon.com/translate/",
+   "pricing_url": "https://aws.amazon.com/translate/pricing",
+   "tagline": "AWS neural machine translation service with real-time and batch text/document translation APIs.",
+   "best_for": "",
+   "tags": [],
+   "starting_price": "Pricing on the official site",
+   "free_tier": "—",
+   "trial": "—",
+   "page": "/directory/amazon-translate/",
+   "page_type": "profile",
+   "test": {
+    "status": "pending"
+   },
+   "affiliate": {
+    "status": "unknown"
+   }
+  },
+  {
+   "slug": "yandex-translate",
+   "name": "Yandex Translate",
+   "vendor": "Yandex Translate",
+   "category": "machine-translation",
+   "url": "https://cloud.yandex.com/en/services/translate",
+   "pricing_url": null,
+   "tagline": "Yandex Cloud machine translation API, plus a consumer website for text, image and document translation.",
+   "best_for": "",
+   "tags": [],
+   "starting_price": "No public pricing page",
+   "free_tier": "—",
+   "trial": "—",
+   "page": "/directory/yandex-translate/",
+   "page_type": "profile",
+   "test": {
+    "status": "pending"
+   },
+   "affiliate": {
+    "status": "unknown"
+   }
+  },
+  {
+   "slug": "modernmt",
+   "name": "ModernMT",
+   "vendor": "ModernMT",
+   "category": "machine-translation",
+   "url": "https://www.modernmt.com/",
+   "pricing_url": "https://www.modernmt.com/pricing",
+   "tagline": "Adaptive machine translation engine that learns from translator corrections in real time, via API and CAT-tool plugins.",
+   "best_for": "",
+   "tags": [],
+   "starting_price": "Pricing on the official site",
+   "free_tier": "—",
+   "trial": "—",
+   "page": "/directory/modernmt/",
+   "page_type": "profile",
+   "test": {
+    "status": "pending"
+   },
+   "affiliate": {
+    "status": "unknown"
+   }
+  },
+  {
+   "slug": "systran",
+   "name": "SYSTRAN",
+   "vendor": "SYSTRAN",
+   "category": "machine-translation",
+   "url": "https://www.systransoft.com/",
+   "pricing_url": "https://www.systransoft.com/pricing/developers/",
+   "tagline": "Machine translation for cloud, API, private cloud and on-premise servers, with domain dictionaries and translation memory.",
+   "best_for": "",
+   "tags": [],
+   "starting_price": "Pricing on the official site",
+   "free_tier": "—",
+   "trial": "—",
+   "page": "/directory/systran/",
+   "page_type": "profile",
+   "test": {
+    "status": "pending"
+   },
+   "affiliate": {
+    "status": "unknown"
+   }
+  },
+  {
+   "slug": "lingvanex",
+   "name": "Lingvanex",
+   "vendor": "Lingvanex",
+   "category": "machine-translation",
+   "url": "https://lingvanex.com/",
+   "pricing_url": null,
+   "tagline": "Cloud translation API, on-premise translation server and desktop translation software.",
+   "best_for": "",
+   "tags": [],
+   "starting_price": "No public pricing page",
+   "free_tier": "—",
+   "trial": "—",
+   "page": "/directory/lingvanex/",
+   "page_type": "profile",
+   "test": {
+    "status": "pending"
+   },
+   "affiliate": {
+    "status": "unknown"
+   }
+  },
+  {
+   "slug": "baidu-translate-api",
+   "name": "Baidu Translate API",
+   "vendor": "Baidu Translate API",
+   "category": "machine-translation",
+   "url": "https://fanyi-api.baidu.com/",
+   "pricing_url": null,
+   "tagline": "Baidu Translate's open API platform for developers.",
+   "best_for": "",
+   "tags": [],
+   "starting_price": "No public pricing page",
+   "free_tier": "—",
+   "trial": "—",
+   "page": "/directory/baidu-translate-api/",
+   "page_type": "profile",
+   "test": {
+    "status": "pending"
+   },
+   "affiliate": {
+    "status": "unknown"
+   }
+  },
+  {
+   "slug": "naver-papago",
+   "name": "Naver Papago",
+   "vendor": "Naver Papago",
+   "category": "machine-translation",
+   "url": "https://papago.naver.com",
+   "pricing_url": null,
+   "tagline": "Naver's multilingual machine translation service for text, images, voice, documents and websites; free for consumers.",
+   "best_for": "",
+   "tags": [],
+   "starting_price": "No public pricing page",
+   "free_tier": "—",
+   "trial": "—",
+   "page": "/directory/naver-papago/",
+   "page_type": "profile",
+   "test": {
+    "status": "pending"
+   },
+   "affiliate": {
+    "status": "unknown"
+   }
+  },
+  {
+   "slug": "elevenlabs-dubbing",
+   "name": "ElevenLabs Dubbing",
+   "vendor": "ElevenLabs Dubbing",
+   "category": "ai-translation",
+   "url": "https://elevenlabs.io/dubbing",
+   "pricing_url": "https://elevenlabs.io/pricing",
+   "tagline": "Automatically dubs video and audio into other languages while preserving the original speaker's voice characteristics.",
+   "best_for": "",
+   "tags": [],
+   "starting_price": "Pricing on the official site",
+   "free_tier": "—",
+   "trial": "—",
+   "page": "/directory/elevenlabs-dubbing/",
+   "page_type": "profile",
+   "test": {
+    "status": "pending"
+   },
+   "affiliate": {
+    "status": "program-verified",
+    "program": "ElevenLabs Creator Affiliate Program",
+    "evidence": "https://elevenlabs.io/affiliates",
+    "joined": false,
+    "url": null
+   }
+  },
+  {
+   "slug": "heygen",
+   "name": "HeyGen",
+   "vendor": "HeyGen",
+   "category": "ai-translation",
+   "url": "https://www.heygen.com/",
+   "pricing_url": "https://www.heygen.com/pricing",
+   "tagline": "AI video platform that translates existing videos and re-syncs lip movement to the new language.",
+   "best_for": "",
+   "tags": [],
+   "starting_price": "Pricing on the official site",
+   "free_tier": "—",
+   "trial": "—",
+   "page": "/directory/heygen/",
+   "page_type": "profile",
+   "test": {
+    "status": "pending"
+   },
+   "affiliate": {
+    "status": "program-verified",
+    "program": "HeyGen Affiliate Creator Program",
+    "evidence": "https://heygen.getrewardful.com/terms",
+    "joined": false,
+    "url": null
+   }
+  },
+  {
+   "slug": "rask-ai",
+   "name": "Rask AI",
+   "vendor": "Rask AI",
+   "category": "ai-translation",
+   "url": "https://www.rask.ai/",
+   "pricing_url": "https://www.rask.ai/pricing",
+   "tagline": "Video/audio localization platform that transcribes, translates and re-dubs with voice cloning.",
+   "best_for": "",
+   "tags": [],
+   "starting_price": "Pricing on the official site",
+   "free_tier": "—",
+   "trial": "—",
+   "page": "/directory/rask-ai/",
+   "page_type": "profile",
+   "test": {
+    "status": "pending"
+   },
+   "affiliate": {
+    "status": "unknown"
+   }
+  },
+  {
+   "slug": "language-io",
+   "name": "Language I/O",
+   "vendor": "Language I/O",
+   "category": "ai-translation",
+   "url": "https://languageio.com/",
+   "pricing_url": null,
+   "tagline": "Real-time AI translation inside Salesforce, Zendesk and other support systems, for multilingual customer conversations.",
+   "best_for": "",
+   "tags": [],
+   "starting_price": "No public pricing page",
+   "free_tier": "—",
+   "trial": "—",
+   "page": "/directory/language-io/",
+   "page_type": "profile",
+   "test": {
+    "status": "pending"
+   },
+   "affiliate": {
+    "status": "unknown"
+   }
+  },
+  {
+   "slug": "kudo",
+   "name": "KUDO",
+   "vendor": "KUDO",
+   "category": "ai-translation",
+   "url": "https://kudo.ai/",
+   "pricing_url": "https://kudo.ai/pricing",
+   "tagline": "AI live speech translation and captions for meetings and events, optionally combined with a human interpreter marketplace.",
+   "best_for": "",
+   "tags": [],
+   "starting_price": "Pricing on the official site",
+   "free_tier": "—",
+   "trial": "—",
+   "page": "/directory/kudo/",
+   "page_type": "profile",
+   "test": {
+    "status": "pending"
+   },
+   "affiliate": {
+    "status": "unknown"
+   }
+  },
+  {
+   "slug": "interprefy",
+   "name": "Interprefy",
+   "vendor": "Interprefy",
+   "category": "ai-translation",
+   "url": "https://www.interprefy.com/",
+   "pricing_url": "https://www.interprefy.com/pricing",
+   "tagline": "Remote simultaneous interpretation and AI speech translation / live captions for meetings and events.",
+   "best_for": "",
+   "tags": [],
+   "starting_price": "Pricing on the official site",
+   "free_tier": "—",
+   "trial": "—",
+   "page": "/directory/interprefy/",
+   "page_type": "profile",
+   "test": {
+    "status": "pending"
+   },
+   "affiliate": {
+    "status": "unknown"
+   }
+  },
+  {
+   "slug": "boostlingo",
+   "name": "Boostlingo",
+   "vendor": "Boostlingo",
+   "category": "ai-translation",
+   "url": "https://boostlingo.com/",
+   "pricing_url": null,
+   "tagline": "Interpreting management platform combining human interpreter scheduling with AI live translation and captions.",
+   "best_for": "",
+   "tags": [],
+   "starting_price": "No public pricing page",
+   "free_tier": "—",
+   "trial": "—",
+   "page": "/directory/boostlingo/",
+   "page_type": "profile",
+   "test": {
+    "status": "pending"
+   },
+   "affiliate": {
+    "status": "unknown"
+   }
+  },
+  {
+   "slug": "lara-translate",
+   "name": "Lara Translate",
+   "vendor": "Lara Translate",
+   "category": "ai-translation",
+   "url": "https://laratranslate.com/",
+   "pricing_url": "https://app.laratranslate.com/pricing?lng=en",
+   "tagline": "AI translation service by Translated for text, documents, audio and images, with an API.",
+   "best_for": "",
+   "tags": [],
+   "starting_price": "Pricing on the official site",
+   "free_tier": "—",
+   "trial": "—",
+   "page": "/directory/lara-translate/",
+   "page_type": "profile",
+   "test": {
+    "status": "pending"
+   },
+   "affiliate": {
+    "status": "unknown"
+   }
+  },
+  {
+   "slug": "pairaphrase",
+   "name": "Pairaphrase",
+   "vendor": "Pairaphrase",
+   "category": "ai-translation",
+   "url": "https://www.pairaphrase.com/",
+   "pricing_url": "https://www.pairaphrase.com/subscriptions",
+   "tagline": "AI translation management software centered on document translation, combining multiple engines with translation memory.",
+   "best_for": "",
+   "tags": [],
+   "starting_price": "Pricing on the official site",
+   "free_tier": "—",
+   "trial": "—",
+   "page": "/directory/pairaphrase/",
+   "page_type": "profile",
+   "test": {
+    "status": "pending"
+   },
+   "affiliate": {
+    "status": "unknown"
+   }
+  },
+  {
+   "slug": "captionhub",
+   "name": "CaptionHub",
+   "vendor": "CaptionHub",
+   "category": "subtitles-video",
+   "url": "https://www.captionhub.com/",
+   "pricing_url": "https://www.captionhub.com/pricing-tiers",
+   "tagline": "Enterprise collaboration platform combining automatic transcription, subtitle translation, voiceover and publishing workflows for multilingual video.",
+   "best_for": "",
+   "tags": [],
+   "starting_price": "Pricing on the official site",
+   "free_tier": "—",
+   "trial": "—",
+   "page": "/directory/captionhub/",
+   "page_type": "profile",
+   "test": {
+    "status": "pending"
+   },
+   "affiliate": {
+    "status": "unknown"
+   }
+  },
+  {
+   "slug": "amara",
+   "name": "Amara",
+   "vendor": "Amara",
+   "category": "subtitles-video",
+   "url": "https://amara.org",
+   "pricing_url": null,
+   "tagline": "Subtitle editor, team workspaces and professional human subtitling/translation services (On Demand / Enterprise).",
+   "best_for": "",
+   "tags": [],
+   "starting_price": "No public pricing page",
+   "free_tier": "—",
+   "trial": "—",
+   "page": "/directory/amara/",
+   "page_type": "profile",
+   "test": {
+    "status": "pending"
+   },
+   "affiliate": {
+    "status": "unknown"
+   }
+  },
+  {
+   "slug": "happy-scribe",
+   "name": "Happy Scribe",
+   "vendor": "Happy Scribe",
+   "category": "subtitles-video",
+   "url": "https://www.happyscribe.com",
+   "pricing_url": "https://www.happyscribe.com/pricing",
+   "tagline": "Turns audio and video into transcripts and subtitles, with machine translation and an interactive editor.",
+   "best_for": "",
+   "tags": [],
+   "starting_price": "Pricing on the official site",
+   "free_tier": "—",
+   "trial": "—",
+   "page": "/directory/happy-scribe/",
+   "page_type": "profile",
+   "test": {
+    "status": "pending"
+   },
+   "affiliate": {
+    "status": "program-verified",
+    "program": "Happy Scribe Affiliate Program",
+    "evidence": "https://www.happyscribe.com/affiliate",
+    "joined": false,
+    "url": null
+   }
+  },
+  {
+   "slug": "sonix",
+   "name": "Sonix",
+   "vendor": "Sonix",
+   "category": "subtitles-video",
+   "url": "https://sonix.ai/",
+   "pricing_url": "https://sonix.ai/pricing",
+   "tagline": "AI transcription, subtitles and translation for audio and video, editable in the browser with SRT/VTT export.",
+   "best_for": "",
+   "tags": [],
+   "starting_price": "Pricing on the official site",
+   "free_tier": "—",
+   "trial": "—",
+   "page": "/directory/sonix/",
+   "page_type": "profile",
+   "test": {
+    "status": "pending"
+   },
+   "affiliate": {
+    "status": "joined",
+    "program": "Sonix Affiliate Program",
+    "url": "https://sonix.ai/invite/awvggvw"
+   }
+  },
+  {
+   "slug": "trint",
+   "name": "Trint",
+   "vendor": "Trint",
+   "category": "subtitles-video",
+   "url": "https://trint.com/",
+   "pricing_url": null,
+   "tagline": "AI audio/video transcription platform — edit, search and collaborate on transcripts, with a subtitle generator exporting SRT.",
+   "best_for": "",
+   "tags": [],
+   "starting_price": "No public pricing page",
+   "free_tier": "—",
+   "trial": "—",
+   "page": "/directory/trint/",
+   "page_type": "profile",
+   "test": {
+    "status": "pending"
+   },
+   "affiliate": {
+    "status": "unknown"
+   }
+  },
+  {
+   "slug": "rev",
+   "name": "Rev",
+   "vendor": "Rev",
+   "category": "subtitles-video",
+   "url": "https://www.rev.com/",
+   "pricing_url": "https://support.rev.com/hc/en-us/articles/18893487380365-Pricing",
+   "tagline": "AI and human transcription, captions, and multilingual Global Subtitles services.",
+   "best_for": "",
+   "tags": [],
+   "starting_price": "Pricing on the official site",
+   "free_tier": "—",
+   "trial": "—",
+   "page": "/directory/rev/",
+   "page_type": "profile",
+   "test": {
+    "status": "pending"
+   },
+   "affiliate": {
+    "status": "unknown"
+   }
+  },
+  {
+   "slug": "subtitle-edit",
+   "name": "Subtitle Edit",
+   "vendor": "Subtitle Edit",
+   "category": "subtitles-video",
+   "url": "https://www.nikse.dk/subtitleedit",
+   "pricing_url": null,
+   "tagline": "Desktop subtitle editor for creating, editing, syncing, translating and converting subtitles across many formats. Open source.",
+   "best_for": "",
+   "tags": [],
+   "starting_price": "Open source — free",
+   "free_tier": "—",
+   "trial": "—",
+   "page": "/directory/subtitle-edit/",
+   "page_type": "profile",
+   "test": {
+    "status": "pending"
+   },
+   "affiliate": {
+    "status": "unknown"
+   }
+  },
+  {
+   "slug": "aegisub",
+   "name": "Aegisub",
+   "vendor": "Aegisub",
+   "category": "subtitles-video",
+   "url": "https://aegisub.org/",
+   "pricing_url": null,
+   "tagline": "Cross-platform subtitle editor for timing and styling subtitles, with live video preview. Open source.",
+   "best_for": "",
+   "tags": [],
+   "starting_price": "Open source — free",
+   "free_tier": "—",
+   "trial": "—",
+   "page": "/directory/aegisub/",
+   "page_type": "profile",
+   "test": {
+    "status": "pending"
+   },
+   "affiliate": {
+    "status": "unknown"
+   }
+  },
+  {
+   "slug": "veed",
+   "name": "VEED",
+   "vendor": "VEED",
+   "category": "subtitles-video",
+   "url": "https://www.veed.io/",
+   "pricing_url": "https://www.veed.io/pricing/index.html.md",
+   "tagline": "Browser video editor that can auto-generate, edit, sync and translate subtitles, exporting SRT/VTT or burned-in captions.",
+   "best_for": "",
+   "tags": [],
+   "starting_price": "Pricing on the official site",
+   "free_tier": "—",
+   "trial": "—",
+   "page": "/directory/veed/",
+   "page_type": "profile",
+   "test": {
+    "status": "pending"
+   },
+   "affiliate": {
+    "status": "program-verified",
+    "program": "VEED Affiliate Program via Impact.com",
+    "evidence": "https://www.veed.io/affiliate",
+    "joined": false,
+    "url": null
+   }
+  },
+  {
+   "slug": "kapwing",
+   "name": "Kapwing",
+   "vendor": "Kapwing",
+   "category": "subtitles-video",
+   "url": "https://www.kapwing.com/",
+   "pricing_url": "https://www.kapwing.com/pricing",
+   "tagline": "Collaborative browser video editor with automatic subtitles, subtitle translation and dubbing tools.",
+   "best_for": "",
+   "tags": [],
+   "starting_price": "Pricing on the official site",
+   "free_tier": "—",
+   "trial": "—",
+   "page": "/directory/kapwing/",
+   "page_type": "profile",
+   "test": {
+    "status": "pending"
+   },
+   "affiliate": {
+    "status": "program-verified",
+    "program": "Kapwing Affiliate Program (KAP) via Tapfiliate",
+    "evidence": "https://www.kapwing.com/affiliates",
+    "joined": false,
+    "url": null
+   }
+  },
+  {
+   "slug": "descript",
+   "name": "Descript",
+   "vendor": "Descript",
+   "category": "subtitles-video",
+   "url": "https://www.descript.com/",
+   "pricing_url": "https://www.descript.com/pricing",
+   "tagline": "AI audio/video editor with a transcript-based interface — edit, caption, translate and dub media by editing text.",
+   "best_for": "",
+   "tags": [],
+   "starting_price": "Pricing on the official site",
+   "free_tier": "—",
+   "trial": "—",
+   "page": "/directory/descript/",
+   "page_type": "profile",
+   "test": {
+    "status": "pending"
+   },
+   "affiliate": {
+    "status": "program-verified",
+    "program": "Descript Affiliate Program via PartnerStack",
+    "evidence": "https://www.descript.com/affiliate-terms",
+    "joined": false,
+    "url": null
+   }
+  },
+  {
+   "slug": "vizard",
+   "name": "Vizard",
+   "vendor": "Vizard",
+   "category": "subtitles-video",
+   "url": "https://vizard.ai/",
+   "pricing_url": "https://vizard.ai/pricing",
+   "tagline": "Turns long videos into short clips automatically, with subtitles that can be translated into many languages for short-form platforms.",
+   "best_for": "",
+   "tags": [],
+   "starting_price": "Pricing on the official site",
+   "free_tier": "—",
+   "trial": "—",
+   "page": "/directory/vizard/",
+   "page_type": "profile",
+   "test": {
+    "status": "pending"
+   },
+   "affiliate": {
+    "status": "unknown"
+   }
+  },
+  {
+   "slug": "apsic-xbench",
+   "name": "ApSIC Xbench",
+   "vendor": "ApSIC Xbench",
+   "category": "qa-terminology",
+   "url": "https://www.xbench.net/",
+   "pricing_url": null,
+   "tagline": "Searches bilingual reference terminology and runs QA checks (consistency, tags, numbers, terminology) on translation files.",
+   "best_for": "",
+   "tags": [],
+   "starting_price": "No public pricing page",
+   "free_tier": "—",
+   "trial": "—",
+   "page": "/directory/apsic-xbench/",
+   "page_type": "profile",
+   "test": {
+    "status": "pending"
+   },
+   "affiliate": {
+    "status": "unknown"
+   }
+  },
+  {
+   "slug": "verifika",
+   "name": "Verifika",
+   "vendor": "Verifika",
+   "category": "qa-terminology",
+   "url": "https://e-verifika.com/",
+   "pricing_url": null,
+   "tagline": "Translation QA software (web/desktop/API) detecting terminology, consistency and number errors with built-in checks and reports.",
+   "best_for": "",
+   "tags": [],
+   "starting_price": "No public pricing page",
+   "free_tier": "—",
+   "trial": "—",
+   "page": "/directory/verifika/",
+   "page_type": "profile",
+   "test": {
+    "status": "pending"
+   },
+   "affiliate": {
+    "status": "unknown"
+   }
+  },
+  {
+   "slug": "qa-distiller",
+   "name": "QA Distiller",
+   "vendor": "QA Distiller",
+   "category": "qa-terminology",
+   "url": "https://www.qa-distiller.com/",
+   "pricing_url": null,
+   "tagline": "Automatically scans bilingual files and translation memories for omissions, inconsistencies, formatting and terminology errors, producing error logs.",
+   "best_for": "",
+   "tags": [],
+   "starting_price": "No public pricing page",
+   "free_tier": "—",
+   "trial": "—",
+   "page": "/directory/qa-distiller/",
+   "page_type": "profile",
+   "test": {
+    "status": "pending"
+   },
+   "affiliate": {
+    "status": "unknown"
+   }
+  },
+  {
+   "slug": "termweb",
+   "name": "TermWeb",
+   "vendor": "TermWeb",
+   "category": "qa-terminology",
+   "url": "https://www.interverbumtech.com/products-services/termweb/",
+   "pricing_url": null,
+   "tagline": "Web-based terminology management system for organizations to build, maintain and share termbases, integrated with translation and content systems.",
+   "best_for": "",
+   "tags": [],
+   "starting_price": "No public pricing page",
+   "free_tier": "—",
+   "trial": "—",
+   "page": "/directory/termweb/",
+   "page_type": "profile",
+   "test": {
+    "status": "pending"
+   },
+   "affiliate": {
+    "status": "unknown"
+   }
+  },
+  {
+   "slug": "qterm",
+   "name": "Qterm",
+   "vendor": "Qterm",
+   "category": "qa-terminology",
+   "url": "https://www.memoq.com/qterm/",
+   "pricing_url": null,
+   "tagline": "Browser-based terminology management system extending memoQ Server, for storing, managing and sharing terminology with live lookup for translators.",
+   "best_for": "",
+   "tags": [],
+   "starting_price": "No public pricing page",
+   "free_tier": "—",
+   "trial": "—",
+   "page": "/directory/qterm/",
+   "page_type": "profile",
+   "test": {
+    "status": "pending"
+   },
+   "affiliate": {
+    "status": "unknown"
+   }
+  },
+  {
+   "slug": "memoq",
+   "name": "memoQ",
+   "vendor": "memoQ",
+   "category": "qa-terminology",
+   "url": "https://www.memoq.com/",
+   "pricing_url": null,
+   "tagline": "CAT/TMS tool with built-in QA checks (terminology, consistency, numbers, tags, length) and termbase management.",
+   "best_for": "",
+   "tags": [],
+   "starting_price": "No public pricing page",
+   "free_tier": "—",
+   "trial": "—",
+   "page": "/directory/memoq/",
+   "page_type": "profile",
+   "test": {
+    "status": "pending"
+   },
+   "affiliate": {
+    "status": "unknown"
+   }
+  },
+  {
+   "slug": "trados-studio",
+   "name": "Trados Studio",
+   "vendor": "Trados Studio",
+   "category": "qa-terminology",
+   "url": "https://www.rws.com/",
+   "pricing_url": null,
+   "tagline": "Desktop translation environment combining translation memory, terminology management and built-in QA checks (QA Checker, Terminology Verifier) before delivery.",
+   "best_for": "",
+   "tags": [],
+   "starting_price": "No public pricing page",
+   "free_tier": "—",
+   "trial": "—",
+   "page": "/directory/trados-studio/",
+   "page_type": "profile",
+   "test": {
+    "status": "pending"
+   },
+   "affiliate": {
+    "status": "unknown"
+   }
+  },
+  {
+   "slug": "acrolinx",
+   "name": "Acrolinx",
+   "vendor": "Acrolinx",
+   "category": "qa-terminology",
+   "url": "https://www.acrolinx.com/",
+   "pricing_url": null,
+   "tagline": "Content governance platform checking terminology consistency, style, clarity and compliance, with guidance inside writing tools.",
+   "best_for": "",
+   "tags": [],
+   "starting_price": "No public pricing page",
+   "free_tier": "—",
+   "trial": "—",
+   "page": "/directory/acrolinx/",
+   "page_type": "profile",
+   "test": {
+    "status": "pending"
+   },
+   "affiliate": {
+    "status": "unknown"
+   }
+  },
+  {
+   "slug": "congree",
+   "name": "Congree",
+   "vendor": "Congree",
+   "category": "qa-terminology",
+   "url": "https://www.congree.com/",
+   "pricing_url": null,
+   "tagline": "Writing-assistance platform checking spelling, grammar, style and terminology inside the editor, with the TermTiger terminology system and term extraction.",
+   "best_for": "",
+   "tags": [],
+   "starting_price": "No public pricing page",
+   "free_tier": "—",
+   "trial": "—",
+   "page": "/directory/congree/",
+   "page_type": "profile",
+   "test": {
+    "status": "pending"
+   },
+   "affiliate": {
+    "status": "unknown"
+   }
+  },
+  {
+   "slug": "errorspy",
+   "name": "ErrorSpy",
+   "vendor": "ErrorSpy",
+   "category": "qa-terminology",
+   "url": "https://www.dog-gmbh.de/",
+   "pricing_url": null,
+   "tagline": "Translation QA software checking terminology, consistency, numbers and completeness, with reporting and a built-in editor.",
+   "best_for": "",
+   "tags": [],
+   "starting_price": "No public pricing page",
+   "free_tier": "—",
+   "trial": "—",
+   "page": "/directory/errorspy/",
+   "page_type": "profile",
+   "test": {
+    "status": "pending"
+   },
+   "affiliate": {
+    "status": "unknown"
+   }
+  },
+  {
+   "slug": "checkmate-okapi",
+   "name": "CheckMate (Okapi Framework)",
+   "vendor": "CheckMate (Okapi Framework)",
+   "category": "qa-terminology",
+   "url": "http://okapiframework.org/",
+   "pricing_url": null,
+   "tagline": "Cross-platform application running quality checks on bilingual files (XLIFF, TMX, PO and more), integrable with LanguageTool. Open source.",
+   "best_for": "",
+   "tags": [],
+   "starting_price": "Open source — free",
+   "free_tier": "—",
+   "trial": "—",
+   "page": "/directory/checkmate-okapi/",
+   "page_type": "profile",
+   "test": {
+    "status": "pending"
+   },
+   "affiliate": {
+    "status": "unknown"
+   }
+  },
+  {
+   "slug": "contentquo",
+   "name": "ContentQuo",
+   "vendor": "ContentQuo",
+   "category": "qa-terminology",
+   "url": "https://www.contentquo.com/",
+   "pricing_url": null,
+   "tagline": "Translation quality evaluation (LQA) platform for assessing translations against MQM-style quality frameworks, with centralized scorecards.",
+   "best_for": "",
+   "tags": [],
+   "starting_price": "No public pricing page",
+   "free_tier": "—",
+   "trial": "—",
+   "page": "/directory/contentquo/",
+   "page_type": "profile",
+   "test": {
+    "status": "pending"
+   },
+   "affiliate": {
+    "status": "unknown"
+   }
+  },
+  {
+   "slug": "gengo",
+   "name": "Gengo",
+   "vendor": "Gengo",
+   "category": "service-platforms",
+   "url": "https://gengo.com/",
+   "pricing_url": "https://gengo.com/business-insights/how-much-does-translation-cost/",
+   "tagline": "Self-serve human translation platform: order website/app localization, transcription and proofreading from its translator network via forms or API.",
+   "best_for": "",
+   "tags": [],
+   "starting_price": "Pricing on the official site",
+   "free_tier": "—",
+   "trial": "—",
+   "page": "/directory/gengo/",
+   "page_type": "profile",
+   "test": {
+    "status": "pending"
+   },
+   "affiliate": {
+    "status": "unknown"
+   }
+  },
+  {
+   "slug": "smartcat",
+   "name": "Smartcat",
+   "vendor": "Smartcat",
+   "category": "service-platforms",
+   "url": "https://www.smartcat.com/",
+   "pricing_url": "https://www.smartcat.com/pricing/",
+   "tagline": "Cloud translation platform combining AI translation, translation memory, terminology and a marketplace of language experts for collaborative translation.",
+   "best_for": "",
+   "tags": [],
+   "starting_price": "Pricing on the official site",
+   "free_tier": "—",
+   "trial": "—",
+   "page": "/directory/smartcat/",
+   "page_type": "profile",
+   "test": {
+    "status": "pending"
+   },
+   "affiliate": {
+    "status": "program-verified",
+    "program": "Freelancer Referral Program",
+    "evidence": "https://help.smartcat.com/smartcat-referral-program-for-freelancers/",
+    "joined": false,
+    "url": null
+   }
+  },
+  {
+   "slug": "translated",
+   "name": "Translated",
+   "vendor": "Translated",
+   "category": "service-platforms",
+   "url": "https://translated.com/",
+   "pricing_url": null,
+   "tagline": "Professional translation services with instant online quotes and ordering — website/software localization, subtitles, DTP and a translation API.",
+   "best_for": "",
+   "tags": [],
+   "starting_price": "No public pricing page",
+   "free_tier": "—",
+   "trial": "—",
+   "page": "/directory/translated/",
+   "page_type": "profile",
+   "test": {
+    "status": "pending"
+   },
+   "affiliate": {
+    "status": "program-verified",
+    "program": "Affiliate Program／Translation Partner Program",
+    "evidence": "https://translated.com/translation-partner-program",
+    "joined": false,
+    "url": null
+   }
+  },
+  {
+   "slug": "proz",
+   "name": "ProZ.com",
+   "vendor": "ProZ.com",
+   "category": "service-platforms",
+   "url": "https://www.proz.com/",
+   "pricing_url": "https://www.proz.com/business-membership",
+   "tagline": "Membership marketplace and community for translators and agencies, where clients search directories, post jobs and contact language professionals directly.",
+   "best_for": "",
+   "tags": [],
+   "starting_price": "Pricing on the official site",
+   "free_tier": "—",
+   "trial": "—",
+   "page": "/directory/proz/",
+   "page_type": "profile",
+   "test": {
+    "status": "pending"
+   },
+   "affiliate": {
+    "status": "unknown"
+   }
+  },
+  {
+   "slug": "transperfect",
+   "name": "TransPerfect",
+   "vendor": "TransPerfect",
+   "category": "service-platforms",
+   "url": "https://www.transperfect.com/",
+   "pricing_url": null,
+   "tagline": "Enterprise language services provider using its GlobalLink technology for translation, website/software localization and multilingual content management.",
+   "best_for": "",
+   "tags": [],
+   "starting_price": "No public pricing page",
+   "free_tier": "—",
+   "trial": "—",
+   "page": "/directory/transperfect/",
+   "page_type": "profile",
+   "test": {
+    "status": "pending"
+   },
+   "affiliate": {
+    "status": "unknown"
+   }
+  },
+  {
+   "slug": "lionbridge",
+   "name": "Lionbridge",
+   "vendor": "Lionbridge",
+   "category": "service-platforms",
+   "url": "https://www.lionbridge.com/",
+   "pricing_url": null,
+   "tagline": "Translation, localization and interpreting services, with an online ordering platform (hosted by its subsidiary Gengo) offering instant quotes.",
+   "best_for": "",
+   "tags": [],
+   "starting_price": "No public pricing page",
+   "free_tier": "—",
+   "trial": "—",
+   "page": "/directory/lionbridge/",
+   "page_type": "profile",
+   "test": {
+    "status": "pending"
+   },
+   "affiliate": {
+    "status": "unknown"
+   }
+  },
+  {
+   "slug": "rws",
+   "name": "RWS",
+   "vendor": "RWS",
+   "category": "service-platforms",
+   "url": "https://www.rws.com/",
+   "pricing_url": null,
+   "tagline": "Translation and localization services for documents, websites, software and multimedia, with proprietary translation technology and language cloud workflows.",
+   "best_for": "",
+   "tags": [],
+   "starting_price": "No public pricing page",
+   "free_tier": "—",
+   "trial": "—",
+   "page": "/directory/rws/",
+   "page_type": "profile",
+   "test": {
+    "status": "pending"
+   },
+   "affiliate": {
+    "status": "unknown"
+   }
+  },
+  {
+   "slug": "welocalize",
+   "name": "Welocalize",
+   "vendor": "Welocalize",
+   "category": "service-platforms",
+   "url": "https://www.welocalize.com/",
+   "pricing_url": null,
+   "tagline": "Enterprise translation, localization and AI language services delivered through its OPAL service delivery platform.",
+   "best_for": "",
+   "tags": [],
+   "starting_price": "No public pricing page",
+   "free_tier": "—",
+   "trial": "—",
+   "page": "/directory/welocalize/",
+   "page_type": "profile",
+   "test": {
+    "status": "pending"
+   },
+   "affiliate": {
+    "status": "unknown"
+   }
+  },
+  {
+   "slug": "languageline-solutions",
+   "name": "LanguageLine Solutions",
+   "vendor": "LanguageLine Solutions",
+   "category": "service-platforms",
+   "url": "https://www.languageline.com/",
+   "pricing_url": null,
+   "tagline": "On-demand phone/video interpreting, document translation and localization, with in-app instant interpreter access and enterprise portals.",
+   "best_for": "",
+   "tags": [],
+   "starting_price": "No public pricing page",
+   "free_tier": "—",
+   "trial": "—",
+   "page": "/directory/languageline-solutions/",
+   "page_type": "profile",
+   "test": {
+    "status": "pending"
+   },
+   "affiliate": {
+    "status": "unknown"
+   }
+  },
+  {
+   "slug": "alconost",
+   "name": "Alconost",
+   "vendor": "Alconost",
+   "category": "service-platforms",
+   "url": "https://alconost.com/",
+   "pricing_url": null,
+   "tagline": "Localization of software, games, websites and marketing content, plus Nitro, a self-serve fast human translation service.",
+   "best_for": "",
+   "tags": [],
+   "starting_price": "No public pricing page",
+   "free_tier": "—",
+   "trial": "—",
+   "page": "/directory/alconost/",
+   "page_type": "profile",
+   "test": {
+    "status": "pending"
+   },
+   "affiliate": {
+    "status": "program-verified",
+    "program": "Affiliate Partner Program",
+    "evidence": "https://alconost.com/en/about/affiliate-partners",
+    "joined": false,
+    "url": null
+   }
+  },
+  {
+   "slug": "blend",
+   "name": "BLEND",
+   "vendor": "BLEND",
+   "category": "service-platforms",
+   "url": "https://www.getblend.com/",
+   "pricing_url": null,
+   "tagline": "Enterprise localization platform with project management, guided ordering, direct translator communication and API/TMS/CMS integrations.",
+   "best_for": "",
+   "tags": [],
+   "starting_price": "No public pricing page",
+   "free_tier": "—",
+   "trial": "—",
+   "page": "/directory/blend/",
+   "page_type": "profile",
+   "test": {
+    "status": "pending"
+   },
+   "affiliate": {
+    "status": "unknown"
+   }
+  },
+  {
+   "slug": "straker",
+   "name": "Straker",
+   "vendor": "Straker",
+   "category": "service-platforms",
+   "url": "https://www.straker.ai/",
+   "pricing_url": null,
+   "tagline": "AI translation workflow building, translation requests and quality verification services on its LanguageCloud / Verify platform.",
+   "best_for": "",
+   "tags": [],
+   "starting_price": "No public pricing page",
+   "free_tier": "—",
+   "trial": "—",
+   "page": "/directory/straker/",
+   "page_type": "profile",
+   "test": {
+    "status": "pending"
+   },
+   "affiliate": {
+    "status": "unknown"
+   }
+  }
+ ]
+}

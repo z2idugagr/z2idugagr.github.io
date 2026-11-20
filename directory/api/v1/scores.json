@@ -1,0 +1,106 @@
+{
+ "schema_version": "1.0",
+ "benchmarks": [
+  {
+   "id": "zh-Hant",
+   "lang_label": "Traditional Chinese",
+   "name": "Traditional Chinese Quality Benchmark",
+   "status": "live",
+   "summary": "Measures how clean a tool's Traditional Chinese output is against Taiwan usage norms: simplified-character residue, mainland-China wording, and terminology consistency. Fixed 24-segment corpus (marketing, UI strings, game dialogue, customer support), deterministic scoring script, raw outputs archived per run.",
+   "version": "1.0"
+  },
+  {
+   "id": "zh-Hans",
+   "lang_label": "Simplified Chinese",
+   "name": "Simplified Chinese Quality Benchmark",
+   "status": "in-development",
+   "summary": "Architecture slot reserved. Corpus and rule set in preparation; no scores published until the first run is executed.",
+   "version": null
+  },
+  {
+   "id": "ja",
+   "lang_label": "Japanese",
+   "name": "Japanese Quality Benchmark",
+   "status": "planned",
+   "summary": "Architecture slot reserved in the Global Language Quality Benchmark Framework. No scores published.",
+   "version": null
+  },
+  {
+   "id": "ko",
+   "lang_label": "Korean",
+   "name": "Korean Quality Benchmark",
+   "status": "planned",
+   "summary": "Architecture slot reserved in the Global Language Quality Benchmark Framework. No scores published.",
+   "version": null
+  },
+  {
+   "id": "es",
+   "lang_label": "Spanish",
+   "name": "Spanish Quality Benchmark",
+   "status": "planned",
+   "summary": "Architecture slot reserved in the Global Language Quality Benchmark Framework. No scores published.",
+   "version": null
+  }
+ ],
+ "runs": [
+  {
+   "benchmark_id": "zh-Hant",
+   "benchmark_version": "1.0",
+   "date": "2026-11-21",
+   "run_id": "zh-Hant-2026-11-21",
+   "corpus_version": "1.0",
+   "segments": 24,
+   "conditions": "AI/LLM engines received the corpus with one shared neutral prompt ('Translate into Traditional Chinese as used in Taiwan' plus fixed formatting instructions). Machine-translation engines received the source text directly, with no prompt. The groups were measured under different conditions; this disclosure travels with the scores wherever they appear.",
+   "results": {
+    "gemini": {
+     "score": 99,
+     "grade": "A",
+     "purity": 100.0,
+     "wording": 97.4,
+     "terminology": 100.0,
+     "residue_rate_pct": 0.0,
+     "mainland_hits": 1,
+     "hits_per_100_cjk": 0.26,
+     "term_preferred": 34,
+     "term_mainland": 0,
+     "segments_scored": 24,
+     "model": "gemini-3.5-flash-lite",
+     "channel": "connector CLI chat",
+     "run_at": "2026-11-21 00:50:13 CST"
+    },
+    "groq": {
+     "score": 96,
+     "grade": "A",
+     "purity": 100.0,
+     "wording": 91.8,
+     "terminology": 97.2,
+     "residue_rate_pct": 0.0,
+     "mainland_hits": 3,
+     "hits_per_100_cjk": 0.82,
+     "term_preferred": 35,
+     "term_mainland": 1,
+     "segments_scored": 24,
+     "model": "openai/gpt-oss-120b",
+     "channel": "connector CLI chat",
+     "run_at": "2026-11-21 00:50:27 CST"
+    },
+    "google-translate": {
+     "score": 89,
+     "grade": "B",
+     "purity": 99.0,
+     "wording": 82.3,
+     "terminology": 83.3,
+     "residue_rate_pct": 0.25,
+     "mainland_hits": 7,
+     "hits_per_100_cjk": 1.77,
+     "term_preferred": 30,
+     "term_mainland": 6,
+     "segments_scored": 24,
+     "model": "not exposed by endpoint; recorded by access date",
+     "channel": "public web endpoint translate.googleapis.com/translate_a/single (client=gtx)",
+     "run_at": "2026-11-21 00:48:19 CST"
+    }
+   }
+  }
+ ]
+}
