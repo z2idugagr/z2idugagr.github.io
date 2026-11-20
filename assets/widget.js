@@ -1,5 +1,5 @@
 /**
- * HankLoc 官網 AI 客服 — 前端聊天泡泡 (Phase 1)
+ * LocIndex AI 助理 — 前端聊天泡泡
  * 原生 JS、無框架、無外部相依。貼法見 SNIPPET.md。
  *
  * 設定方式（二擇一）：
@@ -15,7 +15,7 @@
     window.HANKLOC_CHAT_API ||
     "";
   if (!API) {
-    if (window.console) console.warn("[HankLoc chat] API base URL not configured.");
+    if (window.console) console.warn("[LocIndex chat] API base URL not configured.");
     return;
   }
   API = API.replace(/\/+$/, "");
@@ -73,10 +73,10 @@
   head.className = "hls-head";
   var title = document.createElement("p");
   title.className = "hls-title";
-  title.textContent = "HankLoc AI 助理";
+  title.textContent = "LocIndex AI Assistant";
   var sub = document.createElement("p");
   sub.className = "hls-sub";
-  sub.textContent = "英↔台灣繁中 翻譯・在地化・字幕 | AI support";
+  sub.textContent = "Find & compare localization tools · test-based scores · EN ↔ Traditional Chinese services";
   head.appendChild(title);
   head.appendChild(sub);
 
@@ -87,26 +87,26 @@
   leadbar.className = "hls-leadbar";
   var leadToggle = document.createElement("button");
   leadToggle.type = "button";
-  leadToggle.textContent = "需要專人回覆？留資料給 Hank";
+  leadToggle.textContent = "Need a human reply? Leave your details 留資料給專人";
   leadbar.appendChild(leadToggle);
 
   var leadForm = document.createElement("div");
   leadForm.className = "hls-lead";
   var inName = document.createElement("input");
   inName.type = "text";
-  inName.placeholder = "您的稱呼 Name";
+  inName.placeholder = "Your name 稱呼";
   inName.maxLength = 100;
   var inEmail = document.createElement("input");
   inEmail.type = "email";
   inEmail.placeholder = "Email";
   inEmail.maxLength = 200;
   var inNeed = document.createElement("textarea");
-  inNeed.placeholder = "需求簡述（服務類型、字數、希望交期…）";
+  inNeed.placeholder = "What do you need? （工具諮詢／翻譯・在地化需求、字數、希望交期…）";
   inNeed.maxLength = 2000;
   var leadSend = document.createElement("button");
   leadSend.type = "button";
   leadSend.className = "hls-send";
-  leadSend.textContent = "送出給專人";
+  leadSend.textContent = "Send 送出";
   leadForm.appendChild(inName);
   leadForm.appendChild(inEmail);
   leadForm.appendChild(inNeed);
@@ -116,11 +116,11 @@
   inputbar.className = "hls-inputbar";
   var input = document.createElement("input");
   input.type = "text";
-  input.placeholder = "輸入問題… Ask me anything";
+  input.placeholder = "Ask about tools, scores or services… 輸入問題";
   input.maxLength = 1000;
   var sendBtn = document.createElement("button");
   sendBtn.type = "button";
-  sendBtn.textContent = "送出";
+  sendBtn.textContent = "Send";
   inputbar.appendChild(input);
   inputbar.appendChild(sendBtn);
 
@@ -132,7 +132,7 @@
 
   var bubble = document.createElement("button");
   bubble.className = "hls-bubble";
-  bubble.setAttribute("aria-label", "開啟 HankLoc AI 客服");
+  bubble.setAttribute("aria-label", "Open LocIndex AI assistant 開啟 LocIndex AI 客服");
   bubble.innerHTML =
     '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3C6.5 3 2 6.9 2 11.7c0 2.7 1.5 5.2 3.9 6.8-.1 1-.5 2.3-1.2 3.3 0 0 2.9-.2 5-1.7.7.2 1.5.3 2.3.3 5.5 0 10-3.9 10-8.7S17.5 3 12 3z"/></svg>';
 
@@ -157,7 +157,7 @@
     if (open && !greeted) {
       greeted = true;
       addMsg(
-        "您好，我是 HankLoc 的 AI 助理。可以問我翻譯／在地化／字幕的費率、免費試譯、Steam 商店頁包或短影音方案；需要真人回覆時，點下方「留資料給 Hank」也可以。\nHi! I can help with rates, free trial translation and our services.",
+        "Hi! I'm the LocIndex assistant. Ask me to find or compare localization tools, explain our test-based scores (e.g. the Traditional Chinese Quality Benchmark), or about translation / localization services — EN ↔ Traditional Chinese, with a free one-page trial. I reply in your language.\n你好！也可以用繁體中文問我：工具推薦、實測分數，或翻譯／在地化服務都可以。",
         "hls-bot"
       );
     }
@@ -183,7 +183,7 @@
         });
       })
       .then(function (data) {
-        pending.textContent = data.reply || "（沒有回覆內容）";
+        pending.textContent = data.reply || "(No reply content)";
         history.push({ role: "user", content: text });
         history.push({ role: "assistant", content: data.reply || "" });
         if (history.length > 20) history = history.slice(-20);
@@ -191,7 +191,7 @@
       .catch(function () {
         pending.className = "hls-msg hls-err";
         pending.textContent =
-          "抱歉，客服暫時連不上。請稍後再試，或直接寫信到 hello@hankloc.com。";
+          "Sorry, the assistant is temporarily unavailable. Please try again later, or email hello@hankloc.com.\n抱歉，客服暫時連不上，請稍後再試，或直接寫信到 hello@hankloc.com。";
       })
       .then(function () {
         sendBtn.disabled = false;
@@ -205,12 +205,12 @@
     var email = inEmail.value.trim();
     var need = inNeed.value.trim();
     if (!name || !email || !need) {
-      addMsg("留資料需要填寫稱呼、Email 和需求簡述喔。", "hls-err");
+      addMsg("Please fill in your name, email and a short description. 請填寫稱呼、Email 和需求簡述。", "hls-err");
       panel.classList.add("hls-open");
       return;
     }
     leadSend.disabled = true;
-    leadSend.textContent = "送出中…";
+    leadSend.textContent = "Sending… 送出中";
     fetch(API + "/lead", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -224,19 +224,19 @@
         leadForm.classList.remove("hls-open");
         inName.value = inEmail.value = inNeed.value = "";
         addMsg(
-          "已收到您的資料，Hank 會在平日晚間回覆您。謝謝！",
+          "Thanks — your details are in. Hank will reply on a weekday evening.\n已收到您的資料，Hank 會在平日晚間回覆您。",
           "hls-bot"
         );
       })
       .catch(function () {
         addMsg(
-          "留資料送出失敗，請直接寫信到 hello@hankloc.com，謝謝。",
+          "Couldn't send your details — please email hello@hankloc.com directly.\n留資料送出失敗，請直接寫信到 hello@hankloc.com，謝謝。",
           "hls-err"
         );
       })
       .then(function () {
         leadSend.disabled = false;
-        leadSend.textContent = "送出給專人";
+        leadSend.textContent = "Send 送出";
       });
   }
 
