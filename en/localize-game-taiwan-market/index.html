@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="description" content="Localizing your game for Taiwan means Traditional Chinese (zh-TW) written the way Taiwan players actually use it — not Simplified Chinese converted. A practical guide: store page first, in-game text second, Steamworks setup, cost, and a pre-launch checklist." />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="Hank Chen" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:title" content="How to Localize Your Game for Taiwan | Steam Store Page &amp; In-Game Text in Traditional Chinese (Taiwan) | Hank Chen" />
+<meta property="og:description" content="Localizing your game for Taiwan means Traditional Chinese (zh-TW) written the way Taiwan players actually use it — not Simplified Chinese converted. A practical guide: store page first, in-game text second, Steamworks setup, cost, and a pre-launch checklist." />
+<meta property="og:url" content="https://hankloc.com/en/localize-game-taiwan-market/" />
+<meta property="og:image" content="https://hankloc.com/assets/og-cover.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="How to Localize Your Game for Taiwan | Steam Store Page &amp; In-Game Text in Traditional Chinese (Taiwan) | Hank Chen" />
+<meta name="twitter:description" content="Localizing your game for Taiwan means Traditional Chinese (zh-TW) written the way Taiwan players actually use it — not Simplified Chinese converted. A practical guide: store page first, in-game text second, Steamworks setup, cost, and a pre-launch checklist." />
+<meta name="twitter:image" content="https://hankloc.com/assets/og-cover.png" />
+<link rel="canonical" href="https://hankloc.com/en/localize-game-taiwan-market/" />
+<title>How to Localize Your Game for Taiwan | Steam Store Page &amp; In-Game Text in Traditional Chinese (Taiwan) | Hank Chen</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600;700;900&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"How to Localize Your Game for the Taiwan Market: Store Page, In-Game Text, and Taiwan Wording","author":{"@type":"Person","name":"Hank Chen"},"datePublished":"2026-11-20","inLanguage":"en","mainEntityOfPage":"https://hankloc.com/en/localize-game-taiwan-market/"}
+</script>
+<style>
+  :root{--navy:#0F2A44;--navy-2:#16365A;--navy-deep:#0A1E33;--yellow:#FFC400;--yellow-dark:#E0AA00;--bg:#F6F7F9;--surface:#FFFFFF;--surface-2:#EEF2F6;--ink:#14232F;--muted:#5A6B7A;--line:#DCE3EA;--radius:14px;color-scheme:light}
+  @media (prefers-color-scheme: dark){:root{--bg:#0B1B2E;--surface:#12293F;--surface-2:#0F2A44;--ink:#F2F5F8;--muted:#A9BAC9;--line:#24405C;color-scheme:dark}}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:"Noto Sans","Noto Sans TC",system-ui,-apple-system,"Segoe UI",sans-serif;background:var(--bg);color:var(--ink);line-height:1.8;-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  .wrap{max-width:760px;margin:0 auto;padding:0 20px}
+  .nav{position:sticky;top:0;z-index:50;background:var(--navy);color:#fff;border-bottom:3px solid var(--yellow)}
+  .nav-inner{display:flex;align-items:center;gap:18px;min-height:60px;flex-wrap:wrap;padding-top:6px;padding-bottom:6px;max-width:1080px;margin:0 auto;padding-left:20px;padding-right:20px}
+  .brand{font-weight:900;font-size:1.08rem;text-decoration:none;display:flex;align-items:center;gap:10px}
+  .brand .mark{background:var(--yellow);color:var(--navy);font-weight:900;padding:2px 9px;border-radius:6px;font-size:.95rem}
+  .nav-links{display:flex;gap:4px;margin-left:auto;flex-wrap:wrap}
+  .nav-links a{text-decoration:none;font-size:.92rem;font-weight:500;color:#E7EEF5;padding:9px 12px;border-radius:8px}
+  .nav-links a:hover{background:var(--navy-2);color:#fff}
+  article{padding:44px 0 8px}
+  .tag{display:inline-block;background:rgba(255,196,0,.2);color:var(--yellow-dark);border:1px solid var(--yellow-dark);font-size:.82rem;font-weight:700;padding:4px 13px;border-radius:999px;margin-bottom:14px}
+  @media (prefers-color-scheme: dark){.tag{color:var(--yellow)}}
+  h1{font-size:1.9rem;line-height:1.35;font-weight:900;margin:0 0 10px}
+  .meta{color:var(--muted);font-size:.9rem;margin:0 0 28px}
+  h2{font-size:1.35rem;font-weight:900;margin:36px 0 12px}
+  h2 .bar{color:var(--yellow-dark)}
+  p{margin:0 0 16px}
+  table{width:100%;border-collapse:collapse;margin:8px 0 20px;font-size:.95rem;background:var(--surface);border-radius:12px;overflow:hidden}
+  th,td{border:1px solid var(--line);padding:10px 14px;text-align:left}
+  th{background:var(--navy);color:#fff;font-weight:700}
+  td.tw{font-weight:700;color:var(--ink)}
+  .note{background:var(--surface-2);border-left:4px solid var(--yellow);border-radius:0 10px 10px 0;padding:14px 18px;margin:20px 0;font-size:.95rem;color:var(--muted)}
+  .note b{color:var(--ink)}
+  .cta{background:var(--navy);color:#fff;border-radius:16px;padding:28px;margin:36px 0}
+  .cta h3{margin:0 0 8px;font-size:1.15rem}
+  .cta h3 span{color:var(--yellow)}
+  .cta p{color:#C9D7E4;margin:0 0 18px;font-size:.95rem}
+  .cta .btns{display:flex;gap:12px;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:11px 24px;border-radius:10px;font-weight:700;font-size:.98rem;text-decoration:none}
+  .btn-yellow{background:var(--yellow);color:var(--navy)}
+  .btn-outline{border:2px solid #7E97AE;color:#fff}
+  .author{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:20px;display:flex;gap:16px;align-items:start;margin-bottom:20px}
+  .avatar{width:56px;height:56px;border-radius:12px;background:var(--navy);color:var(--yellow);display:flex;align-items:center;justify-content:center;font-size:1.5rem;font-weight:900;flex-shrink:0}
+  .author h3{margin:0 0 2px;font-size:1.05rem}
+  .author p{margin:0;color:var(--muted);font-size:.92rem}
+  .back{margin-bottom:40px}
+  .back a{font-weight:700;color:var(--navy);text-decoration:none}
+  @media (prefers-color-scheme: dark){.back a{color:var(--yellow)}}
+  footer{background:var(--navy-deep);color:#9DB2C6;padding:28px 0 32px;font-size:.88rem;margin-top:40px}
+  footer .wrap{display:flex;gap:14px;flex-wrap:wrap;justify-content:space-between;align-items:center}
+  footer b{color:#fff}
+  footer a{color:var(--yellow);text-decoration:none;font-weight:700}
+  @media (max-width:640px){h1{font-size:1.55rem}}
+</style>
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "zfovpixisr");
+</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XJ2395TWPE"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XJ2395TWPE');
+</script>
+</head>
+<body>
+<header class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="https://hankloc.com/en/"><span class="mark">譯</span>Hank Chen</a>
+    <nav class="nav-links" aria-label="Main menu">
+      <a href="https://hankloc.com/en/#services">Services</a>
+      <a href="https://hankloc.com/en/#pricing">Pricing</a>
+      <a href="https://hankloc.com/en/steam-store-tc-pack/">Steam Pack</a>
+      <a href="https://hankloc.com/en/#faq">FAQ</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+<article>
+  <span class="tag">Game Localization</span>
+  <h1>How to Localize Your Game for the Taiwan Market: Store Page, In-Game Text, and Taiwan Wording</h1>
+  <p class="meta">Hank Chen ・ November 20, 2026 ・ About 7 minutes</p>
+
+  <p>Taiwan is its own localization — not a free extra that comes with Simplified Chinese. Steam treats Traditional Chinese (zh-TW) and Simplified Chinese (zh-CN) as two separate languages, with separate store pages, separate language codes (<code>tchinese</code> and <code>schinese</code>), and separate audiences. A Taiwan player who opens your store page and finds only Simplified Chinese reads it the same way you would read a page written for a different country: the words are understandable, but the page clearly was not made for them.</p>
+  <p>This guide is the practical version: four steps, what each one costs, how to set it up in Steamworks, and a pre-launch checklist. No market-size claims, no conversion-rate promises — just the work, in order.</p>
+
+  <h2><span class="bar">▍</span>Step 1: Localize the store page first</h2>
+  <p><b>The store page is everything a player sees before buying — and it is the cheapest part of the job.</b> Title, short description, the "About This Game" section, and tags: that is what decides whether a Taiwan player wishlists your game or scrolls past it. In-game text matters after the purchase; the store page matters before it.</p>
+  <p><b>Do the store page first for a second reason: it is a test.</b> A localized store page lets you watch the wishlist response from Taiwan before you commit to translating the whole game. Most publishers I work with start here, check the response, and then decide about in-game text. That sequencing is the point of a store-page-first approach.</p>
+  <p><b>What belongs in a store page localization:</b> the game title (localized name, not a transliteration), the short description, the full "About This Game" text, feature lists, and tag suggestions. Capsule images are graphics, not text — if your capsule has English words baked into the image, that is a separate art task, not a translation task.</p>
+
+  <h2><span class="bar">▍</span>Step 2: Localize the in-game text</h2>
+  <p><b>Once the store page is done, the in-game text is menus, UI strings, dialogue, and subtitles.</b> This is where most "we already have Chinese" projects go wrong: the game ships with Simplified Chinese text, and nobody checks what Taiwan players actually see.</p>
+  <p><b>UI strings have a length problem that store pages do not.</b> A button that fits "Settings" in English has to fit 設定 in Traditional Chinese — usually fine — but a converted string that is longer, or a menu label translated word-for-word from English, will overflow or wrap. Plan for a UI pass after translation: check every button, tooltip, and menu label in-game, not in a spreadsheet.</p>
+  <p><b>Subtitles and dialogue need the same treatment as any other Taiwan text.</b> Spoken lines should read like people talk in Taiwan, not like a textbook. If your game has voice acting in English with Traditional Chinese subtitles, the subtitles carry the whole tone — get them right and the game feels local; get them wrong and every cutscene reminds the player the game was not made for them.</p>
+
+  <h2><span class="bar">▍</span>Step 3: Fix the Taiwan wording — the conversion trap</h2>
+  <p><b>Converting Simplified Chinese to Traditional characters is not localization.</b> A conversion tool changes the glyphs, not the wording. The output is perfectly valid Traditional Chinese — and instantly reads as Mainland wording to anyone in Taiwan. These are the giveaways I see most often on game pages and in game text:</p>
+  <table>
+    <tr><th>What conversion produces</th><th>What Taiwan players expect</th><th>Where it shows up</th></tr>
+    <tr><td class="tw">软件</td><td class="tw">軟體</td><td>software, settings screens, system requirements</td></tr>
+    <tr><td class="tw">视频</td><td class="tw">影片</td><td>video, cutscenes, trailers</td></tr>
+    <tr><td class="tw">网络</td><td class="tw">網路</td><td>network, online play, connection errors</td></tr>
+    <tr><td class="tw">质量</td><td class="tw">品質</td><td>quality settings, graphics options</td></tr>
+    <tr><td class="tw">激活</td><td class="tw">啟用</td><td>activate account, enable feature</td></tr>
+    <tr><td class="tw">默认</td><td class="tw">預設</td><td>default settings</td></tr>
+    <tr><td class="tw">登录</td><td class="tw">登入</td><td>log in — 登錄 reads as "register" in Taiwan</td></tr>
+    <tr><td class="tw">设置</td><td class="tw">設定</td><td>settings — every menu in Taiwan says 設定</td></tr>
+  </table>
+  <p>The rule is the same as for websites: keep what both sides use, replace what only the Mainland uses. More pairs are collected on the site's <a href="https://hankloc.com/glossary/">terminology glossary</a>. If your game already has a Simplified Chinese version, this is a review job, not a re-translation — see the <a href="https://hankloc.com/simplified-to-taiwan-review/">Simplified → Taiwan Traditional review service</a> for how that works.</p>
+
+  <h2><span class="bar">▍</span>Step 4: Set it up in Steamworks — and verify it</h2>
+  <p><b>Steam offers full store page, client, and API localization for 30 languages, and Traditional Chinese is one of them.</b> In Steamworks, add Traditional Chinese as a store language (language code <code>tchinese</code>) and enter the localized store page text there — it is a separate language slot from Simplified Chinese (<code>schinese</code>), not a variant of it.</p>
+  <p><b>Then set the game's supported languages separately.</b> Store page language and in-game language support are two different settings: a game can list Traditional Chinese as an interface or subtitle language even if its store page is not translated yet, and the reverse is also possible. Set both, and set them honestly — list only what the game actually supports. Players check the language table on the store page before buying, and a wrong entry is a refund waiting to happen.</p>
+  <p><b>Verify before launch, in a Taiwan language setting.</b> Open the store page with Steam's language set to Traditional Chinese and confirm the localized title, description, and tags actually show — not the English fallback. Then check the in-game language list on the same page. If the localized name does not appear, the language was added to the wrong slot or the page has not been published for that language yet.</p>
+  <div class="note"><b>Steam's own client interface is available in Traditional Chinese</b>, so Taiwan players browse, buy, and play in zh-TW by default. When your page is English-only, it stands out in their feed for the wrong reason.</div>
+
+  <h2><span class="bar">▍</span>What it costs, and how long it takes</h2>
+  <p><b>Store page: US$149 flat, up to 1,000 words, delivered in 48 hours.</b> That covers the title, short description, "About This Game", and tag suggestions, with a free trial segment first and one revision round. Anything beyond 1,000 words is US$0.08 per word, quoted up front. Full details are on the <a href="https://hankloc.com/en/steam-store-tc-pack/">Steam store page pack</a>.</p>
+  <p><b>In-game text: US$0.08 per word, with a free 500-word trial.</b> Send 500 words of your game's text and get it back localized, so you can judge the quality on your own content before committing to the full script. Pricing and the trial are on the <a href="https://hankloc.com/game-localization/">game localization service page</a>.</p>
+  <p><b>Timing is the part most teams underestimate.</b> A store page takes 48 hours; a full game script takes days to weeks depending on word count and how many UI passes it needs. Do not leave the store page to launch week — it is the first thing players see, and it is also the easiest thing to get done early.</p>
+
+  <h2><span class="bar">▍</span>When to do it: the calendar that decides your deadline</h2>
+  <p><b>Steam Winter Sale — December 17 to January 4.</b> The biggest sale window of the year for store page traffic, and the one most developers plan their localization around. A Taiwan store page should be live well before December 17, not during the sale. My Chinese-language Winter Sale guide covers the same window in detail: <a href="https://hankloc.com/blog/steam-winter-sale-store-page-taiwan-localization/">Steam 冬季特賣商店頁進台灣市場</a>.</p>
+  <p><b>Steam Awards nomination — November 23 to 30.</b> Nomination season puts store pages in front of players who are browsing and voting. If your game is in the conversation, a Taiwan store page should already be up when the voting starts.</p>
+  <p><b>Steam Next Fest (February 2027) — registration closes January 10, 2027.</b> If you are entering the February Next Fest, your demo's store page is the page players land on. Get the Taiwan version done before the registration deadline, not after — the deadline is a natural forcing function, use it.</p>
+
+  <h2><span class="bar">▍</span>Pre-launch checklist</h2>
+  <table>
+    <tr><th>Check</th><th>Pass standard</th></tr>
+    <tr><td>Store page language</td><td>Traditional Chinese added as its own store language in Steamworks (tchinese), not bundled with Simplified Chinese</td></tr>
+    <tr><td>Title and description</td><td>Localized title, short description, and "About This Game" all in Taiwan wording — no conversion leftovers (軟件、視頻、激活、默認)</td></tr>
+    <tr><td>Tags</td><td>Tags make sense in Traditional Chinese and match the game's actual content</td></tr>
+    <tr><td>In-game language table</td><td>Interface / subtitles / audio columns list only what the game actually supports in Traditional Chinese</td></tr>
+    <tr><td>UI strings</td><td>Buttons, menus, and tooltips checked in-game for overflow and wrapping — not just in a spreadsheet</td></tr>
+    <tr><td>Terminology</td><td>One term, one translation, across the store page and the game — names, items, and skills use the same wording everywhere</td></tr>
+    <tr><td>Live verification</td><td>Store page opened with Steam set to Traditional Chinese: localized title and description show, no English fallback</td></tr>
+  </table>
+
+  <h2><span class="bar">▍</span>What to do next</h2>
+  <p>Start with the store page — it is the smallest job with the most visible result. If you already have a Simplified Chinese version, start with a review instead of a re-translation. Either way, the first step is free: send one page, or 500 words of game text, and judge the localization on your own content before spending anything.</p>
+  <p>I'm Hank Chen, a freelance localizer based in Taiwan. I translate English and Simplified Chinese content into Traditional Chinese the way people in Taiwan actually use it — websites, marketing copy, subtitles, and games. My full service list is on the <a href="https://hankloc.com/en/">English services page</a>.</p>
+
+  <div class="cta">
+    <h3>Your game, in Taiwan's words — <span>starting with the store page</span></h3>
+    <p>Send me your store page text and I'll localize a free trial segment first, so you can see the quality before you pay anything. Store page pack: US$149 flat, up to 1,000 words, 48-hour delivery, one revision included. In-game text: US$0.08 per word, free 500-word trial.</p>
+    <div class="btns">
+      <a class="btn btn-yellow" href="https://hankloc.com/en/steam-store-tc-pack/">See the Steam store page pack →</a>
+      <a class="btn btn-outline" href="https://hankloc.com/game-localization/">Game localization services</a>
+    </div>
+  </div>
+
+  <div class="author">
+    <div class="avatar" aria-hidden="true">H</div>
+    <div>
+      <h3>Hank Chen</h3>
+      <p>Freelance localizer in Taiwan. English and Simplified Chinese → Traditional Chinese (Taiwan): websites, marketing copy, subtitles, and games — Taiwan wording only, never raw machine output.</p>
+    </div>
+  </div>
+  <p class="back"><a href="https://hankloc.com/en/">← Back to Taiwan Localization Services</a></p>
+</article>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div><b>Hank Chen</b> ・ English ↔ Traditional Chinese (Taiwan) translation / localization</div>
+    <div>This site never takes payment directly — all orders run through <a href="https://www.fiverr.com/chenhank372/writing-and-translation-expert" target="_blank" rel="noopener">Fiverr</a>.</div>
+  </div>
+</footer>
+</body>
+</html>
