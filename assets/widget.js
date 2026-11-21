@@ -1,5 +1,5 @@
 /**
- * LocIndex AI 助理 — 前端聊天泡泡
+ * LocRank AI 助理 — 前端聊天泡泡
  * 原生 JS、無框架、無外部相依。貼法見 SNIPPET.md。
  *
  * 設定方式（二擇一）：
@@ -15,7 +15,7 @@
     window.HANKLOC_CHAT_API ||
     "";
   if (!API) {
-    if (window.console) console.warn("[LocIndex chat] API base URL not configured.");
+    if (window.console) console.warn("[LocRank chat] API base URL not configured.");
     return;
   }
   API = API.replace(/\/+$/, "");
@@ -73,7 +73,7 @@
   head.className = "hls-head";
   var title = document.createElement("p");
   title.className = "hls-title";
-  title.textContent = "LocIndex AI Assistant";
+  title.textContent = "LocRank AI Assistant";
   var sub = document.createElement("p");
   sub.className = "hls-sub";
   sub.textContent = "Find & compare localization tools · test-based scores · EN ↔ Traditional Chinese services";
@@ -132,7 +132,7 @@
 
   var bubble = document.createElement("button");
   bubble.className = "hls-bubble";
-  bubble.setAttribute("aria-label", "Open LocIndex AI assistant 開啟 LocIndex AI 客服");
+  bubble.setAttribute("aria-label", "Open LocRank AI assistant 開啟 LocRank AI 客服");
   bubble.innerHTML =
     '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3C6.5 3 2 6.9 2 11.7c0 2.7 1.5 5.2 3.9 6.8-.1 1-.5 2.3-1.2 3.3 0 0 2.9-.2 5-1.7.7.2 1.5.3 2.3.3 5.5 0 10-3.9 10-8.7S17.5 3 12 3z"/></svg>';
 
@@ -157,7 +157,7 @@
     if (open && !greeted) {
       greeted = true;
       addMsg(
-        "Hi! I'm the LocIndex assistant. Ask me to find or compare localization tools, explain our test-based scores (e.g. the Traditional Chinese Quality Benchmark), or about translation / localization services — EN ↔ Traditional Chinese, with a free one-page trial. I reply in your language.\n你好！也可以用繁體中文問我：工具推薦、實測分數，或翻譯／在地化服務都可以。",
+        "Hi! I'm the LocRank assistant. Ask me to find or compare localization tools, explain our test-based scores (e.g. the Traditional Chinese Quality Benchmark), or about translation / localization services — EN ↔ Traditional Chinese, with a free one-page trial. I reply in your language.\n你好！也可以用繁體中文問我：工具推薦、實測分數，或翻譯／在地化服務都可以。",
         "hls-bot"
       );
     }

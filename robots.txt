@@ -52,4 +52,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://hankloc.com/sitemap.xml
+Sitemap: https://locrank.com/sitemap.xml
