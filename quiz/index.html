@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>How Taiwan-Ready Is Your Chinese Copy? — 10-Question Quiz | LocRank</title>
+<meta name="description" content="A 10-question quiz that scores how native your Traditional Chinese copy reads in Taiwan. Spot mainland terms, Simplified-conversion traps and sentence-level giveaways — then get your grade and next step." />
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: "Inter", "Noto Sans TC", sans-serif; background: #10201E; color: #EAF4F1; min-height: 100vh; }
+  .wrap { max-width: 680px; margin: 0 auto; padding: 36px 20px 64px; }
+  a.back { color: #8FB5AE; text-decoration: none; font-size: 14px; }
+  .brand { color: #2DD4BF; font-weight: 800; letter-spacing: .12em; font-size: 13px; text-transform: uppercase; margin-top: 18px; }
+  h1 { font-size: 32px; font-weight: 900; line-height: 1.35; margin: 10px 0 12px; }
+  h1 .accent { color: #2DD4BF; }
+  p.lead { color: #B9D2CC; line-height: 1.8; margin-bottom: 24px; }
+  .card { background: #16302B; border: 1px solid #24514A; border-radius: 16px; padding: 26px; }
+  .progress { height: 8px; background: #1D3A35; border-radius: 99px; overflow: hidden; margin-bottom: 20px; }
+  .progress > div { height: 100%; background: #2DD4BF; width: 0%; transition: width .3s ease; }
+  .qmeta { color: #8FB5AE; font-size: 13px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; margin-bottom: 10px; }
+  .qtext { font-size: 21px; font-weight: 700; line-height: 1.55; margin-bottom: 6px; }
+  .qtext-zh { font-size: 17px; color: #B9D2CC; line-height: 1.6; margin-bottom: 18px; }
+  .opts { display: grid; gap: 10px; }
+  .opt { display: block; width: 100%; text-align: left; background: #10201E; color: #EAF4F1; border: 1px solid #2A554D; border-radius: 12px; padding: 14px 16px; font-size: 17px; font-family: inherit; cursor: pointer; line-height: 1.5; }
+  .opt:hover:not(:disabled) { border-color: #2DD4BF; }
+  .opt:disabled { cursor: default; opacity: .92; }
+  .opt.correct { border-color: #2DD4BF; background: #134239; }
+  .opt.wrong { border-color: #E0655F; background: #3D2320; }
+  .explain { display: none; margin-top: 16px; background: #10201E; border-left: 3px solid #2DD4BF; border-radius: 8px; padding: 14px 16px; color: #B9D2CC; line-height: 1.75; font-size: 15px; }
+  .explain b { color: #2DD4BF; }
+  .next { display: none; margin-top: 18px; width: 100%; background: #2DD4BF; color: #10201E; border: none; font-weight: 800; font-size: 17px; padding: 15px; border-radius: 12px; cursor: pointer; font-family: inherit; }
+  .start-btn { display: block; width: 100%; background: #2DD4BF; color: #10201E; text-align: center; font-weight: 800; font-size: 18px; padding: 16px; border-radius: 12px; border: none; cursor: pointer; font-family: inherit; }
+  .score-big { font-size: 52px; font-weight: 900; color: #2DD4BF; line-height: 1.1; }
+  .tier { font-size: 26px; font-weight: 900; margin: 6px 0 12px; }
+  .tier-copy { color: #B9D2CC; line-height: 1.85; margin-bottom: 20px; }
+  .cta-btn { display: block; text-align: center; background: #2DD4BF; color: #10201E; font-weight: 800; font-size: 17px; padding: 15px; border-radius: 12px; text-decoration: none; margin-bottom: 12px; }
+  .cta-ghost { display: block; text-align: center; background: transparent; color: #2DD4BF; border: 1px solid #2DD4BF; font-weight: 700; font-size: 16px; padding: 14px; border-radius: 12px; text-decoration: none; margin-bottom: 12px; }
+  .mailbox { margin-top: 22px; border: 1px dashed #2DD4BF; border-radius: 12px; padding: 18px; }
+  .mailbox h3 { font-size: 17px; margin-bottom: 8px; }
+  .mailbox p { color: #B9D2CC; line-height: 1.75; font-size: 15px; margin-bottom: 12px; }
+  .fine { color: #8FB5AE; font-size: 13px; line-height: 1.7; margin-top: 16px; text-align: center; }
+  .hidden { display: none; }
+</style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XJ2395TWPE"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XJ2395TWPE');
+</script>
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="/">← LocRank home</a>
+  <div class="brand">LocRank · Taiwan Chinese Readiness Quiz</div>
+  <h1>How <span class="accent">Taiwan-ready</span> is your Chinese copy?</h1>
+  <p class="lead">Most "Traditional Chinese" copy is converted, not localized — and Taiwan readers spot it in seconds. Ten questions, drawn from our 42-pair checker dictionary and the Traditional Chinese Quality Benchmark corpus. About two minutes. Instant feedback after every question.</p>
+
+  <!-- INTRO -->
+  <div class="card" id="intro">
+    <p style="line-height:1.85;color:#B9D2CC;margin-bottom:20px;">You'll get a score out of 10 and one of three grades — plus the exact next step for your grade: a free self-check checklist, our free checker tool, or a human audit of your real pages.<br/><span style="color:#EAF4F1;">測驗共 10 題，題目取自 42 組對照詞庫與台繁品質基準語料，答完立即看分級結果。</span></p>
+    <button class="start-btn" id="startBtn">Start the quiz →</button>
+    <p class="fine">No email needed to take the quiz. Your answers never leave your browser.</p>
+  </div>
+
+  <!-- QUIZ -->
+  <div class="card hidden" id="quizCard">
+    <div class="progress"><div id="bar"></div></div>
+    <div class="qmeta" id="qmeta"></div>
+    <div class="qtext" id="qtext"></div>
+    <div class="qtext-zh" id="qtextZh"></div>
+    <div class="opts" id="opts"></div>
+    <div class="explain" id="explain"></div>
+    <button class="next" id="nextBtn">Next question →</button>
+  </div>
+
+  <!-- RESULT -->
+  <div class="card hidden" id="resultCard">
+    <div class="qmeta">Your result</div>
+    <div class="score-big"><span id="scoreNum">0</span><span style="font-size:24px;color:#8FB5AE;"> / 10</span></div>
+    <div class="tier" id="tierName"></div>
+    <p class="tier-copy" id="tierCopy"></p>
+    <a class="cta-btn" id="tierCta" href="#"></a>
+    <a class="cta-ghost" href="/checker/">Run your real copy through the free checker →</a>
+
+    <div class="mailbox">
+      <h3>Get the free self-check checklist by email</h3>
+      <p>Subscribe and we'll email you the free Taiwan wording self-check checklist — the 42-pair cheat sheet this quiz is drawn from — plus localization notes like this a few times a month. Unsubscribe anytime.</p>
+      <a class="cta-btn" href="https://z2idugagr.systeme.io/form-en-clean" target="_blank" rel="noopener">Subscribe free — send me the checklist →</a>
+      <a class="cta-ghost" href="/free/?source=quiz" style="margin-bottom:0;">Or grab the free checklist now →</a>
+    </div>
+    <p class="fine">Want a human to audit your actual pages? First page is a free trial review — hello@hankloc.com</p>
+  </div>
+
+  <p class="fine">Questions sourced from the LocRank checker dictionary (42 pairs) and the Traditional Chinese Quality Benchmark v1.0 corpus (24 segments, 14 term checks). The same traps power our 152-rule Steam store-page health check.</p>
+</div>
+
+<script>
+var QUESTIONS = [
+  {
+    meta: "Word choice · 詞彙辨識",
+    q: "Your UI needs a label for \u201Cvideo\u201D. Which one reads native in Taiwan?",
+    qzh: "介面裡的「video」，哪個才是台灣說法？",
+    opts: ["視頻", "影片", "錄像", "視訊"],
+    answer: 1,
+    why: "<b>影片</b> is what Taiwan says for video content. 視頻 is the mainland term (the #1 giveaway in converted copy), and 視訊 in Taiwan means a video <i>call</i> — a different feature entirely."
+  },
+  {
+    meta: "Word choice · 詞彙辨識",
+    q: "Which is the Taiwan term for \u201Csoftware\u201D?",
+    qzh: "「software」在台灣怎麼說？",
+    opts: ["軟件", "軟體", "程式包", "應用件"],
+    answer: 1,
+    why: "<b>軟體</b>. 軟件 is the classic Simplified→Traditional conversion leftover: the characters convert, the word doesn't. Taiwan has always said 軟體."
+  },
+  {
+    meta: "Word choice · 詞彙辨識",
+    q: "A login button in Taiwan should say…",
+    qzh: "登入按鈕在台灣應該寫哪個？",
+    opts: ["登錄", "登入", "登陸", "註冊"],
+    answer: 1,
+    why: "<b>登入</b>. 登錄 is mainland usage; 登陸 means coming ashore (troops, typhoons). In our five-engine benchmark, this single word was one of the most common machine-translation misses."
+  },
+  {
+    meta: "Sentence feel · 整句語感",
+    q: "Which sentence sounds right to a Taiwan user?",
+    qzh: "哪一句讀起來最像台灣人寫的？",
+    opts: [
+      "請打開設置，修改默認網絡。",
+      "請開啟設定，修改預設網路。",
+      "請打開設置，修改預設網絡。",
+      "請開啟設定，修改默認網絡。"
+    ],
+    answer: 1,
+    why: "Three traps in one line: Taiwan says <b>設定</b> (not 設置）, <b>預設</b> (not 默認）, <b>網路</b> (not 網絡）. Any one of them marks the text as converted, not written for Taiwan."
+  },
+  {
+    meta: "Conversion trap · 簡轉繁地雷",
+    q: "A Taiwan menu lists 土豆. In Taiwan, what does it most likely mean?",
+    qzh: "台灣菜單上的「土豆」，指的是什麼？",
+    opts: ["Potato", "Peanut", "Taro", "Sweet potato"],
+    answer: 1,
+    why: "In Taiwan, <b>土豆 means peanut</b> (from Taiwanese). Potato is 馬鈴薯. Same characters, different food — the most famous meaning-flip trap in the Taiwan market."
+  },
+  {
+    meta: "Conversion trap · 簡轉繁地雷",
+    q: "After a direct Simplified→Traditional conversion, your invoice says 賬單. What's wrong?",
+    qzh: "簡轉繁後的發票寫「賬單」，問題出在哪？",
+    opts: [
+      "Nothing — it's fine",
+      "賬 should be 帳 — Taiwan writes 帳單",
+      "It should say 發票 instead",
+      "The word order is wrong"
+    ],
+    answer: 1,
+    why: "Conversion tools faithfully keep <b>賬</b>, but Taiwan writes <b>帳</b> for accounts and bills （帳戶、帳單）. It survives every automated conversion because the character exists in Traditional — it's just not the one Taiwan uses."
+  },
+  {
+    meta: "Context · 語境判斷",
+    q: "In a software interface, the \u201CMenu\u201D button should be…",
+    qzh: "軟體介面裡的「Menu」應該寫哪個？",
+    opts: ["菜單", "選單", "目錄", "清單"],
+    answer: 1,
+    why: "<b>選單</b>. 菜單 is a restaurant menu. Word-list tools flag this one either way — only context tells you which is right, which is why this trap needs a human-grade check."
+  },
+  {
+    meta: "Marketing feel · 行銷語感",
+    q: "Your landing page brags about value for money. A Taiwan copywriter would write…",
+    qzh: "想強調「划算」，台灣文案會怎麼寫？",
+    opts: ["性價比超高", "CP 值超高", "價格質量比很好", "物美價廉比"],
+    answer: 1,
+    why: "Taiwan marketing says <b>CP 值</b>. 性價比 is the mainland term — in our benchmark it was produced by nearly every engine, and it's an instant tell on a Taiwan landing page."
+  },
+  {
+    meta: "Sentence feel · 整句語感",
+    q: "Which support sentence reads native in Taiwan?",
+    qzh: "哪一句客服文案最道地？",
+    opts: [
+      "如無法在線觀看視頻，請檢查網絡後重新登錄。",
+      "如無法線上看影片，請檢查網路後重新登入。",
+      "如無法在線看影片，請檢查網絡後重新登入。",
+      "如無法線上觀看視頻，請檢查網路後重新登錄。"
+    ],
+    answer: 1,
+    why: "Five checkpoints in one sentence: <b>線上、影片、網路、登入</b> — miss any one and the sentence reads as converted. This is exactly the pattern our 152-rule health check scans page by page."
+  },
+  {
+    meta: "Word choice · 詞彙辨識",
+    q: "\u201CHigh quality\u201D in a Taiwan product description is…",
+    qzh: "產品文案裡的「high quality」，台灣寫哪個？",
+    opts: ["高質量", "高品質", "高質量感", "高品級"],
+    answer: 1,
+    why: "<b>高品質</b>. In Taiwan, 質量 refers to physical mass (physics); quality is 品質. Even top-scoring engines in our benchmark shipped 高質量 — readers notice."
+  }
+];
+
+var TIERS = [
+  {
+    max: 4,
+    name: "Needs Work · 還在翻車區",
+    copy: "Your eye for Taiwan usage is where most teams start — which means converted copy would slip past you and straight in front of Taiwan readers. The good news: the traps are systematic, not random. The free self-check checklist covers all 42 high-frequency pairs with the fix for each, so you can clean up your highest-traffic pages first.",
+    cta: "Get the free self-check checklist →",
+    href: "/free/?source=quiz&tier=needs-work"
+  },
+  {
+    max: 7,
+    name: "Getting There · 抓得到大題",
+    copy: "You catch the obvious mainland terms — but the sentence-level and context traps (the ones in questions like the menu and the support sentence) still get through. Those are exactly what readers feel without being able to name. Run your real copy through the free checker: it scans for all 42 pairs instantly, in your browser.",
+    cta: "Check my copy with the free checker →",
+    href: "/checker/?source=quiz"
+  },
+  {
+    max: 10,
+    name: "Taiwan-Ready · 台灣讀者點頭",
+    copy: "You spotted traps that most machine translation and most conversion tools miss — including the character-level and meaning-flip ones. Your remaining risk isn't vocabulary, it's consistency across a whole site or store page. Our human audit checks every page against 152 rules; the first page is a free trial review.",
+    cta: "Get a free first-page human audit →",
+    href: "/quote/?source=quiz&tier=taiwan-ready"
+  }
+];
+
+var idx = 0, score = 0, answered = false;
+var intro = document.getElementById("intro"),
+    quizCard = document.getElementById("quizCard"),
+    resultCard = document.getElementById("resultCard"),
+    bar = document.getElementById("bar"),
+    qmeta = document.getElementById("qmeta"),
+    qtext = document.getElementById("qtext"),
+    qtextZh = document.getElementById("qtextZh"),
+    optsBox = document.getElementById("opts"),
+    explain = document.getElementById("explain"),
+    nextBtn = document.getElementById("nextBtn");
+
+document.getElementById("startBtn").addEventListener("click", function () {
+  intro.classList.add("hidden");
+  quizCard.classList.remove("hidden");
+  render();
+});
+
+function render() {
+  answered = false;
+  var item = QUESTIONS[idx];
+  bar.style.width = (idx / QUESTIONS.length * 100) + "%";
+  qmeta.textContent = "Question " + (idx + 1) + " of " + QUESTIONS.length + " · " + item.meta;
+  qtext.textContent = item.q;
+  qtextZh.textContent = item.qzh;
+  explain.style.display = "none";
+  nextBtn.style.display = "none";
+  optsBox.innerHTML = "";
+  item.opts.forEach(function (label, i) {
+    var b = document.createElement("button");
+    b.className = "opt";
+    b.textContent = label;
+    b.addEventListener("click", function () { pick(i, b); });
+    optsBox.appendChild(b);
+  });
+}
+
+function pick(i, btn) {
+  if (answered) return;
+  answered = true;
+  var item = QUESTIONS[idx];
+  var buttons = optsBox.querySelectorAll(".opt");
+  buttons.forEach(function (b, j) {
+    b.disabled = true;
+    if (j === item.answer) b.classList.add("correct");
+  });
+  if (i === item.answer) { score++; }
+  else { btn.classList.add("wrong"); }
+  explain.innerHTML = (i === item.answer ? "<b>Correct.</b> " : "<b>Not quite.</b> ") + item.why;
+  explain.style.display = "block";
+  nextBtn.textContent = (idx === QUESTIONS.length - 1) ? "See my grade →" : "Next question →";
+  nextBtn.style.display = "block";
+}
+
+nextBtn.addEventListener("click", function () {
+  idx++;
+  if (idx < QUESTIONS.length) { render(); }
+  else { showResult(); }
+});
+
+function showResult() {
+  bar.style.width = "100%";
+  quizCard.classList.add("hidden");
+  resultCard.classList.remove("hidden");
+  document.getElementById("scoreNum").textContent = score;
+  var tier = TIERS[0];
+  for (var t = 0; t < TIERS.length; t++) { if (score <= TIERS[t].max) { tier = TIERS[t]; break; } }
+  document.getElementById("tierName").textContent = tier.name;
+  document.getElementById("tierCopy").textContent = tier.copy;
+  var cta = document.getElementById("tierCta");
+  cta.textContent = tier.cta;
+  cta.setAttribute("href", tier.href);
+  if (typeof gtag === "function") {
+    gtag("event", "quiz_complete", { score: score, tier: tier.name });
+  }
+}
+</script>
+</body>
+</html>
