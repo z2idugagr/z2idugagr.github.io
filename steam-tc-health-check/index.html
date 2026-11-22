@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Steam 商店頁台繁健檢工具｜免費檢查台灣用詞｜HankLoc</title>
+<meta name="description" content="貼上 Steam 商店頁文案，免費檢查台灣用詞問題：即時標出值得檢查的用詞、健檢分數與修正建議；免費版顯示前 5 項，另可訂閱免費台灣用詞對照精華表。檢查在瀏覽器本機進行，不上傳文字。">
+<style>
+:root{--ink:#1c2430;--mut:#5a6675;--line:#dfe5ec;--acc:#0b6e4f;--bg:#f7f8fa;--card:#fff;--mark:#ffe08a}
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,"Segoe UI","Noto Sans TC","PingFang TC",sans-serif;color:var(--ink);background:var(--bg);line-height:1.7}
+.wrap{max-width:860px;margin:0 auto;padding:28px 18px 48px}
+h1{font-size:26px;margin:6px 0 4px}
+.lead{color:var(--mut);margin:0 0 18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px;margin:14px 0}
+textarea{width:100%;min-height:180px;border:1px solid var(--line);border-radius:8px;padding:12px;font:inherit;resize:vertical}
+.btns{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+button{cursor:pointer;border:0;border-radius:8px;padding:10px 18px;font:inherit;font-weight:600}
+.primary{background:var(--acc);color:#fff}
+.ghost{background:#eef1f4;color:var(--ink)}
+#status{color:var(--mut);font-size:14px;margin-top:10px}
+.score-row{display:flex;gap:18px;align-items:baseline;flex-wrap:wrap}
+#score{font-size:44px;font-weight:800;color:var(--acc)}
+#verdict{font-weight:700}
+#stats{color:var(--mut)}
+pre{white-space:pre-wrap;word-break:break-word;background:#f3f5f7;border:1px solid var(--line);border-radius:8px;padding:12px;font:inherit;margin:10px 0}
+mark{background:var(--mark);border-radius:3px;padding:0 2px}
+ul{padding-left:20px}
+li{margin:8px 0}
+.cnt{color:var(--mut);font-size:13px}
+.low{color:#8a6d00;background:#fff3cd;border-radius:4px;padding:1px 6px;font-size:12px}
+.note{color:var(--mut);font-size:14px}
+#gate{border:1px dashed var(--acc);border-radius:10px;padding:14px;margin-top:14px}
+#gate input[type=email]{width:min(320px,100%);border:1px solid var(--line);border-radius:8px;padding:10px;font:inherit;margin:6px 8px 6px 0}
+#gateMsg{font-size:14px;color:var(--mut);margin-top:8px}
+#gate a.gate-btn{display:inline-block;background:var(--acc);color:#fff;border-radius:8px;padding:10px 18px;font-weight:600;text-decoration:none;margin:6px 0}
+.fine{font-size:13px;color:var(--mut)}
+h2{font-size:19px;margin:4px 0 8px}
+h3{font-size:16px;margin:14px 0 4px}
+a{color:var(--acc)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Steam 商店頁台繁健檢工具</h1>
+  <p class="lead">貼上英文或簡中版商店頁文案，即時檢查台灣用詞：標出值得檢查的位置、給修正建議與 0–100 健檢分數。免費版顯示前 5 項；另可訂閱免費《台灣用詞對照精華表》與後續筆記（訂閱不會自動解鎖本頁其餘結果）。</p>
+
+  <div class="card">
+    <label for="input"><strong>商店頁文案</strong></label>
+    <textarea id="input" placeholder="把商店頁的 About / 簡介 / 特色文案貼在這裡……"></textarea>
+    <div class="btns">
+      <button id="checkBtn" class="primary" type="button">開始健檢</button>
+      <button id="demoBtn" class="ghost" type="button">載入示範範例</button>
+      <button id="clearBtn" class="ghost" type="button">清除</button>
+    </div>
+    <p id="status"></p>
+  </div>
+
+  <div class="card" id="results" style="display:none">
+    <div class="score-row"><span id="score">–</span><span id="verdict"></span></div>
+    <p id="stats"></p>
+    <h2>標示結果</h2>
+    <pre id="highlighted"></pre>
+    <h2>問題清單（建議口吻）</h2>
+    <ol id="issueList"></ol>
+    <div id="gate" style="display:none">
+      <strong id="gateText"></strong>
+      <p><a id="gateLink" class="gate-btn" href="https://z2idugagr.systeme.io/form-zh-clean" target="_blank" rel="noopener">前往 Systeme 訂閱免費對照精華表 →</a></p>
+      <p id="gateMsg">在 Systeme 表單填 email 並完成訂閱確認後，免費《台灣用詞對照精華表》與後續在地化筆記會寄到你的信箱。本頁不會收到或儲存你的 email，也不會自動解鎖或寄出本頁其餘結果；想要整份商店頁的完整真人健檢，請看下方方案。</p>
+    </div>
+    <div id="enWatch"></div>
+  </div>
+
+  <div class="card">
+    <h2>完整版怎麼做？</h2>
+    <p>工具標出的是「值得檢查」的位置，語境判斷仍需人工確認（例如「菜單」在餐廳情境是正確的）。想要整份商店頁一次顧好：<a href="https://hankloc.com/en/steam-store-tc-pack/">Steam 商店頁台繁在地化 US$149／48 小時</a>，含真人審閱與品牌用詞表。</p>
+    <p class="fine">檢查在你的瀏覽器本機進行，文字不會上傳。規則庫 152 條（中文 131／英文翻譯觀察 21），簡中原文也可直接貼上（工具會先做字形正規化再比對），以詞彙比對為主，不宣稱 100% 準確；本工具為健檢建議，非正式審閱報告。</p>
+  </div>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
