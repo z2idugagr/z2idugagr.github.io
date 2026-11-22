@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url><loc>https://locrank.com/</loc><xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://locrank.com/"/><xhtml:link rel="alternate" hreflang="en" href="https://locrank.com/en/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://locrank.com/"/><lastmod>2026-11-21</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
   <url><loc>https://locrank.com/en/</loc><xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://locrank.com/"/><xhtml:link rel="alternate" hreflang="en" href="https://locrank.com/en/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://locrank.com/"/><lastmod>2026-11-17</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://locrank.com/blog/</loc><lastmod>2026-11-21</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://locrank.com/blog/</loc><lastmod>2026-11-22</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://locrank.com/blog/resume-translation/</loc><lastmod>2026-11-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://locrank.com/blog/translation-pricing/</loc><lastmod>2026-11-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://locrank.com/blog/subtitle-translation/</loc><lastmod>2026-11-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
@@ -14,6 +14,7 @@
   <url><loc>https://locrank.com/blog/steam-winter-sale-store-page-taiwan-localization/</loc><lastmod>2026-11-18</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://locrank.com/blog/english-subtitles-taiwan-wording/</loc><lastmod>2026-11-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://locrank.com/blog/steam-awards-nomination-tc/</loc><lastmod>2026-11-21</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://locrank.com/blog/double-12-taiwan-localization/</loc><lastmod>2026-11-22</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://locrank.com/blog/festive-season-copy-taiwan-localization/</loc><lastmod>2026-11-19</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://locrank.com/blog/en-zh-translation-mistakes/</loc><lastmod>2026-11-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://locrank.com/blog/bilingual-subtitle-mistakes/</loc><lastmod>2026-11-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
