@@ -1,0 +1,673 @@
+{
+ "name": "LocRank 簡轉台繁（台灣用詞）詞彙庫",
+ "version": "1.0",
+ "updated": "2026-11-23",
+ "count": 132,
+ "note": "詞彙層對照：左為大陸／簡中常見用詞，右為台灣說法。由 LocRank 既有檢查器詞庫合併而成（/checker/ 基礎 42 組 + Steam 商店頁台繁健檢規則庫中文詞彙規則 131 條，去重後共 132 組）。所有替換皆為建議，語境判斷仍需人工確認。",
+ "sources": [
+  "locrank.com/checker 基礎 42 組對照（wrong/right/note）",
+  "~/workspace/tools/steam-tc-health-check/rules.json 中 type=zh 的 131 條規則（src/tw/note）"
+ ],
+ "pairs": [
+  {
+   "from": "關注公眾號",
+   "to": "追蹤官方帳號",
+   "note": "official account 台灣說「追蹤官方帳號」"
+  },
+  {
+   "from": "信息通知",
+   "to": "訊息通知",
+   "note": "「信息」在台灣說「訊息／資訊」"
+  },
+  {
+   "from": "在線人數",
+   "to": "線上人數",
+   "note": "online players 台灣說「線上人數」"
+  },
+  {
+   "from": "在線客服",
+   "to": "線上客服",
+   "note": "台灣說「線上」"
+  },
+  {
+   "from": "多人聯機",
+   "to": "多人連線",
+   "note": "online multiplayer 台灣說「多人連線」"
+  },
+  {
+   "from": "大年三十",
+   "to": "除夕",
+   "note": "台灣說「除夕」"
+  },
+  {
+   "from": "實名認證",
+   "to": "身分驗證",
+   "note": "台灣說「身分驗證」"
+  },
+  {
+   "from": "快捷方式",
+   "to": "捷徑",
+   "note": "shortcut 台灣說「捷徑」"
+  },
+  {
+   "from": "推薦配置",
+   "to": "建議配備",
+   "note": "recommended specs 台灣說「建議配備」"
+  },
+  {
+   "from": "搜索引擎",
+   "to": "搜尋引擎",
+   "note": "search engine 台灣說「搜尋引擎」"
+  },
+  {
+   "from": "操作系統",
+   "to": "作業系統",
+   "note": "operating system 台灣說「作業系統」"
+  },
+  {
+   "from": "新手教程",
+   "to": "新手教學",
+   "note": "tutorial 台灣說「教學」"
+  },
+  {
+   "from": "早期體驗",
+   "to": "搶先體驗",
+   "note": "early access 台灣 Steam 說「搶先體驗」"
+  },
+  {
+   "from": "最低配置",
+   "to": "最低配備",
+   "note": "minimum specs 台灣說「最低配備」"
+  },
+  {
+   "from": "系統要求",
+   "to": "系統需求",
+   "note": "system requirements 台灣說「系統需求」"
+  },
+  {
+   "from": "網絡行銷",
+   "to": "網路行銷",
+   "note": "「網絡」在台灣說「網路」"
+  },
+  {
+   "from": "觀看視頻",
+   "to": "看影片",
+   "note": "「視頻」在台灣說「影片」"
+  },
+  {
+   "from": "語言設置",
+   "to": "語言設定",
+   "note": "language settings 台灣說「語言設定」"
+  },
+  {
+   "from": "二維碼",
+   "to": "QR Code",
+   "note": "台灣多直接說 QR Code"
+  },
+  {
+   "from": "倒計時",
+   "to": "倒數",
+   "note": "countdown 台灣說「倒數」"
+  },
+  {
+   "from": "公交車",
+   "to": "公車",
+   "note": "bus 台灣叫公車"
+  },
+  {
+   "from": "公眾號",
+   "to": "官方帳號",
+   "note": "official account 台灣說「官方帳號」"
+  },
+  {
+   "from": "出租車",
+   "to": "計程車",
+   "note": "taxi 台灣叫計程車"
+  },
+  {
+   "from": "客戶端",
+   "to": "用戶端",
+   "note": "client 台灣說「用戶端」"
+  },
+  {
+   "from": "序列號",
+   "to": "序號",
+   "note": "serial number 台灣說「序號」"
+  },
+  {
+   "from": "性價比",
+   "to": "CP 值",
+   "note": "台灣行銷與口語都說 CP 值"
+  },
+  {
+   "from": "手機號",
+   "to": "手機號碼",
+   "note": "台灣說「手機號碼」"
+  },
+  {
+   "from": "接地氣",
+   "to": "親民",
+   "note": "品牌文案說「親民／貼近在地」"
+  },
+  {
+   "from": "文件夾",
+   "to": "資料夾",
+   "note": "folder 台灣說「資料夾」"
+  },
+  {
+   "from": "方便面",
+   "to": "泡麵",
+   "note": "instant noodles 台灣叫泡麵"
+  },
+  {
+   "from": "方便麵",
+   "to": "泡麵",
+   "note": "instant noodles 台灣叫泡麵"
+  },
+  {
+   "from": "服務器",
+   "to": "伺服器",
+   "note": "server 台灣說「伺服器」"
+  },
+  {
+   "from": "激活碼",
+   "to": "序號",
+   "note": "activation code 台灣說「序號」"
+  },
+  {
+   "from": "瀏覽器",
+   "to": "瀏覽器",
+   "note": "browser 台灣說「瀏覽器」"
+  },
+  {
+   "from": "身份證",
+   "to": "身分證",
+   "note": "台灣用「身分證」（份）"
+  },
+  {
+   "from": "雲存檔",
+   "to": "雲端存檔",
+   "note": "cloud save 台灣說「雲端存檔」"
+  },
+  {
+   "from": "預註冊",
+   "to": "預先註冊",
+   "note": "pre-register 台灣說「預先註冊」"
+  },
+  {
+   "from": "高質量",
+   "to": "高品質",
+   "note": "「質量」在台灣指物理的 mass，品質才用「高品質」"
+  },
+  {
+   "from": "鼠標墊",
+   "to": "滑鼠墊",
+   "note": "mouse pad 台灣說「滑鼠墊」"
+  },
+  {
+   "from": "主頁",
+   "to": "首頁",
+   "note": "home page 台灣說「首頁」"
+  },
+  {
+   "from": "保存",
+   "to": "儲存",
+   "note": "指存檔時台灣說「儲存」；指保存期限時「保存」正確，視語境而定"
+  },
+  {
+   "from": "信息",
+   "to": "訊息",
+   "note": "message 台灣說「訊息」；正式文件用「資訊」"
+  },
+  {
+   "from": "優盤",
+   "to": "隨身碟",
+   "note": "USB drive 台灣說「隨身碟」"
+  },
+  {
+   "from": "充值",
+   "to": "儲值",
+   "note": "top-up 台灣遊戲說「儲值」"
+  },
+  {
+   "from": "內存",
+   "to": "記憶體",
+   "note": "memory（硬體）台灣說「記憶體」"
+  },
+  {
+   "from": "內測",
+   "to": "封閉測試",
+   "note": "closed beta 台灣說「封閉測試」"
+  },
+  {
+   "from": "全屏",
+   "to": "全螢幕",
+   "note": "full screen 台灣說「全螢幕」"
+  },
+  {
+   "from": "公測",
+   "to": "公開測試",
+   "note": "open beta 台灣說「公開測試」"
+  },
+  {
+   "from": "加載",
+   "to": "載入",
+   "note": "loading 台灣說「載入」"
+  },
+  {
+   "from": "包郵",
+   "to": "免運",
+   "note": "free shipping 台灣說「免運」"
+  },
+  {
+   "from": "匹配",
+   "to": "配對",
+   "note": "matchmaking 台灣說「配對」"
+  },
+  {
+   "from": "反饋",
+   "to": "回饋",
+   "note": "feedback 台灣說「回饋」"
+  },
+  {
+   "from": "回復",
+   "to": "回覆",
+   "note": "reply 台灣用「回覆」（言部）"
+  },
+  {
+   "from": "圖標",
+   "to": "圖示",
+   "note": "icon 台灣說「圖示」"
+  },
+  {
+   "from": "土豆",
+   "to": "馬鈴薯",
+   "note": "potato 是「馬鈴薯」；台語的土豆指花生"
+  },
+  {
+   "from": "在線",
+   "to": "線上",
+   "note": "online 台灣說「線上」"
+  },
+  {
+   "from": "地鐵",
+   "to": "捷運",
+   "note": "台北、高雄的系統叫捷運"
+  },
+  {
+   "from": "大促",
+   "to": "促銷",
+   "note": "台灣說「促銷／優惠活動」"
+  },
+  {
+   "from": "大招",
+   "to": "大絕",
+   "note": "ultimate 台灣說「大絕」；「大招」部分玩家也用，視客群而定"
+  },
+  {
+   "from": "定制",
+   "to": "訂製",
+   "note": "customize 台灣說「訂製」"
+  },
+  {
+   "from": "密鑰",
+   "to": "金鑰",
+   "note": "key（加密）台灣說「金鑰」"
+  },
+  {
+   "from": "封測",
+   "to": "封閉測試",
+   "note": "closed beta 台灣說「封閉測試」"
+  },
+  {
+   "from": "封號",
+   "to": "停權",
+   "note": "account ban 台灣說「停權」"
+  },
+  {
+   "from": "小區",
+   "to": "社區",
+   "note": "residential community 台灣說「社區」"
+  },
+  {
+   "from": "屏幕",
+   "to": "螢幕",
+   "note": "screen 台灣說「螢幕」"
+  },
+  {
+   "from": "崩潰",
+   "to": "當機",
+   "note": "crash 台灣口語說「當機」；正式說明可用「程式異常結束」，視語境而定"
+  },
+  {
+   "from": "差評",
+   "to": "負評",
+   "note": "negative review 台灣說「負評」"
+  },
+  {
+   "from": "彈幕",
+   "to": "留言",
+   "note": "直播互動留言；台灣實況圈也用「彈幕」，視客群而定"
+  },
+  {
+   "from": "快遞",
+   "to": "宅配",
+   "note": "台灣日常說「宅配」；跨境物流可用「快遞」，視語境而定"
+  },
+  {
+   "from": "手信",
+   "to": "伴手禮",
+   "note": "souvenir 台灣說「伴手禮」"
+  },
+  {
+   "from": "手柄",
+   "to": "手把",
+   "note": "gamepad 台灣說「手把」"
+  },
+  {
+   "from": "打印",
+   "to": "列印",
+   "note": "print 台灣說「列印」，機器叫印表機"
+  },
+  {
+   "from": "打賞",
+   "to": "贊助",
+   "note": "台灣實況圈口語說「斗內」；正式文案建議「贊助」"
+  },
+  {
+   "from": "扭蛋",
+   "to": "轉蛋",
+   "note": "gacha 台灣說「轉蛋」"
+  },
+  {
+   "from": "投訴",
+   "to": "客訴",
+   "note": "complaint 台灣客服說「客訴」；正式申訴用「申訴」，視語境而定"
+  },
+  {
+   "from": "掃碼",
+   "to": "掃描 QR Code",
+   "note": "台灣說「掃描 QR Code」"
+  },
+  {
+   "from": "掉率",
+   "to": "掉落率",
+   "note": "drop rate 台灣說「掉落率」"
+  },
+  {
+   "from": "掉線",
+   "to": "斷線",
+   "note": "disconnect 台灣說「斷線」"
+  },
+  {
+   "from": "排位",
+   "to": "積分對戰",
+   "note": "ranked 台灣說「積分對戰」；部分玩家也說「排位」，視客群而定"
+  },
+  {
+   "from": "搜索",
+   "to": "搜尋",
+   "note": "search 台灣說「搜尋」"
+  },
+  {
+   "from": "支付",
+   "to": "付款",
+   "note": "pay 台灣消費文案說「付款」"
+  },
+  {
+   "from": "教程",
+   "to": "教學",
+   "note": "tutorial 台灣說「教學」"
+  },
+  {
+   "from": "文件",
+   "to": "檔案",
+   "note": "file 台灣說「檔案」"
+  },
+  {
+   "from": "暴擊",
+   "to": "爆擊",
+   "note": "critical hit 台灣說「爆擊」"
+  },
+  {
+   "from": "概率",
+   "to": "機率",
+   "note": "probability 台灣說「機率」"
+  },
+  {
+   "from": "水平",
+   "to": "水準",
+   "note": "指程度時用「水準」，如服務水準"
+  },
+  {
+   "from": "測評",
+   "to": "評測",
+   "note": "review/evaluation 台灣說「評測」"
+  },
+  {
+   "from": "滿減",
+   "to": "滿額折抵",
+   "note": "台灣促銷說「滿額折抵／滿額折扣」"
+  },
+  {
+   "from": "漢化",
+   "to": "中文化",
+   "note": "Chinese localization 台灣說「中文化」"
+  },
+  {
+   "from": "激活",
+   "to": "啟用",
+   "note": "activate 台灣說「啟用／啟動」"
+  },
+  {
+   "from": "爆款",
+   "to": "熱銷商品",
+   "note": "台灣說「熱銷／人氣商品」"
+  },
+  {
+   "from": "爆率",
+   "to": "掉落率",
+   "note": "drop rate 台灣說「掉落率」"
+  },
+  {
+   "from": "獎杯",
+   "to": "獎盃",
+   "note": "trophy 台灣用「獎盃」（杯部）"
+  },
+  {
+   "from": "用戶",
+   "to": "使用者",
+   "note": "user 消費端說「使用者」"
+  },
+  {
+   "from": "登錄",
+   "to": "登入",
+   "note": "log in 台灣說「登入」"
+  },
+  {
+   "from": "皮膚",
+   "to": "造型",
+   "note": "skin 台灣玩家也說「皮膚」；正式文案建議「造型」，視語境而定"
+  },
+  {
+   "from": "盒飯",
+   "to": "便當",
+   "note": "boxed meal 台灣叫便當"
+  },
+  {
+   "from": "短信",
+   "to": "簡訊",
+   "note": "SMS 台灣說「簡訊」"
+  },
+  {
+   "from": "硬件",
+   "to": "硬體",
+   "note": "hardware 台灣說「硬體」"
+  },
+  {
+   "from": "硬盤",
+   "to": "硬碟",
+   "note": "hard disk 台灣說「硬碟」"
+  },
+  {
+   "from": "私信",
+   "to": "私訊",
+   "note": "DM 台灣說「私訊」"
+  },
+  {
+   "from": "秒殺",
+   "to": "限時搶購",
+   "note": "台灣說「限時搶購」"
+  },
+  {
+   "from": "程序",
+   "to": "程式",
+   "note": "program 台灣說「程式」；「程序」指行政流程"
+  },
+  {
+   "from": "空調",
+   "to": "冷氣",
+   "note": "日常說「冷氣」；「空調」偏工程用語"
+  },
+  {
+   "from": "窗口",
+   "to": "視窗",
+   "note": "window 台灣說「視窗」"
+  },
+  {
+   "from": "網絡",
+   "to": "網路",
+   "note": "network 台灣說「網路」"
+  },
+  {
+   "from": "緩存",
+   "to": "快取",
+   "note": "cache 台灣說「快取」"
+  },
+  {
+   "from": "聯機",
+   "to": "連線",
+   "note": "online co-op 台灣說「連線」"
+  },
+  {
+   "from": "舉報",
+   "to": "檢舉",
+   "note": "report abuse 台灣說「檢舉」"
+  },
+  {
+   "from": "菜單",
+   "to": "選單",
+   "note": "軟體介面的 menu 是「選單」；餐廳的才是菜單"
+  },
+  {
+   "from": "藍量",
+   "to": "魔力值",
+   "note": "mana 台灣說「魔力值」"
+  },
+  {
+   "from": "補丁",
+   "to": "更新檔",
+   "note": "patch 台灣說「更新檔」"
+  },
+  {
+   "from": "視頻",
+   "to": "影片",
+   "note": "video 台灣說「影片」"
+  },
+  {
+   "from": "觸屏",
+   "to": "觸控螢幕",
+   "note": "touch screen 台灣說「觸控螢幕」"
+  },
+  {
+   "from": "設置",
+   "to": "設定",
+   "note": "settings 台灣說「設定」"
+  },
+  {
+   "from": "評論",
+   "to": "留言",
+   "note": "評論區台灣多說「留言區」；正式評論可用「評價」，視語境而定"
+  },
+  {
+   "from": "質量",
+   "to": "品質",
+   "note": "quality 台灣說「品質」"
+  },
+  {
+   "from": "賬單",
+   "to": "帳單",
+   "note": "bill 用「帳」不「賬」"
+  },
+  {
+   "from": "賬戶",
+   "to": "帳戶",
+   "note": "account 用「帳」不「賬」"
+  },
+  {
+   "from": "軟件",
+   "to": "軟體",
+   "note": "software 台灣一律說「軟體」"
+  },
+  {
+   "from": "連招",
+   "to": "連段",
+   "note": "combo 台灣格鬥圈說「連段」；「連招」部分玩家也用，視客群而定"
+  },
+  {
+   "from": "運行",
+   "to": "執行",
+   "note": "run（程式）台灣說「執行」"
+  },
+  {
+   "from": "郵箱",
+   "to": "信箱",
+   "note": "email address 台灣說「信箱」"
+  },
+  {
+   "from": "酸奶",
+   "to": "優酪乳",
+   "note": "yogurt drink 台灣叫優酪乳"
+  },
+  {
+   "from": "錄屏",
+   "to": "螢幕錄影",
+   "note": "screen recording 台灣說「螢幕錄影」"
+  },
+  {
+   "from": "鏈接",
+   "to": "連結",
+   "note": "link 台灣說「連結」"
+  },
+  {
+   "from": "關注",
+   "to": "追蹤",
+   "note": "follow 台灣社群說「追蹤」"
+  },
+  {
+   "from": "預售",
+   "to": "預購",
+   "note": "pre-order 台灣遊戲說「預購」"
+  },
+  {
+   "from": "顯卡",
+   "to": "顯示卡",
+   "note": "graphics card 台灣說「顯示卡」"
+  },
+  {
+   "from": "默認",
+   "to": "預設",
+   "note": "default 台灣說「預設」"
+  },
+  {
+   "from": "點贊",
+   "to": "按讚",
+   "note": "like 台灣說「按讚」"
+  },
+  {
+   "from": "鼠標",
+   "to": "滑鼠",
+   "note": "mouse 台灣說「滑鼠」"
+  }
+ ]
+}

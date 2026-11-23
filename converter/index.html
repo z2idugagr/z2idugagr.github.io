@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Mainland → Taiwan Wording Converter｜簡轉台繁（台灣用詞）免費轉換器｜LocRank</title>
+<meta name="description" content="Free online converter: paste Chinese copy with Mainland wording and swap terms to how Taiwan actually says them — 軟件→軟體、視頻→影片、網絡→網路 — with a full change list. Word-level swap, runs locally in your browser." />
+<script type="text/javascript">
+(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","zfovpixisr");
+</script>
+<link rel="canonical" href="https://locrank.com/converter/" />
+<meta property="og:url" content="https://locrank.com/converter/" />
+<meta property="og:title" content="Mainland → Taiwan Wording Converter｜簡轉台繁（台灣用詞）免費轉換器" />
+<meta property="og:description" content="Paste Chinese copy, swap Mainland terms for Taiwan wording, and see every change listed. Free, word-level, runs in your browser." />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet" />
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: "Inter", "Noto Sans TC", sans-serif; background: #10201E; color: #E7EEF5; min-height: 100vh; }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 40px 20px 60px; }
+  a.back { color: #A9BAC9; text-decoration: none; font-size: 14px; }
+  h1 { font-size: 29px; font-weight: 900; margin: 16px 0 8px; line-height: 1.4; }
+  h1 .accent { color: #2DD4BF; }
+  h1 .sub { display: block; font-size: 19px; color: #B9CADA; font-weight: 700; margin-top: 4px; }
+  p.lead { color: #B9CADA; line-height: 1.8; margin-bottom: 14px; }
+  p.lead strong { color: #E7EEF5; }
+  .honest { background: #132E2A; border: 1px solid #1F403A; border-left: 4px solid #2DD4BF; border-radius: 8px; padding: 13px 16px; line-height: 1.8; color: #B9CADA; font-size: 14.5px; margin-bottom: 22px; }
+  .honest strong { color: #2DD4BF; }
+  textarea { width: 100%; min-height: 170px; padding: 14px; border-radius: 12px; border: 1px solid #1F403A; background: #132E2A; color: #E7EEF5; font-size: 16px; font-family: inherit; line-height: 1.7; resize: vertical; }
+  .row { display: flex; gap: 10px; margin-top: 14px; flex-wrap: wrap; }
+  button { cursor: pointer; border: none; border-radius: 10px; padding: 13px 22px; font-size: 16px; font-weight: 900; font-family: inherit; }
+  button:disabled { opacity: .5; cursor: wait; }
+  .primary { background: #2DD4BF; color: #132E2A; }
+  .ghost { background: transparent; color: #B9CADA; border: 1px solid #1F403A; }
+  #status { color: #A9BAC9; font-size: 14px; margin-top: 10px; min-height: 20px; }
+  .summary { margin-top: 20px; font-size: 17px; font-weight: 700; display: none; line-height: 1.7; }
+  .summary .n { color: #2DD4BF; font-size: 22px; }
+  .preview { display: none; margin-top: 14px; background: #132E2A; border: 1px solid #1F403A; border-radius: 12px; padding: 16px 18px; line-height: 1.9; white-space: pre-wrap; word-break: break-all; }
+  .preview mark { background: #2DD4BF; color: #132E2A; border-radius: 3px; padding: 0 2px; }
+  .hits { margin-top: 16px; display: none; }
+  .hit { background: #132E2A; border-left: 4px solid #2DD4BF; border-radius: 8px; padding: 12px 16px; margin-bottom: 10px; line-height: 1.7; }
+  .hit .w { color: #FF8A80; font-weight: 900; }
+  .hit .r { color: #2DD4BF; font-weight: 900; }
+  .hit .note { color: #B9CADA; font-size: 14px; }
+  .hit .cnt { color: #A9BAC9; font-size: 13px; }
+  .cta-box { margin-top: 26px; background: #132E2A; border: 1px dashed #2DD4BF; border-radius: 12px; padding: 18px; text-align: center; line-height: 1.9; color: #B9CADA; }
+  .cta-box a { color: #2DD4BF; font-weight: 700; }
+  .report-gate { margin-top: 18px; border-radius: 12px; padding: 18px; line-height: 1.8; background: #132E2A; border: 1px solid #2DD4BF; }
+  .report-gate h2 { font-size: 20px; margin-bottom: 6px; }
+  .report-gate p { color: #B9CADA; }
+  .gate-btn { display: inline-block; margin-top: 12px; border-radius: 10px; padding: 12px 18px; font-weight: 900; text-decoration: none; background: #2DD4BF; color: #132E2A; }
+  .fine { color: #A9BAC9; font-size: 13px; line-height: 1.7; margin-top: 14px; }
+  .tbl-h { font-size: 21px; font-weight: 900; margin: 34px 0 12px; line-height: 1.5; }
+  table.dict { width: 100%; border-collapse: collapse; font-size: 15px; }
+  table.dict th, table.dict td { border: 1px solid #1F403A; padding: 9px 11px; text-align: left; line-height: 1.6; vertical-align: top; }
+  table.dict th { background: #1B3330; color: #E7EEF5; }
+  table.dict td.tw { color: #FF8A80; font-weight: 700; white-space: nowrap; }
+  table.dict td.tr2 { color: #2DD4BF; font-weight: 700; white-space: nowrap; }
+  table.dict td.tn { color: #B9CADA; }
+</style>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XJ2395TWPE"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XJ2395TWPE');
+</script>
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="/">← LocRank home</a>
+  <h1>Mainland → Taiwan <span class="accent">Wording Converter</span><span class="sub">簡轉台繁（台灣用詞）免費轉換器</span></h1>
+  <p class="lead">Paste Chinese copy written with Mainland wording — Simplified or Traditional characters both work — and this free tool swaps Mainland terms for the words people in Taiwan actually use: <strong>軟件 → 軟體、視頻 → 影片、網絡 → 網路</strong>. Every swap is listed below the result, so you can review each one. Conversion runs locally in your browser; your text is never uploaded.</p>
+  <div class="honest"><strong>Honest limits 先講清楚：</strong> this is a <strong>word-level swap</strong> against a 132-term dictionary — not a full translation, and not a magic Simplified→Traditional converter. It cannot fix sentence structure, tone, or terms outside the dictionary, and some swaps depend on context (the list shows a note for each). Wording is only the first pass: publish-ready copy still needs a human localization review. 這是詞彙層的轉換助手，改不到的語感與句構，仍需真人在地化。</div>
+
+  <textarea id="input" placeholder="Paste your Chinese copy here — e.g. 這款軟件的視頻質量很好，支持在線搜索和打印。"></textarea>
+  <div class="row">
+    <button class="primary" id="convertBtn" disabled>Convert 轉換</button>
+    <button class="ghost" id="sampleBtn">Load a sample 載入範例</button>
+    <button class="ghost" id="clearBtn">Clear 清除</button>
+    <button class="ghost" id="copyBtn" style="display:none;">複製轉換後全文</button>
+  </div>
+  <p id="status">Loading the dictionary… 正在載入詞庫</p>
+
+  <div class="summary" id="summary"></div>
+  <div class="preview" id="preview"></div>
+  <div class="hits" id="hits"></div>
+
+  <section class="report-gate" aria-live="polite">
+    <h2>Get the free cheat sheet 免費精華表，先留 email 再領取</h2>
+    <p>The full 《台灣用詞對照精華表》 (Taiwan wording cheat sheet) — the core term pairs plus a step-by-step self-check workflow and before/after examples — is free by email via our Systeme form. 透過 Systeme 表單留 email 並完成訂閱確認後，精華表與後續在地化筆記會寄到你的信箱。</p>
+    <a class="gate-btn" href="https://z2idugagr.systeme.io/form-zh-clean" target="_blank" rel="noopener">前往 Systeme 留 email 領取精華表 →</a>
+    <p class="fine">This page never receives or stores your email, and the form never sees the text you pasted. Subscribing does not unlock a personalised report of your text — if you need a human to review a full page or document, see the services below. 本頁轉換只在你的瀏覽器本機進行。</p>
+  </section>
+
+  <div class="cta-box">
+    Prefer checking instead of converting? 用檢查的：<a href="/checker/">簡轉繁台灣用詞檢查器</a>（標出問題位置與分級摘要）<br/>
+    Game store pages: <a href="/steam-tc-health-check/">Steam 台繁健檢</a> — 152 rules for store-page copy, with a Pro tier that unlocks the full issue list and a downloadable report.<br/>
+    Test yourself first: <a href="/quiz/">10-question Taiwan-usage quiz</a> — about 2 minutes, instant level result. 先測測自己的程度。<br/>
+    Need it done properly? <a href="/simplified-to-taiwan-review/">簡中 → 台灣繁中在地化審閱</a>（真人逐頁改成台灣說法）｜ <a href="/quote/">報價計算器</a>（第一頁免費試審）
+  </div>
+
+  <h2 class="tbl-h">The dictionary: 132 term pairs 詞庫總表（大陸用詞 → 台灣說法）</h2>
+  <table class="dict">
+    <thead><tr><th>Mainland / Simplified-source term</th><th>Taiwan wording</th><th>Note</th></tr></thead>
+    <tbody>
+<tr><td class="tw">關注公眾號</td><td class="tr2">追蹤官方帳號</td><td class="tn">official account 台灣說「追蹤官方帳號」</td></tr>
+<tr><td class="tw">信息通知</td><td class="tr2">訊息通知</td><td class="tn">「信息」在台灣說「訊息／資訊」</td></tr>
+<tr><td class="tw">在線人數</td><td class="tr2">線上人數</td><td class="tn">online players 台灣說「線上人數」</td></tr>
+<tr><td class="tw">在線客服</td><td class="tr2">線上客服</td><td class="tn">台灣說「線上」</td></tr>
+<tr><td class="tw">多人聯機</td><td class="tr2">多人連線</td><td class="tn">online multiplayer 台灣說「多人連線」</td></tr>
+<tr><td class="tw">大年三十</td><td class="tr2">除夕</td><td class="tn">台灣說「除夕」</td></tr>
+<tr><td class="tw">實名認證</td><td class="tr2">身分驗證</td><td class="tn">台灣說「身分驗證」</td></tr>
+<tr><td class="tw">快捷方式</td><td class="tr2">捷徑</td><td class="tn">shortcut 台灣說「捷徑」</td></tr>
+<tr><td class="tw">推薦配置</td><td class="tr2">建議配備</td><td class="tn">recommended specs 台灣說「建議配備」</td></tr>
+<tr><td class="tw">搜索引擎</td><td class="tr2">搜尋引擎</td><td class="tn">search engine 台灣說「搜尋引擎」</td></tr>
+<tr><td class="tw">操作系統</td><td class="tr2">作業系統</td><td class="tn">operating system 台灣說「作業系統」</td></tr>
+<tr><td class="tw">新手教程</td><td class="tr2">新手教學</td><td class="tn">tutorial 台灣說「教學」</td></tr>
+<tr><td class="tw">早期體驗</td><td class="tr2">搶先體驗</td><td class="tn">early access 台灣 Steam 說「搶先體驗」</td></tr>
+<tr><td class="tw">最低配置</td><td class="tr2">最低配備</td><td class="tn">minimum specs 台灣說「最低配備」</td></tr>
+<tr><td class="tw">系統要求</td><td class="tr2">系統需求</td><td class="tn">system requirements 台灣說「系統需求」</td></tr>
+<tr><td class="tw">網絡行銷</td><td class="tr2">網路行銷</td><td class="tn">「網絡」在台灣說「網路」</td></tr>
+<tr><td class="tw">觀看視頻</td><td class="tr2">看影片</td><td class="tn">「視頻」在台灣說「影片」</td></tr>
+<tr><td class="tw">語言設置</td><td class="tr2">語言設定</td><td class="tn">language settings 台灣說「語言設定」</td></tr>
+<tr><td class="tw">二維碼</td><td class="tr2">QR Code</td><td class="tn">台灣多直接說 QR Code</td></tr>
+<tr><td class="tw">倒計時</td><td class="tr2">倒數</td><td class="tn">countdown 台灣說「倒數」</td></tr>
+<tr><td class="tw">公交車</td><td class="tr2">公車</td><td class="tn">bus 台灣叫公車</td></tr>
+<tr><td class="tw">公眾號</td><td class="tr2">官方帳號</td><td class="tn">official account 台灣說「官方帳號」</td></tr>
+<tr><td class="tw">出租車</td><td class="tr2">計程車</td><td class="tn">taxi 台灣叫計程車</td></tr>
+<tr><td class="tw">客戶端</td><td class="tr2">用戶端</td><td class="tn">client 台灣說「用戶端」</td></tr>
+<tr><td class="tw">序列號</td><td class="tr2">序號</td><td class="tn">serial number 台灣說「序號」</td></tr>
+<tr><td class="tw">性價比</td><td class="tr2">CP 值</td><td class="tn">台灣行銷與口語都說 CP 值</td></tr>
+<tr><td class="tw">手機號</td><td class="tr2">手機號碼</td><td class="tn">台灣說「手機號碼」</td></tr>
+<tr><td class="tw">接地氣</td><td class="tr2">親民</td><td class="tn">品牌文案說「親民／貼近在地」</td></tr>
+<tr><td class="tw">文件夾</td><td class="tr2">資料夾</td><td class="tn">folder 台灣說「資料夾」</td></tr>
+<tr><td class="tw">方便面</td><td class="tr2">泡麵</td><td class="tn">instant noodles 台灣叫泡麵</td></tr>
+<tr><td class="tw">方便麵</td><td class="tr2">泡麵</td><td class="tn">instant noodles 台灣叫泡麵</td></tr>
+<tr><td class="tw">服務器</td><td class="tr2">伺服器</td><td class="tn">server 台灣說「伺服器」</td></tr>
+<tr><td class="tw">激活碼</td><td class="tr2">序號</td><td class="tn">activation code 台灣說「序號」</td></tr>
+<tr><td class="tw">瀏覽器</td><td class="tr2">瀏覽器</td><td class="tn">browser 台灣說「瀏覽器」</td></tr>
+<tr><td class="tw">身份證</td><td class="tr2">身分證</td><td class="tn">台灣用「身分證」（份）</td></tr>
+<tr><td class="tw">雲存檔</td><td class="tr2">雲端存檔</td><td class="tn">cloud save 台灣說「雲端存檔」</td></tr>
+<tr><td class="tw">預註冊</td><td class="tr2">預先註冊</td><td class="tn">pre-register 台灣說「預先註冊」</td></tr>
+<tr><td class="tw">高質量</td><td class="tr2">高品質</td><td class="tn">「質量」在台灣指物理的 mass，品質才用「高品質」</td></tr>
+<tr><td class="tw">鼠標墊</td><td class="tr2">滑鼠墊</td><td class="tn">mouse pad 台灣說「滑鼠墊」</td></tr>
+<tr><td class="tw">主頁</td><td class="tr2">首頁</td><td class="tn">home page 台灣說「首頁」</td></tr>
+<tr><td class="tw">保存</td><td class="tr2">儲存</td><td class="tn">指存檔時台灣說「儲存」；指保存期限時「保存」正確，視語境而定</td></tr>
+<tr><td class="tw">信息</td><td class="tr2">訊息</td><td class="tn">message 台灣說「訊息」；正式文件用「資訊」</td></tr>
+<tr><td class="tw">優盤</td><td class="tr2">隨身碟</td><td class="tn">USB drive 台灣說「隨身碟」</td></tr>
+<tr><td class="tw">充值</td><td class="tr2">儲值</td><td class="tn">top-up 台灣遊戲說「儲值」</td></tr>
+<tr><td class="tw">內存</td><td class="tr2">記憶體</td><td class="tn">memory（硬體）台灣說「記憶體」</td></tr>
+<tr><td class="tw">內測</td><td class="tr2">封閉測試</td><td class="tn">closed beta 台灣說「封閉測試」</td></tr>
+<tr><td class="tw">全屏</td><td class="tr2">全螢幕</td><td class="tn">full screen 台灣說「全螢幕」</td></tr>
+<tr><td class="tw">公測</td><td class="tr2">公開測試</td><td class="tn">open beta 台灣說「公開測試」</td></tr>
+<tr><td class="tw">加載</td><td class="tr2">載入</td><td class="tn">loading 台灣說「載入」</td></tr>
+<tr><td class="tw">包郵</td><td class="tr2">免運</td><td class="tn">free shipping 台灣說「免運」</td></tr>
+<tr><td class="tw">匹配</td><td class="tr2">配對</td><td class="tn">matchmaking 台灣說「配對」</td></tr>
+<tr><td class="tw">反饋</td><td class="tr2">回饋</td><td class="tn">feedback 台灣說「回饋」</td></tr>
+<tr><td class="tw">回復</td><td class="tr2">回覆</td><td class="tn">reply 台灣用「回覆」（言部）</td></tr>
+<tr><td class="tw">圖標</td><td class="tr2">圖示</td><td class="tn">icon 台灣說「圖示」</td></tr>
+<tr><td class="tw">土豆</td><td class="tr2">馬鈴薯</td><td class="tn">potato 是「馬鈴薯」；台語的土豆指花生</td></tr>
+<tr><td class="tw">在線</td><td class="tr2">線上</td><td class="tn">online 台灣說「線上」</td></tr>
+<tr><td class="tw">地鐵</td><td class="tr2">捷運</td><td class="tn">台北、高雄的系統叫捷運</td></tr>
+<tr><td class="tw">大促</td><td class="tr2">促銷</td><td class="tn">台灣說「促銷／優惠活動」</td></tr>
+<tr><td class="tw">大招</td><td class="tr2">大絕</td><td class="tn">ultimate 台灣說「大絕」；「大招」部分玩家也用，視客群而定</td></tr>
+<tr><td class="tw">定制</td><td class="tr2">訂製</td><td class="tn">customize 台灣說「訂製」</td></tr>
+<tr><td class="tw">密鑰</td><td class="tr2">金鑰</td><td class="tn">key（加密）台灣說「金鑰」</td></tr>
+<tr><td class="tw">封測</td><td class="tr2">封閉測試</td><td class="tn">closed beta 台灣說「封閉測試」</td></tr>
+<tr><td class="tw">封號</td><td class="tr2">停權</td><td class="tn">account ban 台灣說「停權」</td></tr>
+<tr><td class="tw">小區</td><td class="tr2">社區</td><td class="tn">residential community 台灣說「社區」</td></tr>
+<tr><td class="tw">屏幕</td><td class="tr2">螢幕</td><td class="tn">screen 台灣說「螢幕」</td></tr>
+<tr><td class="tw">崩潰</td><td class="tr2">當機</td><td class="tn">crash 台灣口語說「當機」；正式說明可用「程式異常結束」，視語境而定</td></tr>
+<tr><td class="tw">差評</td><td class="tr2">負評</td><td class="tn">negative review 台灣說「負評」</td></tr>
+<tr><td class="tw">彈幕</td><td class="tr2">留言</td><td class="tn">直播互動留言；台灣實況圈也用「彈幕」，視客群而定</td></tr>
+<tr><td class="tw">快遞</td><td class="tr2">宅配</td><td class="tn">台灣日常說「宅配」；跨境物流可用「快遞」，視語境而定</td></tr>
+<tr><td class="tw">手信</td><td class="tr2">伴手禮</td><td class="tn">souvenir 台灣說「伴手禮」</td></tr>
+<tr><td class="tw">手柄</td><td class="tr2">手把</td><td class="tn">gamepad 台灣說「手把」</td></tr>
+<tr><td class="tw">打印</td><td class="tr2">列印</td><td class="tn">print 台灣說「列印」，機器叫印表機</td></tr>
+<tr><td class="tw">打賞</td><td class="tr2">贊助</td><td class="tn">台灣實況圈口語說「斗內」；正式文案建議「贊助」</td></tr>
+<tr><td class="tw">扭蛋</td><td class="tr2">轉蛋</td><td class="tn">gacha 台灣說「轉蛋」</td></tr>
+<tr><td class="tw">投訴</td><td class="tr2">客訴</td><td class="tn">complaint 台灣客服說「客訴」；正式申訴用「申訴」，視語境而定</td></tr>
+<tr><td class="tw">掃碼</td><td class="tr2">掃描 QR Code</td><td class="tn">台灣說「掃描 QR Code」</td></tr>
+<tr><td class="tw">掉率</td><td class="tr2">掉落率</td><td class="tn">drop rate 台灣說「掉落率」</td></tr>
+<tr><td class="tw">掉線</td><td class="tr2">斷線</td><td class="tn">disconnect 台灣說「斷線」</td></tr>
+<tr><td class="tw">排位</td><td class="tr2">積分對戰</td><td class="tn">ranked 台灣說「積分對戰」；部分玩家也說「排位」，視客群而定</td></tr>
+<tr><td class="tw">搜索</td><td class="tr2">搜尋</td><td class="tn">search 台灣說「搜尋」</td></tr>
+<tr><td class="tw">支付</td><td class="tr2">付款</td><td class="tn">pay 台灣消費文案說「付款」</td></tr>
+<tr><td class="tw">教程</td><td class="tr2">教學</td><td class="tn">tutorial 台灣說「教學」</td></tr>
+<tr><td class="tw">文件</td><td class="tr2">檔案</td><td class="tn">file 台灣說「檔案」</td></tr>
+<tr><td class="tw">暴擊</td><td class="tr2">爆擊</td><td class="tn">critical hit 台灣說「爆擊」</td></tr>
+<tr><td class="tw">概率</td><td class="tr2">機率</td><td class="tn">probability 台灣說「機率」</td></tr>
+<tr><td class="tw">水平</td><td class="tr2">水準</td><td class="tn">指程度時用「水準」，如服務水準</td></tr>
+<tr><td class="tw">測評</td><td class="tr2">評測</td><td class="tn">review/evaluation 台灣說「評測」</td></tr>
+<tr><td class="tw">滿減</td><td class="tr2">滿額折抵</td><td class="tn">台灣促銷說「滿額折抵／滿額折扣」</td></tr>
+<tr><td class="tw">漢化</td><td class="tr2">中文化</td><td class="tn">Chinese localization 台灣說「中文化」</td></tr>
+<tr><td class="tw">激活</td><td class="tr2">啟用</td><td class="tn">activate 台灣說「啟用／啟動」</td></tr>
+<tr><td class="tw">爆款</td><td class="tr2">熱銷商品</td><td class="tn">台灣說「熱銷／人氣商品」</td></tr>
+<tr><td class="tw">爆率</td><td class="tr2">掉落率</td><td class="tn">drop rate 台灣說「掉落率」</td></tr>
+<tr><td class="tw">獎杯</td><td class="tr2">獎盃</td><td class="tn">trophy 台灣用「獎盃」（杯部）</td></tr>
+<tr><td class="tw">用戶</td><td class="tr2">使用者</td><td class="tn">user 消費端說「使用者」</td></tr>
+<tr><td class="tw">登錄</td><td class="tr2">登入</td><td class="tn">log in 台灣說「登入」</td></tr>
+<tr><td class="tw">皮膚</td><td class="tr2">造型</td><td class="tn">skin 台灣玩家也說「皮膚」；正式文案建議「造型」，視語境而定</td></tr>
+<tr><td class="tw">盒飯</td><td class="tr2">便當</td><td class="tn">boxed meal 台灣叫便當</td></tr>
+<tr><td class="tw">短信</td><td class="tr2">簡訊</td><td class="tn">SMS 台灣說「簡訊」</td></tr>
+<tr><td class="tw">硬件</td><td class="tr2">硬體</td><td class="tn">hardware 台灣說「硬體」</td></tr>
+<tr><td class="tw">硬盤</td><td class="tr2">硬碟</td><td class="tn">hard disk 台灣說「硬碟」</td></tr>
+<tr><td class="tw">私信</td><td class="tr2">私訊</td><td class="tn">DM 台灣說「私訊」</td></tr>
+<tr><td class="tw">秒殺</td><td class="tr2">限時搶購</td><td class="tn">台灣說「限時搶購」</td></tr>
+<tr><td class="tw">程序</td><td class="tr2">程式</td><td class="tn">program 台灣說「程式」；「程序」指行政流程</td></tr>
+<tr><td class="tw">空調</td><td class="tr2">冷氣</td><td class="tn">日常說「冷氣」；「空調」偏工程用語</td></tr>
+<tr><td class="tw">窗口</td><td class="tr2">視窗</td><td class="tn">window 台灣說「視窗」</td></tr>
+<tr><td class="tw">網絡</td><td class="tr2">網路</td><td class="tn">network 台灣說「網路」</td></tr>
+<tr><td class="tw">緩存</td><td class="tr2">快取</td><td class="tn">cache 台灣說「快取」</td></tr>
+<tr><td class="tw">聯機</td><td class="tr2">連線</td><td class="tn">online co-op 台灣說「連線」</td></tr>
+<tr><td class="tw">舉報</td><td class="tr2">檢舉</td><td class="tn">report abuse 台灣說「檢舉」</td></tr>
+<tr><td class="tw">菜單</td><td class="tr2">選單</td><td class="tn">軟體介面的 menu 是「選單」；餐廳的才是菜單</td></tr>
+<tr><td class="tw">藍量</td><td class="tr2">魔力值</td><td class="tn">mana 台灣說「魔力值」</td></tr>
+<tr><td class="tw">補丁</td><td class="tr2">更新檔</td><td class="tn">patch 台灣說「更新檔」</td></tr>
+<tr><td class="tw">視頻</td><td class="tr2">影片</td><td class="tn">video 台灣說「影片」</td></tr>
+<tr><td class="tw">觸屏</td><td class="tr2">觸控螢幕</td><td class="tn">touch screen 台灣說「觸控螢幕」</td></tr>
+<tr><td class="tw">設置</td><td class="tr2">設定</td><td class="tn">settings 台灣說「設定」</td></tr>
+<tr><td class="tw">評論</td><td class="tr2">留言</td><td class="tn">評論區台灣多說「留言區」；正式評論可用「評價」，視語境而定</td></tr>
+<tr><td class="tw">質量</td><td class="tr2">品質</td><td class="tn">quality 台灣說「品質」</td></tr>
+<tr><td class="tw">賬單</td><td class="tr2">帳單</td><td class="tn">bill 用「帳」不「賬」</td></tr>
+<tr><td class="tw">賬戶</td><td class="tr2">帳戶</td><td class="tn">account 用「帳」不「賬」</td></tr>
+<tr><td class="tw">軟件</td><td class="tr2">軟體</td><td class="tn">software 台灣一律說「軟體」</td></tr>
+<tr><td class="tw">連招</td><td class="tr2">連段</td><td class="tn">combo 台灣格鬥圈說「連段」；「連招」部分玩家也用，視客群而定</td></tr>
+<tr><td class="tw">運行</td><td class="tr2">執行</td><td class="tn">run（程式）台灣說「執行」</td></tr>
+<tr><td class="tw">郵箱</td><td class="tr2">信箱</td><td class="tn">email address 台灣說「信箱」</td></tr>
+<tr><td class="tw">酸奶</td><td class="tr2">優酪乳</td><td class="tn">yogurt drink 台灣叫優酪乳</td></tr>
+<tr><td class="tw">錄屏</td><td class="tr2">螢幕錄影</td><td class="tn">screen recording 台灣說「螢幕錄影」</td></tr>
+<tr><td class="tw">鏈接</td><td class="tr2">連結</td><td class="tn">link 台灣說「連結」</td></tr>
+<tr><td class="tw">關注</td><td class="tr2">追蹤</td><td class="tn">follow 台灣社群說「追蹤」</td></tr>
+<tr><td class="tw">預售</td><td class="tr2">預購</td><td class="tn">pre-order 台灣遊戲說「預購」</td></tr>
+<tr><td class="tw">顯卡</td><td class="tr2">顯示卡</td><td class="tn">graphics card 台灣說「顯示卡」</td></tr>
+<tr><td class="tw">默認</td><td class="tr2">預設</td><td class="tn">default 台灣說「預設」</td></tr>
+<tr><td class="tw">點贊</td><td class="tr2">按讚</td><td class="tn">like 台灣說「按讚」</td></tr>
+<tr><td class="tw">鼠標</td><td class="tr2">滑鼠</td><td class="tn">mouse 台灣說「滑鼠」</td></tr>
+    </tbody>
+  </table>
+  <p class="fine">Dictionary v1.0 (2026-11-23), merged from LocRank's own checker dictionaries: the 42 core pairs behind <a href="/checker/" style="color:#2DD4BF">/checker/</a> plus the Chinese wording rules in the Steam store-page health-check rule set. Every swap is a suggestion — context still decides. 詞庫由 LocRank 既有檢查器詞庫合併而成，所有替換皆為建議，語境判斷仍需人工確認。</p>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
