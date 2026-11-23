@@ -5,6 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>How Taiwan-Ready Is Your Chinese Copy? — 10-Question Quiz | LocRank</title>
 <meta name="description" content="A 10-question quiz that scores how native your Traditional Chinese copy reads in Taiwan. Spot mainland terms, Simplified-conversion traps and sentence-level giveaways — then get your grade and next step." />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="LocRank" />
+<meta property="og:title" content="How Taiwan-Ready Is Your Chinese Copy? — 10-Question Quiz" />
+<meta property="og:description" content="I scored on the Taiwan Chinese Readiness Quiz. Ten questions on the traps that mark copy as converted, not localized. Think you can beat my score?" />
+<meta property="og:url" content="https://locrank.com/quiz/" />
+<meta name="twitter:card" content="summary_large_image" />
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -40,6 +46,11 @@
   .mailbox h3 { font-size: 17px; margin-bottom: 8px; }
   .mailbox p { color: #B9D2CC; line-height: 1.75; font-size: 15px; margin-bottom: 12px; }
   .fine { color: #8FB5AE; font-size: 13px; line-height: 1.7; margin-top: 16px; text-align: center; }
+  .sharebox { margin-top: 22px; border: 1px solid #24514A; border-radius: 12px; padding: 18px; }
+  .sharebox h3 { font-size: 17px; margin-bottom: 8px; }
+  .sharebox p { color: #B9D2CC; line-height: 1.75; font-size: 15px; margin-bottom: 12px; }
+  .sharebox img { display: block; width: 100%; border-radius: 10px; border: 1px solid #24514A; margin-bottom: 14px; }
+  .share-hint { color: #8FB5AE; font-size: 13px; line-height: 1.7; margin-top: 10px; text-align: center; }
   .hidden { display: none; }
 </style>
 <!-- Google tag (gtag.js) -->
@@ -84,6 +95,15 @@
     <p class="tier-copy" id="tierCopy"></p>
     <a class="cta-btn" id="tierCta" href="#"></a>
     <a class="cta-ghost" href="/checker/">Run your real copy through the free checker →</a>
+
+    <div class="sharebox">
+      <h3>Challenge your team — share your score</h3>
+      <p>Your score card is ready. Send it to whoever wrote your Chinese copy and see if they can beat it.</p>
+      <img id="shareImg" alt="My Taiwan Chinese Readiness Quiz score card" />
+      <button class="cta-btn" id="shareBtn" style="width:100%;border:none;cursor:pointer;font-family:inherit;">Share my score card →</button>
+      <a class="cta-ghost" id="downloadCard" href="#" download="locrank-quiz-score.png" style="margin-bottom:0;">Download the card (PNG)</a>
+      <p class="share-hint" id="shareHint"></p>
+    </div>
 
     <div class="mailbox">
       <h3>Get the free self-check checklist by email</h3>
@@ -295,7 +315,71 @@ function showResult() {
   if (typeof gtag === "function") {
     gtag("event", "quiz_complete", { score: score, tier: tier.name });
   }
+  buildShareCard(tier);
 }
+
+var SHARE_URL = "https://locrank.com/quiz/?utm_source=share-card&utm_medium=social&utm_content=score-card";
+var shareBlob = null;
+
+function buildShareCard(tier) {
+  var c = document.createElement("canvas");
+  c.width = 1200; c.height = 630;
+  var x = c.getContext("2d");
+  x.fillStyle = "#10201E"; x.fillRect(0, 0, 1200, 630);
+  x.strokeStyle = "#2DD4BF"; x.lineWidth = 6;
+  x.strokeRect(18, 18, 1164, 594);
+  x.fillStyle = "#2DD4BF";
+  x.font = "700 30px Inter, 'Noto Sans TC', sans-serif";
+  x.fillText("LOCRANK · TAIWAN CHINESE READINESS QUIZ", 70, 105);
+  x.fillStyle = "#EAF4F1";
+  x.font = "900 190px Inter, 'Noto Sans TC', sans-serif";
+  x.fillText(score + " / 10", 70, 320);
+  x.fillStyle = "#2DD4BF";
+  x.font = "900 54px Inter, 'Noto Sans TC', sans-serif";
+  x.fillText(tier.name, 70, 415);
+  x.fillStyle = "#B9D2CC";
+  x.font = "500 34px Inter, 'Noto Sans TC', sans-serif";
+  x.fillText("How Taiwan-ready is your Chinese copy?", 70, 505);
+  x.fillText("Think you can beat my score?  locrank.com/quiz/", 70, 560);
+  var url = c.toDataURL("image/png");
+  document.getElementById("shareImg").src = url;
+  document.getElementById("downloadCard").href = url;
+  if (c.toBlob) {
+    c.toBlob(function (b) { shareBlob = b; }, "image/png");
+  }
+}
+
+document.getElementById("shareBtn").addEventListener("click", function () {
+  var hint = document.getElementById("shareHint");
+  var text = "I scored " + score + " / 10 on the Taiwan Chinese Readiness Quiz. Think you can beat it?";
+  if (typeof gtag === "function") {
+    gtag("event", "quiz_share_click", { score: score });
+  }
+  function copyFallback() {
+    var done = function () { hint.textContent = "Link copied — paste it anywhere to challenge your team."; };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text + " " + SHARE_URL).then(done, function () {
+        hint.textContent = "Copy this link to share: " + SHARE_URL;
+      });
+    } else {
+      hint.textContent = "Copy this link to share: " + SHARE_URL;
+    }
+  }
+  try {
+    if (shareBlob && navigator.canShare) {
+      var file = new File([shareBlob], "locrank-quiz-score.png", { type: "image/png" });
+      if (navigator.canShare({ files: [file] })) {
+        navigator.share({ files: [file], text: text, url: SHARE_URL }).catch(function () {});
+        return;
+      }
+    }
+    if (navigator.share) {
+      navigator.share({ title: "Taiwan Chinese Readiness Quiz", text: text, url: SHARE_URL }).catch(function () {});
+      return;
+    }
+  } catch (e) { /* fall through to copy */ }
+  copyFallback();
+});
 </script>
 </body>
 </html>
