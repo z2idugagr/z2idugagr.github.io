@@ -69,7 +69,7 @@
   gtag('js', new Date());
   gtag('config', 'G-XJ2395TWPE');
 </script>
-</head>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" /><meta property="og:title" content="簡轉繁台灣用詞檢查工具｜免費線上檢查大陸用詞｜Hank Chen 翻譯" /><meta property="og:description" content="免費線上工具：貼上文字，先看問題數量與前 3 項摘要，再留 email 領取完整對照精華表。42 組高頻對照即時檢查台灣用詞與簡轉繁地雷。" /><meta property="og:type" content="website" /><meta property="og:url" content="https://locrank.com/checker/" /><meta property="og:image" content="https://locrank.com/assets/og-cover.png" /></head>
 <body>
 <div class="wrap">
   <a class="back" href="/">← 回首頁</a>
@@ -88,10 +88,12 @@
   <div class="hits" id="hits"></div>
 
   <section class="report-gate" id="reportGate" aria-live="polite">
-    <h2>免費精華表，先留 email 再領取</h2>
-    <p id="gateText">這裡先顯示摘要與前 3 項。42 組對照已列在本頁下方；含逐項檢查流程與改稿範例的免費精華表，可透過 Systeme 表單留 email 領取。</p>
-    <a class="gate-btn" href="https://z2idugagr.systeme.io/form-zh-clean" target="_blank" rel="noopener">前往 Systeme 留 email 領取精華表 →</a>
-    <p class="fine">在 Systeme 表單填 email 並完成訂閱確認後，精華表與後續在地化筆記會寄到你的信箱。本頁檢查只在你的瀏覽器本機進行，表單不會收到你貼上的文字，也不會自動寄出這段文字的個人化完整報告；若你需要真人逐項審閱，可申請第一頁免費試審。</p>
+    <h2>完整報告，先留 email 再領取</h2>
+    <p id="gateText">這裡先顯示摘要與前 3 項。完整 42 組對照、逐項檢查流程與改稿範例，已整理在免費精華表與完整版清單中。</p>
+    <!-- Systeme main-list form embed slot: source=checker; insert the approved Systeme embed code here when available. -->
+    <div id="systeme-checker-form" class="systeme-slot" data-form-source="checker" data-magnet="fostxk"></div>
+    <a class="gate-btn" href="/free/?source=checker">前往留 email 領取 →</a>
+    <p class="fine">目前先接既有 /free/ 領取流程；若你需要針對剛貼文字的真人逐項審閱，可申請第一頁免費試審。</p>
   </section>
 
   <section class="upgrade-box" id="siteAuditUpgrade">
@@ -103,7 +105,7 @@
 
   <div class="cta-box">
     檢查只是第一步 — 完整版《台灣用詞自查清單》含逐項檢查流程與改稿範例：<a href="https://zidug.gumroad.com/l/tortsw" target="_blank" rel="noopener">Gumroad 完整版 US$7</a><br/>
-    先拿免費的：<a href="/free/">《台灣用詞對照精華表》免費下載</a> ｜ 想要真人審閱？<a href="/quote/">報價計算器</a>（第一頁免費試審）<br/>先測測自己的程度：<a href="/quiz/">10 題台繁程度測驗</a>（約 2 分鐘，答完立即看分級與下一步）<br/>整批簡中內容要換成台灣說法？<a href="/simplified-to-taiwan-review/">簡中 → 台灣繁中在地化審閱</a>（逐頁改成台灣用詞）<br/>遊戲商店頁專用：<a href="/steam-tc-health-check/">Steam 台繁健檢</a>（貼上商店頁文案，152 條遊戲／商店頁規則即時檢查）
+    先拿免費的：<a href="/free/">《台灣用詞對照精華表》免費下載</a> ｜ 想要真人審閱？<a href="/quote/">報價計算器</a>（第一頁免費試審）<br/>先測測自己的程度：<a href="/quiz/">10 題台繁程度測驗</a>（約 2 分鐘，答完立即看分級與下一步）<br/>整批簡中內容要換成台灣說法？<a href="/simplified-to-taiwan-review/">簡中 → 台灣繁中在地化審閱</a>（逐頁改成台灣用詞）
   </div>
 
   
@@ -210,7 +212,7 @@ function run(){
     return '<div class="hit"><span class="w">'+esc(e.d.wrong)+'</span> → <span class="r">'+esc(e.d.right)+'</span> <span class="cnt">×'+e.count+'</span><br/><span class="note">'+esc(e.d.note)+'</span></div>';
   }).join("");
   box.style.display = hits.length ? "block" : "none";
-  gateText.textContent = hiddenCount ? '這裡先顯示前 3 項；還有 '+hiddenCount+' 種問題未展開。免費精華表（含逐項檢查流程與改稿範例）可留 email 領取；本頁不會自動寄出這段文字的個人化完整報告。' : '這段文字的逐項結果已在上方顯示。免費精華表（含逐項檢查流程與改稿範例）可留 email 領取。';
+  gateText.textContent = hiddenCount ? '這裡先顯示前 3 項；還有 '+hiddenCount+' 種問題未展開。完整 42 組對照、逐項檢查流程與改稿範例，可留 email 領取。' : '這段文字的逐項結果已在上方顯示。完整 42 組對照、逐項檢查流程與改稿範例，可留 email 領取精華表。';
   gate.style.display = hits.length ? "block" : "none";
   upgrade.style.display = "block";
   document.getElementById("fixBtn").style.display = "none";
@@ -229,5 +231,5 @@ document.getElementById("sampleBtn").addEventListener("click", function(){
 });
 </script>
 <script src="/assets/widget.js" data-api="https://hankloc-ai-support.z2idugagr.workers.dev" defer></script>
-</body>
+<script src="/assets/lang-switch.js" defer></script></body>
 </html>
