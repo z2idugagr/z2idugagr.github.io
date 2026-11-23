@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Subtitle Tools — Free SRT ↔ VTT Converter, Time Shift & Cue Check | LocRank</title>
+<meta name="description" content="Free browser-based subtitle tools for editors and subtitlers: convert SRT to VTT and VTT to SRT, shift the whole timeline, and run a basic cue health check (bad timecodes, end-before-start, overlaps). Everything runs locally in your browser — files are never uploaded." />
+<script type="text/javascript">
+(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","zfovpixisr");
+</script>
+<link rel="canonical" href="https://locrank.com/subtitle-tools/" />
+<meta property="og:url" content="https://locrank.com/subtitle-tools/" />
+<meta property="og:title" content="Subtitle Tools — SRT ↔ VTT Converter, Time Shift & Cue Check" />
+<meta property="og:description" content="Free, private, browser-only subtitle converter and timing checker for editors and subtitlers. No uploads, no sign-up." />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet" />
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: "Inter", "Noto Sans TC", sans-serif; background: #10201E; color: #E7EEF5; min-height: 100vh; }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 40px 20px 60px; }
+  a.back { color: #A9BAC9; text-decoration: none; font-size: 14px; }
+  h1 { font-size: 29px; font-weight: 900; margin: 16px 0 8px; line-height: 1.4; }
+  h1 .accent { color: #2DD4BF; }
+  h2.sec { font-size: 20px; font-weight: 900; margin: 30px 0 10px; }
+  p.lead { color: #B9CADA; line-height: 1.8; margin-bottom: 8px; }
+  p.lead b { color: #2DD4BF; }
+  .privacy { display: inline-block; background: #132E2A; border: 1px solid #2DD4BF; color: #B9CADA; border-radius: 10px; padding: 9px 14px; font-size: 14px; line-height: 1.6; margin: 10px 0 20px; }
+  .privacy b { color: #2DD4BF; }
+  textarea { width: 100%; min-height: 190px; padding: 14px; border-radius: 12px; border: 1px solid #1F403A; background: #132E2A; color: #E7EEF5; font-size: 14px; font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; line-height: 1.6; resize: vertical; }
+  textarea.out { min-height: 190px; }
+  .row { display: flex; gap: 10px; margin-top: 14px; flex-wrap: wrap; align-items: center; }
+  button { cursor: pointer; border: none; border-radius: 10px; padding: 13px 22px; font-size: 16px; font-weight: 900; font-family: inherit; }
+  .primary { background: #2DD4BF; color: #132E2A; }
+  .ghost { background: transparent; color: #B9CADA; border: 1px solid #1F403A; }
+  button.small { padding: 9px 16px; font-size: 14px; }
+  label.lbl { font-size: 14px; color: #B9CADA; font-weight: 700; }
+  select, input[type="number"] { background: #132E2A; color: #E7EEF5; border: 1px solid #1F403A; border-radius: 10px; padding: 11px 12px; font-size: 15px; font-family: inherit; }
+  input[type="number"] { width: 130px; }
+  input[type="file"] { color: #B9CADA; font-size: 14px; max-width: 100%; }
+  .status { margin-top: 14px; font-size: 15px; font-weight: 700; display: none; }
+  .status .n { color: #2DD4BF; }
+  .issues { margin-top: 14px; display: none; }
+  .issue { background: #132E2A; border-left: 4px solid #FF8A80; border-radius: 8px; padding: 11px 16px; margin-bottom: 10px; line-height: 1.7; font-size: 15px; }
+  .issue .tag { color: #FF8A80; font-weight: 900; }
+  .issue .cue { color: #A9BAC9; font-size: 13px; }
+  .ok-box { display: none; margin-top: 14px; background: #132E2A; border-left: 4px solid #2DD4BF; border-radius: 8px; padding: 11px 16px; line-height: 1.7; font-size: 15px; }
+  .cta-box { margin-top: 26px; background: #132E2A; border: 1px dashed #2DD4BF; border-radius: 12px; padding: 18px; text-align: center; line-height: 1.9; color: #B9CADA; }
+  .cta-box a { color: #2DD4BF; font-weight: 700; }
+  .report-gate { margin-top: 18px; border-radius: 12px; padding: 18px; line-height: 1.8; background: #132E2A; border: 1px solid #2DD4BF; }
+  .report-gate h2 { font-size: 20px; margin-bottom: 6px; }
+  .report-gate p { color: #B9CADA; }
+  .gate-btn { display: inline-block; margin-top: 12px; border-radius: 10px; padding: 12px 18px; font-weight: 900; text-decoration: none; background: #2DD4BF; color: #132E2A; }
+  .fine { color: #A9BAC9; font-size: 13px; line-height: 1.7; margin-top: 18px; }
+  .howto { color: #B9CADA; line-height: 1.9; font-size: 15px; }
+  .howto li { margin-left: 20px; }
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"WebApplication","name":"Subtitle Tools — SRT ↔ VTT Converter, Time Shift & Cue Check","url":"https://locrank.com/subtitle-tools/","applicationCategory":"UtilitiesApplication","operatingSystem":"Any (web browser)","inLanguage":["en","zh-Hant-TW"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Person","name":"Hank Chen","url":"https://locrank.com/"}}]}
+</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XJ2395TWPE"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XJ2395TWPE');
+</script>
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="/">← LocRank home</a>
+  <h1>Subtitle <span class="accent">Tools</span> — SRT ↔ VTT, Time Shift &amp; Cue Check</h1>
+  <p class="lead">Free utilities for video editors and subtitlers: convert <b>SRT → VTT</b> or <b>VTT → SRT</b>, shift an entire timeline by milliseconds or seconds, and run a basic health check that flags broken timecodes, cues that end before they start, and overlapping cues. Problems are flagged, never silently rewritten.</p>
+  <p class="lead">給剪輯與字幕工作者的免費小工具：SRT／VTT 互轉、整檔時間軸平移、基本格式健檢（錯誤時間碼、結束早於開始、重疊 cue 只標示、不自動亂改）。</p>
+  <span class="privacy">🔒 <b>100% local:</b> everything runs in your browser. Your subtitle files are <b>never uploaded</b> to any server. ｜ 全部在本機運算，檔案不上傳。</span>
+
+  <div class="row" style="margin-top:4px;">
+    <input type="file" id="fileInput" accept=".srt,.vtt,.txt" />
+    <button class="ghost small" id="sampleBtn" type="button">Load a sample 試試範例</button>
+  </div>
+  <textarea id="input" placeholder="Paste your .srt or .vtt content here, or choose a file above…&#10;把 .srt 或 .vtt 內容貼在這裡，或用上方按鈕選檔。"></textarea>
+
+  <div class="row">
+    <label class="lbl" for="outFormat">Output 輸出格式</label>
+    <select id="outFormat">
+      <option value="auto" selected>Auto (opposite of input)</option>
+      <option value="vtt">WebVTT (.vtt)</option>
+      <option value="srt">SubRip (.srt)</option>
+    </select>
+    <button class="primary" id="convertBtn" type="button">Convert &amp; Check 轉換＋健檢</button>
+  </div>
+
+  <div class="row">
+    <label class="lbl" for="shiftVal">Shift timeline 平移</label>
+    <input type="number" id="shiftVal" value="1000" step="any" />
+    <select id="shiftUnit">
+      <option value="ms" selected>milliseconds 毫秒</option>
+      <option value="s">seconds 秒</option>
+    </select>
+    <button class="ghost small" id="shiftBtn" type="button">Apply shift 套用平移</button>
+    <span class="fine" style="margin-top:0;">Use a negative value to move cues earlier; times never go below 00:00:00. 負數＝提前，最早不早於 0。</span>
+  </div>
+
+  <div class="status" id="status"></div>
+  <div class="issues" id="issues"></div>
+  <div class="ok-box" id="okBox">✓ Health check passed: no broken timecodes, no end-before-start cues, no overlaps found. 健檢通過：沒有發現格式問題。</div>
+
+  <h2 class="sec">Result 結果</h2>
+  <textarea class="out" id="output" placeholder="Converted subtitles will appear here… 轉換結果會出現在這裡。" readonly></textarea>
+  <div class="row">
+    <button class="primary" id="downloadBtn" type="button">Download 下載</button>
+    <button class="ghost" id="copyBtn" type="button">Copy 複製</button>
+    <span class="fine" id="copyMsg" style="margin-top:0;"></span>
+  </div>
+
+  <h2 class="sec">How it works 用法</h2>
+  <ul class="howto">
+    <li>Paste or load a subtitle file — the format (SRT / VTT) is detected automatically.</li>
+    <li>Hit <b>Convert &amp; Check</b>: you get the converted file plus a health report. Flagged cues keep their original timing line in the output, so nothing is silently changed.</li>
+    <li><b>Apply shift</b> moves every valid cue by the amount you set — handy when a video got a new intro or a cut.</li>
+    <li>The check covers format-level problems only. Wording, line breaks and reading speed still need a human pass — see the localization services below.</li>
+  </ul>
+
+  <section class="report-gate" aria-live="polite">
+    <h2>Free resources for subtitlers — leave your email</h2>
+    <p>Working with Chinese subtitles? Get the free Taiwan-wording essentials sheet and occasional localization notes via the Systeme form. This page never receives your email or your files — the form opens on Systeme in a new tab.</p>
+    <p>做中文字幕嗎？可透過 Systeme 表單留 email，領取免費《台灣用詞對照精華表》與後續在地化筆記。本頁不會收到你的 email，也不會收到你貼上的字幕內容。</p>
+    <a class="gate-btn" href="https://z2idugagr.systeme.io/form-zh-clean" target="_blank" rel="noopener">前往 Systeme 留 email 領取精華表 →</a>
+  </section>
+
+  <div class="cta-box">
+    Need the words fixed too, not just the format?<br/>
+    <a href="/portfolio/localization/">Localization &amp; subtitle services 在地化／字幕服務</a> — human-reviewed EN ↔ Traditional Chinese (Taiwan)<br/>
+    Taiwan wording check for any text: <a href="/checker/">簡轉繁用詞檢查</a> ｜ Simplified → Taiwan converter: <a href="/converter/">簡轉台繁轉換器</a><br/>
+    Test your Taiwan Traditional Chinese level: <a href="/quiz/">10-question quiz 台繁程度測驗</a>
+  </div>
+
+  <p class="fine">Free tool by LocRank. Parsing follows the common SRT (HH:MM:SS,mmm) and WebVTT (HH:MM:SS.mmm / MM:SS.mmm) shapes; unusual player-specific extensions may not parse perfectly. The health check flags issues for your review — it does not repair them automatically. All processing happens locally in your browser; no subtitle content is uploaded, stored, or tracked.</p>
+</div>
+
+<script id="st-core">
+"use strict";
+/* ---- Subtitle core logic (DOM-free, unit-testable) ---- */
+
+function parseSrtTimecode(tc) {
+  var m = /^(\d+):(\d{2}):(\d{2}),(\d{3})$/.exec(String(tc).trim());
+  if (!m) return null;
+  return ((+m[1]) * 3600 + (+m[2]) * 60 + (+m[3])) * 1000 + (+m[4]);
+}
+
+function parseVttTimecode(tc) {
+  var m = /^(?:(\d+):)?(\d{2}):(\d{2})\.(\d{3})$/.exec(String(tc).trim());
+  if (!m) return null;
+  var h = m[1] ? +m[1] : 0;
+  return (h * 3600 + (+m[2]) * 60 + (+m[3])) * 1000 + (+m[4]);
+}
+
+function pad(n, w) { n = String(n); while (n.length < w) n = "0" + n; return n; }
+
+function msToTimecode(ms, sep) {
+  ms = Math.max(0, Math.round(ms));
+  var h = Math.floor(ms / 3600000);
+  var mi = Math.floor((ms % 3600000) / 60000);
+  var s = Math.floor((ms % 60000) / 1000);
+  var mmm = ms % 1000;
+  return pad(h, 2) + ":" + pad(mi, 2) + ":" + pad(s, 2) + sep + pad(mmm, 3);
+}
+function msToSrt(ms) { return msToTimecode(ms, ","); }
+function msToVtt(ms) { return msToTimecode(ms, "."); }
+
+function detectFormat(text) {
+  return /^\s*WEBVTT/.test(text) ? "vtt" : "srt";
+}
+
+/* Parse subtitle text into cues.
+   Cue: {num, id, startMs, endMs, text, rawTiming, issues:[{type,msg}]} */
+function parseSubtitles(text) {
+  var format = detectFormat(text);
+  var norm = String(text).replace(/\r\n?/g, "\n").replace(/^﻿/, "");
+  var blocks = norm.split(/\n\s*\n/);
+  var cues = [];
+  blocks.forEach(function (block) {
+    var lines = block.split("\n").filter(function (l) { return l.trim() !== "" || false; });
+    // keep original lines (trimmed of trailing ws) but drop fully-empty
+    lines = block.split("\n").map(function (l) { return l.replace(/\s+$/, ""); }).filter(function (l) { return l.trim() !== ""; });
+    if (!lines.length) return;
+    if (format === "vtt") {
+      if (/^WEBVTT/.test(lines[0])) {
+        // header block: if it also contains a cue timing line, fall through; else skip
+        if (!lines.some(function (l) { return l.indexOf("-->") >= 0; })) return;
+        lines = lines.slice(1);
+        if (!lines.length) return;
+      }
+      if (/^(NOTE|STYLE|REGION)(\s|$)/.test(lines[0])) return;
+    }
+    var tIdx = -1;
+    for (var i = 0; i < lines.length; i++) { if (lines[i].indexOf("-->") >= 0) { tIdx = i; break; } }
+    var cue = { num: cues.length + 1, id: null, startMs: null, endMs: null, text: "", rawTiming: null, issues: [] };
+    if (tIdx < 0) {
+      cue.issues.push({ type: "no-timing", msg: "No timing line (--> ) found in this block — block kept as-is." });
+      cue.text = lines.join("\n");
+      cues.push(cue);
+      return;
+    }
+    var pre = lines.slice(0, tIdx);
+    if (format === "srt") {
+      // first pre-line is usually the numeric index; ignore it
+    } else if (pre.length) {
+      cue.id = pre.join(" ");
+    }
+    var timingLine = lines[tIdx].trim();
+    cue.rawTiming = timingLine;
+    var parts = timingLine.split("-->");
+    var startRaw = (parts[0] || "").trim();
+    var endRaw = (parts[1] || "").trim().split(/\s+/)[0]; // strip VTT cue settings
+    var parse = format === "srt" ? parseSrtTimecode : parseVttTimecode;
+    cue.startMs = parse(startRaw);
+    cue.endMs = parse(endRaw);
+    if (cue.startMs === null || cue.endMs === null) {
+      cue.issues.push({ type: "bad-timecode", msg: "Malformed timecode: \"" + timingLine + "\" — kept unchanged in the output." });
+    } else if (cue.endMs <= cue.startMs) {
+      cue.issues.push({ type: "end-before-start", msg: "End time is not after start time (" + startRaw + " → " + endRaw + ")." });
+    }
+    cue.text = lines.slice(tIdx + 1).join("\n");
+    cues.push(cue);
+  });
+  // overlap check (only among cues with valid times, in file order)
+  var prev = null;
+  cues.forEach(function (cue) {
+    if (cue.startMs !== null && cue.endMs !== null) {
+      if (prev && cue.startMs < prev.endMs) {
+        cue.issues.push({ type: "overlap", msg: "Overlaps the previous cue (starts before cue " + prev.num + " ends)." });
+      }
+      prev = cue;
+    }
+  });
+  return { format: format, cues: cues };
+}
+
+function shiftCues(cues, deltaMs) {
+  cues.forEach(function (cue) {
+    if (cue.startMs !== null) cue.startMs = Math.max(0, cue.startMs + deltaMs);
+    if (cue.endMs !== null) cue.endMs = Math.max(0, cue.endMs + deltaMs);
+  });
+  return cues;
+}
+
+function formatCues(cues, target) {
+  var out = [];
+  if (target === "vtt") out.push("WEBVTT", "");
+  cues.forEach(function (cue, i) {
+    if (target === "srt") out.push(String(i + 1));
+    else if (cue.id) out.push(cue.id);
+    if (cue.startMs !== null && cue.endMs !== null) {
+      out.push((target === "srt" ? msToSrt(cue.startMs) : msToVtt(cue.startMs)) + " --> " + (target === "srt" ? msToSrt(cue.endMs) : msToVtt(cue.endMs)));
+    } else if (cue.rawTiming) {
+      out.push(cue.rawTiming); // keep original timing line untouched
+    }
+    if (cue.text) out.push(cue.text);
+    out.push("");
+  });
+  return out.join("\n");
+}
+
+function collectIssues(cues) {
+  var all = [];
+  cues.forEach(function (cue) {
+    cue.issues.forEach(function (iss) { all.push({ cue: cue.num, type: iss.type, msg: iss.msg }); });
+  });
+  return all;
+}
+</script>
+
+<script>
+(function () {
+  var $ = function (id) { return document.getElementById(id); };
+  var state = { cues: null, inFormat: null, outFormat: null };
+
+  var SAMPLE = "1\n00:00:01,000 --> 00:00:04,000\nWelcome to the show.\n\n2\n00:00:04,500 --> 00:00:07,000\nToday we fix subtitle timing.\n\n3\n00:00:07,500 --> 00:00:10,000\nConvert, shift, and check — all in your browser.\n";
+
+  function currentTarget() {
+    var sel = $("outFormat").value;
+    if (sel === "auto") return state.inFormat === "srt" ? "vtt" : "srt";
+    return sel;
+  }
+
+  function render() {
+    if (!state.cues) return;
+    var target = currentTarget();
+    state.outFormat = target;
+    $("output").value = formatCues(state.cues, target);
+    var issues = collectIssues(state.cues);
+    var valid = state.cues.filter(function (c) { return c.startMs !== null; }).length;
+    var st = $("status");
+    st.style.display = "block";
+    st.innerHTML = "Parsed <span class=\"n\">" + state.cues.length + "</span> cues (" + state.inFormat.toUpperCase() + " → " + target.toUpperCase() + "), <span class=\"n\">" + valid + "</span> with valid timing, <span class=\"n\">" + issues.length + "</span> issue(s) flagged.";
+    var box = $("issues");
+    if (issues.length) {
+      box.style.display = "block";
+      box.innerHTML = issues.map(function (iss) {
+        return "<div class=\"issue\"><span class=\"tag\">⚠ " + iss.type + "</span> — " + iss.msg + "<div class=\"cue\">Cue #" + iss.cue + "</div></div>";
+      }).join("");
+      $("okBox").style.display = "none";
+    } else {
+      box.style.display = "none";
+      box.innerHTML = "";
+      $("okBox").style.display = "block";
+    }
+  }
+
+  function process() {
+    var text = $("input").value;
+    if (!text.trim()) { $("status").style.display = "block"; $("status").textContent = "Please paste subtitle content or load a file first. 先貼上字幕內容或選擇檔案。"; return; }
+    var parsed = parseSubtitles(text);
+    state.cues = parsed.cues;
+    state.inFormat = parsed.format;
+    render();
+  }
+
+  $("convertBtn").addEventListener("click", process);
+  $("outFormat").addEventListener("change", function () { if (state.cues) render(); });
+  $("shiftBtn").addEventListener("click", function () {
+    if (!state.cues) process();
+    if (!state.cues) return;
+    var v = parseFloat($("shiftVal").value);
+    if (isNaN(v)) return;
+    var delta = $("shiftUnit").value === "s" ? Math.round(v * 1000) : Math.round(v);
+    shiftCues(state.cues, delta);
+    render();
+  });
+  $("sampleBtn").addEventListener("click", function () { $("input").value = SAMPLE; process(); });
+  $("fileInput").addEventListener("change", function (e) {
+    var f = e.target.files && e.target.files[0];
+    if (!f) return;
+    var r = new FileReader();
+    r.onload = function () { $("input").value = String(r.result || ""); process(); };
+    r.readAsText(f);
+  });
+  $("downloadBtn").addEventListener("click", function () {
+    var content = $("output").value;
+    if (!content) return;
+    var ext = state.outFormat === "vtt" ? "vtt" : "srt";
+    var blob = new Blob([content], { type: "text/plain;charset=utf-8" });
+    var a = document.createElement("a");
+    a.href = URL.createObjectURL(blob);
+    a.download = "subtitles." + ext;
+    document.body.appendChild(a);
+    a.click();
+    setTimeout(function () { URL.revokeObjectURL(a.href); a.remove(); }, 400);
+  });
+  $("copyBtn").addEventListener("click", function () {
+    var content = $("output").value;
+    if (!content) return;
+    function done() { $("copyMsg").textContent = "Copied ✓ 已複製"; }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(content).then(done, function () { $("output").select(); document.execCommand("copy"); done(); });
+    } else { $("output").select(); document.execCommand("copy"); done(); }
+  });
+})();
+</script>
+</div>
+</body>
+</html>
