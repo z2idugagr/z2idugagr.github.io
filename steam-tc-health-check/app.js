@@ -4,6 +4,8 @@
 (function () {
 'use strict';
 var FREE_LIMIT = 5;
+var VERIFY_URL = 'https://locrank-license-verify.z2idugagr.workers.dev/verify';
+var LS_KEY = 'locrank_checker_pro_key';
 var state = { rules: null, lastResult: null, unlocked: false};
 
 function $(id) { return document.getElementById(id);}
@@ -108,10 +110,11 @@ html += '<li><strong>' + esc(h.rule.src) + '</strong> → ' + esc(h.rule.tw) +
 $('issueList').innerHTML = html || '<li>沒有發現常見的大陸用詞，做得好！</li>';
 if (hidden > 0) {
 $('gate').style.display = '';
-$('gateText').textContent = '免費版顯示前 ' + FREE_LIMIT + ' 項；還有 ' + hidden + ' 種問題未展開。訂閱免費對照精華表與後續筆記（不會自動解鎖或寄出本頁其餘結果）。';
+$('gateText').textContent = '免費版顯示前 ' + FREE_LIMIT + ' 項；還有 ' + hidden + ' 種問題未展開。訂閱免費對照精華表與後續筆記（不會自動解鎖或寄出本頁其餘結果）。完整報告請見下方 Checker Pro 解鎖區。';
 } else {
 $('gate').style.display = 'none';
 }
+$('dlBtn').style.display = state.unlocked ? '' : 'none';
 if (result.enHits.length) {
 var eh = '<h3>英文原文翻譯注意事項（不扣分，僅提醒）</h3><ul>';
 result.enHits.forEach(function (h) {
@@ -123,6 +126,85 @@ $('enWatch').innerHTML = eh + '</ul>';
 $('enWatch').innerHTML = '';
 }
 $('results').style.display = '';
+}
+
+/* ---- Checker Pro：Gumroad license key 解鎖完整報告 ---- */
+function storeKey(k) { try { localStorage.setItem(LS_KEY, k); } catch (e) {} }
+function readKey() { try { return localStorage.getItem(LS_KEY) || ''; } catch (e) { return ''; } }
+function forgetKey() { try { localStorage.removeItem(LS_KEY); } catch (e) {} }
+
+function applyUnlock() {
+state.unlocked = true;
+$('proMsg').textContent = '已解鎖 Checker Pro：完整問題清單與報告下載已開啟（此瀏覽器會記住金鑰）。';
+if (state.lastResult) render(state.lastResult);
+}
+
+function verifyKey(key, silent) {
+key = (key || '').trim();
+if (!key) { if (!silent) $('proMsg').textContent = '請先貼上 license key。'; return Promise.resolve(false); }
+if (!silent) $('proMsg').textContent = '驗證中…';
+return fetch(VERIFY_URL, {
+method: 'POST',
+headers: { 'Content-Type': 'application/json' },
+body: JSON.stringify({ license_key: key })
+}).then(function (r) { return r.json(); }).then(function (d) {
+if (d && d.valid) { storeKey(key); applyUnlock(); return true; }
+forgetKey();
+if (!silent) $('proMsg').textContent = '這組金鑰未通過驗證，請確認是購買 Checker Pro 後收到的 license key，或重新複製貼上。';
+return false;
+}).catch(function () {
+if (!silent) $('proMsg').textContent = '驗證服務暫時連不上，請稍後再試；你的金鑰沒有被更改。';
+return false;
+});
+}
+
+function buildReport(result) {
+var lines = [];
+lines.push('# Steam 商店頁台繁健檢報告（Checker Pro 完整版）');
+lines.push('');
+lines.push('- 檢查日期：' + new Date().toISOString().slice(0, 10));
+lines.push('- 規則庫：' + (state.rules ? state.rules.length : 152) + ' 條（中文 ' +
+(state.rules ? state.rules.filter(function (r) { return r.type === 'zh'; }).length : 131) +
+'／英文翻譯觀察 ' + (state.rules ? state.rules.filter(function (r) { return r.type === 'en'; }).length : 21) + '）');
+lines.push('- 健檢分數：' + result.score + '／100（' + verdict(result.score) + '）');
+lines.push('- 結果：找到 ' + result.total + ' 處值得檢查的用詞，共 ' + result.distinct + ' 種' +
+(result.enHits.length ? '；另有 ' + result.enHits.length + ' 項英文翻譯注意事項' : '') + '。');
+lines.push('');
+lines.push('## 問題清單（全部）');
+if (!result.hits.length) lines.push('沒有發現常見的大陸用詞，做得好！');
+result.hits.forEach(function (h, i) {
+lines.push((i + 1) + '. ' + h.rule.src + ' → ' + h.rule.tw + '（出現 ' + h.count + ' 次' +
+(h.positions.length ? '，位置：' + h.positions.map(function (p) { return '第 ' + (p + 1) + ' 字'; }).join('、') : '') + '）' +
+(h.rule.risk === 'low' ? '［建議確認語境］' : ''));
+lines.push('   修正建議：' + h.rule.note);
+});
+if (result.enHits.length) {
+lines.push('');
+lines.push('## 英文原文翻譯注意事項（不扣分，僅提醒）');
+result.enHits.forEach(function (h, i) {
+lines.push((i + 1) + '. ' + h.rule.src + ' → ' + h.rule.tw + '（出現 ' + h.count + ' 次）');
+lines.push('   說明：' + h.rule.note);
+});
+}
+lines.push('');
+lines.push('## 受檢原文');
+lines.push(result.text);
+lines.push('');
+lines.push('— 由 LocRank Steam 商店頁台繁健檢工具產生（locrank.com/steam-tc-health-check/）。本報告為詞彙層級健檢建議，非正式審閱報告；語境判斷仍需人工確認。');
+return lines.join('\n');
+}
+
+function downloadReport() {
+if (!state.unlocked || !state.lastResult) return;
+var blob = new Blob([buildReport(state.lastResult)], { type: 'text/markdown;charset=utf-8' });
+var url = URL.createObjectURL(blob);
+var a = document.createElement('a');
+a.href = url;
+a.download = 'steam-tc-health-report.md';
+document.body.appendChild(a);
+a.click();
+document.body.removeChild(a);
+setTimeout(function () { URL.revokeObjectURL(url); }, 1000);
 }
 
 function runCheck() {
@@ -145,6 +227,10 @@ $('demoBtn').addEventListener('click', function () { $('input').value = DEMO; ru
 $('clearBtn').addEventListener('click', function () {
 $('input').value = ''; $('results').style.display = 'none'; $('status').textContent = '';
 });
+$('dlBtn').addEventListener('click', downloadReport);
+$('proBtn').addEventListener('click', function () { verifyKey($('proKey').value, false); });
+var saved = readKey();
+if (saved) { $('proKey').value = saved; verifyKey(saved, true); }
 // Email 收集：由閘門內的 Systeme 託管表單連結處理（form-zh-clean，與 /free/ 同一條已驗證路徑）。
 // 本頁不接收、不儲存任何 email；訂閱送免費對照精華表與後續筆記，不解鎖本頁其餘結果。
 });

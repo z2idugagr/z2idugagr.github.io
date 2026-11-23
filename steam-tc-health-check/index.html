@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Steam 商店頁台繁健檢工具｜免費檢查台灣用詞｜HankLoc</title>
-<meta name="description" content="貼上 Steam 商店頁文案，免費檢查台灣用詞問題：即時標出值得檢查的用詞、健檢分數與修正建議；免費版顯示前 5 項，另可訂閱免費台灣用詞對照精華表。檢查在瀏覽器本機進行，不上傳文字。">
+<meta name="description" content="貼上 Steam 商店頁文案，免費檢查台灣用詞問題：即時標出值得檢查的用詞、健檢分數與修正建議；免費版顯示前 5 項，Checker Pro（一次性買斷）解鎖完整問題清單與可下載報告。檢查在瀏覽器本機進行，不上傳文字。">
 <style>
 :root{--ink:#1c2430;--mut:#5a6675;--line:#dfe5ec;--acc:#0b6e4f;--bg:#f7f8fa;--card:#fff;--mark:#ffe08a}
 *{box-sizing:border-box}
@@ -34,6 +34,9 @@ li{margin:8px 0}
 #gate input[type=email]{width:min(320px,100%);border:1px solid var(--line);border-radius:8px;padding:10px;font:inherit;margin:6px 8px 6px 0}
 #gateMsg{font-size:14px;color:var(--mut);margin-top:8px}
 #gate a.gate-btn{display:inline-block;background:var(--acc);color:#fff;border-radius:8px;padding:10px 18px;font-weight:600;text-decoration:none;margin:6px 0}
+#proKey{width:min(340px,100%);border:1px solid var(--line);border-radius:8px;padding:10px;font:inherit;margin:6px 8px 6px 0}
+#proMsg{font-size:14px;color:var(--mut);margin-top:8px}
+a.buy-btn{display:inline-block;background:var(--acc);color:#fff;border-radius:8px;padding:10px 18px;font-weight:600;text-decoration:none;margin:6px 0}
 .fine{font-size:13px;color:var(--mut)}
 h2{font-size:19px;margin:4px 0 8px}
 h3{font-size:16px;margin:14px 0 4px}
@@ -69,6 +72,18 @@ a{color:var(--acc)}
       <p id="gateMsg">在 Systeme 表單填 email 並完成訂閱確認後，免費《台灣用詞對照精華表》與後續在地化筆記會寄到你的信箱。本頁不會收到或儲存你的 email，也不會自動解鎖或寄出本頁其餘結果；想要整份商店頁的完整真人健檢，請看下方方案。</p>
     </div>
     <div id="enWatch"></div>
+    <p><button id="dlBtn" class="primary" type="button" style="display:none">下載完整報告（.md）</button></p>
+  </div>
+
+  <div class="card" id="proCard">
+    <h2>Checker Pro：解鎖完整報告</h2>
+    <p>免費版顯示前 5 項問題。Checker Pro 一次性買斷（US$15，無訂閱）解鎖：<strong>全部問題清單</strong>（每一項附修正建議與出現位置）＋<strong>可下載的完整報告檔（.md）</strong>。購買後 Gumroad 會寄出 license key，把它貼到下方欄位驗證即可解鎖；檢查一樣在本機進行，文字不會上傳。</p>
+    <p><a class="buy-btn" href="https://zidug.gumroad.com/l/owcuj" target="_blank" rel="noopener">在 Gumroad 購買 Checker Pro →</a></p>
+    <p><strong>我已有 license key</strong></p>
+    <input id="proKey" type="text" placeholder="貼上 Gumroad 收據上的 license key" autocomplete="off" spellcheck="false">
+    <button id="proBtn" class="primary" type="button">驗證並解鎖</button>
+    <p id="proMsg"></p>
+    <p class="fine">解鎖綁定以金鑰驗證為準，請勿分享你的金鑰。報告內容為詞彙層級健檢建議，非真人審閱報告。</p>
   </div>
 
   <div class="card">
