@@ -2,7 +2,7 @@
  * LocRank 語言切換器 — 每頁一語言、隨時可切換。
  * 作法：Google Translate 元件（cookie 驅動），自製選單 UI；
  * 選單與註記一律顯示「目前語言」，不混雜兩種語言。
- * 按鈕常駐；元件慢載時自動重試（v2）。
+ * 按鈕常駐；元件慢載時自動重試（v2）；原生語言頁互切優先導原生頁（v3）。
  */
 (function () {
   "use strict";
@@ -78,6 +78,11 @@
   }
   var CUR = readCookie() || SRC;
 
+  // 原生語言頁（服務頁六語版）：身在原生頁時，互切六語直接導向對應原生頁，
+  // 不經機器翻譯；其他頁面與其他語言一律走 cookie＋機器翻譯流程。
+  var NATIVE = { en: "/en/", ja: "/ja/", ko: "/ko/", de: "/de/", fr: "/fr/", es: "/es/" };
+  var onNativePage = Object.keys(NATIVE).some(function (k) { return NATIVE[k] === location.pathname; });
+
   function nameOf(code) {
     for (var i = 0; i < LANGS.length; i++) if (LANGS[i][0] === code) return LANGS[i][1];
     return code;
@@ -147,6 +152,11 @@
     item.innerHTML = "<span>" + pair[1] + "</span>" + (pair[0] === CUR ? '<span class="lr-check">✓</span>' : "");
     item.addEventListener("click", function () {
       if (pair[0] === CUR) { panel.classList.remove("lr-open"); return; }
+      if (onNativePage && NATIVE[pair[0]]) {
+        setTransCookie(SRC); // 清除翻譯 cookie，原生頁以原文呈現
+        location.href = NATIVE[pair[0]];
+        return;
+      }
       setTransCookie(pair[0]);
       location.reload();
     });
