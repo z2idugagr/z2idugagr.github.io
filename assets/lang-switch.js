@@ -179,6 +179,8 @@
   else document.addEventListener("DOMContentLoaded", mount);
 
   // ---- Google Translate 元件 ----
+  // 按鈕常駐：元件慢載或被擋時按鈕仍在，cookie 先行、元件起來即生效。
+  // （v1 的逾時隱藏會讓按鈕在慢網環境消失，經真瀏覽器實測退回，v2 移除。）
   var gtReady = false;
   window.__lrGoogleTranslateInit = function () {
     try {
@@ -187,17 +189,18 @@
         "google_translate_element"
       );
       gtReady = true;
-    } catch (e) { /* 失敗走降級 */ }
+    } catch (e) { /* 失敗走重試 */ }
   };
-  var s = document.createElement("script");
-  s.src = "https://translate.google.com/translate_a/element.js?cb=__lrGoogleTranslateInit";
-  s.async = true;
-  s.onerror = function () { degrade(); };
-  document.head.appendChild(s);
-
-  function degrade() {
-    // 元件沒起來且目前沒有已生效的翻譯 → 隱藏按鈕，不留壞 UI
-    if (!gtReady && !readCookie()) root.style.display = "none";
+  var gtAttempts = 0;
+  function loadGt() {
+    gtAttempts++;
+    var s = document.createElement("script");
+    s.src = "https://translate.google.com/translate_a/element.js?cb=__lrGoogleTranslateInit";
+    s.async = true;
+    document.head.appendChild(s);
+    setTimeout(function () {
+      if (!gtReady && gtAttempts < 3) loadGt();
+    }, 4000);
   }
-  setTimeout(degrade, 5000);
+  loadGt();
 })();
